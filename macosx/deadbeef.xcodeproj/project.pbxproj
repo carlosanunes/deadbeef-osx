@@ -52,8 +52,25 @@
 		0796AD2C168777970079D590 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AD2A168777970079D590 /* md5.c */; };
 		0796AD33168777B50079D590 /* ConvertUTF.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AD30168777B50079D590 /* ConvertUTF.c */; };
 		0796AD34168777B50079D590 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0796AD32168777B50079D590 /* readme.txt */; };
+		0796AD7A16878A1D0079D590 /* coreaudio.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796AD7716878A190079D590 /* coreaudio.so */; };
+		0796ADAA16879D230079D590 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0796ADA916879D230079D590 /* MainWindow.xib */; };
+		0796ADB216879D590079D590 /* deadbeef-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0796ADB116879D590079D590 /* deadbeef-Info.plist */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0796AD7916878A190079D590 /* Copy Plugins */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = plugins;
+			dstSubfolderSpec = 6;
+			files = (
+				0796AD7A16878A1D0079D590 /* coreaudio.so in Copy Plugins */,
+			);
+			name = "Copy Plugins";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0796AC19168770270079D590 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -133,6 +150,9 @@
 		0796AD30168777B50079D590 /* ConvertUTF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ConvertUTF.c; sourceTree = "<group>"; };
 		0796AD31168777B50079D590 /* ConvertUTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertUTF.h; sourceTree = "<group>"; };
 		0796AD32168777B50079D590 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		0796AD7716878A190079D590 /* coreaudio.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = coreaudio.so; sourceTree = "<group>"; };
+		0796ADA916879D230079D590 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		0796ADB116879D590079D590 /* deadbeef-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "deadbeef-Info.plist"; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -262,6 +282,8 @@
 		29B97314FDCFA39411CA2CEA /* deadbeef */ = {
 			isa = PBXGroup;
 			children = (
+				0796ADB116879D590079D590 /* deadbeef-Info.plist */,
+				0796ADA916879D230079D590 /* MainWindow.xib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -324,6 +346,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0796AD7716878A190079D590 /* coreaudio.so */,
 				0796AC31168770530079D590 /* icons */,
 				0796AC33168770530079D590 /* images */,
 			);
@@ -349,6 +372,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				0796AD7916878A190079D590 /* Copy Plugins */,
 			);
 			buildRules = (
 			);
@@ -407,6 +431,8 @@
 				0796AC53168770530079D590 /* volume-high.png in Resources */,
 				0796AC54168770530079D590 /* volume-low.png in Resources */,
 				0796AD34168777B50079D590 /* readme.txt in Resources */,
+				0796ADAA16879D230079D590 /* MainWindow.xib in Resources */,
+				0796ADB216879D590079D590 /* deadbeef-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +489,10 @@
 				GCC_PREFIX_HEADER = deadbeef_Prefix.pch;
 				INFOPLIST_FILE = "deadbeef-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = deadbeef;
 			};
 			name = Debug;
@@ -477,6 +507,10 @@
 				GCC_PREFIX_HEADER = deadbeef_Prefix.pch;
 				INFOPLIST_FILE = "deadbeef-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = deadbeef;
 			};
 			name = Release;
