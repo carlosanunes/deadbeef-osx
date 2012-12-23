@@ -1,21 +1,10 @@
-/*
-    DeaDBeeF Cocoa GUI
-    Copyright (C) 2012 Carlos Nunes <carloslnunes@gmail.com>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
+//
+//  MainController.m
+//  deadbeef
+//
+//  Created by Carlos Nunes on 4/4/12.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//
 
 #import "DBMainWindowController.h"
 
@@ -37,10 +26,8 @@
 
 
 	// volume bar
-	float volume = volume_get_db();
-	double minVolume = (double) volume_get_min_db();
-	[volumeSlider setMinValue: minVolume];
-	[volumeSlider setFloatValue: volume];
+	[volumeSlider setMinValue: (double) [DBAppDelegate minVolumeDB] ];
+	[volumeSlider setFloatValue: [DBAppDelegate volumeDB] ];
 	
 	shouldUpdate = YES;
 	
@@ -57,8 +44,8 @@
 	pauseAlternateImage = [NSImage imageNamed: @"pause-pressed"];
 	
 	// set state of loop and order menu items
-	int orderState = conf_get_int("playback.order", 0);
-	int loopState = conf_get_int("playback.loop", 0);
+	int orderState = [DBAppDelegate intConfiguration:@"playback.order" num:0];
+	int loopState = [DBAppDelegate intConfiguration:@"playback.loop" num:0];
 	
 	switch (orderState) {
 		case PLAYBACK_ORDER_LINEAR:
@@ -94,8 +81,6 @@
 	[currentSelectedOrderMenuItem setState: NSOnState];
 	[currentSelectedLoopMenuItem setState: NSOnState];
 	
-//	[[timeSlider cell] setDelegate: [self ] ]
-
 }
 
 - (void)windowDidDeminiaturize:(NSNotification *)notification {
@@ -218,7 +203,7 @@
 - (IBAction) volumeSliderChanged: (id)sender {
 	
 	float volume = [volumeSlider floatValue];
-	volume_set_db(volume);
+	[DBAppDelegate setVolumeDB:volume];
 }
 
 
@@ -227,24 +212,21 @@
 
 - (IBAction) loopAll: sender {
 
-	conf_set_int ("playback.loop", 0);
-
+	[DBAppDelegate setIntConfiguration: @"playback.loop" value:0];
 	[self loopMenuItemCheck: sender];
 
 }
 
 - (IBAction) loopSingle:  sender {
 
-	conf_set_int ("playback.loop", 2);
-
+	[DBAppDelegate setIntConfiguration: @"playback.loop" value:2];
 	[self loopMenuItemCheck: sender];
 
 }
 
 - (IBAction) loopNo: sender {
 
-	conf_set_int ("playback.loop", 1);
-	
+	[DBAppDelegate setIntConfiguration: @"playback.loop" value:1];
 	[self loopMenuItemCheck: sender];
 }
 

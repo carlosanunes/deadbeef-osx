@@ -1,20 +1,10 @@
-/*
-    DeaDBeeF Cocoa GUI
-    Copyright (C) 2012 Carlos Nunes <carloslnunes@gmail.com>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+//
+//  DBAppDelegate.m
+//  deadbeef
+//
+//  Created by Carlos Nunes on 4/28/12.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//
 
 #import "DBAppDelegate.h"
 #import "DBMainWindowController.h"
@@ -22,6 +12,10 @@
 #include "../playlist.h"
 #include "../plugins.h"
 #include "../streamer.h"
+#include "../conf.h"
+#include "../volume.h"
+#include "../messagepump.h"
+
 
 @implementation DBAppDelegate
 
@@ -483,6 +477,49 @@
 	plt_unref(plt);
 	pl_unlock();
 	pl_save_all();
+}
+
+
+
++ (void) setCursor : (NSInteger) cursor {
+
+    char conf[100];
+    snprintf (conf, sizeof (conf), "playlist.cursor.%d", deadbeef->plt_get_curr_idx ());
+    conf_set_int (conf, (int) cursor);
+    return pl_set_cursor (PL_MAIN, (int) cursor);
+}
+
++ (void) clearPlayList {
+
+	pl_clear();
+	pl_save_all();
+}
+
+
++ (void) setVolumeDB:(float)value {
+
+	volume_set_db(value);
+}
+
++ (float) volumeDB {
+	
+	return volume_get_db();
+
+}
+
++ (float) minVolumeDB {
+
+	return volume_get_min_db();
+}
+
++ (int) intConfiguration : (NSString *) key num:(NSInteger) def {
+
+	return conf_get_int([key UTF8String], def);
+}
+
++ (void) setIntConfiguration : (NSString *) key value:(NSInteger) def {
+
+	return conf_set_int([key UTF8String], def);
 }
 
 

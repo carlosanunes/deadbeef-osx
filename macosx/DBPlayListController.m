@@ -1,20 +1,10 @@
-/*
-    DeaDBeeF Cocoa GUI
-    Copyright (C) 2012 Carlos Nunes <carloslnunes@gmail.com>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+//
+//  PlayListController.m
+//  deadbeef
+//
+//  Created by Carlos Nunes on 4/5/12.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//
 
 #import "DBPlayListController.h"
 
@@ -226,9 +216,8 @@
 {
 	DB_output_t *output = plug_get_output();
 	NSInteger rowIndex = [playlistTable selectedRow];
-	pl_set_cursor (PL_MAIN, (int) rowIndex);
-	
-	
+	[DBAppDelegate setCursor:rowIndex];
+		
     if (output->state () == OUTPUT_STATE_PAUSED) {
         ddb_playlist_t *plt = plt_get_curr ();
         int cur = plt_get_cursor (plt, PL_MAIN);
@@ -278,8 +267,8 @@
 
 - (IBAction) playlistClear: sender
 {
-	pl_clear();
-	pl_save_all();
+
+	[DBAppDelegate clearPlayList];
 	
 	[playlistTable deselectAll: self];
 	[playlistTable reloadData];
