@@ -333,7 +333,11 @@
 	NSOpenPanel * openPanel = [NSOpenPanel openPanel];
     [openPanel setCanChooseDirectories:NO];
 	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel setAllowedFileTypes: [DBAppDelegate supportedFormatsExtensions] ];
+	
+	NSArray * extensionList = [DBAppDelegate supportedFormatsExtensions];
+	if ( [extensionList count] == 0 )
+		return FALSE; // TODO: Launch Error Message
+	[openPanel setAllowedFileTypes: extensionList ];
 	
     if ( [openPanel runModal] == NSOKButton )
     {
