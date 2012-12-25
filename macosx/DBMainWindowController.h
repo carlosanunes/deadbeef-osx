@@ -74,7 +74,6 @@
 
 // playback commands
 
-- (IBAction) togglePlay: (id)sender; 
 
 - (IBAction) loopAll: (id) sender;
 - (IBAction) loopSingle: (id) sender;
