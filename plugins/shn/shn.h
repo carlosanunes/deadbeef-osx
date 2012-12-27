@@ -115,6 +115,8 @@ extern DB_functions_t *deadbeef;
 #define PATH_MAX    1024    /* max # of characters in a path name */
 #endif
 
+typedef unsigned int uint;
+
 typedef struct _shn_config
 {
 	int      error_output_method;
