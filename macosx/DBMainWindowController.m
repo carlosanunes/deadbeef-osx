@@ -292,23 +292,6 @@
 
 // file
 
-// opens a directory chooser dialog
-- (IBAction) addDirectory:(id)sender {
-	
-	NSOpenPanel * openPanel = [NSOpenPanel openPanel];
-    [openPanel setCanChooseDirectories:YES];
-	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel setCanChooseFiles:NO];
-	
-	if ( [openPanel runModal] == NSOKButton )
-    {
-		NSArray * directories = [openPanel URLs];
-		[DBAppDelegate insertDirectory: directories];
-		[playlistTable reloadData];
-	}
-	
-}
-
 
 - (IBAction) openFiles : sender {
 
@@ -318,11 +301,25 @@
 	}
 }
 
-
-- (IBAction) addFiles : sender {
-
-	[self doFileImport:FALSE];
-
+- (IBAction) addMusic: sender {
+	
+	NSOpenPanel * openPanel = [NSOpenPanel openPanel];
+    [openPanel setCanChooseDirectories:YES];
+	[openPanel setAllowsMultipleSelection:YES];
+	
+	NSArray * extensionList = [DBAppDelegate supportedFormatsExtensions];
+	if ( [extensionList count] == 0 )
+		return; // TODO: Launch Error Message
+	[openPanel setAllowedFileTypes: extensionList ];
+	
+	if ( [openPanel runModal] == NSOKButton )
+    {
+		NSArray * files = [openPanel URLs];
+		[DBAppDelegate addPathsToPlaylist:files];
+		
+		[playlistTable reloadData];
+	}
+	
 }
 
 // opens a file import dialog and adds the selected
@@ -345,7 +342,7 @@
 			pl_clear();
 		
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate addFilesToPlaylist:files];
+		[DBAppDelegate addPathsToPlaylist:files];
 		
 		[playlistTable reloadData];
 		return YES;
