@@ -91,8 +91,6 @@
 // file
 
 - (IBAction) openFiles: (id)sender;
-- (IBAction) addFiles: (id)sender;
-- (IBAction) addDirectory: (id)sender;
-
+- (IBAction) addMusic: (id)sender;
 
 @end
