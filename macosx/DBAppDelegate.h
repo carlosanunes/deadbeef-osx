@@ -46,9 +46,7 @@
 
 + (NSString *) totalPlaytimeAndSongCount;
 
-+ (BOOL) addPathsToPlaylist : (NSArray*) list;
-+ (BOOL) insertFilesToPlaylistAt : (NSArray*) list row:(NSInteger)rowIndex;
-+ (BOOL) insertDirectory : (NSArray*) list;
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex;
 
 + (void) movePlayListItems : (NSIndexSet*) rowIndexes row:(NSInteger) rowBefore;
 + (void) setCursor : (NSInteger) cursor;
