@@ -115,7 +115,7 @@
 	if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
 
-		BOOL inserted = [DBAppDelegate insertFilesToPlaylistAt:files row:row];
+		BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:files row:row];
 		[playlistTable reloadData];
 		return inserted;
     }

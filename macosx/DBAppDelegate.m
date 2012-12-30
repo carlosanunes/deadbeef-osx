@@ -34,17 +34,32 @@
 
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
-		
-	return [DBAppDelegate addPathsToPlaylist: [NSArray arrayWithObject:filename] ];
+	
+	[DBAppDelegate clearPlayList];
+	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:[NSArray arrayWithObject:filename] row:-1 ];
+	if (inserted) {
+		DBPlayListController * controller = [mainPlaylist delegate];
+		[controller playSelectedItem: nil];
+	}
+
+	[mainPlaylist reloadData];
+	
+	return inserted;
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
 
 	printf("Opening: %s\n", [[filenames objectAtIndex:0] UTF8String]);
 	
-	[DBAppDelegate addPathsToPlaylist:filenames];
-
+	[DBAppDelegate clearPlayList];
+	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:filenames row:-1];
+	if (inserted) {
+		DBPlayListController * controller = [mainPlaylist delegate];
+		[controller playSelectedItem: nil];
+	}
+	
 	[mainPlaylist reloadData];
+	return inserted;
 }
 
 
@@ -77,6 +92,10 @@
 	[mainWindow makeKeyWindow];
 	return TRUE;
 }
+
+
+
+
 
 /* = deadbeef core functionality
  */
@@ -331,7 +350,7 @@
 /*
 	accepts both a NSURL list as well as a NSSring list
 */
-+ (BOOL) addPathsToPlaylist : (NSArray *) list {
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex {
 	
     ddb_playlist_t * plt = plt_get_curr ();
     if ( pl_add_files_begin (plt) < 0) {
@@ -339,12 +358,18 @@
         return NO;
     }
 	
-	playItem_t * after = pl_get_last (PL_MAIN);
+	playItem_t * after = NULL;
 	playItem_t * inserted = NULL;
 	int abort = 0;
     NSString * file;
     const char * path;
 	BOOL isDir;
+	
+	// if the provided row index is less than 0, the files will be added at the end of the current playlist
+	if (rowIndex < 0)
+		after = pl_get_last (PL_MAIN);
+	else
+		after = pl_get_for_idx(rowIndex - 1);
 	
     for (int i=0; i<[list count]; ++i) {
 		// check for arg type
@@ -358,7 +383,9 @@
 		if([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && isDir){
 			inserted = plt_insert_dir (plt, after, path, &abort, NULL, NULL);
 		} else {
-			plt_add_file (plt, path, NULL, NULL);
+			inserted = plt_insert_file (plt, after, path, &abort, NULL, NULL);
+			if (inserted)
+				[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:file]];
 		}
 		
 		if (inserted) {
@@ -384,57 +411,6 @@
 	
 	return YES;
 }
-
-
-+ (BOOL) insertFilesToPlaylistAt :  (NSArray*) list  row:(NSInteger)rowIndex{
-
-	ddb_playlist_t *plt = plt_get_curr ();
-	if (pl_add_files_begin (plt) < 0) {
-        plt_unref (plt);
-        return NO;
-    }
-	
-	playItem_t * after = NULL;
-	playItem_t * inserted = NULL;
-	int abort = 0;
-    NSString * file;
-    const char * filename;
-	
-	after = pl_get_for_idx(rowIndex - 1);
-	
-    for (int i=0; i<[list count]; ++i) {
-		// check for arg type
-		if([[list objectAtIndex:i] isKindOfClass:[NSURL class]]) { 
-			file = [[list objectAtIndex:i] path];
-		} else {
-			file = [list objectAtIndex:i];
-		}
-		filename = [file cStringUsingEncoding:NSUTF8StringEncoding];
-		
-		// inserting file
-		// TODO: import dialog
-		inserted = plt_insert_file (plt, after, filename, &abort, NULL, NULL);
-		if (inserted) {
-			if (after) {
-				pl_item_unref (after);
-			}
-			after = inserted;
-			pl_item_ref (after);
-		}
-		
-	}
-	
-	if (after)
-        deadbeef->pl_item_unref (after);
-	
-	pl_add_files_end ();
-    plt_unref (plt);
-    pl_save_all ();	
-		
-	return YES;
-}
-
-
 
 + (void) movePlayListItems : (NSIndexSet*) rowIndexes row:(NSInteger) rowBefore {
 

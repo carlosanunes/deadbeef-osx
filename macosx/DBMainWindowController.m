@@ -315,7 +315,7 @@
 	if ( [openPanel runModal] == NSOKButton )
     {
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate addPathsToPlaylist:files];
+		[DBAppDelegate addPathsToPlaylistAt:files row: -1];
 		
 		[playlistTable reloadData];
 	}
@@ -342,7 +342,8 @@
 			pl_clear();
 		
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate addPathsToPlaylist:files];
+		[DBAppDelegate addPathsToPlaylistAt:files row: -1];
+		
 		
 		[playlistTable reloadData];
 		return YES;
