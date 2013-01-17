@@ -296,7 +296,7 @@
 - (IBAction) openFiles : sender {
 
     if ([self doFileImport:TRUE]) {
-		DBPlayListController * controller = [playlistTable delegate];
+		DBPlayListController * controller = (DBPlayListController *) [playlistTable delegate];
 		[controller playSelectedItem: sender];
 	}
 }
@@ -315,8 +315,7 @@
 	if ( [openPanel runModal] == NSOKButton )
     {
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate addPathsToPlaylistAt:files row: -1];
-		
+		[DBAppDelegate addPathsToPlaylistAt:files row: -1 progressPanelController: fileImportPanelController ];
 		[playlistTable reloadData];
 	}
 	
@@ -342,16 +341,13 @@
 			pl_clear();
 		
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate addPathsToPlaylistAt:files row: -1];
-		
-		
+		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanelController: fileImportPanelController ];
 		[playlistTable reloadData];
 		return YES;
     }
 	
 	return NO;
 }
-
 
 
 @end

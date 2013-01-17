@@ -26,7 +26,9 @@
 	
 @private
 	IBOutlet DBTableView * playlistTable;
+	IBOutlet NSWindow * mainWindow;
 	IBOutlet id playListInfoTable;
+	IBOutlet DBFileImportPanelController * fileImportPanelController;
 }
 
 - (IBAction) updatePlaylistInfo: sender;
