@@ -28,6 +28,7 @@
 
 	IBOutlet NSSlider * volumeSlider;
 	IBOutlet DBTableView * playlistTable;
+	IBOutlet DBFileImportPanelController *fileImportPanelController;
 	
 	NSImage * playImage;
 	NSImage * playAlternateImage;

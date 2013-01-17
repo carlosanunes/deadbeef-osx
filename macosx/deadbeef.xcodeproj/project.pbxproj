@@ -927,6 +927,7 @@
 		0796B5C4168921150079D590 /* Z80_Cpu.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B438168921150079D590 /* Z80_Cpu.h */; };
 		0796B5C5168921150079D590 /* Z80_Cpu_run.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B439168921150079D590 /* Z80_Cpu_run.h */; };
 		0796B6391689494E0079D590 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0796B6381689494E0079D590 /* libz.dylib */; };
+		07A4DED316A26495006B1B6A /* DBFileImportPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A4DED216A26495006B1B6A /* DBFileImportPanelController.m */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -2619,6 +2620,10 @@
 		0796B4AF168921150079D590 /* test.nsf */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.nsf; sourceTree = "<group>"; };
 		0796B4B0168921150079D590 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		0796B6381689494E0079D590 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		07A4DED116A26495006B1B6A /* DBFileImportPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFileImportPanelController.h; sourceTree = "<group>"; };
+		07A4DED216A26495006B1B6A /* DBFileImportPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFileImportPanelController.m; sourceTree = "<group>"; };
+		07DC88FB1691AA2C00DB0456 /* coredecoder.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = coredecoder.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E582C11691E95000982BCB /* coredecoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = coredecoder.c; path = ../plugins/coredecoder/coredecoder.c; sourceTree = SOURCE_ROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -2799,6 +2804,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0796B6391689494E0079D590 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DC88F91691AA2C00DB0456 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4194,6 +4206,7 @@
 		0796ADCE16886D000079D590 /* plugins */ = {
 			isa = PBXGroup;
 			children = (
+				07DC89011691AA5E00DB0456 /* coredecoder */,
 				0788225D1689D04C0066142D /* wildmidi */,
 				0788224D1689CFD80066142D /* wavpack */,
 				078822241689CF5D0066142D /* vtx */,
@@ -5322,6 +5335,14 @@
 			path = gme;
 			sourceTree = "<group>";
 		};
+		07DC89011691AA5E00DB0456 /* coredecoder */ = {
+			isa = PBXGroup;
+			children = (
+				07E582C11691E95000982BCB /* coredecoder.c */,
+			);
+			name = coredecoder;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -5334,6 +5355,8 @@
 				0796AC1F168770270079D590 /* DBPlayListController.h */,
 				0796AC20168770270079D590 /* DBPlayListController.m */,
 				0796AC22168770270079D590 /* views */,
+				07A4DED116A26495006B1B6A /* DBFileImportPanelController.h */,
+				07A4DED216A26495006B1B6A /* DBFileImportPanelController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -5384,6 +5407,7 @@
 				078822711689D0710066142D /* flac.so */,
 				0788227F1689D10B0066142D /* mpgmad.so */,
 				078823F3168A05700066142D /* artwork.so */,
+				07DC88FB1691AA2C00DB0456 /* coredecoder.so */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -6031,6 +6055,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07DC88F71691AA2C00DB0456 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -6442,6 +6473,23 @@
 			productReference = 0796B314168920E10079D590 /* gme.so */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		07DC88FA1691AA2C00DB0456 /* coredecoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DC89021691AA5E00DB0456 /* Build configuration list for PBXNativeTarget "coredecoder" */;
+			buildPhases = (
+				07DC88F71691AA2C00DB0456 /* Headers */,
+				07DC88F81691AA2C00DB0456 /* Sources */,
+				07DC88F91691AA2C00DB0456 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = coredecoder;
+			productName = coredecoder;
+			productReference = 07DC88FB1691AA2C00DB0456 /* coredecoder.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		8D1107260486CEB800E47090 /* deadbeef */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "deadbeef" */;
@@ -6518,6 +6566,7 @@
 				0788221E1689CF270066142D /* vtx */,
 				078822471689CF9D0066142D /* wavpack */,
 				078822561689D0000066142D /* wildmidi */,
+				07DC88FA1691AA2C00DB0456 /* coredecoder */,
 			);
 		};
 /* End PBXProject section */
@@ -7188,6 +7237,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07DC88F81691AA2C00DB0456 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -7219,6 +7275,7 @@
 				0796AC95168772760079D590 /* volume.c in Sources */,
 				0796AD2C168777970079D590 /* md5.c in Sources */,
 				0796AD33168777B50079D590 /* ConvertUTF.c in Sources */,
+				07A4DED316A26495006B1B6A /* DBFileImportPanelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8326,6 +8383,42 @@
 			};
 			name = Release;
 		};
+		07DC88FC1691AA2D00DB0456 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = coredecoder;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		07DC88FD1691AA2D00DB0456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = coredecoder;
+				SKIP_INSTALL = YES;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -8618,6 +8711,15 @@
 			buildConfigurations = (
 				0796B315168920E10079D590 /* Debug */,
 				0796B316168920E10079D590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07DC89021691AA5E00DB0456 /* Build configuration list for PBXNativeTarget "coredecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DC88FC1691AA2D00DB0456 /* Debug */,
+				07DC88FD1691AA2D00DB0456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

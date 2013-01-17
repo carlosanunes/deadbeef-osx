@@ -19,12 +19,16 @@
 #import <Cocoa/Cocoa.h>
 
 #import "views/DBTableView.h"
+#import "DBFileImportPanelController.h"
+#import "DBPlayListController.h"
 
+@class DBFileImportPanelController; // needed for the addPathsToPlaylistAt method
 
 @interface DBAppDelegate : NSObject <NSApplicationDelegate> {
     
 	NSWindow *mainWindow;
 	DBTableView *mainPlaylist;
+	DBFileImportPanelController *fileImportPanelController;
 }
 
 - (BOOL) isPlaying;
@@ -38,15 +42,13 @@
 
 @property (assign) IBOutlet NSWindow *mainWindow;
 @property (assign) IBOutlet DBTableView *mainPlaylist;
-
+@property (assign) IBOutlet DBFileImportPanelController *fileImportPanelController;
 
 // deadbeef core wrapper functions
 
 + (NSArray *) supportedFormatsExtensions;
 
 + (NSString *) totalPlaytimeAndSongCount;
-
-+ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex;
 
 + (void) movePlayListItems : (NSIndexSet*) rowIndexes row:(NSInteger) rowBefore;
 + (void) setCursor : (NSInteger) cursor;
@@ -59,5 +61,7 @@
 + (int) intConfiguration : (NSString *) key num:(NSInteger) def;
 
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def;
+
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanelController : (DBFileImportPanelController *) panelController;
 
 @end
