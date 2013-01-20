@@ -30,13 +30,13 @@
 
 @synthesize mainWindow;
 @synthesize mainPlaylist;
-@synthesize fileImportPanelController;
+@synthesize fileImportPanel;
 
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
 	
 	[DBAppDelegate clearPlayList];
-	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:[NSArray arrayWithObject:filename] row:-1 progressPanelController: fileImportPanelController ];
+	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:[NSArray arrayWithObject:filename] row:-1 progressPanel: fileImportPanel ];
 	if (inserted) {
 		DBPlayListController * controller = (DBPlayListController *) [mainPlaylist delegate];
 		[controller playSelectedItem: nil];
@@ -52,7 +52,7 @@
 	printf("Opening: %s\n", [[filenames objectAtIndex:0] UTF8String]);
 	
 	[DBAppDelegate clearPlayList];
-	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:filenames row:-1 progressPanelController: fileImportPanelController ];
+	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:filenames row:-1 progressPanel: fileImportPanel ];
 	if (inserted) {
 		DBPlayListController * controller = (DBPlayListController *) [mainPlaylist delegate];
 		[controller playSelectedItem: nil];
@@ -102,18 +102,23 @@
 // callback function for the file/directory import operations
 int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
-/*    if (progress_is_aborted ()) {
-        return -1;
-    }
- */   deadbeef->pl_lock ();
+	DBFileImportPanel * panel = NULL;
+	if (data != NULL)
+		panel = (DBFileImportPanel *) data; 
+	
+	if (panel != NULL) {
+		if ([panel abortPressed])
+			return -1;
+	}
+	
+	deadbeef->pl_lock ();
     const char *fname = deadbeef->pl_find_meta (it, ":URI");
-	if ( data == NULL) {
+	if ( panel == NULL) {
 		printf("%s\n", fname);
 	}
 	else {
 		NSString *file = [NSString stringWithUTF8String: fname];
-		DBFileImportPanelController * controller = (DBFileImportPanelController *) data; 
-		[controller setImportPanelCurrentFile:file];
+		[panel setCurrentFile:file];
 	}
     deadbeef->pl_unlock ();
     return 0;
@@ -195,7 +200,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 /*
  accepts both a NSURL list as well as a NSSring list
  */
-+ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanelController: panelController {
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : panel {
 	
     ddb_playlist_t * plt = plt_get_curr ();
     if ( pl_add_files_begin (plt) < 0) {
@@ -216,7 +221,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	else
 		after = pl_get_for_idx(rowIndex - 1);
 	
-// TODO	[panelController showWindow:self];
+	[panel orderFront:self];
 	
     for (int i=0; i<[list count]; ++i) {
 		// check for arg type
@@ -229,9 +234,9 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 		path = [file cStringUsingEncoding:NSUTF8StringEncoding];
 		
 		if([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && isDir){
-			inserted = plt_insert_dir (plt, after, path, &abort, ui_add_file_info_cb, panelController);
+			inserted = plt_insert_dir (plt, after, path, &abort, ui_add_file_info_cb, panel);
 		} else {
-			inserted = plt_insert_file (plt, after, path, &abort, ui_add_file_info_cb, panelController);
+			inserted = plt_insert_file (plt, after, path, &abort, ui_add_file_info_cb, panel);
 			if (inserted)
 				[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:file]];
 		}
@@ -247,7 +252,8 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 		
     }
 	
-// TODO	[panelController close];
+	
+	[panel close];
 	
 	if (after)
         deadbeef->pl_item_unref (after);

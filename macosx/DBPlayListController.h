@@ -20,6 +20,7 @@
 
 #import "DBAppDelegate.h"
 #import "views/DBTableView.h"
+#import "views/DBFileImportPanel.h"
 
 
 @interface DBPlayListController : NSViewController <NSTableViewDelegate, NSTableViewDataSource> {
@@ -28,7 +29,7 @@
 	IBOutlet DBTableView * playlistTable;
 	IBOutlet NSWindow * mainWindow;
 	IBOutlet id playListInfoTable;
-	IBOutlet DBFileImportPanelController * fileImportPanelController;
+	IBOutlet DBFileImportPanel * fileImportPanel;
 }
 
 - (IBAction) updatePlaylistInfo: sender;

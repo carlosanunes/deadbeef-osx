@@ -927,7 +927,7 @@
 		0796B5C4168921150079D590 /* Z80_Cpu.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B438168921150079D590 /* Z80_Cpu.h */; };
 		0796B5C5168921150079D590 /* Z80_Cpu_run.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B439168921150079D590 /* Z80_Cpu_run.h */; };
 		0796B6391689494E0079D590 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0796B6381689494E0079D590 /* libz.dylib */; };
-		07A4DED316A26495006B1B6A /* DBFileImportPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A4DED216A26495006B1B6A /* DBFileImportPanelController.m */; };
+		07A3835816A9D427007D5551 /* DBFileImportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A3835716A9D427007D5551 /* DBFileImportPanel.m */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -2620,8 +2620,8 @@
 		0796B4AF168921150079D590 /* test.nsf */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.nsf; sourceTree = "<group>"; };
 		0796B4B0168921150079D590 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		0796B6381689494E0079D590 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		07A4DED116A26495006B1B6A /* DBFileImportPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFileImportPanelController.h; sourceTree = "<group>"; };
-		07A4DED216A26495006B1B6A /* DBFileImportPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFileImportPanelController.m; sourceTree = "<group>"; };
+		07A3835616A9D427007D5551 /* DBFileImportPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFileImportPanel.h; sourceTree = "<group>"; };
+		07A3835716A9D427007D5551 /* DBFileImportPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFileImportPanel.m; sourceTree = "<group>"; };
 		07DC88FB1691AA2C00DB0456 /* coredecoder.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = coredecoder.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E582C11691E95000982BCB /* coredecoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = coredecoder.c; path = ../plugins/coredecoder/coredecoder.c; sourceTree = SOURCE_ROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -4147,6 +4147,8 @@
 				0796AC26168770270079D590 /* DBTableView.m */,
 				0796AC27168770270079D590 /* DBTimeSliderCell.h */,
 				0796AC28168770270079D590 /* DBTimeSliderCell.m */,
+				07A3835616A9D427007D5551 /* DBFileImportPanel.h */,
+				07A3835716A9D427007D5551 /* DBFileImportPanel.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -5355,8 +5357,6 @@
 				0796AC1F168770270079D590 /* DBPlayListController.h */,
 				0796AC20168770270079D590 /* DBPlayListController.m */,
 				0796AC22168770270079D590 /* views */,
-				07A4DED116A26495006B1B6A /* DBFileImportPanelController.h */,
-				07A4DED216A26495006B1B6A /* DBFileImportPanelController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -7275,7 +7275,7 @@
 				0796AC95168772760079D590 /* volume.c in Sources */,
 				0796AD2C168777970079D590 /* md5.c in Sources */,
 				0796AD33168777B50079D590 /* ConvertUTF.c in Sources */,
-				07A4DED316A26495006B1B6A /* DBFileImportPanelController.m in Sources */,
+				07A3835816A9D427007D5551 /* DBFileImportPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
