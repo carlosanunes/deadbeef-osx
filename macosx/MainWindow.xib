@@ -13,7 +13,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="29"/>
-			<integer value="1254"/>
+			<integer value="1255"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -982,9 +982,9 @@
 				<int key="NSWindowStyleMask">19</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{455, 366}, {337, 60}}</string>
-				<int key="NSWTFlags">-1535639552</int>
-				<string key="NSWindowTitle">Window</string>
-				<string key="NSWindowClass">NSPanel</string>
+				<int key="NSWTFlags">-461897728</int>
+				<string key="NSWindowTitle">File Import</string>
+				<string key="NSWindowClass">DBFileImportPanel</string>
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="42815199">
@@ -1049,9 +1049,6 @@
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
-			</object>
-			<object class="NSCustomObject" id="328134806">
-				<string key="NSClassName">DBFileImportPanelController</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1467,43 +1464,51 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">delegate</string>
+						<string key="label">currentFileTextField</string>
 						<reference key="source" ref="582683597"/>
-						<reference key="destination" ref="328134806"/>
-					</object>
-					<int key="connectionID">1288</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">textFieldCurrentFile</string>
-						<reference key="source" ref="328134806"/>
 						<reference key="destination" ref="257470167"/>
 					</object>
-					<int key="connectionID">1289</int>
+					<int key="connectionID">1299</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">fileImportPanelController</string>
-						<reference key="source" ref="970764049"/>
-						<reference key="destination" ref="328134806"/>
+						<string key="label">buttonAbort</string>
+						<reference key="source" ref="582683597"/>
+						<reference key="destination" ref="405575239"/>
 					</object>
-					<int key="connectionID">1292</int>
+					<int key="connectionID">1300</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">fileImportPanelController</string>
+						<string key="label">fileImportPanel</string>
 						<reference key="source" ref="1040279574"/>
-						<reference key="destination" ref="328134806"/>
+						<reference key="destination" ref="582683597"/>
 					</object>
-					<int key="connectionID">1293</int>
+					<int key="connectionID">1301</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">fileImportPanelController</string>
-						<reference key="source" ref="948441435"/>
-						<reference key="destination" ref="328134806"/>
+						<string key="label">fileImportPanel</string>
+						<reference key="source" ref="970764049"/>
+						<reference key="destination" ref="582683597"/>
 					</object>
-					<int key="connectionID">1294</int>
+					<int key="connectionID">1302</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">fileImportPanel</string>
+						<reference key="source" ref="948441435"/>
+						<reference key="destination" ref="582683597"/>
+					</object>
+					<int key="connectionID">1303</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">abortPressed:</string>
+						<reference key="source" ref="582683597"/>
+						<reference key="destination" ref="405575239"/>
+					</object>
+					<int key="connectionID">1304</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2238,11 +2243,6 @@
 						<reference key="object" ref="226840228"/>
 						<reference key="parent" ref="405575239"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1287</int>
-						<reference key="object" ref="328134806"/>
-						<reference key="parent" ref="0"/>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -2317,7 +2317,6 @@
 					<string>1263.IBPluginDependency</string>
 					<string>1266.IBPluginDependency</string>
 					<string>1267.IBPluginDependency</string>
-					<string>1287.IBPluginDependency</string>
 					<string>129.IBPluginDependency</string>
 					<string>129.ImportedFromIB2</string>
 					<string>130.IBEditorWindowLastContentRect</string>
@@ -2516,7 +2515,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{509, 573}, {64, 6}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2661,7 +2659,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1294</int>
+			<int key="maxID">1304</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2719,13 +2717,13 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>fileImportPanelController</string>
+							<string>fileImportPanel</string>
 							<string>mainPlaylist</string>
 							<string>mainWindow</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>DBFileImportPanelController</string>
+							<string>DBFileImportPanel</string>
 							<string>DBTableView</string>
 							<string>NSWindow</string>
 						</object>
@@ -2734,15 +2732,15 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>fileImportPanelController</string>
+							<string>fileImportPanel</string>
 							<string>mainPlaylist</string>
 							<string>mainWindow</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">fileImportPanelController</string>
-								<string key="candidateClassName">DBFileImportPanelController</string>
+								<string key="name">fileImportPanel</string>
+								<string key="candidateClassName">DBFileImportPanel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">mainPlaylist</string>
@@ -2768,22 +2766,54 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">DBFileImportPanelController</string>
-					<string key="superclassName">NSObject</string>
+					<string key="className">DBFileImportPanel</string>
+					<string key="superclassName">NSPanel</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">abortPressed:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">abortPressed:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">abortPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">textFieldCurrentFile</string>
-						<string key="NS.object.0">NSTextField</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>buttonAbort</string>
+							<string>currentFileTextField</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSButton</string>
+							<string>NSTextField</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">textFieldCurrentFile</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">textFieldCurrentFile</string>
-							<string key="candidateClassName">NSTextField</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>buttonAbort</string>
+							<string>currentFileTextField</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">buttonAbort</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">currentFileTextField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">DBFileImportPanelController.h</string>
+						<string key="minorKey">views/DBFileImportPanel.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -2903,7 +2933,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>btnTogglePlay</string>
-							<string>fileImportPanelController</string>
+							<string>fileImportPanel</string>
 							<string>loopAllMenuItem</string>
 							<string>loopNoMenuItem</string>
 							<string>loopSingleMenuItem</string>
@@ -2918,7 +2948,7 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>id</string>
-							<string>DBFileImportPanelController</string>
+							<string>DBFileImportPanel</string>
 							<string>NSMenuItem</string>
 							<string>NSMenuItem</string>
 							<string>NSMenuItem</string>
@@ -2936,7 +2966,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>btnTogglePlay</string>
-							<string>fileImportPanelController</string>
+							<string>fileImportPanel</string>
 							<string>loopAllMenuItem</string>
 							<string>loopNoMenuItem</string>
 							<string>loopSingleMenuItem</string>
@@ -2955,8 +2985,8 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">fileImportPanelController</string>
-								<string key="candidateClassName">DBFileImportPanelController</string>
+								<string key="name">fileImportPanel</string>
+								<string key="candidateClassName">DBFileImportPanel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">loopAllMenuItem</string>
@@ -3073,14 +3103,14 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>fileImportPanelController</string>
+							<string>fileImportPanel</string>
 							<string>mainWindow</string>
 							<string>playListInfoTable</string>
 							<string>playlistTable</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>DBFileImportPanelController</string>
+							<string>DBFileImportPanel</string>
 							<string>NSWindow</string>
 							<string>id</string>
 							<string>DBTableView</string>
@@ -3090,7 +3120,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>fileImportPanelController</string>
+							<string>fileImportPanel</string>
 							<string>mainWindow</string>
 							<string>playListInfoTable</string>
 							<string>playlistTable</string>
@@ -3098,8 +3128,8 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">fileImportPanelController</string>
-								<string key="candidateClassName">DBFileImportPanelController</string>
+								<string key="name">fileImportPanel</string>
+								<string key="candidateClassName">DBFileImportPanel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">mainWindow</string>
