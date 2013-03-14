@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078476FD16E80D3F00512E95 /* coredecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 07E582C11691E95000982BCB /* coredecoder.c */; };
 		07881EA11689C3A70066142D /* lastfm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881E9F1689C3A70066142D /* lastfm.c */; };
 		07881EA61689C3FD0066142D /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07881EA51689C3FD0066142D /* libcurl.dylib */; };
 		07881EB51689C4CC0066142D /* m3u.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881EB31689C4CC0066142D /* m3u.c */; };
@@ -7241,6 +7242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078476FD16E80D3F00512E95 /* coredecoder.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
