@@ -1,20 +1,20 @@
 /*
-    DeaDBeeF Cocoa GUI
-    Copyright (C) 2012 Carlos Nunes <carloslnunes@gmail.com>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ DeaDBeeF Cocoa GUI
+ Copyright (C) 2012 Carlos Nunes <carloslnunes@gmail.com>
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #import "DBAppDelegate.h"
 
@@ -36,23 +36,23 @@
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
 	
 	[DBAppDelegate clearPlayList];
-	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:[NSArray arrayWithObject:filename] row:-1 progressPanel: fileImportPanel ];
+	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:[NSArray arrayWithObject:filename] row:-1 progressPanel: fileImportPanel mainList: mainPlaylist ];
 	if (inserted) {
 		DBPlayListController * controller = (DBPlayListController *) [mainPlaylist delegate];
 		[controller playSelectedItem: nil];
 	}
-
+	
 	[mainPlaylist reloadData];
 	
 	return inserted;
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
-
+	
 	printf("Opening: %s\n", [[filenames objectAtIndex:0] UTF8String]);
 	
 	[DBAppDelegate clearPlayList];
-	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:filenames row:-1 progressPanel: fileImportPanel ];
+	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:filenames row:-1 progressPanel: fileImportPanel mainList: mainPlaylist ];
 	if (inserted) {
 		DBPlayListController * controller = (DBPlayListController *) [mainPlaylist delegate];
 		[controller playSelectedItem: nil];
@@ -65,9 +65,9 @@
 
 
 - (NSMenu *) applicationDockMenu:(NSApplication *)sender {
-
+	
 	NSMenu * menu = [[NSMenu alloc] init];
-		
+	
 	NSString * playToggleString = NULL;
 	if([self isPlaying]) {
 		playToggleString = NSLocalizedString(@"Pause", "Dock item");
@@ -78,7 +78,7 @@
 	} else {
 		playToggleString = NSLocalizedString(@"Play", "Dock item");
 	}
-
+	
 	[menu addItemWithTitle: playToggleString action:@selector(togglePlay:) keyEquivalent:@""];
 	[menu addItemWithTitle: NSLocalizedString(@"Next", "Dock item") action:@selector(nextAction:) keyEquivalent:@""];
 	[menu addItemWithTitle: NSLocalizedString(@"Previous", "Dock item") action:@selector(previousAction:) keyEquivalent:@""];
@@ -101,24 +101,29 @@
 
 // callback function for the file/directory import operations
 int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
-
+	
 	DBFileImportPanel * panel = NULL;
 	if (data != NULL)
 		panel = (DBFileImportPanel *) data; 
 	
+	deadbeef->pl_lock ();
+	
 	if (panel != NULL) {
-		if ([panel abortPressed])
+		if (![panel isVisible] || [panel abortPressed]) {
+			deadbeef->pl_unlock ();
 			return -1;
+		}
 	}
 	
-	deadbeef->pl_lock ();
     const char *fname = deadbeef->pl_find_meta (it, ":URI");
 	if ( panel == NULL) {
 		printf("%s\n", fname);
 	}
 	else {
-		NSString *file = [NSString stringWithUTF8String: fname];
-		[panel setCurrentFile:file];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			NSString *file = [NSString stringWithUTF8String: fname];
+			[panel setCurrentFile:file];
+		});
 	}
     deadbeef->pl_unlock ();
     return 0;
@@ -127,7 +132,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 
 - (BOOL) isPlaying {
-
+	
 	DB_output_t * output = plug_get_output();
 	
 	if (output-> state() == OUTPUT_STATE_PLAYING) 
@@ -137,7 +142,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 }
 
 - (NSString*) playingTrackName {
-
+	
 	pl_lock();
 	
 	const char * meta = NULL;
@@ -200,7 +205,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 /*
  accepts both a NSURL list as well as a NSSring list
  */
-+ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : panel {
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : panel mainList : playlist {
 	
     ddb_playlist_t * plt = plt_get_curr ();
     if ( pl_add_files_begin (plt) < 0) {
@@ -208,67 +213,73 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         return NO;
     }
 	
-	playItem_t * after = NULL;
-	playItem_t * inserted = NULL;
-	int abort = 0;
-    NSString * file;
-    const char * path;
-	BOOL isDir;
-	
-	// if the provided row index is less than 0, the files will be added at the end of the current playlist
-	if (rowIndex < 0)
-		after = pl_get_last (PL_MAIN);
-	else
-		after = pl_get_for_idx(rowIndex - 1);
-	
-	[panel orderFront:self];
-	
-    for (int i=0; i<[list count]; ++i) {
-		// check for arg type
-		if([[list objectAtIndex:i] isKindOfClass:[NSURL class]]) { 
-			file = [[list objectAtIndex:i] path];
-		} else {
-			file = [list objectAtIndex:i];
-		}
-		
-		path = [file cStringUsingEncoding:NSUTF8StringEncoding];
-		
-		if([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && isDir){
-			inserted = plt_insert_dir (plt, after, path, &abort, ui_add_file_info_cb, panel);
-		} else {
-			inserted = plt_insert_file (plt, after, path, &abort, ui_add_file_info_cb, panel);
-			if (inserted)
-				[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:file]];
-		}
-		
-		
-		if (inserted) {
-			if (after) {
-				pl_item_unref (after);
-			}
-			after = inserted;
-			pl_item_ref (after);
-		}
-		
-    }
-	
-	
-	[panel close];
-	
-	if (after)
-        deadbeef->pl_item_unref (after);
-	
-    pl_add_files_end ();
-    plt_unref (plt);
-    pl_save_all ();
-    conf_save ();
+	// the add files code is executed in another thread
+	dispatch_async(dispatch_get_global_queue(0, 0),
+				   ^ {					   
+					   
+					   playItem_t * after = NULL;
+					   playItem_t * inserted = NULL;
+					   int abort = 0;
+					   NSString * file;
+					   const char * path;
+					   BOOL isDir;
+					   
+					   // if the provided row index is less than 0, the files will be added at the end of the current playlist
+					   if (rowIndex < 0)
+						   after = pl_get_last (PL_MAIN);
+					   else
+						   after = pl_get_for_idx(rowIndex - 1);
+					   
+					   [panel orderFront:self];
+					   
+					   for (int i=0; i<[list count]; ++i) {
+						   // check for arg type
+						   if([[list objectAtIndex:i] isKindOfClass:[NSURL class]]) { 
+							   file = [[list objectAtIndex:i] path];
+						   } else {
+							   file = [list objectAtIndex:i];
+						   }
+						   
+						   path = [file cStringUsingEncoding:NSUTF8StringEncoding];
+						   
+						   if([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && isDir){
+							   inserted = plt_insert_dir (plt, after, path, &abort, ui_add_file_info_cb, panel);
+						   } else {
+							   inserted = plt_insert_file (plt, after, path, &abort, ui_add_file_info_cb, panel);
+							   if (inserted)
+								   [[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:file]];
+						   }
+						   
+						   if (inserted) {
+							   if (after) {
+								   pl_item_unref (after);
+							   }
+							   after = inserted;
+							   pl_item_ref (after);
+						   }
+						   // if aborted exit loop
+						   if (abort)
+							   break;
+					   }
+					   
+					   if (after)
+						   deadbeef->pl_item_unref (after);
+					   
+					   pl_add_files_end ();
+					   plt_unref (plt);
+					   pl_save_all ();
+					   conf_save ();
+					   
+					   dispatch_async(dispatch_get_main_queue(), ^{ [panel close]; [playlist reloadData]; });
+					   
+				   });
 	
 	return YES;
 }
 
 
 + (NSString *) totalPlaytimeAndSongCount {
-
+	
 	float pl_totaltime = pl_get_totaltime ();
     int daystotal = (int)pl_totaltime / (3600*24);
     int hourtotal = ((int)pl_totaltime / 3600) % 24;
@@ -427,7 +438,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
             }
         }
 	}
-
+	
 	DB_vfs_t **vfsplugs = deadbeef->plug_get_vfs_list ();
     for (int i = 0; vfsplugs[i]; i++) {
         if (vfsplugs[i]->is_container) {
@@ -445,7 +456,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 
 + (void) movePlayListItems : (NSIndexSet*) rowIndexes row:(NSInteger) rowBefore {
-
+	
 	pl_lock();
 	ddb_playlist_t *plt = deadbeef->plt_get_curr ();
 	
@@ -463,7 +474,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 		++n;
 		index = [rowIndexes indexGreaterThanIndex:index ];
 	}
-
+	
 	plt_move_items( (playlist_t *)plt, PL_MAIN, (playlist_t *)plt, dropBefore, indexes, count);
 	
 	plt_unref(plt);
@@ -474,7 +485,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 
 + (void) setCursor : (NSInteger) cursor {
-
+	
     char conf[100];
     snprintf (conf, sizeof (conf), "playlist.cursor.%d", deadbeef->plt_get_curr_idx ());
     conf_set_int (conf, (int) cursor);
@@ -482,35 +493,35 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 }
 
 + (void) clearPlayList {
-
+	
 	pl_clear();
 	pl_save_all();
 }
 
 
 + (void) setVolumeDB:(float)value {
-
+	
 	volume_set_db(value);
 }
 
 + (float) volumeDB {
 	
 	return volume_get_db();
-
+	
 }
 
 + (float) minVolumeDB {
-
+	
 	return volume_get_min_db();
 }
 
 + (int) intConfiguration : (NSString *) key num:(NSInteger) def {
-
+	
 	return conf_get_int([key UTF8String], def);
 }
 
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def {
-
+	
 	return conf_set_int([key UTF8String], def);
 }
 

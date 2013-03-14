@@ -114,7 +114,7 @@
 	// check for file paths
 	if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
-		BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:files row: row progressPanel: fileImportPanel ];
+		BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:files row: row progressPanel: fileImportPanel  mainList: playlistTable ];
 
 		[playlistTable reloadData];
 		return inserted;

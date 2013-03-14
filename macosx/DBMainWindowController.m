@@ -315,7 +315,7 @@
 	if ( [openPanel runModal] == NSOKButton )
     {
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel ];
+		[DBAppDelegate addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel mainList: playlistTable  ];
 		[playlistTable reloadData];
 	}
 	
@@ -341,7 +341,7 @@
 			pl_clear();
 		
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel ];
+		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel  mainList: playlistTable  ];
 		[playlistTable reloadData];
 		return YES;
     }

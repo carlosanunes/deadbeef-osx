@@ -62,6 +62,6 @@
 
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def;
 
-+ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel;
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel mainList : (DBTableView *) playlist;
 
 @end
