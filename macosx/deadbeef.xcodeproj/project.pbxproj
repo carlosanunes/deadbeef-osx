@@ -434,7 +434,6 @@
 		07882808168A45360066142D /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 078827EA168A45360066142D /* timer.h */; };
 		07882809168A45360066142D /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = 078827ED168A45360066142D /* version.c */; };
 		0788280A168A45360066142D /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 078827EE168A45360066142D /* version.h */; };
-		07882817168A47260066142D /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; };
 		07882A51168A73540066142D /* flac.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822711689D0710066142D /* flac.so */; };
 		07882AB0168A7C9E0066142D /* FLAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07882AAF168A7C9E0066142D /* FLAC.framework */; };
 		07882AC3168A7D4D0066142D /* flac.c in Sources */ = {isa = PBXBuildFile; fileRef = 078822771689D0D90066142D /* flac.c */; };
@@ -929,6 +928,8 @@
 		0796B5C5168921150079D590 /* Z80_Cpu_run.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B439168921150079D590 /* Z80_Cpu_run.h */; };
 		0796B6391689494E0079D590 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0796B6381689494E0079D590 /* libz.dylib */; };
 		07A3835816A9D427007D5551 /* DBFileImportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A3835716A9D427007D5551 /* DBFileImportPanel.m */; };
+		07EECE48170A1E74001E3803 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EECE47170A1E74001E3803 /* AudioToolbox.framework */; };
+		07EECE53170A1EFC001E3803 /* coredecoder.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07DC88FB1691AA2C00DB0456 /* coredecoder.so */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -996,13 +997,6 @@
 			remoteGlobalIDString = 078822081689CEC80066142D;
 			remoteInfo = vorbis;
 		};
-		07882815168A47160066142D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0788227E1689D10B0066142D;
-			remoteInfo = mpgmad;
-		};
 		07882A4F168A73440066142D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -1016,6 +1010,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 078822471689CF9D0066142D;
 			remoteInfo = wavpack;
+		};
+		07EECE54170A1F08001E3803 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07DC88FA1691AA2C00DB0456;
+			remoteInfo = coredecoder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1038,9 +1039,9 @@
 			dstPath = plugins;
 			dstSubfolderSpec = 6;
 			files = (
+				07EECE53170A1EFC001E3803 /* coredecoder.so in Copy Plugins */,
 				07882BA4168B91A30066142D /* wavpack.so in Copy Plugins */,
 				07882A51168A73540066142D /* flac.so in Copy Plugins */,
-				07882817168A47260066142D /* mpgmad.so in Copy Plugins */,
 				07882695168A19060066142D /* vorbis.so in Copy Plugins */,
 				078823321689D49F0066142D /* vfs_zip.so in Copy Plugins */,
 				078822371689CF780066142D /* vtx.so in Copy Plugins */,
@@ -2625,6 +2626,8 @@
 		07A3835716A9D427007D5551 /* DBFileImportPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFileImportPanel.m; sourceTree = "<group>"; };
 		07DC88FB1691AA2C00DB0456 /* coredecoder.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = coredecoder.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E582C11691E95000982BCB /* coredecoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = coredecoder.c; path = ../plugins/coredecoder/coredecoder.c; sourceTree = SOURCE_ROOT; };
+		07EECE41170A1E43001E3803 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		07EECE47170A1E74001E3803 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -2812,6 +2815,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07EECE48170A1E74001E3803 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5425,6 +5429,8 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				0796B6381689494E0079D590 /* libz.dylib */,
 				07881EA51689C3FD0066142D /* libcurl.dylib */,
+				07EECE41170A1E43001E3803 /* CoreAudio.framework */,
+				07EECE47170A1E74001E3803 /* AudioToolbox.framework */,
 			);
 			name = deadbeef;
 			sourceTree = "<group>";
@@ -6505,7 +6511,6 @@
 			);
 			dependencies = (
 				07882A50168A73440066142D /* PBXTargetDependency */,
-				07882816168A47160066142D /* PBXTargetDependency */,
 				078823AD1689E4F30066142D /* PBXTargetDependency */,
 				078823AF1689E4FC0066142D /* PBXTargetDependency */,
 				078823B11689E5020066142D /* PBXTargetDependency */,
@@ -6515,6 +6520,7 @@
 				078823B91689E51A0066142D /* PBXTargetDependency */,
 				078823BB1689E51F0066142D /* PBXTargetDependency */,
 				07882BA3168B91900066142D /* PBXTargetDependency */,
+				07EECE55170A1F08001E3803 /* PBXTargetDependency */,
 				07882694168A18FE0066142D /* PBXTargetDependency */,
 			);
 			name = deadbeef;
@@ -7329,11 +7335,6 @@
 			target = 078822081689CEC80066142D /* vorbis */;
 			targetProxy = 07882693168A18FE0066142D /* PBXContainerItemProxy */;
 		};
-		07882816168A47160066142D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0788227E1689D10B0066142D /* mpgmad */;
-			targetProxy = 07882815168A47160066142D /* PBXContainerItemProxy */;
-		};
 		07882A50168A73440066142D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 078822701689D0710066142D /* flac */;
@@ -7343,6 +7344,11 @@
 			isa = PBXTargetDependency;
 			target = 078822471689CF9D0066142D /* wavpack */;
 			targetProxy = 07882BA2168B91900066142D /* PBXContainerItemProxy */;
+		};
+		07EECE55170A1F08001E3803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07DC88FA1691AA2C00DB0456 /* coredecoder */;
+			targetProxy = 07EECE54170A1F08001E3803 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
