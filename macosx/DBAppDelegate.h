@@ -29,6 +29,7 @@
 	NSWindow *mainWindow;
 	DBTableView *mainPlaylist;
 	DBFileImportPanel *fileImportPanel;
+	
 }
 
 - (BOOL) isPlaying;
