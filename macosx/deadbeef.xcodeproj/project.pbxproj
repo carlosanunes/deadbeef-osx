@@ -2830,6 +2830,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0760ECEB1724857D0018A9BF /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		07881E9E1689C3A70066142D /* lastfm */ = {
 			isa = PBXGroup;
 			children = (
@@ -5420,6 +5427,7 @@
 		29B97314FDCFA39411CA2CEA /* deadbeef */ = {
 			isa = PBXGroup;
 			children = (
+				0760ECEB1724857D0018A9BF /* Libraries */,
 				0796ADB116879D590079D590 /* deadbeef-Info.plist */,
 				0796ADA916879D230079D590 /* MainWindow.xib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -8438,6 +8446,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = deadbeef_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "deadbeef-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
@@ -8457,6 +8466,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = deadbeef_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "deadbeef-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";

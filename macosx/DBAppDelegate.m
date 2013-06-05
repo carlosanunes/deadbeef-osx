@@ -305,6 +305,9 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         snprintf (totaltime_str, sizeof (totaltime_str), "%s, %d seconds", totaltime_str, sectotal);				
 	}	
 	
+	if (pl_getcount(PL_MAIN) == 0)
+		return [NSString stringWithFormat:@"No songs"];
+	
 	return [NSString stringWithFormat:@"%d song(s)%s", pl_getcount(PL_MAIN), totaltime_str];
 }
 
