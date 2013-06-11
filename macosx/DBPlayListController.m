@@ -301,5 +301,10 @@
 }
 
 
+- (IBAction) showTrackInfo: sender
+{
+	[trackPropertiesPanel makeKeyAndOrderFront:nil];
+}
+
 
 @end

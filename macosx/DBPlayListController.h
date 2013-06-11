@@ -30,6 +30,7 @@
 	IBOutlet NSWindow * mainWindow;
 	IBOutlet id playListInfoTable;
 	IBOutlet DBFileImportPanel * fileImportPanel;
+	IBOutlet NSPanel * trackPropertiesPanel;
 }
 
 - (IBAction) updatePlaylistInfo: sender;
@@ -37,6 +38,7 @@
 - (IBAction) deleteSelectedItems: sender;
 - (IBAction) playlistClear: sender;
 - (IBAction) invertSelection: sender;
+- (IBAction) showTrackProperties: sender;
 
 @end
 
