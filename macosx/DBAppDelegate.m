@@ -280,7 +280,11 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 + (NSString *) totalPlaytimeAndSongCount {
 	
-	float pl_totaltime = pl_get_totaltime ();
+	if (pl_getcount(PL_MAIN) == 0)
+		return [NSString stringWithFormat:@"No songs"];
+	
+	float pl_totaltime = plt_get_totaltime(PL_MAIN);
+	
     int daystotal = (int)pl_totaltime / (3600*24);
     int hourtotal = ((int)pl_totaltime / 3600) % 24;
     int mintotal = ((int)pl_totaltime/60) % 60;
@@ -304,9 +308,6 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	if(sectotal) {
         snprintf (totaltime_str, sizeof (totaltime_str), "%s, %d seconds", totaltime_str, sectotal);				
 	}	
-	
-	if (pl_getcount(PL_MAIN) == 0)
-		return [NSString stringWithFormat:@"No songs"];
 	
 	return [NSString stringWithFormat:@"%d song(s)%s", pl_getcount(PL_MAIN), totaltime_str];
 }
@@ -528,5 +529,90 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	return conf_set_int([key UTF8String], def);
 }
 
+
++ (NSMutableDictionary *) keyList : (NSInteger) propertiesNumber {
+
+	NSMutableDictionary * list = [NSMutableDictionary dictionaryWithCapacity:10];
+	DB_playItem_t * it;
+	DB_playItem_t ** tracks;
+	int num_selected = 0;
+	ddb_playlist_t *plt;
+	
+	pl_lock();
+	
+	plt = deadbeef->plt_get_curr ();
+	num_selected = plt_getselcount(plt);
+	
+	if (0 < num_selected) {
+        tracks = malloc (sizeof (DB_playItem_t *) * num_selected);
+        if (tracks) {
+            int n = 0;
+            it = deadbeef->plt_get_first (plt, PL_MAIN);
+            while (it) {
+                if (deadbeef->pl_is_selected (it)) {
+                    assert (n < num_selected);
+                    deadbeef->pl_item_ref (it);
+                    tracks[n++] = it;
+                }
+                DB_playItem_t *next = deadbeef->pl_get_next (it, PL_MAIN);
+                deadbeef->pl_item_unref (it);
+                it = next;
+            }
+        }
+        else {
+            deadbeef->pl_unlock ();
+            return list;
+        }
+    }
+	
+	for (int i = 0; i < num_selected; ++i)
+	{
+	    DB_metaInfo_t *meta = deadbeef->pl_get_metadata_head (tracks[i]);
+        while (meta) {
+			if (meta->key[0] != '!' && ((propertiesNumber && meta->key[0] == ':') || (!propertiesNumber && meta->key[0] != ':'))) {
+				[list setObject:[NSString stringWithUTF8String: meta->value] forKey:[NSString stringWithUTF8String: meta->key] ];
+			}
+        	meta = meta -> next;
+        }
+		deadbeef->pl_item_unref (tracks[i]);
+	}	
+	
+	pl_unlock();
+	plt_unref(plt);
+	return list;
+}
+
+
++ (void) setItemSelected : (NSInteger) index value:(BOOL) def {
+
+	pl_lock();
+	
+	ddb_playlist_t * plt = plt_get_curr ();
+	ddb_playItem_t * it = pl_get_for_idx ( (int) index );
+	
+	if(def)
+		pl_set_selected(it, 1); // select
+	else 
+		pl_set_selected(it, 0); // unselect		
+	
+	
+	pl_unlock();
+}
+
++ (NSMutableDictionary *) knownMetadataKeys {
+
+	return [NSDictionary dictionaryWithObjectsAndKeys:
+	 @"artist"	,	@"Artist",
+	 @"title"	,	@"Track Title",
+	 @"album"	,	@"Album",
+	 @"year"	,	@"Date",
+	 @"track"	,	@"Track Number",
+	 @"numtracks",	@"Total Tracks",
+	 @"genre"	,	@"Genre",
+	 @"composer" ,	@"Composer",
+	 @"disc"	,	@"Disc Number",
+	 @"comment"	,	@"Comment",
+	 nil];	
+}
 
 @end

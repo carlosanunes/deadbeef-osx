@@ -21,6 +21,7 @@
 #import "DBAppDelegate.h"
 #import "views/DBTableView.h"
 #import "views/DBFileImportPanel.h"
+#import "DBTrackPropertiesPanelController.h"
 
 
 @interface DBPlayListController : NSViewController <NSTableViewDelegate, NSTableViewDataSource> {
@@ -31,6 +32,8 @@
 	IBOutlet id playListInfoTable;
 	IBOutlet DBFileImportPanel * fileImportPanel;
 	IBOutlet NSPanel * trackPropertiesPanel;
+	
+	NSMutableDictionary * metadataTypes;
 }
 
 - (IBAction) updatePlaylistInfo: sender;
@@ -38,7 +41,7 @@
 - (IBAction) deleteSelectedItems: sender;
 - (IBAction) playlistClear: sender;
 - (IBAction) invertSelection: sender;
-- (IBAction) showTrackProperties: sender;
+- (IBAction) showTrackInfo: sender;
 
 @end
 
