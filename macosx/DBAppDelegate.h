@@ -47,6 +47,8 @@
 
 // deadbeef core wrapper functions
 
++ (NSMutableDictionary *) knownMetadataKeys;
+
 + (NSArray *) supportedFormatsExtensions;
 
 + (NSString *) totalPlaytimeAndSongCount;
@@ -64,5 +66,9 @@
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def;
 
 + (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel mainList : (DBTableView *) playlist;
+
++ (NSMutableDictionary *) keyList : (NSInteger) propertiesNumber;
+
++ (void) setItemSelected : (NSInteger) index value:(BOOL) def;
 
 @end

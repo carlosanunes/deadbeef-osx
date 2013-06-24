@@ -36,12 +36,25 @@
 	[playlistTable setDoubleAction: @selector(playSelectedItem:)]; // row double click
 	[playlistTable setEnterAction: @selector(playSelectedItem:)]; // row + enter
 	[playlistTable setDeleteAction: @selector(deleteSelectedItems:)]; // delete
-	[playlistTable setReloadAction: @selector(updatePlaylistInfo:)];
+	[playlistTable setReloadAction: @selector(updatePlaylistInfo:)]; // on data reload
 
 	[playlistTable registerForDraggedTypes: [NSArray arrayWithObjects: DB_TABLE_VIEW_TYPE, (NSString*)kUTTypeFileURL, nil]];
-
-	[self updatePlaylistInfo: self];
 	
+	// default metadata
+	metadataTypes = [NSDictionary dictionaryWithObjectsAndKeys:
+		@"artist"	,	@"Artist",
+		@"title"	,	@"Track Title",
+		@"album"	,	@"Album",
+		@"year"		,	@"Date",
+		@"track"	,	@"Track Number",
+		@"numtracks",	@"Total Tracks",
+		@"genre"	,	@"Genre",
+		@"composer" ,	@"Composer",
+		@"disc"		,	@"Disc Number",
+		@"comment"	,	@"Comment",
+	nil];
+	
+
 	NSTableColumn * column;
 //    if (!col) {
         // create default set of columns	
@@ -131,6 +144,25 @@
 	[playlistTable reloadData];
 	
 	return YES;
+}
+
+// we use the selection validation method to retrieve the proposed new selected indexes while maintaining the former
+- (NSIndexSet *)tableView:(NSTableView *)tableView selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
+
+	NSIndexSet * indexesToDeselect = [tableView selectedRowIndexes];
+	
+	// deselect old
+	[indexesToDeselect enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+		[DBAppDelegate setItemSelected:idx value:NO];
+	}];
+	
+	// select new
+	[proposedSelectionIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+		[DBAppDelegate setItemSelected:idx value:YES];
+	}];
+	
+	
+	return proposedSelectionIndexes; // we do not want to change the selection
 }
 
 
@@ -303,7 +335,8 @@
 
 - (IBAction) showTrackInfo: sender
 {
-	[trackPropertiesPanel makeKeyAndOrderFront:nil];
+	[[trackPropertiesPanel windowController] fillProperties];
+	[trackPropertiesPanel makeKeyAndOrderFront:self];
 }
 
 

@@ -17,13 +17,11 @@
 */
 #import <Cocoa/Cocoa.h>
 
-
 @interface DBTableView : NSTableView {
 
 	SEL enterAction;
 	SEL deleteAction;
 	SEL reloadAction;
-	
 }
 
 - (void)setEnterAction:(SEL)aSelector;

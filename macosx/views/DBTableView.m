@@ -37,6 +37,7 @@
 	reloadAction = aSelector;
 }
 
+
 - (void) reloadData
 {
 	[_target performSelector:reloadAction];
@@ -46,6 +47,8 @@
 
 - (void)keyDown:(NSEvent *)event
 {
+	[super keyDown:event];
+	
 	unichar  u = [[event charactersIgnoringModifiers]
 				  characterAtIndex: 0];
 	
@@ -61,7 +64,6 @@
 		return;
 	}
 	
-	[super keyDown:event];
 }
 
 - (void)highlightSelectionInClipRect:(NSRect)clipRect
@@ -100,5 +102,22 @@
 	[super highlightSelectionInClipRect: clipRect];
 }
 
+// change default behaviour of calling a menu, so that it also selects the row
+- (NSMenu *) menuForEvent:(NSEvent *)event {
+
+	NSInteger row = [self rowAtPoint: [self convertPoint: [event locationInWindow] fromView: nil]];
+	NSIndexSet * selectedRows = nil;
+	if (row != -1)
+	{
+        if (![self isRowSelected: row]) {
+			// preserve behaviour of selection validation
+			selectedRows = [_delegate tableView:self selectionIndexesForProposedSelection: [NSIndexSet indexSetWithIndex: row]];  
+            [self selectRowIndexes: selectedRows byExtendingSelection: NO];
+		}
+		return [super menu];
+	}
+
+	return nil;
+}
 
 @end
