@@ -18,4 +18,13 @@
 
 #define PREFIX 1
 #define PORTABLE 1
-#define VERSION "0.5.5"
+#define VERSION "0.5.6"
+
+/* strdupa does not exist in osx */
+#ifndef strdupa
+#define strdupa(s) \
+	(__extension__ ({const char *__in = (s); \
+			 size_t __len = strlen (__in) + 1; \
+			 char * __out = (char *) __builtin_alloca (__len); \
+			 (char *) memcpy (__out, __in, __len);}))
+#endif
