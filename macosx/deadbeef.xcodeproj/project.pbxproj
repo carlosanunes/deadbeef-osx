@@ -132,28 +132,9 @@
 		078820F81689C9440066142D /* sidconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820281689C9430066142D /* sidconfig.h */; };
 		078820F91689C9440066142D /* sidint.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820291689C9430066142D /* sidint.h */; };
 		078820FA1689C9440066142D /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820321689C9430066142D /* config.h */; };
-		078820FB1689C9440066142D /* libini.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820391689C9430066142D /* libini.h */; };
-		078820FC1689C9440066142D /* SidDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788203C1689C9430066142D /* SidDatabase.h */; };
-		078820FD1689C9440066142D /* SidFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788203D1689C9430066142D /* SidFilter.h */; };
 		078820FE1689C9440066142D /* SidTuneMod.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788203E1689C9430066142D /* SidTuneMod.h */; };
 		078820FF1689C9440066142D /* SidUsage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788203F1689C9430066142D /* SidUsage.h */; };
-		078821001689C9440066142D /* headings.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820461689C9430066142D /* headings.h */; };
-		078821011689C9440066142D /* headings.i in Sources */ = {isa = PBXBuildFile; fileRef = 078820471689C9430066142D /* headings.i */; };
-		078821021689C9440066142D /* ini.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078820481689C9430066142D /* ini.cpp */; };
-		078821031689C9440066142D /* ini.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820491689C9430066142D /* ini.h */; };
-		078821041689C9440066142D /* keys.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788204A1689C9430066142D /* keys.h */; };
-		078821051689C9440066142D /* keys.i in Sources */ = {isa = PBXBuildFile; fileRef = 0788204B1689C9430066142D /* keys.i */; };
-		078821061689C9440066142D /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788204C1689C9430066142D /* list.h */; };
-		078821071689C9440066142D /* list.i in Sources */ = {isa = PBXBuildFile; fileRef = 0788204D1689C9430066142D /* list.i */; };
-		078821081689C9440066142D /* types.i in Sources */ = {isa = PBXBuildFile; fileRef = 078820501689C9430066142D /* types.i */; };
-		078821091689C9440066142D /* MD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078820561689C9430066142D /* MD5.cpp */; };
-		0788210A1689C9440066142D /* MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820571689C9430066142D /* MD5.h */; };
-		0788210B1689C9440066142D /* MD5_Defs.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820581689C9430066142D /* MD5_Defs.h */; };
-		0788210C1689C9440066142D /* SidDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078820591689C9430066142D /* SidDatabase.cpp */; };
-		0788210D1689C9440066142D /* SidFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0788205A1689C9430066142D /* SidFilter.cpp */; };
-		0788210E1689C9440066142D /* SidTuneMod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0788205B1689C9430066142D /* SidTuneMod.cpp */; };
 		0788210F1689C9440066142D /* SidUsage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0788205C1689C9430066142D /* SidUsage.cpp */; };
-		078821101689C9440066142D /* smm0.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788205D1689C9430066142D /* smm0.h */; };
 		078821111689C9440066142D /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 078820711689C9440066142D /* config.h */; };
 		078821121689C9440066142D /* envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0788207E1689C9440066142D /* envelope.cpp */; };
 		078821131689C9440066142D /* envelope.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788207F1689C9440066142D /* envelope.h */; };
@@ -456,6 +437,7 @@
 		07882B9E168B90E80066142D /* float.c in Sources */ = {isa = PBXBuildFile; fileRef = 07882B83168B90B20066142D /* float.c */; };
 		07882B9F168B90E90066142D /* extra2.c in Sources */ = {isa = PBXBuildFile; fileRef = 07882B82168B90B20066142D /* extra2.c */; };
 		07882BA4168B91A30066142D /* wavpack.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822481689CF9D0066142D /* wavpack.so */; };
+		07968D981790BDD9005285E4 /* dumb.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B12E1688F3B10079D590 /* dumb.so */; };
 		0796AC29168770270079D590 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC1B168770270079D590 /* DBAppDelegate.m */; };
 		0796AC2A168770270079D590 /* DBMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC1C168770270079D590 /* DBMain.m */; };
 		0796AC2B168770270079D590 /* DBMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC1E168770270079D590 /* DBMainWindowController.m */; };
@@ -738,17 +720,8 @@
 		0796B2731688F3F10079D590 /* dumbmenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B1CF1688F3F10079D590 /* dumbmenu.h */; };
 		0796B2741688F3F10079D590 /* guiproc.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B1D01688F3F10079D590 /* guiproc.h */; };
 		0796B2751688F3F10079D590 /* guitop.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B1D11688F3F10079D590 /* guitop.h */; };
-		0796B2761688F3F10079D590 /* main.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B1D21688F3F10079D590 /* main.h */; };
 		0796B2771688F3F10079D590 /* options.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B1D31688F3F10079D590 /* options.h */; };
 		0796B2781688F3F10079D590 /* subclip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B1D41688F3F10079D590 /* subclip.h */; };
-		0796B2791688F3F10079D590 /* dumbdesk.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B1D71688F3F10079D590 /* dumbdesk.c */; };
-		0796B27A1688F3F10079D590 /* dumbgui.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B1D81688F3F10079D590 /* dumbgui.c */; };
-		0796B27B1688F3F10079D590 /* dumbmenu.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B1D91688F3F10079D590 /* dumbmenu.c */; };
-		0796B27C1688F3F10079D590 /* guiproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B1DA1688F3F10079D590 /* guiproc.c */; };
-		0796B27D1688F3F10079D590 /* guitop.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B1DB1688F3F10079D590 /* guitop.c */; };
-		0796B27E1688F3F10079D590 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B1DC1688F3F10079D590 /* main.c */; };
-		0796B27F1688F3F10079D590 /* options.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B1DD1688F3F10079D590 /* options.c */; };
-		0796B2801688F3F10079D590 /* subclip.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B1DE1688F3F10079D590 /* subclip.c */; };
 		0796B2EB1688F7C70079D590 /* asm.S in Sources */ = {isa = PBXBuildFile; fileRef = 0796B2E51688F7C70079D590 /* asm.S */; };
 		0796B2EC1688F7C70079D590 /* dsputil_yasm.asm in Sources */ = {isa = PBXBuildFile; fileRef = 0796B2E61688F7C70079D590 /* dsputil_yasm.asm */; };
 		0796B2ED1688F7C70079D590 /* ffap.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B2E71688F7C70079D590 /* ffap.c */; };
@@ -1102,6 +1075,13 @@
 			remoteGlobalIDString = 078822471689CF9D0066142D;
 			remoteInfo = wavpack;
 		};
+		07968D961790BDC8005285E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0796B12D1688F3B10079D590 /* dumb */;
+			remoteInfo = dumb;
+		};
 		07A6E7AD1764D2A500F3F133 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -1130,6 +1110,7 @@
 			dstPath = plugins;
 			dstSubfolderSpec = 6;
 			files = (
+				07968D981790BDD9005285E4 /* dumb.so in Copy Plugins */,
 				077E09801764ED6F00044230 /* coreaudio.so in Copy Plugins */,
 				07882BA4168B91A30066142D /* wavpack.so in Copy Plugins */,
 				07882A51168A73540066142D /* flac.so in Copy Plugins */,
@@ -4402,7 +4383,7 @@
 			path = ../ConvertUTF;
 			sourceTree = SOURCE_ROOT;
 		};
-		0796ADCE16886D000079D590 /* plugins */ = {
+		0796ADCE16886D000079D590 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
 				07D588481775192C003A01DE /* sndfile */,
@@ -4433,7 +4414,7 @@
 				0796B0BD1688EF570079D590 /* alac */,
 				0796AEC61688DDDE0079D590 /* adplug */,
 			);
-			name = plugins;
+			name = Plugins;
 			sourceTree = "<group>";
 		};
 		0796AEC61688DDDE0079D590 /* adplug */ = {
@@ -5777,11 +5758,12 @@
 		29B97314FDCFA39411CA2CEA /* deadbeef */ = {
 			isa = PBXGroup;
 			children = (
+				0796ADCE16886D000079D590 /* Plugins */,
 				0760ECEB1724857D0018A9BF /* Libraries */,
 				0796ADB116879D590079D590 /* deadbeef-Info.plist */,
 				0796ADA916879D230079D590 /* MainWindow.xib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97315FDCFA39411CA2CEA /* Core */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -5789,10 +5771,9 @@
 			name = deadbeef;
 			sourceTree = "<group>";
 		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+		29B97315FDCFA39411CA2CEA /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0796ADCE16886D000079D590 /* plugins */,
 				0796AD2F168777B50079D590 /* ConvertUTF */,
 				0796AD29168777970079D590 /* md5 */,
 				0796AC5B168772760079D590 /* common.h */,
@@ -5837,7 +5818,7 @@
 				0796AC82168772760079D590 /* volume.c */,
 				0796AC83168772760079D590 /* volume.h */,
 			);
-			name = "Other Sources";
+			name = Core;
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -5970,18 +5951,8 @@
 				078820F81689C9440066142D /* sidconfig.h in Headers */,
 				078820F91689C9440066142D /* sidint.h in Headers */,
 				078820FA1689C9440066142D /* config.h in Headers */,
-				078820FB1689C9440066142D /* libini.h in Headers */,
-				078820FC1689C9440066142D /* SidDatabase.h in Headers */,
-				078820FD1689C9440066142D /* SidFilter.h in Headers */,
 				078820FE1689C9440066142D /* SidTuneMod.h in Headers */,
 				078820FF1689C9440066142D /* SidUsage.h in Headers */,
-				078821001689C9440066142D /* headings.h in Headers */,
-				078821031689C9440066142D /* ini.h in Headers */,
-				078821041689C9440066142D /* keys.h in Headers */,
-				078821061689C9440066142D /* list.h in Headers */,
-				0788210A1689C9440066142D /* MD5.h in Headers */,
-				0788210B1689C9440066142D /* MD5_Defs.h in Headers */,
-				078821101689C9440066142D /* smm0.h in Headers */,
 				078821111689C9440066142D /* config.h in Headers */,
 				078821131689C9440066142D /* envelope.h in Headers */,
 				078821151689C9440066142D /* extfilt.h in Headers */,
@@ -6305,7 +6276,6 @@
 				0796B2731688F3F10079D590 /* dumbmenu.h in Headers */,
 				0796B2741688F3F10079D590 /* guiproc.h in Headers */,
 				0796B2751688F3F10079D590 /* guitop.h in Headers */,
-				0796B2761688F3F10079D590 /* main.h in Headers */,
 				0796B2771688F3F10079D590 /* options.h in Headers */,
 				0796B2781688F3F10079D590 /* subclip.h in Headers */,
 			);
@@ -6956,6 +6926,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				07968D971790BDC8005285E4 /* PBXTargetDependency */,
 				07882A50168A73440066142D /* PBXTargetDependency */,
 				07A6E7AE1764D2A500F3F133 /* PBXTargetDependency */,
 				078823AD1689E4F30066142D /* PBXTargetDependency */,
@@ -7145,15 +7116,6 @@
 				078820EF1689C9440066142D /* SidTune.cpp in Sources */,
 				078820F11689C9440066142D /* SidTuneTools.cpp in Sources */,
 				078820F31689C9440066142D /* xsid.cpp in Sources */,
-				078821011689C9440066142D /* headings.i in Sources */,
-				078821021689C9440066142D /* ini.cpp in Sources */,
-				078821051689C9440066142D /* keys.i in Sources */,
-				078821071689C9440066142D /* list.i in Sources */,
-				078821081689C9440066142D /* types.i in Sources */,
-				078821091689C9440066142D /* MD5.cpp in Sources */,
-				0788210C1689C9440066142D /* SidDatabase.cpp in Sources */,
-				0788210D1689C9440066142D /* SidFilter.cpp in Sources */,
-				0788210E1689C9440066142D /* SidTuneMod.cpp in Sources */,
 				0788210F1689C9440066142D /* SidUsage.cpp in Sources */,
 				078821121689C9440066142D /* envelope.cpp in Sources */,
 				078821141689C9440066142D /* extfilt.cpp in Sources */,
@@ -7580,14 +7542,6 @@
 				0796B2671688F3F10079D590 /* readxm.c in Sources */,
 				0796B2681688F3F10079D590 /* readxm2.c in Sources */,
 				0796B2691688F3F10079D590 /* xmeffect.c in Sources */,
-				0796B2791688F3F10079D590 /* dumbdesk.c in Sources */,
-				0796B27A1688F3F10079D590 /* dumbgui.c in Sources */,
-				0796B27B1688F3F10079D590 /* dumbmenu.c in Sources */,
-				0796B27C1688F3F10079D590 /* guiproc.c in Sources */,
-				0796B27D1688F3F10079D590 /* guitop.c in Sources */,
-				0796B27E1688F3F10079D590 /* main.c in Sources */,
-				0796B27F1688F3F10079D590 /* options.c in Sources */,
-				0796B2801688F3F10079D590 /* subclip.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7853,6 +7807,11 @@
 			target = 078822471689CF9D0066142D /* wavpack */;
 			targetProxy = 07882BA2168B91900066142D /* PBXContainerItemProxy */;
 		};
+		07968D971790BDC8005285E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0796B12D1688F3B10079D590 /* dumb */;
+			targetProxy = 07968D961790BDC8005285E4 /* PBXContainerItemProxy */;
+		};
 		07A6E7AE1764D2A500F3F133 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0788227E1689D10B0066142D /* mpgmad */;
@@ -7868,6 +7827,7 @@
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -7888,6 +7848,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
@@ -8088,7 +8049,9 @@
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -8098,9 +8061,16 @@
 					HAVE_STRNCASECMP,
 					HAVE_STRCASECMP,
 				);
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/../plugins/sid/sidplay-libs",
+					"$SRCROOT/../plugins/sid/sidplay-libs/libsidplay",
+					"$SRCROOT/../plugins/sid/sidplay-libs/unix",
 					"$SRCROOT/../plugins/sid/sidplay-libs/libsidplay/include",
-					"$SRCROOT/../plugins/sid/sidplay-libs/",
+					"$SRCROOT/../plugins/sid/sidplay-libs/libsidplay/include/sidplay",
+					"$SRCROOT/../plugins/sid/sidplay-libs/builders/resid-builder/include/sidplay/builders",
+					"$SRCROOT/../plugins/sid/sidplay-libs/libsidplay/include/sidplay/utils",
+					"$SRCROOT/../plugins/sid/sidplay-libs/builders/resid-builder/include",
 				);
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
@@ -8117,6 +8087,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
@@ -8125,9 +8097,16 @@
 					HAVE_STRNCASECMP,
 					HAVE_STRCASECMP,
 				);
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/../plugins/sid/sidplay-libs",
+					"$SRCROOT/../plugins/sid/sidplay-libs/libsidplay",
+					"$SRCROOT/../plugins/sid/sidplay-libs/unix",
 					"$SRCROOT/../plugins/sid/sidplay-libs/libsidplay/include",
-					"$SRCROOT/../plugins/sid/sidplay-libs/",
+					"$SRCROOT/../plugins/sid/sidplay-libs/libsidplay/include/sidplay",
+					"$SRCROOT/../plugins/sid/sidplay-libs/builders/resid-builder/include/sidplay/builders",
+					"$SRCROOT/../plugins/sid/sidplay-libs/libsidplay/include/sidplay/utils",
+					"$SRCROOT/../plugins/sid/sidplay-libs/builders/resid-builder/include",
 				);
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
@@ -8183,7 +8162,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
-				HEADER_SEARCH_PATHS = "$SRCROOT/../plugins/uade2/uade-2.13/src/include";
+				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/../plugins/uade2/uade-2.13/src/include",
+					"$SRCROOT/../plugins/uade2/uade-2.13/src/frontends/common",
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = uade;
@@ -8202,7 +8184,10 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
-				HEADER_SEARCH_PATHS = "$SRCROOT/../plugins/uade2/uade-2.13/src/include";
+				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/../plugins/uade2/uade-2.13/src/include",
+					"$SRCROOT/../plugins/uade2/uade-2.13/src/frontends/common",
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = uade;
@@ -8791,16 +8776,14 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					ALLEGRO_MACOSX,
-					ALLEGRO_HAVE_INTTYPES_H,
 					HAVE_LOG2,
 					HAVE_SYS_SYSLIMITS_H,
-					ALLEGRO_HAVE_STDINT_H,
 				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
-					$SRCROOT/,
 					"$SRCROOT/../plugins/dumb/dumb-kode54/include/",
-					"$SRCROOT/libs/allegro-5.0.10/include/**",
+					"$SRCROOT/libs/allegro-5.0.10/include/",
+					"$SRCROOT/libs/allegro-5.0.10/include/allegro5/",
 				);
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
@@ -8819,16 +8802,14 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					ALLEGRO_MACOSX,
-					ALLEGRO_HAVE_INTTYPES_H,
 					HAVE_LOG2,
 					HAVE_SYS_SYSLIMITS_H,
-					ALLEGRO_HAVE_STDINT_H,
 				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
-					$SRCROOT/,
 					"$SRCROOT/../plugins/dumb/dumb-kode54/include/",
-					"$SRCROOT/libs/allegro-5.0.10/include/**",
+					"$SRCROOT/libs/allegro-5.0.10/include/",
+					"$SRCROOT/libs/allegro-5.0.10/include/allegro5/",
 				);
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
@@ -8878,21 +8859,31 @@
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
+				GCC_CW_ASM_SYNTAX = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					LIBGME_VISIBILITY,
 					HAVE_STDINT_H,
 					GME_VERSION_055,
 					HAVE_SYS_SYSLIMITS_H,
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "$SRCROOT/../plugins/gme/game-music-emu-0.6pre/gme";
 				INSTALL_PATH = /usr/local/lib;
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				OTHER_LDFLAGS = "-module";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lsupc++",
+					"-module",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = gme;
 				SKIP_INSTALL = YES;
@@ -8907,19 +8898,29 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
+				GCC_CW_ASM_SYNTAX = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					LIBGME_VISIBILITY,
 					HAVE_STDINT_H,
 					GME_VERSION_055,
 					HAVE_SYS_SYSLIMITS_H,
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "$SRCROOT/../plugins/gme/game-music-emu-0.6pre/gme";
 				INSTALL_PATH = /usr/local/lib;
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				OTHER_LDFLAGS = "-module";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lsupc++",
+					"-module",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = gme;
 				SKIP_INSTALL = YES;

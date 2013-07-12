@@ -54,7 +54,6 @@
 		@"comment"	,	@"Comment",
 	nil];
 	
-
 	NSTableColumn * column;
 //    if (!col) {
         // create default set of columns	
@@ -90,6 +89,7 @@
         }
     }
 */
+
 }
 
 
