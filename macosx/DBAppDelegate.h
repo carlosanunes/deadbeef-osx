@@ -29,7 +29,6 @@
 	NSWindow *mainWindow;
 	DBTableView *mainPlaylist;
 	DBFileImportPanel *fileImportPanel;
-	
 }
 
 - (BOOL) isPlaying;
@@ -40,10 +39,10 @@
 - (IBAction) previousAction: (id)sender;
 - (IBAction) togglePlay: sender;
 
-
 @property (assign) IBOutlet NSWindow *mainWindow;
 @property (assign) IBOutlet DBTableView *mainPlaylist;
 @property (assign) IBOutlet DBFileImportPanel *fileImportPanel;
+
 
 // deadbeef core wrapper functions
 

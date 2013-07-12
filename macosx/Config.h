@@ -20,6 +20,7 @@
 #define PORTABLE 1
 #define VERSION "0.5.6"
 
+
 /* strdupa does not exist in osx */
 #ifndef strdupa
 #define strdupa(s) \

@@ -34,7 +34,6 @@
 
 - (void) awakeFromNib {
 
-
 	// volume bar
 	[volumeSlider setMinValue: (double) [DBAppDelegate minVolumeDB] ];
 	[volumeSlider setFloatValue: [DBAppDelegate volumeDB] ];
@@ -295,7 +294,7 @@
 
 - (IBAction) openFiles : sender {
 
-    if ([self doFileImport:TRUE]) {
+    if ([self doFileImport:YES]) {
 		DBPlayListController * controller = (DBPlayListController *) [playlistTable delegate];
 		[controller playSelectedItem: sender];
 	}
@@ -303,21 +302,7 @@
 
 - (IBAction) addMusic: sender {
 	
-	NSOpenPanel * openPanel = [NSOpenPanel openPanel];
-    [openPanel setCanChooseDirectories:YES];
-	[openPanel setAllowsMultipleSelection:YES];
-	
-	NSArray * extensionList = [DBAppDelegate supportedFormatsExtensions];
-	if ( [extensionList count] == 0 )
-		return; // TODO: Launch Error Message
-	[openPanel setAllowedFileTypes: extensionList ];
-	
-	if ( [openPanel runModal] == NSOKButton )
-    {
-		NSArray * files = [openPanel URLs];
-		[DBAppDelegate addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel mainList: playlistTable  ];
-		[playlistTable reloadData];
-	}
+	[self doFileImport:NO];
 	
 }
 
@@ -329,11 +314,11 @@
 	NSOpenPanel * openPanel = [NSOpenPanel openPanel];
     [openPanel setCanChooseDirectories:NO];
 	[openPanel setAllowsMultipleSelection:YES];
+	NSArray * extensions = [DBAppDelegate supportedFormatsExtensions];
 	
-	NSArray * extensionList = [DBAppDelegate supportedFormatsExtensions];
-	if ( [extensionList count] == 0 )
+	if ( [extensions count] == 0 )
 		return FALSE; // TODO: Launch Error Message
-	[openPanel setAllowedFileTypes: extensionList ];
+	[openPanel setAllowedFileTypes: extensions ];
 	
     if ( [openPanel runModal] == NSOKButton )
     {

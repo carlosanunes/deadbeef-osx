@@ -47,7 +47,6 @@
 
 - (void)keyDown:(NSEvent *)event
 {
-	[super keyDown:event];
 	
 	unichar  u = [[event charactersIgnoringModifiers]
 				  characterAtIndex: 0];
@@ -63,7 +62,9 @@
 		[_target performSelector:deleteAction];
 		return;
 	}
-	
+
+	[super keyDown:event];
+
 }
 
 - (void)highlightSelectionInClipRect:(NSRect)clipRect

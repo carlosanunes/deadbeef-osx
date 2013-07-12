@@ -33,6 +33,7 @@
 @synthesize fileImportPanel;
 
 
+
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
 	
 	[DBAppDelegate clearPlayList];
@@ -431,7 +432,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 + (NSArray *) supportedFormatsExtensions {
     
-    NSMutableArray * array = [NSMutableArray arrayWithObjects: nil];
+    NSMutableArray * array = [NSMutableArray arrayWithCapacity: 10];
 	
 	DB_decoder_t **codecs = plug_get_decoder_list ();
     for (int i = 0; codecs[i]; ++i) {

@@ -26,12 +26,30 @@
 	trackMetadata = [DBAppDelegate keyList:0];
 
 	// fill default properties
-	[labelWhere setStringValue: [trackProperties valueForKey:@":URI"]];
-	[labelDuration setStringValue: [trackProperties valueForKey:@":DURATION"] ];
-	[labelSubtrackIndex setStringValue:[trackProperties valueForKey:@":TRACKNUM"] ];
-	[labelTags setStringValue:[trackProperties valueForKey:@":TAGS"]];
-	[labelCodec setStringValue:[trackProperties valueForKey:@":DECODER"]];
-	[labelEmbeddedCuesheet setStringValue:[trackProperties valueForKey:@":HAS_EMBEDDED_CUESHEET"]];
+	NSString * text = nil;
+	text = [trackProperties valueForKey:@":URI"];	
+	if (text != nil)
+		[labelWhere setStringValue: text];
+	
+	text = [trackProperties valueForKey:@":DURATION"];	
+	if (text != nil)
+		[labelDuration setStringValue: text ];
+	
+	text = [trackProperties valueForKey:@":TRACKNUM"];	
+	if (text != nil)
+		[labelSubtrackIndex setStringValue:text ];
+	
+	text = [trackProperties valueForKey:@":TAGS"];	
+	if (text != nil)
+		[labelTags setStringValue:text];
+	
+	text = [trackProperties valueForKey:@":DECODER"];	
+	if (text != nil)
+		[labelCodec setStringValue: text];
+	
+	text = [trackProperties valueForKey:@":HAS_EMBEDDED_CUESHEET"];	
+	if (text != nil)
+		[labelEmbeddedCuesheet setStringValue:text];
 	
 	// remove default properties from list
 	[trackProperties removeObjectForKey:@":URI"];
