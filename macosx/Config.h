@@ -16,10 +16,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+
 #define PREFIX 1
 #define PORTABLE 1
 #define VERSION "0.5.6"
-
 
 /* strdupa does not exist in osx */
 #ifndef strdupa
