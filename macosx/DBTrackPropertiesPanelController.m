@@ -59,8 +59,8 @@
 	[trackProperties removeObjectForKey:@":DECODER"];
 	[trackProperties removeObjectForKey:@":HAS_EMBEDDED_CUESHEET"];
 
-	[trackPropertiesController bind:NSContentDictionaryBinding toObject:self withKeyPath:@"trackProperties" options:nil];
-	[trackMetadataController bind:NSContentDictionaryBinding toObject:self withKeyPath:@"trackMetadata" options:nil];	
+	[trackMetadataController setContent: trackMetadata];
+	[trackPropertiesController setContent:trackProperties];
 }
 
 
@@ -75,7 +75,9 @@
 
 - (IBAction) updateProperties : sender {
 
+	
 	[self close];
+	
 }
 
 @end

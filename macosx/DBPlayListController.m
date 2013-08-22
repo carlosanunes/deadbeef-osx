@@ -89,6 +89,8 @@
         }
     }
 */
+	
+	[self updatePlaylistInfo: self];
 
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075E942717C3A66600602E67 /* DBTextInputPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 075E942617C3A66600602E67 /* DBTextInputPanelController.m */; };
+		075E966917C4F6FA00602E67 /* TextInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075E966817C4F6FA00602E67 /* TextInputPanel.xib */; };
 		077E097F1764ED6800044230 /* coreaudio.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 077E097E1764ED6800044230 /* coreaudio.so */; };
 		077E09801764ED6F00044230 /* coreaudio.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 077E097E1764ED6800044230 /* coreaudio.so */; };
 		078476FD16E80D3F00512E95 /* coredecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 07E582C11691E95000982BCB /* coredecoder.c */; };
@@ -1146,6 +1148,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		075E942517C3A66600602E67 /* DBTextInputPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTextInputPanelController.h; sourceTree = "<group>"; };
+		075E942617C3A66600602E67 /* DBTextInputPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTextInputPanelController.m; sourceTree = "<group>"; };
+		075E966817C4F6FA00602E67 /* TextInputPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputPanel.xib; sourceTree = "<group>"; };
 		077E097E1764ED6800044230 /* coreaudio.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = coreaudio.so; sourceTree = "<group>"; };
 		07881E981689C3710066142D /* lastfm.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = lastfm.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07881E9F1689C3A70066142D /* lastfm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lastfm.c; sourceTree = "<group>"; };
@@ -4750,6 +4755,8 @@
 				0796AC22168770270079D590 /* views */,
 				07B889C717666780006027B4 /* DBTrackPropertiesPanelController.h */,
 				07B889C817666780006027B4 /* DBTrackPropertiesPanelController.m */,
+				075E942517C3A66600602E67 /* DBTextInputPanelController.h */,
+				075E942617C3A66600602E67 /* DBTextInputPanelController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -4821,6 +4828,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				075E966817C4F6FA00602E67 /* TextInputPanel.xib */,
 			);
 			name = deadbeef;
 			sourceTree = "<group>";
@@ -6081,6 +6089,7 @@
 				0796AC53168770530079D590 /* volume-high.png in Resources */,
 				0796AC54168770530079D590 /* volume-low.png in Resources */,
 				0796ADAA16879D230079D590 /* MainWindow.xib in Resources */,
+				075E966917C4F6FA00602E67 /* TextInputPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6823,6 +6832,7 @@
 				0796AD33168777B50079D590 /* ConvertUTF.c in Sources */,
 				07A3835816A9D427007D5551 /* DBFileImportPanel.m in Sources */,
 				07B889C917666780006027B4 /* DBTrackPropertiesPanelController.m in Sources */,
+				075E942717C3A66600602E67 /* DBTextInputPanelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
