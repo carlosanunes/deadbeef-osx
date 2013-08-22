@@ -20,6 +20,7 @@
 
 #import "DBAppDelegate.h"
 #import "DBPlayListController.h"
+#import "DBTextInputPanelController.h"
 
 @interface DBMainWindowController : NSObject <NSWindowDelegate> {
 		
@@ -89,9 +90,10 @@
 
 - (IBAction) orderMenuItemCheck: (id) sender; // to check and uncheck the correct order menu items
 
-// file
+// file or stream
 
 - (IBAction) openFiles: (id)sender;
 - (IBAction) addMusic: (id)sender;
+- (IBAction) openStream: (id)sender;
 
 @end

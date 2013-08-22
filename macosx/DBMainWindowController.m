@@ -306,6 +306,20 @@
 	
 }
 
+-(IBAction) openStream: sender {
+
+	DBTextInputPanelController * controller = [[DBTextInputPanelController alloc] initWithWindowNibName:@"TextInputPanel" ];
+	[controller setPanelTitle: NSLocalizedString(@"Open Stream...", "Panel title")];
+	
+	if ([controller runModal] == NSOKButton)
+	{
+		if ([DBAppDelegate addPathToPlaylistAtEnd: [controller textInput] ])
+			[playlistTable reloadData];
+		else
+		{}
+	}
+}
+
 // opens a file import dialog and adds the selected
 // files to the playlist (clearing it if clearPlayList is true)
 // returns true if the user chose to open the files

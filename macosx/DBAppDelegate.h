@@ -66,8 +66,12 @@
 
 + (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel mainList : (DBTableView *) playlist;
 
++ (BOOL) addPathToPlaylistAtEnd : (NSString *) path;
+
 + (NSMutableDictionary *) keyList : (NSInteger) propertiesNumber;
 
 + (void) setItemSelected : (NSInteger) index value:(BOOL) def;
+
++ (void) updateTrackMetadata : (NSMutableDictionary *) metadata;
 
 @end
