@@ -199,6 +199,11 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
 }
 
+- (IBAction) openPreferences : (id) sender {
+	
+	DBPreferencesPanelController * controller = [[DBPreferencesPanelController alloc] initWithWindowNibName:@"PreferencesWindow"];
+}
+
 
 /* = deadbeef core helper functions 
  */
