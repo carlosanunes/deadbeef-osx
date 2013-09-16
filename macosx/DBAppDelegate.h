@@ -21,6 +21,7 @@
 #import "views/DBTableView.h"
 #import "views/DBFileImportPanel.h"
 #import "DBPlayListController.h"
+#import "DBPreferencesPanelController.h"
 
 @class DBFileImportPanelController; // needed for the addPathsToPlaylistAt method
 
@@ -29,7 +30,10 @@
 	NSWindow *mainWindow;
 	DBTableView *mainPlaylist;
 	DBFileImportPanel *fileImportPanel;
+
 }
+
+- (IBAction) openPreferences: (id) sender;
 
 - (BOOL) isPlaying;
 - (NSString*) playingTrackName;
