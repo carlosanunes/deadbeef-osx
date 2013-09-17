@@ -7,12 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		075E942717C3A66600602E67 /* DBTextInputPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 075E942617C3A66600602E67 /* DBTextInputPanelController.m */; };
-		075E966917C4F6FA00602E67 /* TextInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075E966817C4F6FA00602E67 /* TextInputPanel.xib */; };
-		077A85F817D1540C00D66282 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077A85F717D1540C00D66282 /* PreferencesWindow.xib */; };
-		077A85FC17D154CA00D66282 /* DBPreferencesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077A85FB17D154CA00D66282 /* DBPreferencesPanelController.m */; };
-		077E097F1764ED6800044230 /* coreaudio.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 077E097E1764ED6800044230 /* coreaudio.so */; };
-		077E09801764ED6F00044230 /* coreaudio.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 077E097E1764ED6800044230 /* coreaudio.so */; };
+		0702977917E8EBE700710234 /* fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702977417E8EBE700710234 /* fft.c */; };
+		0702977A17E8EBE700710234 /* handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702977617E8EBE700710234 /* handler.c */; };
+		0702979317E8EE4A00710234 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702979117E8EE4A00710234 /* parser.c */; };
+		070297A717E9014900710234 /* mms.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881ED01689C5550066142D /* mms.so */; };
+		070297D517E9084800710234 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297BD17E9084800710234 /* DBAppDelegate.m */; };
+		070297D617E9084800710234 /* DBMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297BE17E9084800710234 /* DBMain.m */; };
+		070297D717E9084800710234 /* DBMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C017E9084800710234 /* DBMainWindowController.m */; };
+		070297D817E9084800710234 /* DBPlayListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C217E9084800710234 /* DBPlayListController.m */; };
+		070297D917E9084800710234 /* DBPreferencesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C417E9084800710234 /* DBPreferencesPanelController.m */; };
+		070297DA17E9084800710234 /* DBTextInputPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C617E9084800710234 /* DBTextInputPanelController.m */; };
+		070297DB17E9084800710234 /* DBTrackPropertiesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */; };
+		070297DC17E9084800710234 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297C917E9084800710234 /* MainWindow.xib */; };
+		070297DD17E9084800710234 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CA17E9084800710234 /* PreferencesWindow.xib */; };
+		070297DE17E9084800710234 /* TextInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CB17E9084800710234 /* TextInputPanel.xib */; };
+		070297DF17E9084800710234 /* DBBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297CE17E9084800710234 /* DBBottomBar.m */; };
+		070297E017E9084800710234 /* DBFileImportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D017E9084800710234 /* DBFileImportPanel.m */; };
+		070297E117E9084800710234 /* DBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D217E9084800710234 /* DBTableView.m */; };
+		070297E217E9084800710234 /* DBTimeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D417E9084800710234 /* DBTimeSliderCell.m */; };
+		0702981817E9090B00710234 /* deadbeef.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0702980617E9090B00710234 /* deadbeef.icns */; };
+		0702981917E9090B00710234 /* back-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980817E9090B00710234 /* back-pressed.png */; };
+		0702981A17E9090B00710234 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980917E9090B00710234 /* back.png */; };
+		0702981B17E9090B00710234 /* background-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980A17E9090B00710234 /* background-top.png */; };
+		0702981C17E9090B00710234 /* buffering.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980B17E9090B00710234 /* buffering.png */; };
+		0702981D17E9090B00710234 /* forward-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980C17E9090B00710234 /* forward-pressed.png */; };
+		0702981E17E9090B00710234 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980D17E9090B00710234 /* forward.png */; };
+		0702981F17E9090B00710234 /* FROM THE VLC PROJECT in Resources */ = {isa = PBXBuildFile; fileRef = 0702980E17E9090B00710234 /* FROM THE VLC PROJECT */; };
+		0702982017E9090B00710234 /* pause-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980F17E9090B00710234 /* pause-pressed.png */; };
+		0702982117E9090B00710234 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981017E9090B00710234 /* pause.png */; };
+		0702982217E9090B00710234 /* paused.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981117E9090B00710234 /* paused.png */; };
+		0702982317E9090B00710234 /* play-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981217E9090B00710234 /* play-pressed.png */; };
+		0702982417E9090B00710234 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981317E9090B00710234 /* play.png */; };
+		0702982517E9090B00710234 /* stop-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981417E9090B00710234 /* stop-pressed.png */; };
+		0702982617E9090B00710234 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981517E9090B00710234 /* stop.png */; };
+		0702982717E9090B00710234 /* volume-high.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981617E9090B00710234 /* volume-high.png */; };
+		0702982817E9090B00710234 /* volume-low.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981717E9090B00710234 /* volume-low.png */; };
+		0702984F17E911A500710234 /* coreaudio.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702984D17E911A500710234 /* coreaudio.c */; };
+		0702985F17E9127400710234 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EECE41170A1E43001E3803 /* CoreAudio.framework */; };
+		0702986417E9128E00710234 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EECE47170A1E74001E3803 /* AudioToolbox.framework */; };
+		0702986617E9128E00710234 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702986517E9128E00710234 /* AudioUnit.framework */; };
+		0702986A17E912B300710234 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702986917E912B300710234 /* CoreServices.framework */; };
+		0702993E17E9142A00710234 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702986517E9128E00710234 /* AudioUnit.framework */; };
+		0702994317E9143600710234 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EECE47170A1E74001E3803 /* AudioToolbox.framework */; };
+		0702995517E9143D00710234 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702986917E912B300710234 /* CoreServices.framework */; };
+		0702995617E9144800710234 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EECE41170A1E43001E3803 /* CoreAudio.framework */; };
+		0702995C17E9148700710234 /* coreaudio.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0702984A17E9113200710234 /* coreaudio.so */; };
 		078476FD16E80D3F00512E95 /* coredecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 07E582C11691E95000982BCB /* coredecoder.c */; };
 		07881EA11689C3A70066142D /* lastfm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881E9F1689C3A70066142D /* lastfm.c */; };
 		07881EA61689C3FD0066142D /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07881EA51689C3FD0066142D /* libcurl.dylib */; };
@@ -316,29 +355,6 @@
 		07882B9E168B90E80066142D /* float.c in Sources */ = {isa = PBXBuildFile; fileRef = 07882B83168B90B20066142D /* float.c */; };
 		07882B9F168B90E90066142D /* extra2.c in Sources */ = {isa = PBXBuildFile; fileRef = 07882B82168B90B20066142D /* extra2.c */; };
 		07882BA4168B91A30066142D /* wavpack.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822481689CF9D0066142D /* wavpack.so */; };
-		0796AC29168770270079D590 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC1B168770270079D590 /* DBAppDelegate.m */; };
-		0796AC2A168770270079D590 /* DBMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC1C168770270079D590 /* DBMain.m */; };
-		0796AC2B168770270079D590 /* DBMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC1E168770270079D590 /* DBMainWindowController.m */; };
-		0796AC2C168770270079D590 /* DBPlayListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC20168770270079D590 /* DBPlayListController.m */; };
-		0796AC2E168770270079D590 /* DBBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC24168770270079D590 /* DBBottomBar.m */; };
-		0796AC2F168770270079D590 /* DBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC26168770270079D590 /* DBTableView.m */; };
-		0796AC30168770270079D590 /* DBTimeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC28168770270079D590 /* DBTimeSliderCell.m */; };
-		0796AC44168770530079D590 /* deadbeef.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC32168770530079D590 /* deadbeef.icns */; };
-		0796AC45168770530079D590 /* back-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC34168770530079D590 /* back-pressed.png */; };
-		0796AC46168770530079D590 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC35168770530079D590 /* back.png */; };
-		0796AC47168770530079D590 /* background-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC36168770530079D590 /* background-top.png */; };
-		0796AC48168770530079D590 /* buffering.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC37168770530079D590 /* buffering.png */; };
-		0796AC49168770530079D590 /* forward-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC38168770530079D590 /* forward-pressed.png */; };
-		0796AC4A168770530079D590 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC39168770530079D590 /* forward.png */; };
-		0796AC4C168770530079D590 /* pause-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC3B168770530079D590 /* pause-pressed.png */; };
-		0796AC4D168770530079D590 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC3C168770530079D590 /* pause.png */; };
-		0796AC4E168770530079D590 /* paused.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC3D168770530079D590 /* paused.png */; };
-		0796AC4F168770530079D590 /* play-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC3E168770530079D590 /* play-pressed.png */; };
-		0796AC50168770530079D590 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC3F168770530079D590 /* play.png */; };
-		0796AC51168770530079D590 /* stop-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC40168770530079D590 /* stop-pressed.png */; };
-		0796AC52168770530079D590 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC41168770530079D590 /* stop.png */; };
-		0796AC53168770530079D590 /* volume-high.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC42168770530079D590 /* volume-high.png */; };
-		0796AC54168770530079D590 /* volume-low.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796AC43168770530079D590 /* volume-low.png */; };
 		0796AC84168772760079D590 /* conf.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC5C168772760079D590 /* conf.c */; };
 		0796AC85168772760079D590 /* dsppreset.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC5F168772760079D590 /* dsppreset.c */; };
 		0796AC86168772760079D590 /* junklib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC62168772760079D590 /* junklib.c */; };
@@ -359,7 +375,6 @@
 		0796AC95168772760079D590 /* volume.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC82168772760079D590 /* volume.c */; };
 		0796AD2C168777970079D590 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AD2A168777970079D590 /* md5.c */; };
 		0796AD33168777B50079D590 /* ConvertUTF.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AD30168777B50079D590 /* ConvertUTF.c */; };
-		0796ADAA16879D230079D590 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0796ADA916879D230079D590 /* MainWindow.xib */; };
 		0796AF541688DE300079D590 /* a2m.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0796AEC81688DDDE0079D590 /* a2m.cpp */; };
 		0796AF551688DE300079D590 /* a2m.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796AEC91688DDDE0079D590 /* a2m.h */; };
 		0796AF561688DE310079D590 /* adl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0796AECA1688DDDE0079D590 /* adl.cpp */; };
@@ -928,9 +943,7 @@
 		079AF7B817BA8EEC00BDCBC4 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 079AF7A617BA8EEC00BDCBC4 /* version.h */; };
 		079AF7F817BA94D300BDCBC4 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 079AF7F717BA94D300BDCBC4 /* config.h */; };
 		079AF80017BA97AB00BDCBC4 /* solaris.c in Sources */ = {isa = PBXBuildFile; fileRef = 079AF6B817BA8CAC00BDCBC4 /* solaris.c */; };
-		07A3835816A9D427007D5551 /* DBFileImportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A3835716A9D427007D5551 /* DBFileImportPanel.m */; };
 		07A6E7B11764D2D400F3F133 /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; };
-		07B889C917666780006027B4 /* DBTrackPropertiesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B889C817666780006027B4 /* DBTrackPropertiesPanelController.m */; };
 		07D5872717751164003A01DE /* ao.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D586C317751164003A01DE /* ao.h */; };
 		07D5872817751164003A01DE /* corlett.c in Sources */ = {isa = PBXBuildFile; fileRef = 07D586C417751164003A01DE /* corlett.c */; };
 		07D5872917751164003A01DE /* corlett.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D586C517751164003A01DE /* corlett.h */; };
@@ -1025,6 +1038,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		070297A017E9010400710234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07881ECF1689C5550066142D /* mms */;
+			remoteInfo = mms;
+		};
+		0702993517E913D600710234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0702983617E9113200710234 /* coreaudio */;
+			remoteInfo = coreaudio;
+		};
 		078823AC1689E4F30066142D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -1130,7 +1157,8 @@
 			dstPath = plugins;
 			dstSubfolderSpec = 6;
 			files = (
-				077E09801764ED6F00044230 /* coreaudio.so in Copy Plugins */,
+				0702995C17E9148700710234 /* coreaudio.so in Copy Plugins */,
+				070297A717E9014900710234 /* mms.so in Copy Plugins */,
 				07882BA4168B91A30066142D /* wavpack.so in Copy Plugins */,
 				07882A51168A73540066142D /* flac.so in Copy Plugins */,
 				07A6E7B11764D2D400F3F133 /* mpgmad.so in Copy Plugins */,
@@ -1150,13 +1178,59 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		075E942517C3A66600602E67 /* DBTextInputPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTextInputPanelController.h; sourceTree = "<group>"; };
-		075E942617C3A66600602E67 /* DBTextInputPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTextInputPanelController.m; sourceTree = "<group>"; };
-		075E966817C4F6FA00602E67 /* TextInputPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputPanel.xib; sourceTree = "<group>"; };
-		077A85F717D1540C00D66282 /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
-		077A85FA17D154CA00D66282 /* DBPreferencesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPreferencesPanelController.h; sourceTree = "<group>"; };
-		077A85FB17D154CA00D66282 /* DBPreferencesPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPreferencesPanelController.m; sourceTree = "<group>"; };
-		077E097E1764ED6800044230 /* coreaudio.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = coreaudio.so; sourceTree = "<group>"; };
+		0702977417E8EBE700710234 /* fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fft.c; path = ../fft.c; sourceTree = SOURCE_ROOT; };
+		0702977517E8EBE700710234 /* fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fft.h; path = ../fft.h; sourceTree = SOURCE_ROOT; };
+		0702977617E8EBE700710234 /* handler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = handler.c; path = ../handler.c; sourceTree = SOURCE_ROOT; };
+		0702977717E8EBE700710234 /* handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = handler.h; path = ../handler.h; sourceTree = SOURCE_ROOT; };
+		0702977817E8EBE700710234 /* strdupa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = strdupa.h; path = ../strdupa.h; sourceTree = SOURCE_ROOT; };
+		0702979117E8EE4A00710234 /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parser.c; sourceTree = "<group>"; };
+		0702979217E8EE4A00710234 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
+		070297BB17E9084800710234 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = ../plugins/cocoaui/Config.h; sourceTree = SOURCE_ROOT; };
+		070297BC17E9084800710234 /* DBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBAppDelegate.h; path = ../plugins/cocoaui/DBAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		070297BD17E9084800710234 /* DBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBAppDelegate.m; path = ../plugins/cocoaui/DBAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		070297BE17E9084800710234 /* DBMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBMain.m; path = ../plugins/cocoaui/DBMain.m; sourceTree = SOURCE_ROOT; };
+		070297BF17E9084800710234 /* DBMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBMainWindowController.h; path = ../plugins/cocoaui/DBMainWindowController.h; sourceTree = SOURCE_ROOT; };
+		070297C017E9084800710234 /* DBMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBMainWindowController.m; path = ../plugins/cocoaui/DBMainWindowController.m; sourceTree = SOURCE_ROOT; };
+		070297C117E9084800710234 /* DBPlayListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPlayListController.h; path = ../plugins/cocoaui/DBPlayListController.h; sourceTree = SOURCE_ROOT; };
+		070297C217E9084800710234 /* DBPlayListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPlayListController.m; path = ../plugins/cocoaui/DBPlayListController.m; sourceTree = SOURCE_ROOT; };
+		070297C317E9084800710234 /* DBPreferencesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPreferencesPanelController.h; path = ../plugins/cocoaui/DBPreferencesPanelController.h; sourceTree = SOURCE_ROOT; };
+		070297C417E9084800710234 /* DBPreferencesPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPreferencesPanelController.m; path = ../plugins/cocoaui/DBPreferencesPanelController.m; sourceTree = SOURCE_ROOT; };
+		070297C517E9084800710234 /* DBTextInputPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBTextInputPanelController.h; path = ../plugins/cocoaui/DBTextInputPanelController.h; sourceTree = SOURCE_ROOT; };
+		070297C617E9084800710234 /* DBTextInputPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBTextInputPanelController.m; path = ../plugins/cocoaui/DBTextInputPanelController.m; sourceTree = SOURCE_ROOT; };
+		070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBTrackPropertiesPanelController.h; path = ../plugins/cocoaui/DBTrackPropertiesPanelController.h; sourceTree = SOURCE_ROOT; };
+		070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBTrackPropertiesPanelController.m; path = ../plugins/cocoaui/DBTrackPropertiesPanelController.m; sourceTree = SOURCE_ROOT; };
+		070297C917E9084800710234 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../plugins/cocoaui/MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		070297CA17E9084800710234 /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PreferencesWindow.xib; path = ../plugins/cocoaui/PreferencesWindow.xib; sourceTree = SOURCE_ROOT; };
+		070297CB17E9084800710234 /* TextInputPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TextInputPanel.xib; path = ../plugins/cocoaui/TextInputPanel.xib; sourceTree = SOURCE_ROOT; };
+		070297CD17E9084800710234 /* DBBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBottomBar.h; sourceTree = "<group>"; };
+		070297CE17E9084800710234 /* DBBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBottomBar.m; sourceTree = "<group>"; };
+		070297CF17E9084800710234 /* DBFileImportPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFileImportPanel.h; sourceTree = "<group>"; };
+		070297D017E9084800710234 /* DBFileImportPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFileImportPanel.m; sourceTree = "<group>"; };
+		070297D117E9084800710234 /* DBTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTableView.h; sourceTree = "<group>"; };
+		070297D217E9084800710234 /* DBTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTableView.m; sourceTree = "<group>"; };
+		070297D317E9084800710234 /* DBTimeSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTimeSliderCell.h; sourceTree = "<group>"; };
+		070297D417E9084800710234 /* DBTimeSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTimeSliderCell.m; sourceTree = "<group>"; };
+		0702980617E9090B00710234 /* deadbeef.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = deadbeef.icns; sourceTree = "<group>"; };
+		0702980817E9090B00710234 /* back-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-pressed.png"; sourceTree = "<group>"; };
+		0702980917E9090B00710234 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		0702980A17E9090B00710234 /* background-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-top.png"; sourceTree = "<group>"; };
+		0702980B17E9090B00710234 /* buffering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buffering.png; sourceTree = "<group>"; };
+		0702980C17E9090B00710234 /* forward-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-pressed.png"; sourceTree = "<group>"; };
+		0702980D17E9090B00710234 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		0702980E17E9090B00710234 /* FROM THE VLC PROJECT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "FROM THE VLC PROJECT"; sourceTree = "<group>"; };
+		0702980F17E9090B00710234 /* pause-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-pressed.png"; sourceTree = "<group>"; };
+		0702981017E9090B00710234 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		0702981117E9090B00710234 /* paused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paused.png; sourceTree = "<group>"; };
+		0702981217E9090B00710234 /* play-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-pressed.png"; sourceTree = "<group>"; };
+		0702981317E9090B00710234 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		0702981417E9090B00710234 /* stop-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-pressed.png"; sourceTree = "<group>"; };
+		0702981517E9090B00710234 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		0702981617E9090B00710234 /* volume-high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-high.png"; sourceTree = "<group>"; };
+		0702981717E9090B00710234 /* volume-low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-low.png"; sourceTree = "<group>"; };
+		0702984A17E9113200710234 /* coreaudio.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = coreaudio.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		0702984D17E911A500710234 /* coreaudio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = coreaudio.c; sourceTree = "<group>"; };
+		0702986517E9128E00710234 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		0702986917E912B300710234 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		07881E981689C3710066142D /* lastfm.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = lastfm.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07881E9F1689C3A70066142D /* lastfm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lastfm.c; sourceTree = "<group>"; };
 		07881EA51689C3FD0066142D /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
@@ -1475,37 +1549,6 @@
 		07882B8D168B90B20066142D /* wavpack_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack_version.h; sourceTree = "<group>"; };
 		07882B8E168B90B20066142D /* words.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = words.c; sourceTree = "<group>"; };
 		07882B8F168B90B20066142D /* wputils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wputils.c; sourceTree = "<group>"; };
-		0796AC19168770270079D590 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		0796AC1A168770270079D590 /* DBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAppDelegate.h; sourceTree = "<group>"; };
-		0796AC1B168770270079D590 /* DBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAppDelegate.m; sourceTree = "<group>"; };
-		0796AC1C168770270079D590 /* DBMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMain.m; sourceTree = "<group>"; };
-		0796AC1D168770270079D590 /* DBMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMainWindowController.h; sourceTree = "<group>"; };
-		0796AC1E168770270079D590 /* DBMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMainWindowController.m; sourceTree = "<group>"; };
-		0796AC1F168770270079D590 /* DBPlayListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPlayListController.h; sourceTree = "<group>"; };
-		0796AC20168770270079D590 /* DBPlayListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPlayListController.m; sourceTree = "<group>"; };
-		0796AC23168770270079D590 /* DBBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBottomBar.h; sourceTree = "<group>"; };
-		0796AC24168770270079D590 /* DBBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBottomBar.m; sourceTree = "<group>"; };
-		0796AC25168770270079D590 /* DBTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTableView.h; sourceTree = "<group>"; };
-		0796AC26168770270079D590 /* DBTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTableView.m; sourceTree = "<group>"; };
-		0796AC27168770270079D590 /* DBTimeSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTimeSliderCell.h; sourceTree = "<group>"; };
-		0796AC28168770270079D590 /* DBTimeSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTimeSliderCell.m; sourceTree = "<group>"; };
-		0796AC32168770530079D590 /* deadbeef.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = deadbeef.icns; sourceTree = "<group>"; };
-		0796AC34168770530079D590 /* back-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-pressed.png"; sourceTree = "<group>"; };
-		0796AC35168770530079D590 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		0796AC36168770530079D590 /* background-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-top.png"; sourceTree = "<group>"; };
-		0796AC37168770530079D590 /* buffering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buffering.png; sourceTree = "<group>"; };
-		0796AC38168770530079D590 /* forward-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-pressed.png"; sourceTree = "<group>"; };
-		0796AC39168770530079D590 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
-		0796AC3A168770530079D590 /* FROM THE VLC PROJECT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "FROM THE VLC PROJECT"; sourceTree = "<group>"; };
-		0796AC3B168770530079D590 /* pause-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-pressed.png"; sourceTree = "<group>"; };
-		0796AC3C168770530079D590 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
-		0796AC3D168770530079D590 /* paused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paused.png; sourceTree = "<group>"; };
-		0796AC3E168770530079D590 /* play-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-pressed.png"; sourceTree = "<group>"; };
-		0796AC3F168770530079D590 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
-		0796AC40168770530079D590 /* stop-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-pressed.png"; sourceTree = "<group>"; };
-		0796AC41168770530079D590 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
-		0796AC42168770530079D590 /* volume-high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-high.png"; sourceTree = "<group>"; };
-		0796AC43168770530079D590 /* volume-low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-low.png"; sourceTree = "<group>"; };
 		0796AC5B168772760079D590 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = ../common.h; sourceTree = SOURCE_ROOT; };
 		0796AC5C168772760079D590 /* conf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = conf.c; path = ../conf.c; sourceTree = SOURCE_ROOT; };
 		0796AC5D168772760079D590 /* conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = conf.h; path = ../conf.h; sourceTree = SOURCE_ROOT; };
@@ -1551,7 +1594,6 @@
 		0796AD2B168777970079D590 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
 		0796AD30168777B50079D590 /* ConvertUTF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ConvertUTF.c; sourceTree = "<group>"; };
 		0796AD31168777B50079D590 /* ConvertUTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertUTF.h; sourceTree = "<group>"; };
-		0796ADA916879D230079D590 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		0796ADB116879D590079D590 /* deadbeef-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "deadbeef-Info.plist"; sourceTree = "<group>"; };
 		0796AEC81688DDDE0079D590 /* a2m.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = a2m.cpp; sourceTree = "<group>"; };
 		0796AEC91688DDDE0079D590 /* a2m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = a2m.h; sourceTree = "<group>"; };
@@ -2382,10 +2424,6 @@
 		079AF7A317BA8EEC00BDCBC4 /* ll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ll.h; sourceTree = "<group>"; };
 		079AF7A617BA8EEC00BDCBC4 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		079AF7F717BA94D300BDCBC4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "libs/libcdio-0.90/config.h"; sourceTree = SOURCE_ROOT; };
-		07A3835616A9D427007D5551 /* DBFileImportPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFileImportPanel.h; sourceTree = "<group>"; };
-		07A3835716A9D427007D5551 /* DBFileImportPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFileImportPanel.m; sourceTree = "<group>"; };
-		07B889C717666780006027B4 /* DBTrackPropertiesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTrackPropertiesPanelController.h; sourceTree = "<group>"; };
-		07B889C817666780006027B4 /* DBTrackPropertiesPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTrackPropertiesPanelController.m; sourceTree = "<group>"; };
 		07D586B3177510E7003A01DE /* ao.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ao.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D586C317751164003A01DE /* ao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ao.h; sourceTree = "<group>"; };
 		07D586C417751164003A01DE /* corlett.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = corlett.c; sourceTree = "<group>"; };
@@ -2491,6 +2529,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0702984617E9113200710234 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0702995617E9144800710234 /* CoreAudio.framework in Frameworks */,
+				0702995517E9143D00710234 /* CoreServices.framework in Frameworks */,
+				0702994317E9143600710234 /* AudioToolbox.framework in Frameworks */,
+				0702993E17E9142A00710234 /* AudioUnit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07881E961689C3710066142D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2693,13 +2742,109 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				077E097F1764ED6800044230 /* coreaudio.so in Frameworks */,
+				0702985F17E9127400710234 /* CoreAudio.framework in Frameworks */,
+				0702986417E9128E00710234 /* AudioToolbox.framework in Frameworks */,
+				0702986617E9128E00710234 /* AudioUnit.framework in Frameworks */,
+				0702986A17E912B300710234 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0702979017E8EE4A00710234 /* libparser */ = {
+			isa = PBXGroup;
+			children = (
+				0702979117E8EE4A00710234 /* parser.c */,
+				0702979217E8EE4A00710234 /* parser.h */,
+			);
+			name = libparser;
+			path = ../plugins/libparser;
+			sourceTree = SOURCE_ROOT;
+		};
+		070297AB17E9055500710234 /* cocoaui */ = {
+			isa = PBXGroup;
+			children = (
+				070297BB17E9084800710234 /* Config.h */,
+				070297BC17E9084800710234 /* DBAppDelegate.h */,
+				070297BD17E9084800710234 /* DBAppDelegate.m */,
+				070297BE17E9084800710234 /* DBMain.m */,
+				070297BF17E9084800710234 /* DBMainWindowController.h */,
+				070297C017E9084800710234 /* DBMainWindowController.m */,
+				070297C117E9084800710234 /* DBPlayListController.h */,
+				070297C217E9084800710234 /* DBPlayListController.m */,
+				070297C317E9084800710234 /* DBPreferencesPanelController.h */,
+				070297C417E9084800710234 /* DBPreferencesPanelController.m */,
+				070297C517E9084800710234 /* DBTextInputPanelController.h */,
+				070297C617E9084800710234 /* DBTextInputPanelController.m */,
+				070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */,
+				070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */,
+				070297C917E9084800710234 /* MainWindow.xib */,
+				070297CA17E9084800710234 /* PreferencesWindow.xib */,
+				070297CB17E9084800710234 /* TextInputPanel.xib */,
+				070297CC17E9084800710234 /* views */,
+			);
+			name = cocoaui;
+			sourceTree = "<group>";
+		};
+		070297CC17E9084800710234 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				070297CD17E9084800710234 /* DBBottomBar.h */,
+				070297CE17E9084800710234 /* DBBottomBar.m */,
+				070297CF17E9084800710234 /* DBFileImportPanel.h */,
+				070297D017E9084800710234 /* DBFileImportPanel.m */,
+				070297D117E9084800710234 /* DBTableView.h */,
+				070297D217E9084800710234 /* DBTableView.m */,
+				070297D317E9084800710234 /* DBTimeSliderCell.h */,
+				070297D417E9084800710234 /* DBTimeSliderCell.m */,
+			);
+			name = views;
+			path = ../plugins/cocoaui/views;
+			sourceTree = SOURCE_ROOT;
+		};
+		0702980517E9090B00710234 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				0702980617E9090B00710234 /* deadbeef.icns */,
+			);
+			name = icons;
+			path = ../plugins/cocoaui/icons;
+			sourceTree = SOURCE_ROOT;
+		};
+		0702980717E9090B00710234 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0702980817E9090B00710234 /* back-pressed.png */,
+				0702980917E9090B00710234 /* back.png */,
+				0702980A17E9090B00710234 /* background-top.png */,
+				0702980B17E9090B00710234 /* buffering.png */,
+				0702980C17E9090B00710234 /* forward-pressed.png */,
+				0702980D17E9090B00710234 /* forward.png */,
+				0702980E17E9090B00710234 /* FROM THE VLC PROJECT */,
+				0702980F17E9090B00710234 /* pause-pressed.png */,
+				0702981017E9090B00710234 /* pause.png */,
+				0702981117E9090B00710234 /* paused.png */,
+				0702981217E9090B00710234 /* play-pressed.png */,
+				0702981317E9090B00710234 /* play.png */,
+				0702981417E9090B00710234 /* stop-pressed.png */,
+				0702981517E9090B00710234 /* stop.png */,
+				0702981617E9090B00710234 /* volume-high.png */,
+				0702981717E9090B00710234 /* volume-low.png */,
+			);
+			name = images;
+			path = ../plugins/cocoaui/images;
+			sourceTree = SOURCE_ROOT;
+		};
+		0702984C17E911A500710234 /* coreaudio */ = {
+			isa = PBXGroup;
+			children = (
+				0702984D17E911A500710234 /* coreaudio.c */,
+			);
+			name = coreaudio;
+			path = ../plugins/coreaudio;
+			sourceTree = SOURCE_ROOT;
+		};
 		0760ECEB1724857D0018A9BF /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -3292,52 +3437,6 @@
 			path = "libs/wavpack-4.60.1/src";
 			sourceTree = SOURCE_ROOT;
 		};
-		0796AC22168770270079D590 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				0796AC23168770270079D590 /* DBBottomBar.h */,
-				0796AC24168770270079D590 /* DBBottomBar.m */,
-				0796AC25168770270079D590 /* DBTableView.h */,
-				0796AC26168770270079D590 /* DBTableView.m */,
-				0796AC27168770270079D590 /* DBTimeSliderCell.h */,
-				0796AC28168770270079D590 /* DBTimeSliderCell.m */,
-				07A3835616A9D427007D5551 /* DBFileImportPanel.h */,
-				07A3835716A9D427007D5551 /* DBFileImportPanel.m */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		0796AC31168770530079D590 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				0796AC32168770530079D590 /* deadbeef.icns */,
-			);
-			path = icons;
-			sourceTree = "<group>";
-		};
-		0796AC33168770530079D590 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				0796AC34168770530079D590 /* back-pressed.png */,
-				0796AC35168770530079D590 /* back.png */,
-				0796AC36168770530079D590 /* background-top.png */,
-				0796AC37168770530079D590 /* buffering.png */,
-				0796AC38168770530079D590 /* forward-pressed.png */,
-				0796AC39168770530079D590 /* forward.png */,
-				0796AC3A168770530079D590 /* FROM THE VLC PROJECT */,
-				0796AC3B168770530079D590 /* pause-pressed.png */,
-				0796AC3C168770530079D590 /* pause.png */,
-				0796AC3D168770530079D590 /* paused.png */,
-				0796AC3E168770530079D590 /* play-pressed.png */,
-				0796AC3F168770530079D590 /* play.png */,
-				0796AC40168770530079D590 /* stop-pressed.png */,
-				0796AC41168770530079D590 /* stop.png */,
-				0796AC42168770530079D590 /* volume-high.png */,
-				0796AC43168770530079D590 /* volume-low.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		0796AD29168777970079D590 /* md5 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3361,6 +3460,9 @@
 		0796ADCE16886D000079D590 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				0702984C17E911A500710234 /* coreaudio */,
+				070297AB17E9055500710234 /* cocoaui */,
+				0702979017E8EE4A00710234 /* libparser */,
 				079AF5BF17BA877500BDCBC4 /* mpgmad */,
 				07D588481775192C003A01DE /* sndfile */,
 				07D586C217751164003A01DE /* ao */,
@@ -4746,28 +4848,6 @@
 			name = coredecoder;
 			sourceTree = "<group>";
 		};
-		080E96DDFE201D6D7F000001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				077A85FA17D154CA00D66282 /* DBPreferencesPanelController.h */,
-				077A85FB17D154CA00D66282 /* DBPreferencesPanelController.m */,
-				0796AC19168770270079D590 /* Config.h */,
-				0796AC1A168770270079D590 /* DBAppDelegate.h */,
-				0796AC1B168770270079D590 /* DBAppDelegate.m */,
-				0796AC1C168770270079D590 /* DBMain.m */,
-				0796AC1D168770270079D590 /* DBMainWindowController.h */,
-				0796AC1E168770270079D590 /* DBMainWindowController.m */,
-				0796AC1F168770270079D590 /* DBPlayListController.h */,
-				0796AC20168770270079D590 /* DBPlayListController.m */,
-				0796AC22168770270079D590 /* views */,
-				07B889C717666780006027B4 /* DBTrackPropertiesPanelController.h */,
-				07B889C817666780006027B4 /* DBTrackPropertiesPanelController.m */,
-				075E942517C3A66600602E67 /* DBTextInputPanelController.h */,
-				075E942617C3A66600602E67 /* DBTextInputPanelController.m */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -4819,6 +4899,7 @@
 				07DC88FB1691AA2C00DB0456 /* coredecoder.so */,
 				07D586B3177510E7003A01DE /* ao.so */,
 				07D5883517751897003A01DE /* sndfile.so */,
+				0702984A17E9113200710234 /* coreaudio.so */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -4829,14 +4910,10 @@
 				0796ADCE16886D000079D590 /* Plugins */,
 				0760ECEB1724857D0018A9BF /* Libraries */,
 				0796ADB116879D590079D590 /* deadbeef-Info.plist */,
-				0796ADA916879D230079D590 /* MainWindow.xib */,
-				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Core */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				075E966817C4F6FA00602E67 /* TextInputPanel.xib */,
-				077A85F717D1540C00D66282 /* PreferencesWindow.xib */,
 			);
 			name = deadbeef;
 			sourceTree = "<group>";
@@ -4844,6 +4921,11 @@
 		29B97315FDCFA39411CA2CEA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0702977417E8EBE700710234 /* fft.c */,
+				0702977517E8EBE700710234 /* fft.h */,
+				0702977617E8EBE700710234 /* handler.c */,
+				0702977717E8EBE700710234 /* handler.h */,
+				0702977817E8EBE700710234 /* strdupa.h */,
 				0796AD2F168777B50079D590 /* ConvertUTF */,
 				0796AD29168777970079D590 /* md5 */,
 				0796AC5B168772760079D590 /* common.h */,
@@ -4894,9 +4976,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				077E097E1764ED6800044230 /* coreaudio.so */,
-				0796AC31168770530079D590 /* icons */,
-				0796AC33168770530079D590 /* images */,
+				0702980517E9090B00710234 /* icons */,
+				0702980717E9090B00710234 /* images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -4904,6 +4985,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0702986517E9128E00710234 /* AudioUnit.framework */,
+				0702986917E912B300710234 /* CoreServices.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 				0788246E168A0F790066142D /* ogg.framework */,
@@ -4915,6 +4998,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0702983717E9113200710234 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07881E941689C3710066142D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -5533,6 +5623,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0702983617E9113200710234 /* coreaudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0702984717E9113200710234 /* Build configuration list for PBXNativeTarget "coreaudio" */;
+			buildPhases = (
+				0702983717E9113200710234 /* Headers */,
+				0702984017E9113200710234 /* Sources */,
+				0702984617E9113200710234 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = coreaudio;
+			productName = mms;
+			productReference = 0702984A17E9113200710234 /* coreaudio.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		07881E971689C3710066142D /* lastfm */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07881EA21689C3A70066142D /* Build configuration list for PBXNativeTarget "lastfm" */;
@@ -6005,6 +6112,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				0702993617E913D600710234 /* PBXTargetDependency */,
+				070297A117E9010400710234 /* PBXTargetDependency */,
 				07882A50168A73440066142D /* PBXTargetDependency */,
 				07A6E7AE1764D2A500F3F133 /* PBXTargetDependency */,
 				078823AD1689E4F30066142D /* PBXTargetDependency */,
@@ -6043,6 +6152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				0702983617E9113200710234 /* coreaudio */,
 				8D1107260486CEB800E47090 /* deadbeef */,
 				0796AF4E1688DE100079D590 /* adplug */,
 				078823F2168A05700066142D /* artwork */,
@@ -6080,31 +6190,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0796AC44168770530079D590 /* deadbeef.icns in Resources */,
-				0796AC45168770530079D590 /* back-pressed.png in Resources */,
-				0796AC46168770530079D590 /* back.png in Resources */,
-				0796AC47168770530079D590 /* background-top.png in Resources */,
-				0796AC48168770530079D590 /* buffering.png in Resources */,
-				0796AC49168770530079D590 /* forward-pressed.png in Resources */,
-				0796AC4A168770530079D590 /* forward.png in Resources */,
-				0796AC4C168770530079D590 /* pause-pressed.png in Resources */,
-				0796AC4D168770530079D590 /* pause.png in Resources */,
-				0796AC4E168770530079D590 /* paused.png in Resources */,
-				0796AC4F168770530079D590 /* play-pressed.png in Resources */,
-				0796AC50168770530079D590 /* play.png in Resources */,
-				0796AC51168770530079D590 /* stop-pressed.png in Resources */,
-				0796AC52168770530079D590 /* stop.png in Resources */,
-				0796AC53168770530079D590 /* volume-high.png in Resources */,
-				0796AC54168770530079D590 /* volume-low.png in Resources */,
-				0796ADAA16879D230079D590 /* MainWindow.xib in Resources */,
-				075E966917C4F6FA00602E67 /* TextInputPanel.xib in Resources */,
-				077A85F817D1540C00D66282 /* PreferencesWindow.xib in Resources */,
+				070297DC17E9084800710234 /* MainWindow.xib in Resources */,
+				070297DD17E9084800710234 /* PreferencesWindow.xib in Resources */,
+				070297DE17E9084800710234 /* TextInputPanel.xib in Resources */,
+				0702981817E9090B00710234 /* deadbeef.icns in Resources */,
+				0702981917E9090B00710234 /* back-pressed.png in Resources */,
+				0702981A17E9090B00710234 /* back.png in Resources */,
+				0702981B17E9090B00710234 /* background-top.png in Resources */,
+				0702981C17E9090B00710234 /* buffering.png in Resources */,
+				0702981D17E9090B00710234 /* forward-pressed.png in Resources */,
+				0702981E17E9090B00710234 /* forward.png in Resources */,
+				0702981F17E9090B00710234 /* FROM THE VLC PROJECT in Resources */,
+				0702982017E9090B00710234 /* pause-pressed.png in Resources */,
+				0702982117E9090B00710234 /* pause.png in Resources */,
+				0702982217E9090B00710234 /* paused.png in Resources */,
+				0702982317E9090B00710234 /* play-pressed.png in Resources */,
+				0702982417E9090B00710234 /* play.png in Resources */,
+				0702982517E9090B00710234 /* stop-pressed.png in Resources */,
+				0702982617E9090B00710234 /* stop.png in Resources */,
+				0702982717E9090B00710234 /* volume-high.png in Resources */,
+				0702982817E9090B00710234 /* volume-low.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0702984017E9113200710234 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0702984F17E911A500710234 /* coreaudio.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07881E951689C3710066142D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -6812,13 +6931,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0796AC29168770270079D590 /* DBAppDelegate.m in Sources */,
-				0796AC2A168770270079D590 /* DBMain.m in Sources */,
-				0796AC2B168770270079D590 /* DBMainWindowController.m in Sources */,
-				0796AC2C168770270079D590 /* DBPlayListController.m in Sources */,
-				0796AC2E168770270079D590 /* DBBottomBar.m in Sources */,
-				0796AC2F168770270079D590 /* DBTableView.m in Sources */,
-				0796AC30168770270079D590 /* DBTimeSliderCell.m in Sources */,
 				0796AC84168772760079D590 /* conf.c in Sources */,
 				0796AC85168772760079D590 /* dsppreset.c in Sources */,
 				0796AC86168772760079D590 /* junklib.c in Sources */,
@@ -6839,16 +6951,36 @@
 				0796AC95168772760079D590 /* volume.c in Sources */,
 				0796AD2C168777970079D590 /* md5.c in Sources */,
 				0796AD33168777B50079D590 /* ConvertUTF.c in Sources */,
-				07A3835816A9D427007D5551 /* DBFileImportPanel.m in Sources */,
-				07B889C917666780006027B4 /* DBTrackPropertiesPanelController.m in Sources */,
-				075E942717C3A66600602E67 /* DBTextInputPanelController.m in Sources */,
-				077A85FC17D154CA00D66282 /* DBPreferencesPanelController.m in Sources */,
+				0702977917E8EBE700710234 /* fft.c in Sources */,
+				0702977A17E8EBE700710234 /* handler.c in Sources */,
+				0702979317E8EE4A00710234 /* parser.c in Sources */,
+				070297D517E9084800710234 /* DBAppDelegate.m in Sources */,
+				070297D617E9084800710234 /* DBMain.m in Sources */,
+				070297D717E9084800710234 /* DBMainWindowController.m in Sources */,
+				070297D817E9084800710234 /* DBPlayListController.m in Sources */,
+				070297D917E9084800710234 /* DBPreferencesPanelController.m in Sources */,
+				070297DA17E9084800710234 /* DBTextInputPanelController.m in Sources */,
+				070297DB17E9084800710234 /* DBTrackPropertiesPanelController.m in Sources */,
+				070297DF17E9084800710234 /* DBBottomBar.m in Sources */,
+				070297E017E9084800710234 /* DBFileImportPanel.m in Sources */,
+				070297E117E9084800710234 /* DBTableView.m in Sources */,
+				070297E217E9084800710234 /* DBTimeSliderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		070297A117E9010400710234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07881ECF1689C5550066142D /* mms */;
+			targetProxy = 070297A017E9010400710234 /* PBXContainerItemProxy */;
+		};
+		0702993617E913D600710234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0702983617E9113200710234 /* coreaudio */;
+			targetProxy = 0702993517E913D600710234 /* PBXContainerItemProxy */;
+		};
 		078823AD1689E4F30066142D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0796AF4E1688DE100079D590 /* adplug */;
@@ -6912,6 +7044,54 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0702984817E9113200710234 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/../plugins/coreaudio,
+					$SRCROOT/,
+				);
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = "-module";
+				PREBINDING = NO;
+				PRODUCT_NAME = coreaudio;
+				SKIP_INSTALL = YES;
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		0702984917E9113200710234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/../plugins/coreaudio,
+					$SRCROOT/,
+				);
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = "-module";
+				PREBINDING = NO;
+				PRODUCT_NAME = coreaudio;
+				SKIP_INSTALL = YES;
+				USE_HEADERMAP = NO;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		07881E991689C3710066142D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -8239,8 +8419,14 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = deadbeef_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_LOG2,
+					HAVE_SYS_SYSLIMITS_H,
+					HAVE_CONFIG_H,
+				);
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
+					$SRCROOT/../plugins/cocoaui,
 					$SRCROOT/..,
 					$SRCROOT/,
 				);
@@ -8264,8 +8450,14 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = deadbeef_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_LOG2,
+					HAVE_SYS_SYSLIMITS_H,
+					HAVE_CONFIG_H,
+				);
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
+					$SRCROOT/../plugins/cocoaui,
 					$SRCROOT/..,
 					$SRCROOT/,
 				);
@@ -8322,6 +8514,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0702984717E9113200710234 /* Build configuration list for PBXNativeTarget "coreaudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0702984817E9113200710234 /* Debug */,
+				0702984917E9113200710234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		07881EA21689C3A70066142D /* Build configuration list for PBXNativeTarget "lastfm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

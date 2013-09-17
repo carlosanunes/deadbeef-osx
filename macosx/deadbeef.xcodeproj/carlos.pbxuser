@@ -1,5 +1,292 @@
 // !$*UTF8*$!
 {
+	0702977417E8EBE700710234 /* fft.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {877, 1456}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 726}";
+			sepNavWindowFrame = "{{15, 0}, {952, 778}}";
+		};
+	};
+	0702977B17E8EBF200710234 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 0702977417E8EBE700710234 /* fft.c */;
+	};
+	0702977C17E8EBF200710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0702977417E8EBE700710234 /* fft.c */;
+		name = "fft.c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 726;
+		vrLoc = 0;
+	};
+	0702978217E8EC2400710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0702977417E8EBE700710234 /* fft.c */;
+		name = "fft.c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 726;
+		vrLoc = 0;
+	};
+	0702978717E8EC9200710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0702977417E8EBE700710234 /* fft.c */;
+		name = "fft.c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 726;
+		vrLoc = 0;
+	};
+	0702979617E8EE5A00710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0702977417E8EBE700710234 /* fft.c */;
+		name = "fft.c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 726;
+		vrLoc = 0;
+	};
+	0702979717E8EE5A00710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC77168772760079D590 /* sj_to_unicode.h */;
+		name = "sj_to_unicode.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 375;
+		vrLoc = 0;
+	};
+	0702979817E8EE5A00710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC78168772760079D590 /* streamer.c */;
+		name = "streamer.c: 797";
+		rLen = 0;
+		rLoc = 22695;
+		rType = 0;
+		vrLen = 629;
+		vrLoc = 22373;
+	};
+	0702979917E8EE5A00710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC78168772760079D590 /* streamer.c */;
+		name = "streamer.c: 798";
+		rLen = 0;
+		rLoc = 22739;
+		rType = 0;
+		vrLen = 349;
+		vrLoc = 21488;
+	};
+	070297A417E9012000710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC78168772760079D590 /* streamer.c */;
+		name = "streamer.c: 798";
+		rLen = 0;
+		rLoc = 22739;
+		rType = 0;
+		vrLen = 313;
+		vrLoc = 21525;
+	};
+	070297AA17E9015200710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC78168772760079D590 /* streamer.c */;
+		name = "streamer.c: 798";
+		rLen = 0;
+		rLoc = 22739;
+		rType = 0;
+		vrLen = 313;
+		vrLoc = 21525;
+	};
+	070297AC17E9057800710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC78168772760079D590 /* streamer.c */;
+		name = "streamer.c: 798";
+		rLen = 0;
+		rLoc = 22739;
+		rType = 0;
+		vrLen = 313;
+		vrLoc = 21525;
+	};
+	070297AD17E9057800710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 077A85FA17D154CA00D66282 /* DBPreferencesPanelController.h */;
+		name = "DBPreferencesPanelController.h: 13";
+		rLen = 0;
+		rLoc = 266;
+		rType = 0;
+		vrLen = 270;
+		vrLoc = 0;
+	};
+	070297AE17E9057800710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 07B889C717666780006027B4 /* DBTrackPropertiesPanelController.h */;
+		name = "DBTrackPropertiesPanelController.h: 17";
+		rLen = 13;
+		rLoc = 453;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 211;
+	};
+	070297AF17E9057800710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 07B889C717666780006027B4 /* DBTrackPropertiesPanelController.h */;
+		name = "DBTrackPropertiesPanelController.h: 17";
+		rLen = 13;
+		rLoc = 453;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 211;
+	};
+	070297BA17E905C300710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 07B889C717666780006027B4 /* DBTrackPropertiesPanelController.h */;
+		name = "DBTrackPropertiesPanelController.h: 17";
+		rLen = 13;
+		rLoc = 453;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 211;
+	};
+	070297BE17E9084800710234 /* DBMain.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {877, 4303}}";
+			sepNavSelRange = "{839, 0}";
+			sepNavVisRange = "{596, 317}";
+		};
+	};
+	0702982D17E90BE400710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC78168772760079D590 /* streamer.c */;
+		name = "streamer.c: 798";
+		rLen = 0;
+		rLoc = 22739;
+		rType = 0;
+		vrLen = 471;
+		vrLoc = 22563;
+	};
+	0702982E17E90BE400710234 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Config.h: No such file or directory";
+		fRef = 070297BE17E9084800710234 /* DBMain.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 24;
+		rType = 1;
+	};
+	0702982F17E90BE400710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 070297BE17E9084800710234 /* DBMain.m */;
+		name = "DBMain.m: 25";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 317;
+		vrLoc = 596;
+	};
+	0702983217E90C6600710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 070297BE17E9084800710234 /* DBMain.m */;
+		name = "DBMain.m: 25";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 317;
+		vrLoc = 596;
+	};
+	0702983317E90C6600710234 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Pointer targets in initialization differ in signedness";
+		fRef = 0796AC5C168772760079D590 /* conf.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 109;
+		rType = 1;
+	};
+	0702983417E90C6600710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC5C168772760079D590 /* conf.c */;
+		name = "conf.c: 110";
+		rLen = 0;
+		rLoc = 2711;
+		rType = 0;
+		vrLen = 317;
+		vrLoc = 2583;
+	};
+	0702983617E9113200710234 /* coreaudio */ = {
+		activeExec = 0;
+	};
+	0702984B17E9117600710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC5C168772760079D590 /* conf.c */;
+		name = "conf.c: 110";
+		rLen = 0;
+		rLoc = 2711;
+		rType = 0;
+		vrLen = 358;
+		vrLoc = 2583;
+	};
+	0702984D17E911A500710234 /* coreaudio.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {877, 4030}}";
+			sepNavSelRange = "{365, 0}";
+			sepNavVisRange = "{3, 663}";
+		};
+	};
+	0702994117E9142D00710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC5C168772760079D590 /* conf.c */;
+		name = "conf.c: 110";
+		rLen = 0;
+		rLoc = 2711;
+		rType = 0;
+		vrLen = 339;
+		vrLoc = 2561;
+	};
+	0702994217E9142D00710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC5C168772760079D590 /* conf.c */;
+		name = "conf.c: 110";
+		rLen = 0;
+		rLoc = 2711;
+		rType = 0;
+		vrLen = 339;
+		vrLoc = 2561;
+	};
+	0702996117E914B400710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0796AC5C168772760079D590 /* conf.c */;
+		name = "conf.c: 105";
+		rLen = 0;
+		rLoc = 2616;
+		rType = 0;
+		vrLen = 339;
+		vrLoc = 881;
+	};
+	0702996217E914B400710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0702984D17E911A500710234 /* coreaudio.c */;
+		name = "coreaudio.c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 666;
+		vrLoc = 0;
+	};
+	0702996317E914B400710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0702984D17E911A500710234 /* coreaudio.c */;
+		name = "coreaudio.c: 10";
+		rLen = 0;
+		rLoc = 365;
+		rType = 0;
+		vrLen = 663;
+		vrLoc = 3;
+	};
 	070F8D74169F661D0013349E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 0796AC6F168772760079D590 /* plugins.c */;
@@ -157,16 +444,6 @@
 		vrLen = 1106;
 		vrLoc = 0;
 	};
-	075C305017E7C9BF0074699C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 07881ED91689C58D0066142D /* bswap.h */;
-		name = "bswap.h: 244";
-		rLen = 28;
-		rLoc = 9537;
-		rType = 0;
-		vrLen = 482;
-		vrLoc = 9256;
-	};
 	075CB37917D3CD63000165CE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 078822641689D04C0066142D /* wildmidi.c */;
@@ -208,6 +485,12 @@
 		vrLoc = 0;
 	};
 	075E942517C3A66600602E67 /* DBTextInputPanelController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBTextInputPanelController.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBTextInputPanelController.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 377}}";
 			sepNavSelRange = "{241, 16}";
@@ -215,6 +498,12 @@
 		};
 	};
 	075E942617C3A66600602E67 /* DBTextInputPanelController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBTextInputPanelController.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBTextInputPanelController.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 689}}";
 			sepNavSelRange = "{699, 0}";
@@ -393,13 +682,25 @@
 		vrLoc = 3065;
 	};
 	077A85FA17D154CA00D66282 /* DBPreferencesPanelController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBPreferencesPanelController.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBPreferencesPanelController.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {877, 267}}";
+			sepNavIntBoundsRect = "{{0, 0}, {877, 221}}";
 			sepNavSelRange = "{266, 0}";
-			sepNavVisRange = "{0, 275}";
+			sepNavVisRange = "{0, 270}";
 		};
 	};
 	077A85FB17D154CA00D66282 /* DBPreferencesPanelController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBPreferencesPanelController.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBPreferencesPanelController.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 267}}";
 			sepNavSelRange = "{235, 0}";
@@ -520,7 +821,7 @@
 		ignoreCount = 0;
 		lineNumber = 452;
 		location = deadbeef;
-		modificationTime = 401066423.296279;
+		modificationTime = 401151149.090484;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -6433,6 +6734,12 @@
 		vrLoc = 0;
 	};
 	0796AC19168770270079D590 /* Config.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = Config.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/Config.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 416}}";
 			sepNavSelRange = "{804, 0}";
@@ -6440,6 +6747,12 @@
 		};
 	};
 	0796AC1A168770270079D590 /* DBAppDelegate.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBAppDelegate.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBAppDelegate.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 1040}}";
 			sepNavSelRange = "{877, 0}";
@@ -6447,6 +6760,12 @@
 		};
 	};
 	0796AC1B168770270079D590 /* DBAppDelegate.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBAppDelegate.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBAppDelegate.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {922, 9919}}";
 			sepNavSelRange = "{5075, 0}";
@@ -6455,6 +6774,12 @@
 		};
 	};
 	0796AC1C168770270079D590 /* DBMain.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBMain.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBMain.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 4277}}";
 			sepNavSelRange = "{891, 0}";
@@ -6462,6 +6787,12 @@
 		};
 	};
 	0796AC1D168770270079D590 /* DBMainWindowController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBMainWindowController.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBMainWindowController.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 1300}}";
 			sepNavSelRange = "{2583, 70}";
@@ -6469,6 +6800,12 @@
 		};
 	};
 	0796AC1E168770270079D590 /* DBMainWindowController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBMainWindowController.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBMainWindowController.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1300, 4316}}";
 			sepNavSelRange = "{7504, 30}";
@@ -6477,6 +6814,12 @@
 		};
 	};
 	0796AC1F168770270079D590 /* DBPlayListController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBPlayListController.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBPlayListController.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 624}}";
 			sepNavSelRange = "{1210, 0}";
@@ -6484,6 +6827,12 @@
 		};
 	};
 	0796AC20168770270079D590 /* DBPlayListController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBPlayListController.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBPlayListController.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 4719}}";
 			sepNavSelRange = "{9669, 0}";
@@ -6491,6 +6840,12 @@
 		};
 	};
 	0796AC23168770270079D590 /* DBBottomBar.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBBottomBar.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/views/DBBottomBar.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 364}}";
 			sepNavSelRange = "{0, 0}";
@@ -6498,6 +6853,12 @@
 		};
 	};
 	0796AC24168770270079D590 /* DBBottomBar.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBBottomBar.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/views/DBBottomBar.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 481}}";
 			sepNavSelRange = "{799, 20}";
@@ -6505,6 +6866,12 @@
 		};
 	};
 	0796AC25168770270079D590 /* DBTableView.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBTableView.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/views/DBTableView.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 442}}";
 			sepNavSelRange = "{767, 0}";
@@ -6512,6 +6879,12 @@
 		};
 	};
 	0796AC26168770270079D590 /* DBTableView.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBTableView.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/views/DBTableView.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 1742}}";
 			sepNavSelRange = "{1455, 0}";
@@ -6519,6 +6892,12 @@
 		};
 	};
 	0796AC27168770270079D590 /* DBTimeSliderCell.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBTimeSliderCell.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/views/DBTimeSliderCell.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 377}}";
 			sepNavSelRange = "{0, 0}";
@@ -6526,6 +6905,12 @@
 		};
 	};
 	0796AC28168770270079D590 /* DBTimeSliderCell.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBTimeSliderCell.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/views/DBTimeSliderCell.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 780}}";
 			sepNavSelRange = "{0, 0}";
@@ -6533,22 +6918,138 @@
 		};
 	};
 	0796AC32168770530079D590 /* deadbeef.icns */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.icns;
+		name = deadbeef.icns;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/icons/deadbeef.icns";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavWindowFrame = "{{15, 0}, {952, 778}}";
 		};
 	};
+	0796AC34168770530079D590 /* back-pressed.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "back-pressed.png";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/back-pressed.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC35168770530079D590 /* back.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = back.png;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/back.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC36168770530079D590 /* background-top.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "background-top.png";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/background-top.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC37168770530079D590 /* buffering.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = buffering.png;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/buffering.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC38168770530079D590 /* forward-pressed.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "forward-pressed.png";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/forward-pressed.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC39168770530079D590 /* forward.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = forward.png;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/forward.png";
+		sourceTree = "<absolute>";
+	};
 	0796AC3A168770530079D590 /* FROM THE VLC PROJECT */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text;
+		name = "FROM THE VLC PROJECT";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/FROM THE VLC PROJECT";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {914, 275}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 20}";
 		};
 	};
+	0796AC3B168770530079D590 /* pause-pressed.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "pause-pressed.png";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/pause-pressed.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC3C168770530079D590 /* pause.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = pause.png;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/pause.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC3D168770530079D590 /* paused.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = paused.png;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/paused.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC3E168770530079D590 /* play-pressed.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "play-pressed.png";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/play-pressed.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC3F168770530079D590 /* play.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = play.png;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/play.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC40168770530079D590 /* stop-pressed.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "stop-pressed.png";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/stop-pressed.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC41168770530079D590 /* stop.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = stop.png;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/stop.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC42168770530079D590 /* volume-high.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "volume-high.png";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/volume-high.png";
+		sourceTree = "<absolute>";
+	};
+	0796AC43168770530079D590 /* volume-low.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "volume-low.png";
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/images/volume-low.png";
+		sourceTree = "<absolute>";
+	};
 	0796AC5C168772760079D590 /* conf.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1215, 4212}}";
-			sepNavSelRange = "{1254, 20}";
-			sepNavVisRange = "{5431, 404}";
+			sepNavIntBoundsRect = "{{0, 0}, {877, 4251}}";
+			sepNavSelRange = "{2616, 0}";
+			sepNavVisRange = "{881, 339}";
 		};
 	};
 	0796AC5E168772760079D590 /* deadbeef.h */ = {
@@ -6588,16 +7089,16 @@
 	};
 	0796AC77168772760079D590 /* sj_to_unicode.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1215, 89466}}";
+			sepNavIntBoundsRect = "{{0, 0}, {877, 89466}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 335}";
+			sepNavVisRange = "{0, 375}";
 		};
 	};
 	0796AC78168772760079D590 /* streamer.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1215, 30472}}";
-			sepNavSelRange = "{22695, 0}";
-			sepNavVisRange = "{22454, 493}";
+			sepNavIntBoundsRect = "{{0, 0}, {877, 33709}}";
+			sepNavSelRange = "{22739, 0}";
+			sepNavVisRange = "{22563, 471}";
 			sepNavWindowFrame = "{{15, 0}, {952, 778}}";
 		};
 	};
@@ -11360,6 +11861,12 @@
 		vrLoc = 20834;
 	};
 	07A3835616A9D427007D5551 /* DBFileImportPanel.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBFileImportPanel.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/views/DBFileImportPanel.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 403}}";
 			sepNavSelRange = "{621, 0}";
@@ -11367,6 +11874,12 @@
 		};
 	};
 	07A3835716A9D427007D5551 /* DBFileImportPanel.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBFileImportPanel.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/views/DBFileImportPanel.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 442}}";
 			sepNavSelRange = "{416, 0}";
@@ -11382,14 +11895,6 @@
 		rType = 0;
 		vrLen = 515;
 		vrLoc = 4919;
-	};
-	07A92AF017E7C69D007BE50F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "../../config.h: No such file or directory";
-		fRef = 07881ED91689C58D0066142D /* bswap.h */;
-		rLen = 1;
-		rLoc = 243;
-		rType = 1;
 	};
 	07A92AF117E7C69D007BE50F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -11419,14 +11924,26 @@
 		vrLoc = 2619;
 	};
 	07B889C717666780006027B4 /* DBTrackPropertiesPanelController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DBTrackPropertiesPanelController.h;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBTrackPropertiesPanelController.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {877, 507}}";
+			sepNavIntBoundsRect = "{{0, 0}, {877, 546}}";
 			sepNavSelRange = "{453, 13}";
-			sepNavVisRange = "{185, 729}";
+			sepNavVisRange = "{211, 497}";
 			sepNavWindowFrame = "{{15, 0}, {952, 778}}";
 		};
 	};
 	07B889C817666780006027B4 /* DBTrackPropertiesPanelController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DBTrackPropertiesPanelController.m;
+		path = "/Users/carlos/Workspace/deadbeef-repo/macosx/DBTrackPropertiesPanelController.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 1092}}";
 			sepNavSelRange = "{1874, 0}";
@@ -12140,7 +12657,7 @@
 		activeExecutable = 07F5B4C516876FAC00C5DE1C /* deadbeef */;
 		activeTarget = 8D1107260486CEB800E47090 /* deadbeef */;
 		addToTargets = (
-			8D1107260486CEB800E47090 /* deadbeef */,
+			0702983617E9113200710234 /* coreaudio */,
 		);
 		breakpoints = (
 			078478CB16EB5B4300512E95 /* junklib.c:452 */,
@@ -12232,10 +12749,37 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 401066388;
-			PBXWorkspaceStateSaveDate = 401066388;
+			PBXPerProjectTemplateStateSaveDate = 401140442;
+			PBXWorkspaceStateSaveDate = 401140442;
 		};
 		perUserProjectItems = {
+			0702977B17E8EBF200710234 /* PBXBookmark */ = 0702977B17E8EBF200710234 /* PBXBookmark */;
+			0702977C17E8EBF200710234 /* PBXTextBookmark */ = 0702977C17E8EBF200710234 /* PBXTextBookmark */;
+			0702978217E8EC2400710234 /* PBXTextBookmark */ = 0702978217E8EC2400710234 /* PBXTextBookmark */;
+			0702978717E8EC9200710234 /* PBXTextBookmark */ = 0702978717E8EC9200710234 /* PBXTextBookmark */;
+			0702979617E8EE5A00710234 /* PBXTextBookmark */ = 0702979617E8EE5A00710234 /* PBXTextBookmark */;
+			0702979717E8EE5A00710234 /* PBXTextBookmark */ = 0702979717E8EE5A00710234 /* PBXTextBookmark */;
+			0702979817E8EE5A00710234 /* PBXTextBookmark */ = 0702979817E8EE5A00710234 /* PBXTextBookmark */;
+			0702979917E8EE5A00710234 /* PBXTextBookmark */ = 0702979917E8EE5A00710234 /* PBXTextBookmark */;
+			070297A417E9012000710234 /* PBXTextBookmark */ = 070297A417E9012000710234 /* PBXTextBookmark */;
+			070297AA17E9015200710234 /* PBXTextBookmark */ = 070297AA17E9015200710234 /* PBXTextBookmark */;
+			070297AC17E9057800710234 /* PBXTextBookmark */ = 070297AC17E9057800710234 /* PBXTextBookmark */;
+			070297AD17E9057800710234 /* PBXTextBookmark */ = 070297AD17E9057800710234 /* PBXTextBookmark */;
+			070297AE17E9057800710234 /* PBXTextBookmark */ = 070297AE17E9057800710234 /* PBXTextBookmark */;
+			070297AF17E9057800710234 /* PBXTextBookmark */ = 070297AF17E9057800710234 /* PBXTextBookmark */;
+			070297BA17E905C300710234 /* PBXTextBookmark */ = 070297BA17E905C300710234 /* PBXTextBookmark */;
+			0702982D17E90BE400710234 /* PBXTextBookmark */ = 0702982D17E90BE400710234 /* PBXTextBookmark */;
+			0702982E17E90BE400710234 /* XCBuildMessageTextBookmark */ = 0702982E17E90BE400710234 /* XCBuildMessageTextBookmark */;
+			0702982F17E90BE400710234 /* PBXTextBookmark */ = 0702982F17E90BE400710234 /* PBXTextBookmark */;
+			0702983217E90C6600710234 /* PBXTextBookmark */ = 0702983217E90C6600710234 /* PBXTextBookmark */;
+			0702983317E90C6600710234 /* XCBuildMessageTextBookmark */ = 0702983317E90C6600710234 /* XCBuildMessageTextBookmark */;
+			0702983417E90C6600710234 /* PBXTextBookmark */ = 0702983417E90C6600710234 /* PBXTextBookmark */;
+			0702984B17E9117600710234 /* PBXTextBookmark */ = 0702984B17E9117600710234 /* PBXTextBookmark */;
+			0702994117E9142D00710234 /* PBXTextBookmark */ = 0702994117E9142D00710234 /* PBXTextBookmark */;
+			0702994217E9142D00710234 /* PBXTextBookmark */ = 0702994217E9142D00710234 /* PBXTextBookmark */;
+			0702996117E914B400710234 /* PBXTextBookmark */ = 0702996117E914B400710234 /* PBXTextBookmark */;
+			0702996217E914B400710234 /* PBXTextBookmark */ = 0702996217E914B400710234 /* PBXTextBookmark */;
+			0702996317E914B400710234 /* PBXTextBookmark */ = 0702996317E914B400710234 /* PBXTextBookmark */;
 			070F8D74169F661D0013349E = 070F8D74169F661D0013349E /* PBXTextBookmark */;
 			070F8D75169F661D0013349E = 070F8D75169F661D0013349E /* PBXTextBookmark */;
 			070F8D77169F661D0013349E = 070F8D77169F661D0013349E /* PBXTextBookmark */;
@@ -12251,7 +12795,6 @@
 			071A187F1789953E001E8373 = 071A187F1789953E001E8373 /* PBXTextBookmark */;
 			071A18801789953E001E8373 = 071A18801789953E001E8373 /* PBXTextBookmark */;
 			071A18B51789A2E6001E8373 = 071A18B51789A2E6001E8373 /* PBXTextBookmark */;
-			075C305017E7C9BF0074699C /* PBXTextBookmark */ = 075C305017E7C9BF0074699C /* PBXTextBookmark */;
 			075CB37917D3CD63000165CE = 075CB37917D3CD63000165CE /* PBXTextBookmark */;
 			075CB37A17D3CD63000165CE = 075CB37A17D3CD63000165CE /* PBXTextBookmark */;
 			075CB38617D3CDED000165CE = 075CB38617D3CDED000165CE /* PBXTextBookmark */;
@@ -12888,7 +13431,6 @@
 			079AF88317BAA77C00BDCBC4 = 079AF88317BAA77C00BDCBC4 /* PBXTextBookmark */;
 			079AF88B17BAA7F300BDCBC4 = 079AF88B17BAA7F300BDCBC4 /* PBXTextBookmark */;
 			07A92AEF17E7C69D007BE50F = 07A92AEF17E7C69D007BE50F /* PBXTextBookmark */;
-			07A92AF017E7C69D007BE50F = 07A92AF017E7C69D007BE50F /* PBXTextBookmark */;
 			07A92AF117E7C69D007BE50F = 07A92AF117E7C69D007BE50F /* PBXTextBookmark */;
 			07B889B8176608C3006027B4 = 07B889B8176608C3006027B4 /* PBXTextBookmark */;
 			07B889D217667FE5006027B4 = 07B889D217667FE5006027B4 /* PBXTextBookmark */;
