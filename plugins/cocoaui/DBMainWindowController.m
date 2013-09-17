@@ -38,11 +38,12 @@
 	[volumeSlider setMinValue: (double) [DBAppDelegate minVolumeDB] ];
 	[volumeSlider setFloatValue: [DBAppDelegate volumeDB] ];
 	
+	shouldUpdate = YES;
 	
 	// global update timer
-	windowUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.3
+	windowUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.3 
 														  target: self
-                                                       selector: @selector(updateSeekBar)
+														selector: @selector(updateWindow)
 														userInfo:nil
 														 repeats:YES];
 	
@@ -88,52 +89,48 @@
 	
 	[currentSelectedOrderMenuItem setState: NSOnState];
 	[currentSelectedLoopMenuItem setState: NSOnState];
-    
-
-    [self updateStatusTextField];
-    
-    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
-    
-    [notificationCenter addObserver: self
-                           selector: @selector(updateButtons)
-                               name: @"DB_EventPaused"
-                             object: nil];
-
-    [notificationCenter addObserver: self
-                           selector: @selector(updateButtons)
-                               name: @"DB_EventSongChanged"
-                             object: nil];
-    
-    [notificationCenter addObserver:self
-                           selector:@selector(updateVolumeSlider)
-                               name:@"DB_EventVolumeChanged"
-                             object:nil];
-    
-    [notificationCenter addObserver: self
-                           selector: @selector(updateStatusTextField)
-                               name: @"DB_EventPlaylistSwitched"
-                             object: nil];
-    
-    [notificationCenter addObserver: self
-                           selector: @selector(updateStatusTextField)
-                               name: @"DB_EventPlaylistChanged"
-                             object: nil];
-    
+	
 }
 
-- (void) updateSeekBar  {
+- (void)windowDidDeminiaturize:(NSNotification *)notification {
+	shouldUpdate = YES;
+}
+
+- (void)windowDidMiniaturize:(NSNotification *)notification {
+	shouldUpdate = NO;
+}
+
+
+- (void) updateWindow {
 	
-	float duration = [DBAppDelegate playingItemDuration];
-	if (duration < 0) {
-		[timeSlider setFloatValue:[timeSlider minValue]];
-		return;
+	if (shouldUpdate)
+	{
+		[self updateSeekBar];
+		[self updateButtons];
+		// reload the status column (playing/loading/stopped) 
+//		[playlistTable reloadDataForRowIndexes:[NSIndexSet indexSetWithIndexesInRange: NSMakeRange(0, [playlistTable numberOfRows]) ] columnIndexes: [NSIndexSet indexSetWithIndex: 0]];
+		[self updateStatusColumn];
 	}
 	
+}
+
+
+- (void) updateSeekBar {
+	
+	DB_playItem_t *trk = deadbeef->streamer_get_playing_track ();
+	if (!trk || deadbeef->pl_get_item_duration (trk) < 0) {
+		[timeSlider setFloatValue:[timeSlider minValue]];
+		if(trk)
+			pl_item_unref(trk);
+		return;
+	}
+		
+	float duration = pl_get_item_duration(trk);
 	float pos = 0;
 	int minpos = 0;
 	int secpos = 0;
 	if (duration > 0) {
-		pos = [DBAppDelegate playingItemPosition];
+		pos = streamer_get_playpos();
 		minpos = pos / 60;
 		secpos = pos - minpos * 60;
 		pos = pos / duration;
@@ -144,14 +141,16 @@
 	[timeSlider setFloatValue: pos];	
 	[timeSlider setToolTip: [NSString stringWithFormat:@"%d:%02d", minpos, secpos] ]; 
 		
+	pl_item_unref(trk);
+		
 }
 
 
 - (void) updateButtons {
+
+	DB_output_t * output = plug_get_output();
 	
-	int state = [DBAppDelegate outputState];
-	
-	if (state == OUTPUT_STATE_STOPPED || state == OUTPUT_STATE_PAUSED) {
+	if (output-> state() == OUTPUT_STATE_STOPPED || output->state() == OUTPUT_STATE_PAUSED) {
 		[btnTogglePlay setImage: playImage];
 		[btnTogglePlay setAlternateImage: playAlternateImage];	
 	} else {
@@ -160,11 +159,28 @@
 	}
 }
 
-- (void) updateStatusTextField
-{
-	[statusTextField setStringValue: [DBAppDelegate totalPlaytimeAndSongCount] ];
-}
+// updates the status indicator column of the playlist widget (playing/loading/stopped)
+- (void) updateStatusColumn {
+	
+	[playlistTable setNeedsDisplayInRect:currentStatusCell];
+		
+	playItem_t * streamingTrack = streamer_get_streaming_track();
+	if (streamingTrack <= 0) {
+		return;
+	}
+	
+	NSInteger rowOfTrack = pl_get_idx_of(streamingTrack);
+	NSRect cellRect = [playlistTable frameOfCellAtColumn:0 row: rowOfTrack];
 
+	if(!NSContainsRect(currentStatusCell, cellRect)) {
+		oldStatusCell = currentStatusCell;
+		currentStatusCell = cellRect;
+	}
+
+	[playlistTable setNeedsDisplayInRect:currentStatusCell];
+	[playlistTable setNeedsDisplayInRect:oldStatusCell];
+
+}
 
 - (IBAction) seekBarAction: (id)sender {
 
@@ -182,11 +198,13 @@
             return;
     }
 	
-	float duration = [DBAppDelegate playingItemDuration];
-	if (duration > 0) {
+	DB_playItem_t *trk = deadbeef->streamer_get_playing_track ();
+	if (trk) {
 		float range = [sender maxValue];
-		float time = (duration * value) / range;
-		[DBAppDelegate seekToPosition: time * 1000];
+		float time = (pl_get_item_duration(trk) * value) / range;
+		
+		messagepump_push (DB_EV_SEEK, 0, time * 1000, 0);
+        pl_item_unref (trk);
 	}
 	
 }
@@ -197,11 +215,6 @@
 	[DBAppDelegate setVolumeDB:volume];
 }
 
-
-- (void) updateVolumeSlider {
-    
-    [volumeSlider setFloatValue: [DBAppDelegate volumeDB] ];
-}
 
 // playback commands
 
@@ -236,7 +249,8 @@
 
 - (IBAction) orderLinear:  sender {
 
-	[DBAppDelegate setIntConfiguration: @"playback.order" value:PLAYBACK_ORDER_LINEAR];
+	conf_set_int ("playback.order", PLAYBACK_ORDER_LINEAR);
+    messagepump_push (DB_EV_CONFIGCHANGED, 0, 0, 0);
 	
 	[self orderMenuItemCheck: sender];
 
@@ -244,7 +258,8 @@
 
 - (IBAction) orderRandom:  sender {
 
-	[DBAppDelegate setIntConfiguration: @"playback.order" value:PLAYBACK_ORDER_RANDOM];
+	conf_set_int ("playback.order", PLAYBACK_ORDER_RANDOM);
+    messagepump_push (DB_EV_CONFIGCHANGED, 0, 0, 0);
 	
 	[self orderMenuItemCheck: sender];
 	
@@ -252,14 +267,16 @@
 
 - (IBAction) orderShuffleTracks: sender {
 
-	[DBAppDelegate setIntConfiguration: @"playback.order" value:PLAYBACK_ORDER_SHUFFLE_TRACKS];	
+	conf_set_int ("playback.order", PLAYBACK_ORDER_SHUFFLE_TRACKS);
+    messagepump_push (DB_EV_CONFIGCHANGED, 0, 0, 0);
 	
 	[self orderMenuItemCheck: sender];
 
 }
 - (IBAction) orderShuffleAlbum: sender {
 	
-	[DBAppDelegate setIntConfiguration: @"playback.order" value:PLAYBACK_ORDER_SHUFFLE_ALBUMS];	
+    conf_set_int ("playback.order", PLAYBACK_ORDER_SHUFFLE_ALBUMS);
+    messagepump_push (DB_EV_CONFIGCHANGED, 0, 0, 0);	
 	
 	[self orderMenuItemCheck: sender];
 }
@@ -278,9 +295,8 @@
 - (IBAction) openFiles : sender {
 
     if ([self doFileImport:YES]) {
-// TODO
-//		DBPlayListController * controller = (DBPlayListController *) [playlistTable delegate];
-//		[controller playSelectedItem: sender];
+		DBPlayListController * controller = (DBPlayListController *) [playlistTable delegate];
+		[controller playSelectedItem: sender];
 	}
 }
 
@@ -292,16 +308,16 @@
 
 -(IBAction) openStream: sender {
 
-    DBTextInputPanelController * controller = [DBTextInputPanelController initPanelWithTitle:NSLocalizedString(@"Open Stream...", "Open stream")];
-    
+	DBTextInputPanelController * controller = [[DBTextInputPanelController alloc] initWithWindowNibName:@"TextInputPanel" ];
+	[controller setPanelTitle: NSLocalizedString(@"Open Stream...", "Panel title")];
+	
 	if ([controller runModal] == NSOKButton)
 	{
-		if (![DBAppDelegate addPathToPlaylistAtEnd: [controller textInput] ])
-		{
-        }
+		if ([DBAppDelegate addPathToPlaylistAtEnd: [controller textInput] ])
+			[playlistTable reloadData];
+		else
+		{}
 	}
-    
-    [controller release];
 }
 
 // opens a file import dialog and adds the selected
@@ -321,58 +337,15 @@
     if ( [openPanel runModal] == NSOKButton )
     {
 		if(clearPlaylist)
-			[DBAppDelegate clearPlayList];
+			pl_clear();
 		
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel ];
+		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel  mainList: playlistTable  ];
+		[playlistTable reloadData];
 		return YES;
     }
 	
 	return NO;
-}
-
-
-// playlist
-
-
-- (IBAction) newPlaylist: (id) sender {
-    
-    [DBAppDelegate newPlaylist];
-    
-}
-
-- (IBAction) loadPlaylist: (id) sender {
-
-    NSOpenPanel * openPanel = [NSOpenPanel openPanel];
-    NSURL * currentPath = [NSURL URLWithString: [DBAppDelegate stringConfiguration:@"filechooser.playlist.lastdir" str:@""] ];
-    
-    [openPanel setAllowedFileTypes: [DBAppDelegate supportedSavePlaylistExtensions] ];
-    [openPanel setDirectoryURL:currentPath];
-    
-    if ([openPanel runModal] == NSOKButton)
-    {
-        [DBAppDelegate loadPlaylist: [openPanel URL] ];
-        
-    }
-    
-
-    
-}
-
-- (IBAction) savePlaylist: (id) sender {
-    
-    NSSavePanel * savePanel = [NSSavePanel savePanel];
-    NSURL * currentPath = [NSURL URLWithString: [DBAppDelegate stringConfiguration:@"filechooser.playlist.lastdir" str:@""] ];
-    
-    [savePanel setAllowedFileTypes: [DBAppDelegate supportedSavePlaylistExtensions] ];
-    [savePanel setDirectoryURL:currentPath];
-    [savePanel setCanSelectHiddenExtension: YES];
-    
-    if ([savePanel runModal] == NSOKButton)
-    {
-        [DBAppDelegate saveCurrentPlaylist: [savePanel URL] ];
-    }
-    
 }
 
 

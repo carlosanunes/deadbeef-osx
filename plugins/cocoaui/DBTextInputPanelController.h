@@ -17,8 +17,6 @@
 	IBOutlet id textInput;
 }
 
-+ (DBTextInputPanelController *) initPanelWithTitle: (NSString *) title;
-
 - (void) setPanelTitle : (NSString *) title;
 
 - (NSInteger) runModal;

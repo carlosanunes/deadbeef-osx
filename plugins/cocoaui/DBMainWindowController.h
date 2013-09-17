@@ -22,18 +22,24 @@
 #import "DBPlayListController.h"
 #import "DBTextInputPanelController.h"
 
-
 @interface DBMainWindowController : NSObject <NSWindowDelegate> {
 		
 	IBOutlet id timeSlider;
 	IBOutlet id btnTogglePlay;
 
 	IBOutlet NSSlider * volumeSlider;
+	IBOutlet DBTableView * playlistTable;
 	IBOutlet DBFileImportPanel *fileImportPanel;
-    
-    // status bar label
-    IBOutlet NSTextField * statusTextField;
-    
+	
+	NSImage * playImage;
+	NSImage * playAlternateImage;
+	NSImage * pauseImage;
+	NSImage * pauseAlternateImage;
+	
+	NSTimer * windowUpdateTimer;
+	
+	BOOL shouldUpdate;
+	
 	// order menu items
 	IBOutlet NSMenuItem * orderLinearMenuItem;
 	IBOutlet NSMenuItem * orderShuffleTracksMenuItem;
@@ -47,16 +53,9 @@
 	
 	NSMenuItem * currentSelectedOrderMenuItem;
 	NSMenuItem * currentSelectedLoopMenuItem;
-    
-    @private
-    
-	NSImage * playImage;
-	NSImage * playAlternateImage;
-	NSImage * pauseImage;
-	NSImage * pauseAlternateImage;
 	
-	NSTimer * windowUpdateTimer;
-	   
+	NSRect currentStatusCell;
+	NSRect oldStatusCell;
 }
 
 
@@ -66,10 +65,9 @@
 // update functions
 
 - (void) updateSeekBar;
-- (void) updateVolumeSlider;
+- (void) updateWindow;
 - (void) updateButtons;
-- (void) updateStatusTextField;
-
+- (void) updateStatusColumn;
 
 // sliders
 
@@ -97,12 +95,5 @@
 - (IBAction) openFiles: (id)sender;
 - (IBAction) addMusic: (id)sender;
 - (IBAction) openStream: (id)sender;
-
-// playlist management
-
-- (IBAction) newPlaylist: (id) sender;
-- (IBAction) loadPlaylist: (id) sender;
-- (IBAction) savePlaylist: (id) sender;
-
 
 @end

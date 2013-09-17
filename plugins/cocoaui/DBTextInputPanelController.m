@@ -11,15 +11,6 @@
 
 @implementation DBTextInputPanelController
 
-+ (DBTextInputPanelController *) initPanelWithTitle: (NSString *) title {
-    
-    DBTextInputPanelController * controller = [[DBTextInputPanelController alloc] initWithWindowNibName:@"TextInputPanel" ];
-	[controller setPanelTitle: NSLocalizedString(title, "Panel title")];
-    
-    return controller;
-}
-
-
 - (void) setPanelTitle : (NSString *) title {
 
 	[[self window] setTitle: title];

@@ -21,16 +21,7 @@
 #import "views/DBTableView.h"
 #import "views/DBFileImportPanel.h"
 #import "DBPlayListController.h"
-#import "MASPreferencesWindowController.h"
-#import "DBPreferencesViewControllerSound.h"
-#import "DBPreferencesViewControllerPlugins.h"
-#import "DBPreferencesViewControllerNetwork.h"
-#import "DBPreferencesViewControllerPlayback.h"
-
-#define PLUGIN_DATA_NAME_POS 0
-#define PLUGIN_DATA_COPYRIGHT_POS 1
-#define PLUGIN_DATA_WEBSITE_POS 2
-#define PLUGIN_DATA_WEBSITE_VERSION 3
+#import "DBPreferencesPanelController.h"
 
 @class DBFileImportPanelController; // needed for the addPathsToPlaylistAt method
 
@@ -39,9 +30,7 @@
 	NSWindow *mainWindow;
 	DBTableView *mainPlaylist;
 	DBFileImportPanel *fileImportPanel;
-    
-    MASPreferencesWindowController *preferencesWindowController;
-    
+
 }
 
 - (IBAction) openPreferences: (id) sender;
@@ -64,7 +53,6 @@
 + (NSMutableDictionary *) knownMetadataKeys;
 
 + (NSArray *) supportedFormatsExtensions;
-+ (NSArray *) supportedSavePlaylistExtensions;
 
 + (NSString *) totalPlaytimeAndSongCount;
 
@@ -76,56 +64,18 @@
 + (float) volumeDB;
 + (float) minVolumeDB;
 
-+ (NSInteger) currentPlaylistItemCount;
-
 + (int) intConfiguration : (NSString *) key num:(NSInteger) def;
+
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def;
 
-+ (NSString *) stringConfiguration : (NSString *) key str:(NSString *) def;
-+ (void) setStringConfiguration : (NSString *) key value:(NSString *) def;
-
-+ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel;
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel mainList : (DBTableView *) playlist;
 
 + (BOOL) addPathToPlaylistAtEnd : (NSString *) path;
 
 + (NSMutableDictionary *) keyList : (NSInteger) propertiesNumber;
 
-+ (void) setPlaylistItemsSelected : (NSIndexSet *) indexSet;
++ (void) setItemSelected : (NSInteger) index value:(BOOL) def;
 
-+ (void) setPlaylistItemSelected : (NSInteger) index value:(BOOL) def;
-
-+ (void) setCurrentPlaylist : (NSInteger) index;
-
-+ (float) playingItemDuration;
-
-+ (float) playingItemPosition;
-
-+ (int) outputState;
-
-+ (void) seekToPosition : (float) pos;
-
-+ (void) updateSelectedTracksMetadata:(NSMutableDictionary *)metadata;
-
-+ (NSDictionary *) pluginList;
-
-+ (NSArray *) outputPluginList;
-
-+ (NSArray *) replaygainModeList;
-
-+ (NSArray *) proxyTypeList;
-
-+ (NSDictionary *) availablePlaylists;
-
-+ (NSInteger) currentPlaylistIndex;
-
-+ (NSInteger) streamingTrackIndex;
-
-+ (BOOL) saveCurrentPlaylist: (NSURL *) fname;
-
-+ (void) loadPlaylist: (NSURL *) url;
-
-+ (BOOL) newPlaylist;
-
-+ (BOOL) streamerOkToRead;
++ (void) updateTrackMetadata : (NSMutableDictionary *) metadata;
 
 @end

@@ -36,6 +36,7 @@
 	[playlistTable setDoubleAction: @selector(playSelectedItem:)]; // row double click
 	[playlistTable setEnterAction: @selector(playSelectedItem:)]; // row + enter
 	[playlistTable setDeleteAction: @selector(deleteSelectedItems:)]; // delete
+	[playlistTable setReloadAction: @selector(updatePlaylistInfo:)]; // on data reload
 
 	[playlistTable registerForDraggedTypes: [NSArray arrayWithObjects: DB_TABLE_VIEW_TYPE, (NSString*)kUTTypeFileURL, nil]];
 	
@@ -88,40 +89,9 @@
         }
     }
 */
-    
-    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+	
+	[self updatePlaylistInfo: self];
 
-    [notificationCenter addObserver: self
-                           selector: @selector(reloadPlaylist)
-                               name: @"DB_EventPlaylistSwitched"
-                             object: nil];
-
-    [notificationCenter addObserver: self
-                           selector: @selector(reloadPlaylist)
-                               name: @"DB_EventPlaylistChanged"
-                             object: nil];
-
-    [notificationCenter addObserver: self
-                           selector: @selector(updateStatusColumn)
-                               name: @"DB_EventPaused"
-                             object: nil];
-
-    [notificationCenter addObserver: self
-                           selector: @selector(updateStatusColumn)
-                               name: @"DB_EventSongChanged"
-                             object: nil];
-    
-    [notificationCenter addObserver: self
-                           selector: @selector(updateStatusColumn)
-                               name: @"DB_EventTrackInfoChanged"
-                             object: nil];
-
-
-}
-
-- (void) reloadPlaylist  {
-    
-	[playlistTable reloadData];
 }
 
 
@@ -159,8 +129,9 @@
 	// check for file paths
 	if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
-		BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:files row: row progressPanel: fileImportPanel ];
+		BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:files row: row progressPanel: fileImportPanel  mainList: playlistTable ];
 
+		[playlistTable reloadData];
 		return inserted;
     }
 	
@@ -171,7 +142,8 @@
 	
     NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
 //    NSInteger dragRow = [rowIndexes firstIndex];
-	[DBAppDelegate movePlayListItems:rowIndexes row:row];
+	[DBAppDelegate movePlayListItems:rowIndexes row:row]; 
+	[playlistTable reloadData];
 	
 	return YES;
 }
@@ -183,12 +155,12 @@
 	
 	// deselect old
 	[indexesToDeselect enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-		[DBAppDelegate setPlaylistItemSelected:idx value:NO];
+		[DBAppDelegate setItemSelected:idx value:NO];
 	}];
 	
 	// select new
 	[proposedSelectionIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-		[DBAppDelegate setPlaylistItemSelected:idx value:YES];
+		[DBAppDelegate setItemSelected:idx value:YES];
 	}];
 	
 	
@@ -199,8 +171,8 @@
 // datasource methods //
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-	    
-	return [DBAppDelegate currentPlaylistItemCount];
+	
+	return (NSInteger) pl_getcount(PL_MAIN);
 }
 
 
@@ -208,15 +180,27 @@
 			objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			row:(NSInteger)rowIndex {
 	
+	DB_playItem_t * it = pl_get_first(PL_MAIN);
+	int index = 0;
+    while (it) {
+		if (rowIndex == index)
+			break;
+        DB_playItem_t *next = pl_get_next (it, PL_MAIN);
+        pl_item_unref (it);
+        it = next;
+		++index;
+    }
+	
 	const char * meta = NULL;
 	NSString * ident = [aTableColumn identifier];
-
+	
 	if ( [ident isEqualToString:@"playing"] )
 	{
-		if ([DBAppDelegate streamingTrackIndex] == rowIndex) {
+		DB_playItem_t * playing_track = streamer_get_playing_track();
+		if (playing_track == it) {
 			
-			int paused = [DBAppDelegate outputState] == OUTPUT_STATE_PAUSED;
-			BOOL buffering = ! [DBAppDelegate streamerOkToRead];
+			int paused = plug_get_output()->state () == OUTPUT_STATE_PAUSED;
+			int buffering = !streamer_ok_to_read (-1);
 			NSImage * image = NULL;
 			//TODO
 			if (paused) {
@@ -228,23 +212,20 @@
 			} else {
 				image = [NSImage imageNamed:@"NSRightFacingTriangleTemplate"];			
 			}
-					
+			
+			pl_item_unref(it);
+			pl_item_unref(playing_track);
+			
 			return image;
 		}
 	}
 	
-    ddb_playlist_t *plt = deadbeef->plt_get_curr ();
-    ddb_playItem_t *it = deadbeef->plt_get_item_for_idx (plt, (int) rowIndex, PL_MAIN);
-
-    if (it == NULL)
-        return NULL;
-    
-	deadbeef->pl_lock();
+	pl_lock();
 	if ( [ident isEqualToString: @"title"] )
 	{
-		meta = deadbeef->pl_find_meta_raw(it, "title");
+		meta = pl_find_meta_raw(it, "title");
 		if (meta == NULL) {
-			const char *f = deadbeef->pl_find_meta_raw (it, ":URI");
+			const char *f = pl_find_meta_raw (it, ":URI");
 			meta = strrchr (f, '/');
 			if (meta) {
 				meta++;
@@ -255,71 +236,58 @@
 		}
 	}
 	else if ( [ident isEqualToString: @"duration"] )
-		meta = deadbeef->pl_find_meta_raw(it, ":DURATION");
+		meta = pl_find_meta_raw(it, ":DURATION");
 	else if ( [ident isEqualToString: @"track"] )
-		meta = deadbeef->pl_find_meta_raw(it, "track");
+		meta = pl_find_meta_raw(it, "track");
 		if (meta && meta[0] == 0) {
 			meta = NULL;
 		}	
 	else if ( [ident isEqualToString: @"artist"] )
-		meta = deadbeef->pl_find_meta_raw(it, "artist");
+		meta = pl_find_meta_raw(it, "artist");
 	else if ( [ident isEqualToString: @"album"] )
-		meta = deadbeef->pl_find_meta_raw(it, "album");
+		meta = pl_find_meta_raw(it, "album");
 	
-	deadbeef->pl_unlock();
-    
-    if (it)
-        deadbeef->pl_item_unref(it);
-	if (plt)
-        deadbeef->plt_unref(plt);
-	
+	pl_unlock();
+	pl_item_unref(it);
+		
 	if (meta == NULL)
 		return NULL;
-    
 	return [NSString stringWithUTF8String: meta];
 }
-
-// selection change
-
-- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
-
-    [DBAppDelegate setPlaylistItemsSelected: [playlistTable selectedRowIndexes] ];
-    
-}
-
 
 
 - (IBAction) playSelectedItem: sender
 {
+	DB_output_t *output = plug_get_output();
 	NSInteger rowIndex = [playlistTable selectedRow];
 	[DBAppDelegate setCursor:rowIndex];
 		
-    if ([DBAppDelegate outputState] == OUTPUT_STATE_PAUSED) {
-        ddb_playlist_t *plt = deadbeef->plt_get_curr ();
-        int cur = deadbeef->plt_get_cursor (plt, PL_MAIN);
+    if (output->state () == OUTPUT_STATE_PAUSED) {
+        ddb_playlist_t *plt = plt_get_curr ();
+        int cur = plt_get_cursor (plt, PL_MAIN);
         if (cur != -1) {
-            ddb_playItem_t *it = deadbeef->plt_get_item_for_idx (plt, cur, PL_MAIN);
-            ddb_playItem_t *it_playing = deadbeef->streamer_get_playing_track ();
+            ddb_playItem_t *it = plt_get_item_for_idx (plt, cur, PL_MAIN);
+            ddb_playItem_t *it_playing = streamer_get_playing_track ();
             if (it) {
-                deadbeef->pl_item_unref (it);
+                pl_item_unref (it);
             }
             if (it_playing) {
-                deadbeef->pl_item_unref (it_playing);
+                pl_item_unref (it_playing);
             }
             if (it != it_playing) {
-                deadbeef->sendmessage (DB_EV_PLAY_NUM, 0, cur, 0);
+                messagepump_push (DB_EV_PLAY_NUM, 0, cur, 0);
             }
             else {
-                deadbeef->sendmessage (DB_EV_PLAY_CURRENT, 0, 0, 0);
+                messagepump_push (DB_EV_PLAY_CURRENT, 0, 0, 0);
             }
         }
         else {
-            deadbeef->sendmessage (DB_EV_PLAY_CURRENT, 0, 0, 0);
+            messagepump_push (DB_EV_PLAY_CURRENT, 0, 0, 0);
         }
-        deadbeef->plt_unref (plt);
+        plt_unref (plt);
     }
     else {
-        deadbeef->sendmessage (DB_EV_PLAY_CURRENT, 0, 0, 0);
+        messagepump_push (DB_EV_PLAY_CURRENT, 0, 0, 0);
     }
 }
 
@@ -327,24 +295,28 @@
 {
 	NSIndexSet * indexSet = [playlistTable selectedRowIndexes];
 	__block int i = 0;
-    [playlistTable deselectAll: self];
-    
-	deadbeef->pl_lock();
-	ddb_playlist_t * plt = deadbeef->plt_get_curr ();
+
+	pl_lock();
+	ddb_playlist_t * plt = plt_get_curr ();
 	[indexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-		deadbeef->plt_remove_item(plt, deadbeef->pl_get_for_idx (( (int) idx) - i) );
+		plt_remove_item(plt, pl_get_for_idx (( (int) idx) - i) );
 		++i;
 	}];
-	deadbeef->pl_save_all();	
-	deadbeef->pl_unlock();
+	pl_save_all();	
+	pl_unlock();
 
+	[playlistTable deselectAll: self];
+	[playlistTable reloadData];
 }
 
 - (IBAction) playlistClear: sender
 {
 
 	[DBAppDelegate clearPlayList];
+	
 	[playlistTable deselectAll: self];
+	[playlistTable reloadData];
+
 }
 
 - (IBAction) invertSelection: sender
@@ -357,29 +329,16 @@
 	
 }
 
-- (void) updateStatusColumn  {
-	
-	[playlistTable setNeedsDisplayInRect:currentStatusCell];
-    
-    NSInteger rowOfTrack = [DBAppDelegate streamingTrackIndex];
-    
-	NSRect cellRect = [playlistTable frameOfCellAtColumn:0 row: rowOfTrack];
-    
-	if(!NSContainsRect(currentStatusCell, cellRect)) {
-		oldStatusCell = currentStatusCell;
-		currentStatusCell = cellRect;
-	}
-    
-	[playlistTable setNeedsDisplayInRect:currentStatusCell];
-	[playlistTable setNeedsDisplayInRect:oldStatusCell];
-            
+- (IBAction) updatePlaylistInfo: sender
+{		
+	[playListInfoTable setStringValue: [DBAppDelegate totalPlaytimeAndSongCount] ];
 }
+
 
 - (IBAction) showTrackInfo: sender
 {
-    DBTrackInspectorPanelController * controller = [DBTrackInspectorPanelController sharedController];
-    [controller showWindow: self];
-
+	[[trackPropertiesPanel windowController] fillProperties];
+	[trackPropertiesPanel makeKeyAndOrderFront:self];
 }
 
 

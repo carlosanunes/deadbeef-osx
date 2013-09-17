@@ -21,23 +21,22 @@
 #import "DBAppDelegate.h"
 #import "views/DBTableView.h"
 #import "views/DBFileImportPanel.h"
-#import "DBTrackInspectorPanelController.h"
+#import "DBTrackPropertiesPanelController.h"
 
 
 @interface DBPlayListController : NSViewController <NSTableViewDelegate, NSTableViewDataSource> {
 	
+@private
 	IBOutlet DBTableView * playlistTable;
+	IBOutlet NSWindow * mainWindow;
+	IBOutlet id playListInfoTable;
 	IBOutlet DBFileImportPanel * fileImportPanel;
+	IBOutlet NSPanel * trackPropertiesPanel;
 	
-    @private
 	NSMutableDictionary * metadataTypes;
-    
-    NSRect currentStatusCell;
-	NSRect oldStatusCell;
 }
 
-- (void) reloadPlaylist;
-- (void) updateStatusColumn;
+- (IBAction) updatePlaylistInfo: sender;
 - (IBAction) playSelectedItem: sender;
 - (IBAction) deleteSelectedItems: sender;
 - (IBAction) playlistClear: sender;
