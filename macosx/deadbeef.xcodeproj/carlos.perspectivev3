@@ -269,13 +269,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>1C37FBAC04509CD000000102</string>
+								<string>0796ADCE16886D000079D590</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
-									<integer>8</integer>
+									<integer>37</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -312,7 +312,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>07F5B4D416876FEF00C5DE1C</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>coreaudio.c</string>
+								<string>asfheader.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,11 +320,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>07F5B4D516876FEF00C5DE1C</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>coreaudio.c</string>
+										<string>asfheader.c</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0702996317E914B400710234</string>
+										<string>070299BF17E917A700710234</string>
 										<key>history</key>
 										<array>
 											<string>0796AFE91688E7590079D590</string>
@@ -924,7 +924,6 @@
 											<string>07719F8D17B6A41E000C413B</string>
 											<string>079AF5B517BA84F100BDCBC4</string>
 											<string>079AF61117BA89F700BDCBC4</string>
-											<string>079AF61317BA89F700BDCBC4</string>
 											<string>079AF61417BA89F700BDCBC4</string>
 											<string>079AF61517BA89F700BDCBC4</string>
 											<string>079AF61617BA89F700BDCBC4</string>
@@ -1030,7 +1029,9 @@
 											<string>0702982D17E90BE400710234</string>
 											<string>0702983217E90C6600710234</string>
 											<string>0702996117E914B400710234</string>
-											<string>0702996217E914B400710234</string>
+											<string>070299BC17E917A700710234</string>
+											<string>070299BD17E917A700710234</string>
+											<string>070299BE17E917A700710234</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -1070,8 +1071,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {938, 400}}</string>
-										<key>RubberWindowFrame</key>
-										<string>-1 55 1276 723 0 0 1280 778 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -1126,6 +1125,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {938, 400}}</string>
+										<key>RubberWindowFrame</key>
+										<string>-1 55 1276 723 0 0 1280 778 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -1347,7 +1348,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>0702996417E914B400710234</string>
 		<string>070297A517E9012000710234</string>
 		<string>070297A617E9012000710234</string>
 		<string>/Users/carlos/Workspace/deadbeef-repo/macosx/deadbeef.xcodeproj</string>
