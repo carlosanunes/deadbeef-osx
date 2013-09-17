@@ -232,9 +232,9 @@
 	};
 	0702984D17E911A500710234 /* coreaudio.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {877, 4030}}";
+			sepNavIntBoundsRect = "{{0, 0}, {877, 4043}}";
 			sepNavSelRange = "{365, 0}";
-			sepNavVisRange = "{3, 663}";
+			sepNavVisRange = "{3, 812}";
 		};
 	};
 	0702994117E9142D00710234 /* PBXTextBookmark */ = {
@@ -286,6 +286,56 @@
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 3;
+	};
+	0702996717E916C200710234 /* wma */ = {
+		activeExec = 0;
+	};
+	0702998417E9171400710234 /* asfheader.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {877, 11414}}";
+			sepNavSelRange = "{1040, 26}";
+			sepNavVisRange = "{1465, 290}";
+		};
+	};
+	070299BC17E917A700710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0702984D17E911A500710234 /* coreaudio.c */;
+		name = "coreaudio.c: 10";
+		rLen = 0;
+		rLoc = 365;
+		rType = 0;
+		vrLen = 812;
+		vrLoc = 3;
+	};
+	070299BD17E917A700710234 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 0796ADB116879D590079D590 /* deadbeef-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/carlos/Workspace/deadbeef-repo/macosx/deadbeef-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	070299BE17E917A700710234 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "../../config.h: No such file or directory";
+		fRef = 0702998417E9171400710234 /* asfheader.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 24;
+		rType = 1;
+	};
+	070299BF17E917A700710234 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0702998417E9171400710234 /* asfheader.c */;
+		name = "asfheader.c: 25";
+		rLen = 26;
+		rLoc = 1040;
+		rType = 0;
+		vrLen = 290;
+		vrLoc = 1465;
 	};
 	070F8D74169F661D0013349E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -12657,7 +12707,7 @@
 		activeExecutable = 07F5B4C516876FAC00C5DE1C /* deadbeef */;
 		activeTarget = 8D1107260486CEB800E47090 /* deadbeef */;
 		addToTargets = (
-			0702983617E9113200710234 /* coreaudio */,
+			0702996717E916C200710234 /* wma */,
 		);
 		breakpoints = (
 			078478CB16EB5B4300512E95 /* junklib.c:452 */,
@@ -12780,6 +12830,10 @@
 			0702996117E914B400710234 /* PBXTextBookmark */ = 0702996117E914B400710234 /* PBXTextBookmark */;
 			0702996217E914B400710234 /* PBXTextBookmark */ = 0702996217E914B400710234 /* PBXTextBookmark */;
 			0702996317E914B400710234 /* PBXTextBookmark */ = 0702996317E914B400710234 /* PBXTextBookmark */;
+			070299BC17E917A700710234 /* PBXTextBookmark */ = 070299BC17E917A700710234 /* PBXTextBookmark */;
+			070299BD17E917A700710234 /* PlistBookmark */ = 070299BD17E917A700710234 /* PlistBookmark */;
+			070299BE17E917A700710234 /* XCBuildMessageTextBookmark */ = 070299BE17E917A700710234 /* XCBuildMessageTextBookmark */;
+			070299BF17E917A700710234 /* PBXTextBookmark */ = 070299BF17E917A700710234 /* PBXTextBookmark */;
 			070F8D74169F661D0013349E = 070F8D74169F661D0013349E /* PBXTextBookmark */;
 			070F8D75169F661D0013349E = 070F8D75169F661D0013349E /* PBXTextBookmark */;
 			070F8D77169F661D0013349E = 070F8D77169F661D0013349E /* PBXTextBookmark */;
