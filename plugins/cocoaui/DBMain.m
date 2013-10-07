@@ -317,6 +317,10 @@ main (int argc, char * argv[]) {
 	// call clean up on exit()
 	atexit(player_exit);
 	
+    for (int i = 0; i < argc; ++i)
+    {
+        trace("argv: %s", argv[i]);
+    }
     // Call cocoa ui (main loop)
     // this function never returns, instead it calls exit()
 	NSApplicationMain(argc, (const char**) argv);

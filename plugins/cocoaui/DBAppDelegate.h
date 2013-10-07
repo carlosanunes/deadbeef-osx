@@ -23,6 +23,8 @@
 #import "DBPlayListController.h"
 #import "DBPreferencesPanelController.h"
 
+
+
 @class DBFileImportPanelController; // needed for the addPathsToPlaylistAt method
 
 @interface DBAppDelegate : NSObject <NSApplicationDelegate> {
@@ -64,6 +66,8 @@
 + (float) volumeDB;
 + (float) minVolumeDB;
 
++ (NSInteger) mainPlayListCount;
+
 + (int) intConfiguration : (NSString *) key num:(NSInteger) def;
 
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def;
@@ -77,5 +81,14 @@
 + (void) setItemSelected : (NSInteger) index value:(BOOL) def;
 
 + (void) updateTrackMetadata : (NSMutableDictionary *) metadata;
+
++ (float) playingItemDuration;
+
++ (float) playingItemPosition;
+
++ (int) outputState;
+
++ (void) seekToPosition : (float) pos;
+
 
 @end
