@@ -117,20 +117,18 @@
 
 - (void) updateSeekBar {
 	
-	DB_playItem_t *trk = deadbeef->streamer_get_playing_track ();
-	if (!trk || deadbeef->pl_get_item_duration (trk) < 0) {
+		
+	float duration = [DBAppDelegate playingItemDuration];
+	if (duration < 0) {
 		[timeSlider setFloatValue:[timeSlider minValue]];
-		if(trk)
-			pl_item_unref(trk);
 		return;
 	}
-		
-	float duration = pl_get_item_duration(trk);
+	
 	float pos = 0;
 	int minpos = 0;
 	int secpos = 0;
 	if (duration > 0) {
-		pos = streamer_get_playpos();
+		pos = [DBAppDelegate playingItemPosition];
 		minpos = pos / 60;
 		secpos = pos - minpos * 60;
 		pos = pos / duration;
@@ -141,16 +139,14 @@
 	[timeSlider setFloatValue: pos];	
 	[timeSlider setToolTip: [NSString stringWithFormat:@"%d:%02d", minpos, secpos] ]; 
 		
-	pl_item_unref(trk);
-		
 }
 
 
 - (void) updateButtons {
-
-	DB_output_t * output = plug_get_output();
 	
-	if (output-> state() == OUTPUT_STATE_STOPPED || output->state() == OUTPUT_STATE_PAUSED) {
+	int state = [DBAppDelegate outputState];
+	
+	if (state == OUTPUT_STATE_STOPPED || state == OUTPUT_STATE_PAUSED) {
 		[btnTogglePlay setImage: playImage];
 		[btnTogglePlay setAlternateImage: playAlternateImage];	
 	} else {
@@ -164,12 +160,12 @@
 	
 	[playlistTable setNeedsDisplayInRect:currentStatusCell];
 		
-	playItem_t * streamingTrack = streamer_get_streaming_track();
+	playItem_t * streamingTrack = deadbeef->streamer_get_streaming_track();
 	if (streamingTrack <= 0) {
 		return;
 	}
 	
-	NSInteger rowOfTrack = pl_get_idx_of(streamingTrack);
+	NSInteger rowOfTrack = deadbeef->pl_get_idx_of(streamingTrack);
 	NSRect cellRect = [playlistTable frameOfCellAtColumn:0 row: rowOfTrack];
 
 	if(!NSContainsRect(currentStatusCell, cellRect)) {
@@ -198,13 +194,11 @@
             return;
     }
 	
-	DB_playItem_t *trk = deadbeef->streamer_get_playing_track ();
-	if (trk) {
+	float duration = [DBAppDelegate playingItemDuration];
+	if (duration > 0) {
 		float range = [sender maxValue];
-		float time = (pl_get_item_duration(trk) * value) / range;
-		
-		messagepump_push (DB_EV_SEEK, 0, time * 1000, 0);
-        pl_item_unref (trk);
+		float time = (duration * value) / range;
+		[DBAppDelegate seekToPosition: time * 1000];
 	}
 	
 }
@@ -249,8 +243,7 @@
 
 - (IBAction) orderLinear:  sender {
 
-	conf_set_int ("playback.order", PLAYBACK_ORDER_LINEAR);
-    messagepump_push (DB_EV_CONFIGCHANGED, 0, 0, 0);
+	[DBAppDelegate setIntConfiguration: @"playback.order" value:PLAYBACK_ORDER_LINEAR];
 	
 	[self orderMenuItemCheck: sender];
 
@@ -258,8 +251,7 @@
 
 - (IBAction) orderRandom:  sender {
 
-	conf_set_int ("playback.order", PLAYBACK_ORDER_RANDOM);
-    messagepump_push (DB_EV_CONFIGCHANGED, 0, 0, 0);
+	[DBAppDelegate setIntConfiguration: @"playback.order" value:PLAYBACK_ORDER_RANDOM];
 	
 	[self orderMenuItemCheck: sender];
 	
@@ -267,16 +259,14 @@
 
 - (IBAction) orderShuffleTracks: sender {
 
-	conf_set_int ("playback.order", PLAYBACK_ORDER_SHUFFLE_TRACKS);
-    messagepump_push (DB_EV_CONFIGCHANGED, 0, 0, 0);
+	[DBAppDelegate setIntConfiguration: @"playback.order" value:PLAYBACK_ORDER_SHUFFLE_TRACKS];	
 	
 	[self orderMenuItemCheck: sender];
 
 }
 - (IBAction) orderShuffleAlbum: sender {
 	
-    conf_set_int ("playback.order", PLAYBACK_ORDER_SHUFFLE_ALBUMS);
-    messagepump_push (DB_EV_CONFIGCHANGED, 0, 0, 0);	
+	[DBAppDelegate setIntConfiguration: @"playback.order" value:PLAYBACK_ORDER_SHUFFLE_ALBUMS];	
 	
 	[self orderMenuItemCheck: sender];
 }
@@ -337,7 +327,7 @@
     if ( [openPanel runModal] == NSOKButton )
     {
 		if(clearPlaylist)
-			pl_clear();
+			[DBAppDelegate clearPlayList];
 		
 		NSArray * files = [openPanel URLs];
 		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel  mainList: playlistTable  ];

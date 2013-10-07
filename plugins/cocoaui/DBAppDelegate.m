@@ -133,10 +133,8 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 
 - (BOOL) isPlaying {
-	
-	DB_output_t * output = plug_get_output();
-	
-	if (output-> state() == OUTPUT_STATE_PLAYING) 
+		
+	if ([DBAppDelegate outputState] == OUTPUT_STATE_PLAYING) 
 		return YES;
 	
 	return NO;
@@ -144,15 +142,15 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 - (NSString*) playingTrackName {
 	
-	pl_lock();
+	deadbeef->pl_lock();
 	
 	const char * meta = NULL;
-	DB_playItem_t * it = streamer_get_playing_track();
+	DB_playItem_t * it = deadbeef->streamer_get_playing_track();
 	
 	
-	meta = pl_find_meta_raw(it, "title");
+	meta = deadbeef->pl_find_meta_raw(it, "title");
 	if (meta == NULL) {
-		const char *f = pl_find_meta_raw (it, ":URI");
+		const char *f = deadbeef->pl_find_meta_raw (it, ":URI");
 		meta = strrchr (f, '/');
 		if (meta) {
 			meta++;
@@ -162,40 +160,39 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 		}
 	}
 	
-	pl_unlock();
-	pl_item_unref(it);
+	deadbeef->pl_unlock();
+	deadbeef->pl_item_unref(it);
 	
 	return [NSString stringWithUTF8String: meta];
 }
 
 - (IBAction) stopAction : sender {
 	
-    messagepump_push (DB_EV_STOP, 0, 0, 0);		
+    deadbeef->sendmessage (DB_EV_STOP, 0, 0, 0);		
 }
 
 
 - (IBAction) previousAction : sender {
 	
-    messagepump_push (DB_EV_PREV, 0, 0, 0);    
+    deadbeef->sendmessage (DB_EV_PREV, 0, 0, 0);    
 }
 
 - (IBAction) nextAction : sender {
 	
-    messagepump_push (DB_EV_NEXT, 0, 0, 0);
+    deadbeef->sendmessage (DB_EV_NEXT, 0, 0, 0);
 }
 
 
 - (IBAction) togglePlay: sender 
 {
-	DB_output_t * output = plug_get_output();
 	
-	if (output-> state() == OUTPUT_STATE_STOPPED) 
+	if ([DBAppDelegate outputState] == OUTPUT_STATE_STOPPED) 
 	{
-		messagepump_push(DB_EV_PLAY_CURRENT, 0, 0, 0);
+		deadbeef->sendmessage(DB_EV_PLAY_CURRENT, 0, 0, 0);
 		return;
 	}	
 	
-	messagepump_push (DB_EV_TOGGLE_PAUSE, 0, 0, 0);
+	deadbeef->sendmessage (DB_EV_TOGGLE_PAUSE, 0, 0, 0);
 	
 }
 
@@ -213,9 +210,9 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
  */
 + (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : panel mainList : playlist {
 	
-    ddb_playlist_t * plt = plt_get_curr ();
-    if ( pl_add_files_begin (plt) < 0) {
-        plt_unref (plt);
+    ddb_playlist_t * plt = deadbeef->plt_get_curr ();
+    if ( deadbeef->pl_add_files_begin (plt) < 0) {
+        deadbeef->plt_unref (plt);
         return NO;
     }
 	
@@ -232,9 +229,9 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 					   
 					   // if the provided row index is less than 0, the files will be added at the end of the current playlist
 					   if (rowIndex < 0)
-						   after = pl_get_last (PL_MAIN);
+						   after = deadbeef->pl_get_last (PL_MAIN);
 					   else
-						   after = pl_get_for_idx(rowIndex - 1);
+						   after = deadbeef->pl_get_for_idx(rowIndex - 1);
 					   
 					   [panel orderFront:self];
 					   
@@ -249,19 +246,19 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 						   path = [file cStringUsingEncoding:NSUTF8StringEncoding];
 						   
 						   if([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && isDir){
-							   inserted = plt_insert_dir (plt, after, path, &abort, ui_add_file_info_cb, panel);
+							   inserted = deadbeef->plt_insert_dir (plt, after, path, &abort, ui_add_file_info_cb, panel);
 						   } else {
-							   inserted = plt_insert_file (plt, after, path, &abort, ui_add_file_info_cb, panel);
+							   inserted = deadbeef->plt_insert_file (plt, after, path, &abort, ui_add_file_info_cb, panel);
 							   if (inserted)
 								   [[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:file]];
 						   }
 						   
 						   if (inserted) {
 							   if (after) {
-								   pl_item_unref (after);
+								   deadbeef->pl_item_unref (after);
 							   }
 							   after = inserted;
-							   pl_item_ref (after);
+							   deadbeef->pl_item_ref (after);
 						   }
 						   // if aborted exit loop
 						   if (abort)
@@ -271,10 +268,10 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 					   if (after)
 						   deadbeef->pl_item_unref (after);
 					   
-					   pl_add_files_end ();
-					   plt_unref (plt);
-					   pl_save_all ();
-					   conf_save ();
+					   deadbeef->pl_add_files_end ();
+					   deadbeef->plt_unref (plt);
+					   deadbeef->pl_save_all ();
+					   deadbeef->conf_save ();
 					   
 					   dispatch_async(dispatch_get_main_queue(), ^{ [panel close]; [playlist reloadData]; });
 					   
@@ -286,10 +283,10 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 + (NSString *) totalPlaytimeAndSongCount {
 	
-	if (pl_getcount(PL_MAIN) == 0)
+	if (deadbeef->pl_getcount(PL_MAIN) == 0)
 		return [NSString stringWithFormat:@"No songs"];
 	
-	float pl_totaltime = plt_get_totaltime(PL_MAIN);
+	float pl_totaltime = deadbeef->plt_get_totaltime(PL_MAIN);
 	
     int daystotal = (int)pl_totaltime / (3600*24);
     int hourtotal = ((int)pl_totaltime / 3600) % 24;
@@ -315,7 +312,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         snprintf (totaltime_str, sizeof (totaltime_str), "%s, %d seconds", totaltime_str, sectotal);				
 	}	
 	
-	return [NSString stringWithFormat:@"%d song(s)%s", pl_getcount(PL_MAIN), totaltime_str];
+	return [NSString stringWithFormat:@"%d song(s)%s", deadbeef->pl_getcount(PL_MAIN), totaltime_str];
 }
 
 /*
@@ -439,7 +436,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     
     NSMutableArray * array = [NSMutableArray arrayWithCapacity: 10];
 	
-	DB_decoder_t **codecs = plug_get_decoder_list ();
+	DB_decoder_t **codecs = deadbeef->plug_get_decoder_list ();
     for (int i = 0; codecs[i]; ++i) {
         if (codecs[i]->exts && codecs[i]->insert) {
             const char **exts = codecs[i]->exts;
@@ -467,7 +464,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 + (void) movePlayListItems : (NSIndexSet*) rowIndexes row:(NSInteger) rowBefore {
 	
-	pl_lock();
+	deadbeef->pl_lock();
 	ddb_playlist_t *plt = deadbeef->plt_get_curr ();
 	
 	int count = 0;
@@ -476,7 +473,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	int n = 0;
 	
 	count = [rowIndexes count];
-	dropBefore = pl_get_for_idx(rowBefore);
+	dropBefore = deadbeef->pl_get_for_idx(rowBefore);
 	
 	NSUInteger index = [rowIndexes firstIndex];
 	while (index != NSNotFound) {
@@ -485,11 +482,11 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 		index = [rowIndexes indexGreaterThanIndex:index ];
 	}
 	
-	plt_move_items( (playlist_t *)plt, PL_MAIN, (playlist_t *)plt, dropBefore, indexes, count);
+	deadbeef->plt_move_items( (playlist_t *)plt, PL_MAIN, (playlist_t *)plt, dropBefore, indexes, count);
 	
-	plt_unref(plt);
-	pl_unlock();
-	pl_save_all();
+	deadbeef->plt_unref(plt);
+	deadbeef->pl_unlock();
+	deadbeef->pl_save_all();
 }
 
 
@@ -498,41 +495,44 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
     char conf[100];
     snprintf (conf, sizeof (conf), "playlist.cursor.%d", deadbeef->plt_get_curr_idx ());
-    conf_set_int (conf, (int) cursor);
-    return pl_set_cursor (PL_MAIN, (int) cursor);
+    deadbeef->conf_set_int (conf, (int) cursor);
+    return deadbeef->pl_set_cursor (PL_MAIN, (int) cursor);
 }
 
 + (void) clearPlayList {
 	
-	pl_clear();
-	pl_save_all();
+	deadbeef->pl_clear();
+	deadbeef->pl_save_all();
 }
 
 
 + (void) setVolumeDB:(float)value {
 	
-	volume_set_db(value);
+	deadbeef->volume_set_db(value);
 }
 
 + (float) volumeDB {
 	
-	return volume_get_db();
+	return deadbeef->volume_get_db();
 	
 }
 
 + (float) minVolumeDB {
 	
-	return volume_get_min_db();
+	return deadbeef->volume_get_min_db();
 }
 
 + (int) intConfiguration : (NSString *) key num:(NSInteger) def {
 	
-	return conf_get_int([key UTF8String], def);
+	return deadbeef->conf_get_int([key UTF8String], def);
 }
 
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def {
 	
-	return conf_set_int([key UTF8String], def);
+	deadbeef->conf_set_int([key UTF8String], def);
+	deadbeef->sendmessage (DB_EV_CONFIGCHANGED, 0, 0, 0);
+	
+	return;
 }
 
 
@@ -544,10 +544,10 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	int num_selected = 0;
 	ddb_playlist_t *plt;
 	
-	pl_lock();
+	deadbeef->pl_lock();
 	
 	plt = deadbeef->plt_get_curr ();
-	num_selected = plt_getselcount(plt);
+	num_selected = deadbeef->plt_getselcount(plt);
 	
 	if (0 < num_selected) {
         tracks = malloc (sizeof (DB_playItem_t *) * num_selected);
@@ -567,7 +567,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         }
         else {
             deadbeef->pl_unlock ();
-			plt_unref(plt);
+			deadbeef->plt_unref(plt);
             return list;
         }
     }
@@ -584,27 +584,27 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 		deadbeef->pl_item_unref (tracks[i]);
 	}	
 	
-	pl_unlock();
-	plt_unref(plt);
+	deadbeef->pl_unlock();
+	deadbeef->plt_unref(plt);
 	return list;
 }
 
 
 + (void) setItemSelected : (NSInteger) index value:(BOOL) def {
 
-	pl_lock();
+	deadbeef->pl_lock();
 	
-	ddb_playlist_t * plt = plt_get_curr ();
-	ddb_playItem_t * it = pl_get_for_idx ( (int) index ); // TODO: deprecated
+	ddb_playlist_t * plt = deadbeef->plt_get_curr ();
+	ddb_playItem_t * it = deadbeef->pl_get_for_idx ( (int) index ); // TODO: deprecated
 	
 	if(def)
-		pl_set_selected(it, 1); // select
+		deadbeef->pl_set_selected(it, 1); // select
 	else 
-		pl_set_selected(it, 0); // unselect		
+		deadbeef->pl_set_selected(it, 0); // unselect		
 	
 	
-	plt_unref(plt);
-	pl_unlock();
+	deadbeef->plt_unref(plt);
+	deadbeef->pl_unlock();
 }
 
 + (NSMutableDictionary *) knownMetadataKeys {
@@ -630,10 +630,10 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	int num_selected = 0;
 	ddb_playlist_t *plt;
 	
-	pl_lock();
+	deadbeef->pl_lock();
 	
 	plt = deadbeef->plt_get_curr ();
-	num_selected = plt_getselcount(plt);
+	num_selected = deadbeef->plt_getselcount(plt);
 	
 	// fetch selected tracks
 	if (0 < num_selected) {
@@ -654,7 +654,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         }
         else {
             deadbeef->pl_unlock ();
-			plt_unref(plt);
+			deadbeef->plt_unref(plt);
 			return;
         }
     }
@@ -696,7 +696,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         }
     }
 	
-	plt_unref(plt);
+	deadbeef->plt_unref(plt);
 	
 }
 
@@ -718,6 +718,46 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
 	return YES;
 }
+
++ (NSInteger) mainPlayListCount {
+
+	return (NSInteger) deadbeef->pl_getcount(PL_MAIN);
+}
+
++ (float) playingItemDuration {
+	
+	float duration = 0;
+	
+	DB_playItem_t *trk = deadbeef->streamer_get_playing_track ();
+	if (!trk || deadbeef->pl_get_item_duration (trk) < 0) {
+		duration = -1;
+		if (trk)
+			deadbeef->pl_item_unref(trk);
+		return duration;
+	}
+	
+	duration = deadbeef->pl_get_item_duration(trk);
+	deadbeef->pl_item_unref(trk);
+	
+	return duration;
+}
+
++ (float) playingItemPosition {
+
+	return deadbeef->streamer_get_playpos();
+}
+
++ (int) outputState {
+	
+	return deadbeef->get_output ()->state ();
+}
+
++ (void) seekToPosition : (float) pos {
+	
+	deadbeef->sendmessage (DB_EV_SEEK, 0, pos * 1000, 0);
+	return;
+}
+
 
 
 @end

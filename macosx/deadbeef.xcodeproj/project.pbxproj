@@ -11,20 +11,6 @@
 		0702977A17E8EBE700710234 /* handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702977617E8EBE700710234 /* handler.c */; };
 		0702979317E8EE4A00710234 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702979117E8EE4A00710234 /* parser.c */; };
 		070297A717E9014900710234 /* mms.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881ED01689C5550066142D /* mms.so */; };
-		070297D517E9084800710234 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297BD17E9084800710234 /* DBAppDelegate.m */; };
-		070297D617E9084800710234 /* DBMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297BE17E9084800710234 /* DBMain.m */; };
-		070297D717E9084800710234 /* DBMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C017E9084800710234 /* DBMainWindowController.m */; };
-		070297D817E9084800710234 /* DBPlayListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C217E9084800710234 /* DBPlayListController.m */; };
-		070297D917E9084800710234 /* DBPreferencesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C417E9084800710234 /* DBPreferencesPanelController.m */; };
-		070297DA17E9084800710234 /* DBTextInputPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C617E9084800710234 /* DBTextInputPanelController.m */; };
-		070297DB17E9084800710234 /* DBTrackPropertiesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */; };
-		070297DC17E9084800710234 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297C917E9084800710234 /* MainWindow.xib */; };
-		070297DD17E9084800710234 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CA17E9084800710234 /* PreferencesWindow.xib */; };
-		070297DE17E9084800710234 /* TextInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CB17E9084800710234 /* TextInputPanel.xib */; };
-		070297DF17E9084800710234 /* DBBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297CE17E9084800710234 /* DBBottomBar.m */; };
-		070297E017E9084800710234 /* DBFileImportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D017E9084800710234 /* DBFileImportPanel.m */; };
-		070297E117E9084800710234 /* DBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D217E9084800710234 /* DBTableView.m */; };
-		070297E217E9084800710234 /* DBTimeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D417E9084800710234 /* DBTimeSliderCell.m */; };
 		0702981817E9090B00710234 /* deadbeef.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0702980617E9090B00710234 /* deadbeef.icns */; };
 		0702981917E9090B00710234 /* back-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980817E9090B00710234 /* back-pressed.png */; };
 		0702981A17E9090B00710234 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980917E9090B00710234 /* back.png */; };
@@ -75,6 +61,31 @@
 		070299B117E9171400710234 /* wmafixed.h in Headers */ = {isa = PBXBuildFile; fileRef = 0702999A17E9171400710234 /* wmafixed.h */; };
 		070299B217E9171400710234 /* wma_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702999C17E9171400710234 /* wma_plugin.c */; };
 		070299BB17E9178E00710234 /* wma.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0702997317E916C200710234 /* wma.so */; };
+		07029A0D17E91CA600710234 /* dumb.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B12E1688F3B10079D590 /* dumb.so */; };
+		07029A1417E91CD500710234 /* ffap.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B2DF1688F7860079D590 /* ffap.so */; };
+		07029A1917E91D1000710234 /* gme.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B314168920E10079D590 /* gme.so */; };
+		07029A1E17E91D3900710234 /* shn.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881F431689C8200066142D /* shn.so */; };
+		0715DF1117F6348300A15158 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0715DF1017F6348300A15158 /* main.c */; };
+		0715DF6217F63A0B00A15158 /* DBAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297BC17E9084800710234 /* DBAppDelegate.h */; };
+		0715DF6317F63A0C00A15158 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297BD17E9084800710234 /* DBAppDelegate.m */; };
+		0715DF6417F63A0E00A15158 /* DBBottomBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297CD17E9084800710234 /* DBBottomBar.h */; };
+		0715DF6517F63A1000A15158 /* DBBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297CE17E9084800710234 /* DBBottomBar.m */; };
+		0715DF6617F63A1200A15158 /* DBFileImportPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297CF17E9084800710234 /* DBFileImportPanel.h */; };
+		0715DF6717F63A1300A15158 /* DBFileImportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D017E9084800710234 /* DBFileImportPanel.m */; };
+		0715DF6917F63A1600A15158 /* DBMainWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297BF17E9084800710234 /* DBMainWindowController.h */; };
+		0715DF6A17F63A1700A15158 /* DBMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C017E9084800710234 /* DBMainWindowController.m */; };
+		0715DF6B17F63A1B00A15158 /* DBPlayListController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C117E9084800710234 /* DBPlayListController.h */; };
+		0715DF6C17F63A2000A15158 /* DBPlayListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C217E9084800710234 /* DBPlayListController.m */; };
+		0715DF6D17F63A2100A15158 /* DBPreferencesPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C317E9084800710234 /* DBPreferencesPanelController.h */; };
+		0715DF6E17F63A2300A15158 /* DBPreferencesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C417E9084800710234 /* DBPreferencesPanelController.m */; };
+		0715DF6F17F63A2400A15158 /* DBTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297D117E9084800710234 /* DBTableView.h */; };
+		0715DF7017F63A2500A15158 /* DBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D217E9084800710234 /* DBTableView.m */; };
+		0715DF7117F63A2700A15158 /* DBTextInputPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C517E9084800710234 /* DBTextInputPanelController.h */; };
+		0715DF7217F63A2800A15158 /* DBTextInputPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C617E9084800710234 /* DBTextInputPanelController.m */; };
+		0715DF7317F63A2900A15158 /* DBTimeSliderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297D317E9084800710234 /* DBTimeSliderCell.h */; };
+		0715DF7417F63A2A00A15158 /* DBTimeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D417E9084800710234 /* DBTimeSliderCell.m */; };
+		0715DF7517F63A2B00A15158 /* DBTrackPropertiesPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */; };
+		0715DF7617F63A2C00A15158 /* DBTrackPropertiesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */; };
 		078476FD16E80D3F00512E95 /* coredecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 07E582C11691E95000982BCB /* coredecoder.c */; };
 		07881EA11689C3A70066142D /* lastfm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881E9F1689C3A70066142D /* lastfm.c */; };
 		07881EA61689C3FD0066142D /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07881EA51689C3FD0066142D /* libcurl.dylib */; };
@@ -967,6 +978,14 @@
 		079AF7F817BA94D300BDCBC4 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 079AF7F717BA94D300BDCBC4 /* config.h */; };
 		079AF80017BA97AB00BDCBC4 /* solaris.c in Sources */ = {isa = PBXBuildFile; fileRef = 079AF6B817BA8CAC00BDCBC4 /* solaris.c */; };
 		07A6E7B11764D2D400F3F133 /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; };
+		07C4AAFE17F63BE40086EB7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0715DF1417F6351B00A15158 /* Cocoa.framework */; };
+		07C4AAFF17F63BF10086EB7F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0715DF1E17F6359D00A15158 /* AppKit.framework */; };
+		07C4AB1F17F63F630086EB7F /* cocoaui_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 0715DF4F17F6389800A15158 /* cocoaui_api.h */; };
+		07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */ = {isa = PBXBuildFile; fileRef = 0715DF0D17F6342300A15158 /* cocoaui.c */; };
+		07C4AC0C180217C80086EB7F /* ddb_gui_cocoa.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */; };
+		07C4ACB7180233D80086EB7F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297C917E9084800710234 /* MainWindow.xib */; };
+		07C4ACB8180233D80086EB7F /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CA17E9084800710234 /* PreferencesWindow.xib */; };
+		07C4ACB9180233D80086EB7F /* TextInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CB17E9084800710234 /* TextInputPanel.xib */; };
 		07D5872717751164003A01DE /* ao.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D586C317751164003A01DE /* ao.h */; };
 		07D5872817751164003A01DE /* corlett.c in Sources */ = {isa = PBXBuildFile; fileRef = 07D586C417751164003A01DE /* corlett.c */; };
 		07D5872917751164003A01DE /* corlett.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D586C517751164003A01DE /* corlett.h */; };
@@ -1065,22 +1084,50 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 07881ECF1689C5550066142D /* mms */;
+			remoteGlobalIDString = 07881ECF1689C5550066142D;
 			remoteInfo = mms;
 		};
 		0702993517E913D600710234 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0702983617E9113200710234 /* coreaudio */;
+			remoteGlobalIDString = 0702983617E9113200710234;
 			remoteInfo = coreaudio;
 		};
 		070299B917E9178400710234 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0702996717E916C200710234 /* wma */;
+			remoteGlobalIDString = 0702996717E916C200710234;
 			remoteInfo = wma;
+		};
+		07029A0B17E91C3300710234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0796B12D1688F3B10079D590;
+			remoteInfo = dumb;
+		};
+		07029A1217E91CC000710234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0796B2DE1688F7860079D590;
+			remoteInfo = ffap;
+		};
+		07029A1717E91CEE00710234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0796B313168920E10079D590;
+			remoteInfo = gme;
+		};
+		07029A1C17E91D2800710234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07881F421689C8200066142D;
+			remoteInfo = shn;
 		};
 		078823AC1689E4F30066142D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1166,6 +1213,13 @@
 			remoteGlobalIDString = 0788227E1689D10B0066142D;
 			remoteInfo = mpgmad;
 		};
+		07C4AC0A180217B50086EB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0715DF5817F6395100A15158 /* cocoaui */;
+			remoteInfo = cocoaui;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1187,6 +1241,11 @@
 			dstPath = plugins;
 			dstSubfolderSpec = 6;
 			files = (
+				07C4AC0C180217C80086EB7F /* ddb_gui_cocoa.so in Copy Plugins */,
+				07029A1E17E91D3900710234 /* shn.so in Copy Plugins */,
+				07029A1917E91D1000710234 /* gme.so in Copy Plugins */,
+				07029A1417E91CD500710234 /* ffap.so in Copy Plugins */,
+				07029A0D17E91CA600710234 /* dumb.so in Copy Plugins */,
 				070299BB17E9178E00710234 /* wma.so in Copy Plugins */,
 				0702995C17E9148700710234 /* coreaudio.so in Copy Plugins */,
 				070297A717E9014900710234 /* mms.so in Copy Plugins */,
@@ -1216,7 +1275,6 @@
 		0702977817E8EBE700710234 /* strdupa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = strdupa.h; path = ../strdupa.h; sourceTree = SOURCE_ROOT; };
 		0702979117E8EE4A00710234 /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parser.c; sourceTree = "<group>"; };
 		0702979217E8EE4A00710234 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
-		070297BB17E9084800710234 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = ../plugins/cocoaui/Config.h; sourceTree = SOURCE_ROOT; };
 		070297BC17E9084800710234 /* DBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBAppDelegate.h; path = ../plugins/cocoaui/DBAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		070297BD17E9084800710234 /* DBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBAppDelegate.m; path = ../plugins/cocoaui/DBAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		070297BE17E9084800710234 /* DBMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBMain.m; path = ../plugins/cocoaui/DBMain.m; sourceTree = SOURCE_ROOT; };
@@ -1286,6 +1344,12 @@
 		0702999A17E9171400710234 /* wmafixed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wmafixed.h; sourceTree = "<group>"; };
 		0702999B17E9171400710234 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		0702999C17E9171400710234 /* wma_plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wma_plugin.c; sourceTree = "<group>"; };
+		0715DF0D17F6342300A15158 /* cocoaui.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoaui.c; path = ../plugins/cocoaui/cocoaui.c; sourceTree = SOURCE_ROOT; };
+		0715DF1017F6348300A15158 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../main.c; sourceTree = SOURCE_ROOT; };
+		0715DF1417F6351B00A15158 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0715DF1E17F6359D00A15158 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0715DF4F17F6389800A15158 /* cocoaui_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cocoaui_api.h; path = ../plugins/cocoaui/cocoaui_api.h; sourceTree = SOURCE_ROOT; };
+		0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_gui_cocoa.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07881E981689C3710066142D /* lastfm.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = lastfm.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07881E9F1689C3A70066142D /* lastfm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lastfm.c; sourceTree = "<group>"; };
 		07881EA51689C3FD0066142D /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
@@ -2602,6 +2666,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0715DF5717F6395100A15158 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07C4AAFE17F63BE40086EB7F /* Cocoa.framework in Frameworks */,
+				07C4AAFF17F63BF10086EB7F /* AppKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07881E961689C3710066142D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2827,7 +2900,8 @@
 		070297AB17E9055500710234 /* cocoaui */ = {
 			isa = PBXGroup;
 			children = (
-				070297BB17E9084800710234 /* Config.h */,
+				0715DF4F17F6389800A15158 /* cocoaui_api.h */,
+				0715DF0D17F6342300A15158 /* cocoaui.c */,
 				070297BC17E9084800710234 /* DBAppDelegate.h */,
 				070297BD17E9084800710234 /* DBAppDelegate.m */,
 				070297BE17E9084800710234 /* DBMain.m */,
@@ -2841,9 +2915,6 @@
 				070297C617E9084800710234 /* DBTextInputPanelController.m */,
 				070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */,
 				070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */,
-				070297C917E9084800710234 /* MainWindow.xib */,
-				070297CA17E9084800710234 /* PreferencesWindow.xib */,
-				070297CB17E9084800710234 /* TextInputPanel.xib */,
 				070297CC17E9084800710234 /* views */,
 			);
 			name = cocoaui;
@@ -4795,6 +4866,16 @@
 			path = cddb;
 			sourceTree = "<group>";
 		};
+		07C4ACB6180233A00086EB7F /* nib */ = {
+			isa = PBXGroup;
+			children = (
+				070297C917E9084800710234 /* MainWindow.xib */,
+				070297CA17E9084800710234 /* PreferencesWindow.xib */,
+				070297CB17E9084800710234 /* TextInputPanel.xib */,
+			);
+			name = nib;
+			sourceTree = "<group>";
+		};
 		07D586C217751164003A01DE /* ao */ = {
 			isa = PBXGroup;
 			children = (
@@ -4986,14 +5067,10 @@
 				0796B0B71688EE720079D590 /* alac.so */,
 				0796B0D61688EFAE0079D590 /* cdda.so */,
 				0796B0E61688F0A80079D590 /* dca.so */,
-				0796B12E1688F3B10079D590 /* dumb.so */,
-				0796B2DF1688F7860079D590 /* ffap.so */,
-				0796B314168920E10079D590 /* gme.so */,
 				07881E981689C3710066142D /* lastfm.so */,
 				07881EAD1689C4920066142D /* m3u.so */,
 				07881ED01689C5550066142D /* mms.so */,
 				07881EFD1689C6FF0066142D /* musepack.so */,
-				07881F431689C8200066142D /* shn.so */,
 				07881F701689C9040066142D /* sid.so */,
 				078821391689CC120066142D /* tta.so */,
 				0788215B1689CC870066142D /* uade.so */,
@@ -5010,7 +5087,12 @@
 				07D586B3177510E7003A01DE /* ao.so */,
 				07D5883517751897003A01DE /* sndfile.so */,
 				0702984A17E9113200710234 /* coreaudio.so */,
+				0796B12E1688F3B10079D590 /* dumb.so */,
 				0702997317E916C200710234 /* wma.so */,
+				0796B314168920E10079D590 /* gme.so */,
+				07881F431689C8200066142D /* shn.so */,
+				0796B2DF1688F7860079D590 /* ffap.so */,
+				0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -5025,6 +5107,8 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				0715DF1417F6351B00A15158 /* Cocoa.framework */,
+				0715DF1E17F6359D00A15158 /* AppKit.framework */,
 			);
 			name = deadbeef;
 			sourceTree = "<group>";
@@ -5032,6 +5116,7 @@
 		29B97315FDCFA39411CA2CEA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0715DF1017F6348300A15158 /* main.c */,
 				0702977417E8EBE700710234 /* fft.c */,
 				0702977517E8EBE700710234 /* fft.h */,
 				0702977617E8EBE700710234 /* handler.c */,
@@ -5087,6 +5172,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07C4ACB6180233A00086EB7F /* nib */,
 				0702980517E9090B00710234 /* icons */,
 				0702980717E9090B00710234 /* images */,
 			);
@@ -5133,6 +5219,24 @@
 				070299AD17E9171400710234 /* wmadata.h in Headers */,
 				070299AE17E9171400710234 /* wmadec.h in Headers */,
 				070299B117E9171400710234 /* wmafixed.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0715DF5517F6395100A15158 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0715DF6217F63A0B00A15158 /* DBAppDelegate.h in Headers */,
+				0715DF6417F63A0E00A15158 /* DBBottomBar.h in Headers */,
+				0715DF6617F63A1200A15158 /* DBFileImportPanel.h in Headers */,
+				0715DF6917F63A1600A15158 /* DBMainWindowController.h in Headers */,
+				0715DF6B17F63A1B00A15158 /* DBPlayListController.h in Headers */,
+				0715DF6D17F63A2100A15158 /* DBPreferencesPanelController.h in Headers */,
+				0715DF6F17F63A2400A15158 /* DBTableView.h in Headers */,
+				0715DF7117F63A2700A15158 /* DBTextInputPanelController.h in Headers */,
+				0715DF7317F63A2900A15158 /* DBTimeSliderCell.h in Headers */,
+				0715DF7517F63A2B00A15158 /* DBTrackPropertiesPanelController.h in Headers */,
+				07C4AB1F17F63F630086EB7F /* cocoaui_api.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5788,6 +5892,23 @@
 			productReference = 0702997317E916C200710234 /* wma.so */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		0715DF5817F6395100A15158 /* cocoaui */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0715DF5C17F6399F00A15158 /* Build configuration list for PBXNativeTarget "cocoaui" */;
+			buildPhases = (
+				0715DF5517F6395100A15158 /* Headers */,
+				0715DF5617F6395100A15158 /* Sources */,
+				0715DF5717F6395100A15158 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cocoaui;
+			productName = cocoaui;
+			productReference = 0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		07881E971689C3710066142D /* lastfm */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07881EA21689C3A70066142D /* Build configuration list for PBXNativeTarget "lastfm" */;
@@ -6260,6 +6381,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				07C4AC0B180217B50086EB7F /* PBXTargetDependency */,
+				07029A1817E91CEE00710234 /* PBXTargetDependency */,
+				07029A1317E91CC000710234 /* PBXTargetDependency */,
+				07029A0C17E91C3300710234 /* PBXTargetDependency */,
+				07029A1D17E91D2800710234 /* PBXTargetDependency */,
 				070299BA17E9178400710234 /* PBXTargetDependency */,
 				0702993617E913D600710234 /* PBXTargetDependency */,
 				070297A117E9010400710234 /* PBXTargetDependency */,
@@ -6301,6 +6427,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				0715DF5817F6395100A15158 /* cocoaui */,
 				0702983617E9113200710234 /* coreaudio */,
 				8D1107260486CEB800E47090 /* deadbeef */,
 				0796AF4E1688DE100079D590 /* adplug */,
@@ -6340,9 +6467,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				070297DC17E9084800710234 /* MainWindow.xib in Resources */,
-				070297DD17E9084800710234 /* PreferencesWindow.xib in Resources */,
-				070297DE17E9084800710234 /* TextInputPanel.xib in Resources */,
+				07C4ACB7180233D80086EB7F /* MainWindow.xib in Resources */,
+				07C4ACB8180233D80086EB7F /* PreferencesWindow.xib in Resources */,
+				07C4ACB9180233D80086EB7F /* TextInputPanel.xib in Resources */,
 				0702981817E9090B00710234 /* deadbeef.icns in Resources */,
 				0702981917E9090B00710234 /* back-pressed.png in Resources */,
 				0702981A17E9090B00710234 /* back.png in Resources */,
@@ -6387,6 +6514,24 @@
 				070299AF17E9171400710234 /* wmadeci.c in Sources */,
 				070299B017E9171400710234 /* wmafixed.c in Sources */,
 				070299B217E9171400710234 /* wma_plugin.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0715DF5617F6395100A15158 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0715DF6317F63A0C00A15158 /* DBAppDelegate.m in Sources */,
+				0715DF6517F63A1000A15158 /* DBBottomBar.m in Sources */,
+				0715DF6717F63A1300A15158 /* DBFileImportPanel.m in Sources */,
+				0715DF6A17F63A1700A15158 /* DBMainWindowController.m in Sources */,
+				0715DF6C17F63A2000A15158 /* DBPlayListController.m in Sources */,
+				0715DF6E17F63A2300A15158 /* DBPreferencesPanelController.m in Sources */,
+				0715DF7017F63A2500A15158 /* DBTableView.m in Sources */,
+				0715DF7217F63A2800A15158 /* DBTextInputPanelController.m in Sources */,
+				0715DF7417F63A2A00A15158 /* DBTimeSliderCell.m in Sources */,
+				0715DF7617F63A2C00A15158 /* DBTrackPropertiesPanelController.m in Sources */,
+				07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7120,17 +7265,7 @@
 				0702977917E8EBE700710234 /* fft.c in Sources */,
 				0702977A17E8EBE700710234 /* handler.c in Sources */,
 				0702979317E8EE4A00710234 /* parser.c in Sources */,
-				070297D517E9084800710234 /* DBAppDelegate.m in Sources */,
-				070297D617E9084800710234 /* DBMain.m in Sources */,
-				070297D717E9084800710234 /* DBMainWindowController.m in Sources */,
-				070297D817E9084800710234 /* DBPlayListController.m in Sources */,
-				070297D917E9084800710234 /* DBPreferencesPanelController.m in Sources */,
-				070297DA17E9084800710234 /* DBTextInputPanelController.m in Sources */,
-				070297DB17E9084800710234 /* DBTrackPropertiesPanelController.m in Sources */,
-				070297DF17E9084800710234 /* DBBottomBar.m in Sources */,
-				070297E017E9084800710234 /* DBFileImportPanel.m in Sources */,
-				070297E117E9084800710234 /* DBTableView.m in Sources */,
-				070297E217E9084800710234 /* DBTimeSliderCell.m in Sources */,
+				0715DF1117F6348300A15158 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7151,6 +7286,26 @@
 			isa = PBXTargetDependency;
 			target = 0702996717E916C200710234 /* wma */;
 			targetProxy = 070299B917E9178400710234 /* PBXContainerItemProxy */;
+		};
+		07029A0C17E91C3300710234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0796B12D1688F3B10079D590 /* dumb */;
+			targetProxy = 07029A0B17E91C3300710234 /* PBXContainerItemProxy */;
+		};
+		07029A1317E91CC000710234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0796B2DE1688F7860079D590 /* ffap */;
+			targetProxy = 07029A1217E91CC000710234 /* PBXContainerItemProxy */;
+		};
+		07029A1817E91CEE00710234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0796B313168920E10079D590 /* gme */;
+			targetProxy = 07029A1717E91CEE00710234 /* PBXContainerItemProxy */;
+		};
+		07029A1D17E91D2800710234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07881F421689C8200066142D /* shn */;
+			targetProxy = 07029A1C17E91D2800710234 /* PBXContainerItemProxy */;
 		};
 		078823AD1689E4F30066142D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -7211,6 +7366,11 @@
 			isa = PBXTargetDependency;
 			target = 0788227E1689D10B0066142D /* mpgmad */;
 			targetProxy = 07A6E7AD1764D2A500F3F133 /* PBXContainerItemProxy */;
+		};
+		07C4AC0B180217B50086EB7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0715DF5817F6395100A15158 /* cocoaui */;
+			targetProxy = 07C4AC0A180217B50086EB7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -7313,6 +7473,70 @@
 			};
 			name = Release;
 		};
+		0715DF5A17F6395200A15158 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/../plugins/cocoaui,
+					$SRCROOT/,
+				);
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ddb_gui_cocoa;
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		0715DF5B17F6395200A15158 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/../plugins/cocoaui,
+					$SRCROOT/,
+				);
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ddb_gui_cocoa;
+				USE_HEADERMAP = NO;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		07881E991689C3710066142D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -7408,6 +7632,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
 				HEADER_SEARCH_PATHS = (
 					$SRCROOT/../plugins/mms,
 					$SRCROOT/,
@@ -7431,6 +7656,7 @@
 				EXECUTABLE_PREFIX = "";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
 				HEADER_SEARCH_PATHS = (
 					$SRCROOT/../plugins/mms,
 					$SRCROOT/,
@@ -8645,9 +8871,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = deadbeef_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					DOCDIR,
+					LIBDIR,
+					"PREFIX=1",
+					"VERSION=\\\"devel\\\"",
+					"PORTABLE=1",
 					HAVE_LOG2,
 					HAVE_SYS_SYSLIMITS_H,
-					HAVE_CONFIG_H,
 				);
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
@@ -8676,9 +8906,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = deadbeef_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					DOCDIR,
+					LIBDIR,
+					"PREFIX=1",
+					"VERSION=\\\"devel\\\"",
+					"PORTABLE=1",
 					HAVE_LOG2,
 					HAVE_SYS_SYSLIMITS_H,
-					HAVE_CONFIG_H,
 				);
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
@@ -8753,6 +8987,15 @@
 			buildConfigurations = (
 				0702997117E916C200710234 /* Debug */,
 				0702997217E916C200710234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0715DF5C17F6399F00A15158 /* Build configuration list for PBXNativeTarget "cocoaui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0715DF5A17F6395200A15158 /* Debug */,
+				0715DF5B17F6395200A15158 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
