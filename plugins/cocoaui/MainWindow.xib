@@ -12,10 +12,10 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="927"/>
+			<integer value="1167"/>
+			<integer value="1255"/>
 			<integer value="57"/>
-			<integer value="1477"/>
-			<integer value="1254"/>
+			<integer value="1427"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1028,7 +1028,7 @@
 			<object class="NSWindowTemplate" id="582683597">
 				<int key="NSWindowStyleMask">19</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{455, 366}, {424, 60}}</string>
+				<string key="NSWindowRect">{{455, 385}, {461, 41}}</string>
 				<int key="NSWTFlags">-461897728</int>
 				<string key="NSWindowTitle">File Import</string>
 				<string key="NSWindowClass">DBFileImportPanel</string>
@@ -1042,7 +1042,7 @@
 						<object class="NSTextField" id="257470167">
 							<reference key="NSNextResponder" ref="42815199"/>
 							<int key="NSvFlags">266</int>
-							<string key="NSFrame">{{7, 31}, {411, 22}}</string>
+							<string key="NSFrame">{{9, 9}, {411, 22}}</string>
 							<reference key="NSSuperview" ref="42815199"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="821726109">
@@ -1072,29 +1072,30 @@
 						<object class="NSButton" id="405575239">
 							<reference key="NSNextResponder" ref="42815199"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{343, 7}, {75, 19}}</string>
+							<string key="NSFrame">{{432, 12}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="42815199"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="226840228">
-								<int key="NSCellFlags">-2080244224</int>
+								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Cancel</string>
-								<object class="NSFont" key="NSSupport">
-									<string key="NSName">LucidaGrande</string>
-									<double key="NSSize">12</double>
-									<int key="NSfFlags">16</int>
-								</object>
+								<string key="NSContents"/>
+								<reference key="NSSupport" ref="288340354"/>
 								<reference key="NSControlView" ref="405575239"/>
-								<int key="NSButtonFlags">-2038152961</int>
-								<int key="NSButtonFlags2">164</int>
+								<int key="NSButtonFlags">138690815</int>
+								<int key="NSButtonFlags2">130</int>
+								<object class="NSCustomResource" key="NSNormalImage" id="854489661">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">NSStopProgressFreestandingTemplate</string>
+								</object>
+								<reference key="NSAlternateImage" ref="854489661"/>
 								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent"/>
+								<string type="base64-UTF8" key="NSKeyEquivalent">Gw</string>
 								<int key="NSPeriodicDelay">400</int>
 								<int key="NSPeriodicInterval">75</int>
 							</object>
 						</object>
 					</object>
-					<string key="NSFrameSize">{424, 60}</string>
+					<string key="NSFrameSize">{461, 41}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
@@ -3273,8 +3274,8 @@
 						<reference key="object" ref="42815199"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="257470167"/>
 							<reference ref="405575239"/>
+							<reference ref="257470167"/>
 						</object>
 						<reference key="parent" ref="582683597"/>
 					</object>
@@ -3291,20 +3292,6 @@
 						<int key="objectID">1263</int>
 						<reference key="object" ref="821726109"/>
 						<reference key="parent" ref="257470167"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1266</int>
-						<reference key="object" ref="405575239"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="226840228"/>
-						</object>
-						<reference key="parent" ref="42815199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1267</int>
-						<reference key="object" ref="226840228"/>
-						<reference key="parent" ref="405575239"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1360</int>
@@ -3812,6 +3799,20 @@
 						<reference key="object" ref="443092521"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1266</int>
+						<reference key="object" ref="405575239"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="226840228"/>
+						</object>
+						<reference key="parent" ref="42815199"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1267</int>
+						<reference key="object" ref="226840228"/>
+						<reference key="parent" ref="405575239"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -3883,8 +3884,10 @@
 					<string>126.IBPluginDependency</string>
 					<string>126.ImportedFromIB2</string>
 					<string>1262.IBPluginDependency</string>
+					<string>1262.IBViewBoundsToFrameTransform</string>
 					<string>1263.IBPluginDependency</string>
 					<string>1266.IBPluginDependency</string>
+					<string>1266.IBViewBoundsToFrameTransform</string>
 					<string>1267.IBPluginDependency</string>
 					<string>129.IBPluginDependency</string>
 					<string>129.ImportedFromIB2</string>
@@ -4166,16 +4169,22 @@
 					<integer value="1"/>
 					<string>{{522, 812}, {146, 23}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{428, 138}, {424, 60}}</string>
+					<string>{{445, 102}, {461, 41}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{428, 138}, {424, 60}}</string>
+					<string>{{445, 102}, {461, 41}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABA4AAAwggAAA</bytes>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABDq4AAwggAAA</bytes>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -4455,7 +4464,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1620</int>
+			<int key="maxID">1625</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4557,7 +4566,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">DBAppDelegate.h</string>
+						<string key="minorKey">../plugins/cocoaui/DBAppDelegate.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4565,7 +4574,7 @@
 					<string key="superclassName">NSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">views/DBBottomBar.h</string>
+						<string key="minorKey">../plugins/cocoaui/views/DBBottomBar.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4616,7 +4625,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">views/DBFileImportPanel.h</string>
+						<string key="minorKey">../plugins/cocoaui/views/DBFileImportPanel.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4842,7 +4851,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">DBMainWindowController.h</string>
+						<string key="minorKey">../plugins/cocoaui/DBMainWindowController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4971,7 +4980,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">DBPlayListController.h</string>
+						<string key="minorKey">../plugins/cocoaui/DBPlayListController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4979,7 +4988,7 @@
 					<string key="superclassName">NSTableView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">views/DBTableView.h</string>
+						<string key="minorKey">../plugins/cocoaui/views/DBTableView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4987,7 +4996,7 @@
 					<string key="superclassName">NSSliderCell</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">views/DBTimeSliderCell.h</string>
+						<string key="minorKey">../plugins/cocoaui/views/DBTimeSliderCell.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -5094,7 +5103,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">DBTrackPropertiesPanelController.h</string>
+						<string key="minorKey">../plugins/cocoaui/DBTrackPropertiesPanelController.h</string>
 					</object>
 				</object>
 			</object>
@@ -5783,7 +5792,7 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">deadbeef.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../../macosx/deadbeef.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -5791,6 +5800,7 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>NSMenuCheckmark</string>
 				<string>NSMenuMixedState</string>
+				<string>NSStopProgressFreestandingTemplate</string>
 				<string>back</string>
 				<string>back-pressed</string>
 				<string>forward</string>
@@ -5806,6 +5816,7 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{9, 8}</string>
 				<string>{7, 2}</string>
+				<string>{83, 83}</string>
 				<string>{35, 23}</string>
 				<string>{35, 23}</string>
 				<string>{35, 23}</string>

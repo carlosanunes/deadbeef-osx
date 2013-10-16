@@ -18,13 +18,8 @@
 
 #import "DBAppDelegate.h"
 
-#include "../playlist.h"
-#include "../plugins.h"
-#include "../streamer.h"
-#include "../conf.h"
-#include "../volume.h"
-#include "../messagepump.h"
-
+#include "deadbeef.h"
+#include "cocoaui_api.h"
 
 @implementation DBAppDelegate
 
@@ -32,7 +27,10 @@
 @synthesize mainPlaylist;
 @synthesize fileImportPanel;
 
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
+
+}
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
 	
@@ -93,6 +91,26 @@
 	[mainWindow orderFront:nil];
 	[mainWindow makeKeyWindow];
 	return TRUE;
+}
+
+
+- (IBAction) openPreferences : (id) sender {
+
+	
+	NSViewController * viewControllerSound = [[DBPreferencesViewControllerSound alloc] init];
+	NSViewController * pluginsControllerSound = [[DBPreferencesViewControllerPlugins alloc] init];	
+
+	NSArray * controllers = [[NSArray alloc] initWithObjects:viewControllerSound, pluginsControllerSound, nil];
+							 
+	[viewControllerSound release];
+	[pluginsControllerSound release];
+	
+	NSString * title = NSLocalizedString(@"Preferences", @"Common title for preferences window");
+	MASPreferencesWindowController * windowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
+	
+	[controllers release];
+	
+	[windowController showWindow : nil];
 }
 
 
@@ -196,14 +214,6 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
 }
 
-- (IBAction) openPreferences : (id) sender {
-	
-	DBPreferencesPanelController * controller = [[DBPreferencesPanelController alloc] initWithWindowNibName:@"PreferencesWindow"];
-}
-
-
-/* = deadbeef core helper functions 
- */
 
 /*
  accepts both a NSURL list as well as a NSSring list
@@ -220,8 +230,8 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	dispatch_async(dispatch_get_global_queue(0, 0),
 				   ^ {					   
 					   
-					   playItem_t * after = NULL;
-					   playItem_t * inserted = NULL;
+					   DB_playItem_t * after = NULL;
+					   DB_playItem_t * inserted = NULL;
 					   int abort = 0;
 					   NSString * file;
 					   const char * path;
@@ -468,7 +478,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	ddb_playlist_t *plt = deadbeef->plt_get_curr ();
 	
 	int count = 0;
-	playItem_t * dropBefore = NULL;
+	DB_playItem_t * dropBefore = NULL;
 	uint32_t indexes[count];
 	int n = 0;
 	
@@ -482,7 +492,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 		index = [rowIndexes indexGreaterThanIndex:index ];
 	}
 	
-	deadbeef->plt_move_items( (playlist_t *)plt, PL_MAIN, (playlist_t *)plt, dropBefore, indexes, count);
+	deadbeef->plt_move_items( (ddb_playlist_t *)plt, PL_MAIN, (ddb_playlist_t *)plt, dropBefore, indexes, count);
 	
 	deadbeef->plt_unref(plt);
 	deadbeef->pl_unlock();
@@ -623,7 +633,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	 nil];	
 }
 
-+ (void) updateTrackMetadata : (NSMutableDictionary *) metadata {
++ (void) updateSelectedTracksMetadata : (NSMutableDictionary *) metadata {
 	
 	DB_playItem_t * it;
 	DB_playItem_t ** tracks;
@@ -659,7 +669,13 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         }
     }
 	deadbeef->pl_unlock ();
-
+	
+	// update metadata
+	for (int t =0; t < num_selected; ++t) {
+	
+		// TODO
+		
+	}
 	
 	// update data
 	for (int t = 0; t < num_selected; t++) {
@@ -689,10 +705,10 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
                     if (dec->write_metadata) {
                         dec->write_metadata (track);
                     }
-					deadbeef->pl_item_unref (tracks[t]);
                     break;
                 }
             }
+			deadbeef->pl_item_unref (tracks[t]);
         }
     }
 	
@@ -754,10 +770,9 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 + (void) seekToPosition : (float) pos {
 	
-	deadbeef->sendmessage (DB_EV_SEEK, 0, pos * 1000, 0);
+	deadbeef->sendmessage (DB_EV_SEEK, 0, pos, 0);
 	return;
 }
-
 
 
 @end

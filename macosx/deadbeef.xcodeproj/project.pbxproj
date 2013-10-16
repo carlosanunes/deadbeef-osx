@@ -76,8 +76,6 @@
 		0715DF6A17F63A1700A15158 /* DBMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C017E9084800710234 /* DBMainWindowController.m */; };
 		0715DF6B17F63A1B00A15158 /* DBPlayListController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C117E9084800710234 /* DBPlayListController.h */; };
 		0715DF6C17F63A2000A15158 /* DBPlayListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C217E9084800710234 /* DBPlayListController.m */; };
-		0715DF6D17F63A2100A15158 /* DBPreferencesPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C317E9084800710234 /* DBPreferencesPanelController.h */; };
-		0715DF6E17F63A2300A15158 /* DBPreferencesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C417E9084800710234 /* DBPreferencesPanelController.m */; };
 		0715DF6F17F63A2400A15158 /* DBTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297D117E9084800710234 /* DBTableView.h */; };
 		0715DF7017F63A2500A15158 /* DBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D217E9084800710234 /* DBTableView.m */; };
 		0715DF7117F63A2700A15158 /* DBTextInputPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C517E9084800710234 /* DBTextInputPanelController.h */; };
@@ -86,6 +84,16 @@
 		0715DF7417F63A2A00A15158 /* DBTimeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D417E9084800710234 /* DBTimeSliderCell.m */; };
 		0715DF7517F63A2B00A15158 /* DBTrackPropertiesPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */; };
 		0715DF7617F63A2C00A15158 /* DBTrackPropertiesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */; };
+		073B5D73180DF7E100AF2FE8 /* PreferencesViewSound.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */; };
+		073B5D76180DF80C00AF2FE8 /* PreferencesViewPlugins.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073B5D75180DF80C00AF2FE8 /* PreferencesViewPlugins.xib */; };
+		073B5D8A180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5D88180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h */; };
+		073B5D8B180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 073B5D89180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m */; };
+		073B5D8E180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5D8C180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h */; };
+		073B5D8F180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.m in Sources */ = {isa = PBXBuildFile; fileRef = 073B5D8D180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.m */; };
+		073B5DA9180DFDC300AF2FE8 /* MASPreferencesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5DA4180DFDC300AF2FE8 /* MASPreferencesViewController.h */; };
+		073B5DAA180DFDC300AF2FE8 /* MASPreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5DA6180DFDC300AF2FE8 /* MASPreferencesWindowController.h */; };
+		073B5DAB180DFDC300AF2FE8 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073B5DA7180DFDC300AF2FE8 /* MASPreferencesWindowController.m */; };
+		073B5DF3180E030600AF2FE8 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073B5DA5180DFDC300AF2FE8 /* MASPreferencesWindow.xib */; };
 		078476FD16E80D3F00512E95 /* coredecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 07E582C11691E95000982BCB /* coredecoder.c */; };
 		07881EA11689C3A70066142D /* lastfm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881E9F1689C3A70066142D /* lastfm.c */; };
 		07881EA61689C3FD0066142D /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07881EA51689C3FD0066142D /* libcurl.dylib */; };
@@ -984,7 +992,6 @@
 		07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */ = {isa = PBXBuildFile; fileRef = 0715DF0D17F6342300A15158 /* cocoaui.c */; };
 		07C4AC0C180217C80086EB7F /* ddb_gui_cocoa.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */; };
 		07C4ACB7180233D80086EB7F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297C917E9084800710234 /* MainWindow.xib */; };
-		07C4ACB8180233D80086EB7F /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CA17E9084800710234 /* PreferencesWindow.xib */; };
 		07C4ACB9180233D80086EB7F /* TextInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CB17E9084800710234 /* TextInputPanel.xib */; };
 		07D5872717751164003A01DE /* ao.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D586C317751164003A01DE /* ao.h */; };
 		07D5872817751164003A01DE /* corlett.c in Sources */ = {isa = PBXBuildFile; fileRef = 07D586C417751164003A01DE /* corlett.c */; };
@@ -1217,7 +1224,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0715DF5817F6395100A15158 /* cocoaui */;
+			remoteGlobalIDString = 0715DF5817F6395100A15158;
 			remoteInfo = cocoaui;
 		};
 /* End PBXContainerItemProxy section */
@@ -1277,19 +1284,15 @@
 		0702979217E8EE4A00710234 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
 		070297BC17E9084800710234 /* DBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBAppDelegate.h; path = ../plugins/cocoaui/DBAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		070297BD17E9084800710234 /* DBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBAppDelegate.m; path = ../plugins/cocoaui/DBAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		070297BE17E9084800710234 /* DBMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBMain.m; path = ../plugins/cocoaui/DBMain.m; sourceTree = SOURCE_ROOT; };
 		070297BF17E9084800710234 /* DBMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBMainWindowController.h; path = ../plugins/cocoaui/DBMainWindowController.h; sourceTree = SOURCE_ROOT; };
 		070297C017E9084800710234 /* DBMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBMainWindowController.m; path = ../plugins/cocoaui/DBMainWindowController.m; sourceTree = SOURCE_ROOT; };
 		070297C117E9084800710234 /* DBPlayListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPlayListController.h; path = ../plugins/cocoaui/DBPlayListController.h; sourceTree = SOURCE_ROOT; };
 		070297C217E9084800710234 /* DBPlayListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPlayListController.m; path = ../plugins/cocoaui/DBPlayListController.m; sourceTree = SOURCE_ROOT; };
-		070297C317E9084800710234 /* DBPreferencesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPreferencesPanelController.h; path = ../plugins/cocoaui/DBPreferencesPanelController.h; sourceTree = SOURCE_ROOT; };
-		070297C417E9084800710234 /* DBPreferencesPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPreferencesPanelController.m; path = ../plugins/cocoaui/DBPreferencesPanelController.m; sourceTree = SOURCE_ROOT; };
 		070297C517E9084800710234 /* DBTextInputPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBTextInputPanelController.h; path = ../plugins/cocoaui/DBTextInputPanelController.h; sourceTree = SOURCE_ROOT; };
 		070297C617E9084800710234 /* DBTextInputPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBTextInputPanelController.m; path = ../plugins/cocoaui/DBTextInputPanelController.m; sourceTree = SOURCE_ROOT; };
 		070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBTrackPropertiesPanelController.h; path = ../plugins/cocoaui/DBTrackPropertiesPanelController.h; sourceTree = SOURCE_ROOT; };
 		070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBTrackPropertiesPanelController.m; path = ../plugins/cocoaui/DBTrackPropertiesPanelController.m; sourceTree = SOURCE_ROOT; };
 		070297C917E9084800710234 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../plugins/cocoaui/MainWindow.xib; sourceTree = SOURCE_ROOT; };
-		070297CA17E9084800710234 /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PreferencesWindow.xib; path = ../plugins/cocoaui/PreferencesWindow.xib; sourceTree = SOURCE_ROOT; };
 		070297CB17E9084800710234 /* TextInputPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TextInputPanel.xib; path = ../plugins/cocoaui/TextInputPanel.xib; sourceTree = SOURCE_ROOT; };
 		070297CD17E9084800710234 /* DBBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBottomBar.h; sourceTree = "<group>"; };
 		070297CE17E9084800710234 /* DBBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBottomBar.m; sourceTree = "<group>"; };
@@ -1350,6 +1353,19 @@
 		0715DF1E17F6359D00A15158 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0715DF4F17F6389800A15158 /* cocoaui_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cocoaui_api.h; path = ../plugins/cocoaui/cocoaui_api.h; sourceTree = SOURCE_ROOT; };
 		0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_gui_cocoa.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PreferencesViewSound.xib; path = ../plugins/cocoaui/PreferencesViewSound.xib; sourceTree = SOURCE_ROOT; };
+		073B5D75180DF80C00AF2FE8 /* PreferencesViewPlugins.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesViewPlugins.xib; sourceTree = "<group>"; };
+		073B5D88180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPreferencesViewControllerSound.h; path = ../plugins/cocoaui/DBPreferencesViewControllerSound.h; sourceTree = SOURCE_ROOT; };
+		073B5D89180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPreferencesViewControllerSound.m; path = ../plugins/cocoaui/DBPreferencesViewControllerSound.m; sourceTree = SOURCE_ROOT; };
+		073B5D8C180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPreferencesViewControllerPlugins.h; sourceTree = "<group>"; };
+		073B5D8D180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPreferencesViewControllerPlugins.m; sourceTree = "<group>"; };
+		073B5DA2180DFDC300AF2FE8 /* .git */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .git; sourceTree = "<group>"; };
+		073B5DA3180DFDC300AF2FE8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		073B5DA4180DFDC300AF2FE8 /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
+		073B5DA5180DFDC300AF2FE8 /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
+		073B5DA6180DFDC300AF2FE8 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
+		073B5DA7180DFDC300AF2FE8 /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
+		073B5DA8180DFDC300AF2FE8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		07881E981689C3710066142D /* lastfm.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = lastfm.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07881E9F1689C3A70066142D /* lastfm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lastfm.c; sourceTree = "<group>"; };
 		07881EA51689C3FD0066142D /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
@@ -2904,18 +2920,19 @@
 				0715DF0D17F6342300A15158 /* cocoaui.c */,
 				070297BC17E9084800710234 /* DBAppDelegate.h */,
 				070297BD17E9084800710234 /* DBAppDelegate.m */,
-				070297BE17E9084800710234 /* DBMain.m */,
 				070297BF17E9084800710234 /* DBMainWindowController.h */,
 				070297C017E9084800710234 /* DBMainWindowController.m */,
 				070297C117E9084800710234 /* DBPlayListController.h */,
 				070297C217E9084800710234 /* DBPlayListController.m */,
-				070297C317E9084800710234 /* DBPreferencesPanelController.h */,
-				070297C417E9084800710234 /* DBPreferencesPanelController.m */,
 				070297C517E9084800710234 /* DBTextInputPanelController.h */,
 				070297C617E9084800710234 /* DBTextInputPanelController.m */,
 				070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */,
 				070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */,
 				070297CC17E9084800710234 /* views */,
+				073B5D88180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h */,
+				073B5D89180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m */,
+				073B5D8C180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h */,
+				073B5D8D180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.m */,
 			);
 			name = cocoaui;
 			sourceTree = "<group>";
@@ -3025,9 +3042,25 @@
 			path = libwma;
 			sourceTree = "<group>";
 		};
+		073B5DA1180DFDC300AF2FE8 /* MASPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				073B5DA2180DFDC300AF2FE8 /* .git */,
+				073B5DA3180DFDC300AF2FE8 /* .gitignore */,
+				073B5DA4180DFDC300AF2FE8 /* MASPreferencesViewController.h */,
+				073B5DA5180DFDC300AF2FE8 /* MASPreferencesWindow.xib */,
+				073B5DA6180DFDC300AF2FE8 /* MASPreferencesWindowController.h */,
+				073B5DA7180DFDC300AF2FE8 /* MASPreferencesWindowController.m */,
+				073B5DA8180DFDC300AF2FE8 /* README.md */,
+			);
+			name = MASPreferences;
+			path = libs/MASPreferences;
+			sourceTree = "<group>";
+		};
 		0760ECEB1724857D0018A9BF /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				073B5DA1180DFDC300AF2FE8 /* MASPreferences */,
 				0796B6381689494E0079D590 /* libz.dylib */,
 				07881EA51689C3FD0066142D /* libcurl.dylib */,
 			);
@@ -4870,8 +4903,9 @@
 			isa = PBXGroup;
 			children = (
 				070297C917E9084800710234 /* MainWindow.xib */,
-				070297CA17E9084800710234 /* PreferencesWindow.xib */,
 				070297CB17E9084800710234 /* TextInputPanel.xib */,
+				073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */,
+				073B5D75180DF80C00AF2FE8 /* PreferencesViewPlugins.xib */,
 			);
 			name = nib;
 			sourceTree = "<group>";
@@ -5231,12 +5265,15 @@
 				0715DF6617F63A1200A15158 /* DBFileImportPanel.h in Headers */,
 				0715DF6917F63A1600A15158 /* DBMainWindowController.h in Headers */,
 				0715DF6B17F63A1B00A15158 /* DBPlayListController.h in Headers */,
-				0715DF6D17F63A2100A15158 /* DBPreferencesPanelController.h in Headers */,
 				0715DF6F17F63A2400A15158 /* DBTableView.h in Headers */,
 				0715DF7117F63A2700A15158 /* DBTextInputPanelController.h in Headers */,
 				0715DF7317F63A2900A15158 /* DBTimeSliderCell.h in Headers */,
 				0715DF7517F63A2B00A15158 /* DBTrackPropertiesPanelController.h in Headers */,
 				07C4AB1F17F63F630086EB7F /* cocoaui_api.h in Headers */,
+				073B5D8A180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h in Headers */,
+				073B5D8E180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h in Headers */,
+				073B5DA9180DFDC300AF2FE8 /* MASPreferencesViewController.h in Headers */,
+				073B5DAA180DFDC300AF2FE8 /* MASPreferencesWindowController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6468,7 +6505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C4ACB7180233D80086EB7F /* MainWindow.xib in Resources */,
-				07C4ACB8180233D80086EB7F /* PreferencesWindow.xib in Resources */,
+				073B5DF3180E030600AF2FE8 /* MASPreferencesWindow.xib in Resources */,
 				07C4ACB9180233D80086EB7F /* TextInputPanel.xib in Resources */,
 				0702981817E9090B00710234 /* deadbeef.icns in Resources */,
 				0702981917E9090B00710234 /* back-pressed.png in Resources */,
@@ -6487,6 +6524,8 @@
 				0702982617E9090B00710234 /* stop.png in Resources */,
 				0702982717E9090B00710234 /* volume-high.png in Resources */,
 				0702982817E9090B00710234 /* volume-low.png in Resources */,
+				073B5D73180DF7E100AF2FE8 /* PreferencesViewSound.xib in Resources */,
+				073B5D76180DF80C00AF2FE8 /* PreferencesViewPlugins.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6526,12 +6565,14 @@
 				0715DF6717F63A1300A15158 /* DBFileImportPanel.m in Sources */,
 				0715DF6A17F63A1700A15158 /* DBMainWindowController.m in Sources */,
 				0715DF6C17F63A2000A15158 /* DBPlayListController.m in Sources */,
-				0715DF6E17F63A2300A15158 /* DBPreferencesPanelController.m in Sources */,
 				0715DF7017F63A2500A15158 /* DBTableView.m in Sources */,
 				0715DF7217F63A2800A15158 /* DBTextInputPanelController.m in Sources */,
 				0715DF7417F63A2A00A15158 /* DBTimeSliderCell.m in Sources */,
 				0715DF7617F63A2C00A15158 /* DBTrackPropertiesPanelController.m in Sources */,
 				07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */,
+				073B5D8B180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m in Sources */,
+				073B5D8F180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.m in Sources */,
+				073B5DAB180DFDC300AF2FE8 /* MASPreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7488,9 +7529,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					$SRCROOT/../plugins/cocoaui,
 					$SRCROOT/,
+					$SRCROOT/..,
+					$SRCROOT/libs/MASPreferences,
 				);
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_LDFLAGS = (
@@ -7519,9 +7563,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					$SRCROOT/../plugins/cocoaui,
 					$SRCROOT/,
+					$SRCROOT/..,
+					$SRCROOT/libs/MASPreferences,
 				);
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_LDFLAGS = (
