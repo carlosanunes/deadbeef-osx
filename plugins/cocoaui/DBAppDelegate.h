@@ -21,8 +21,9 @@
 #import "views/DBTableView.h"
 #import "views/DBFileImportPanel.h"
 #import "DBPlayListController.h"
-#import "DBPreferencesPanelController.h"
-
+#import "MASPreferencesWindowController.h"
+#import "DBPreferencesViewControllerSound.h"
+#import "DBPreferencesViewControllerPlugins.h"
 
 
 @class DBFileImportPanelController; // needed for the addPathsToPlaylistAt method
@@ -80,8 +81,6 @@
 
 + (void) setItemSelected : (NSInteger) index value:(BOOL) def;
 
-+ (void) updateTrackMetadata : (NSMutableDictionary *) metadata;
-
 + (float) playingItemDuration;
 
 + (float) playingItemPosition;
@@ -90,5 +89,6 @@
 
 + (void) seekToPosition : (float) pos;
 
++ (void) updateSelectedTracksMetadata:(NSMutableDictionary *)metadata;
 
 @end
