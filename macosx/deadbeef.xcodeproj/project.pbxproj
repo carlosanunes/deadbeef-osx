@@ -85,7 +85,6 @@
 		0715DF7517F63A2B00A15158 /* DBTrackPropertiesPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */; };
 		0715DF7617F63A2C00A15158 /* DBTrackPropertiesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */; };
 		073B5D73180DF7E100AF2FE8 /* PreferencesViewSound.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */; };
-		073B5D76180DF80C00AF2FE8 /* PreferencesViewPlugins.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073B5D75180DF80C00AF2FE8 /* PreferencesViewPlugins.xib */; };
 		073B5D8A180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5D88180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h */; };
 		073B5D8B180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 073B5D89180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m */; };
 		073B5D8E180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5D8C180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h */; };
@@ -94,7 +93,17 @@
 		073B5DAA180DFDC300AF2FE8 /* MASPreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5DA6180DFDC300AF2FE8 /* MASPreferencesWindowController.h */; };
 		073B5DAB180DFDC300AF2FE8 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073B5DA7180DFDC300AF2FE8 /* MASPreferencesWindowController.m */; };
 		073B5DF3180E030600AF2FE8 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073B5DA5180DFDC300AF2FE8 /* MASPreferencesWindow.xib */; };
+		0782B9FD180F4DF900CB8120 /* PreferencesViewPlugins.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0782B9FC180F4DF900CB8120 /* PreferencesViewPlugins.xib */; };
 		078476FD16E80D3F00512E95 /* coredecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 07E582C11691E95000982BCB /* coredecoder.c */; };
+		0786991618130C740093C177 /* DBValueTransformerFirstElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 0786991318130C740093C177 /* DBValueTransformerFirstElement.h */; };
+		0786991718130C740093C177 /* DBValueTransformerFirstElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0786991418130C740093C177 /* DBValueTransformerFirstElement.m */; };
+		0786991B18130C970093C177 /* DBValueTransformerLastElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 0786991818130C970093C177 /* DBValueTransformerLastElement.h */; };
+		0786991C18130C970093C177 /* DBValueTransformerLastElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0786991918130C970093C177 /* DBValueTransformerLastElement.m */; };
+		078699341813114B0093C177 /* ScrollableTextPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078699331813114B0093C177 /* ScrollableTextPanel.xib */; };
+		078699381813147A0093C177 /* DBScrollableTextPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 078699361813147A0093C177 /* DBScrollableTextPanelController.h */; };
+		078699391813147A0093C177 /* DBScrollableTextPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078699371813147A0093C177 /* DBScrollableTextPanelController.m */; };
+		07869A601813428D0093C177 /* DBValueTransformerPluginHasWebsite.h in Headers */ = {isa = PBXBuildFile; fileRef = 07869A5E1813428D0093C177 /* DBValueTransformerPluginHasWebsite.h */; };
+		07869A611813428D0093C177 /* DBValueTransformerPluginHasWebsite.m in Sources */ = {isa = PBXBuildFile; fileRef = 07869A5F1813428D0093C177 /* DBValueTransformerPluginHasWebsite.m */; };
 		07881EA11689C3A70066142D /* lastfm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881E9F1689C3A70066142D /* lastfm.c */; };
 		07881EA61689C3FD0066142D /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07881EA51689C3FD0066142D /* libcurl.dylib */; };
 		07881EB51689C4CC0066142D /* m3u.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881EB31689C4CC0066142D /* m3u.c */; };
@@ -1354,7 +1363,6 @@
 		0715DF4F17F6389800A15158 /* cocoaui_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cocoaui_api.h; path = ../plugins/cocoaui/cocoaui_api.h; sourceTree = SOURCE_ROOT; };
 		0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_gui_cocoa.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PreferencesViewSound.xib; path = ../plugins/cocoaui/PreferencesViewSound.xib; sourceTree = SOURCE_ROOT; };
-		073B5D75180DF80C00AF2FE8 /* PreferencesViewPlugins.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesViewPlugins.xib; sourceTree = "<group>"; };
 		073B5D88180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPreferencesViewControllerSound.h; path = ../plugins/cocoaui/DBPreferencesViewControllerSound.h; sourceTree = SOURCE_ROOT; };
 		073B5D89180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPreferencesViewControllerSound.m; path = ../plugins/cocoaui/DBPreferencesViewControllerSound.m; sourceTree = SOURCE_ROOT; };
 		073B5D8C180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPreferencesViewControllerPlugins.h; sourceTree = "<group>"; };
@@ -1366,6 +1374,16 @@
 		073B5DA6180DFDC300AF2FE8 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
 		073B5DA7180DFDC300AF2FE8 /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
 		073B5DA8180DFDC300AF2FE8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		0782B9FC180F4DF900CB8120 /* PreferencesViewPlugins.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PreferencesViewPlugins.xib; path = ../plugins/cocoaui/PreferencesViewPlugins.xib; sourceTree = SOURCE_ROOT; };
+		0786991318130C740093C177 /* DBValueTransformerFirstElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBValueTransformerFirstElement.h; path = ../plugins/cocoaui/DBValueTransformerFirstElement.h; sourceTree = SOURCE_ROOT; };
+		0786991418130C740093C177 /* DBValueTransformerFirstElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBValueTransformerFirstElement.m; path = ../plugins/cocoaui/DBValueTransformerFirstElement.m; sourceTree = SOURCE_ROOT; };
+		0786991818130C970093C177 /* DBValueTransformerLastElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBValueTransformerLastElement.h; path = ../plugins/cocoaui/DBValueTransformerLastElement.h; sourceTree = SOURCE_ROOT; };
+		0786991918130C970093C177 /* DBValueTransformerLastElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBValueTransformerLastElement.m; path = ../plugins/cocoaui/DBValueTransformerLastElement.m; sourceTree = SOURCE_ROOT; };
+		078699331813114B0093C177 /* ScrollableTextPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScrollableTextPanel.xib; path = ../plugins/cocoaui/ScrollableTextPanel.xib; sourceTree = SOURCE_ROOT; };
+		078699361813147A0093C177 /* DBScrollableTextPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBScrollableTextPanelController.h; path = ../plugins/cocoaui/DBScrollableTextPanelController.h; sourceTree = SOURCE_ROOT; };
+		078699371813147A0093C177 /* DBScrollableTextPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBScrollableTextPanelController.m; path = ../plugins/cocoaui/DBScrollableTextPanelController.m; sourceTree = SOURCE_ROOT; };
+		07869A5E1813428D0093C177 /* DBValueTransformerPluginHasWebsite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBValueTransformerPluginHasWebsite.h; path = ../plugins/cocoaui/DBValueTransformerPluginHasWebsite.h; sourceTree = SOURCE_ROOT; };
+		07869A5F1813428D0093C177 /* DBValueTransformerPluginHasWebsite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBValueTransformerPluginHasWebsite.m; path = ../plugins/cocoaui/DBValueTransformerPluginHasWebsite.m; sourceTree = SOURCE_ROOT; };
 		07881E981689C3710066142D /* lastfm.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = lastfm.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07881E9F1689C3A70066142D /* lastfm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lastfm.c; sourceTree = "<group>"; };
 		07881EA51689C3FD0066142D /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
@@ -2933,6 +2951,14 @@
 				073B5D89180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m */,
 				073B5D8C180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h */,
 				073B5D8D180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.m */,
+				0786991318130C740093C177 /* DBValueTransformerFirstElement.h */,
+				0786991418130C740093C177 /* DBValueTransformerFirstElement.m */,
+				0786991818130C970093C177 /* DBValueTransformerLastElement.h */,
+				0786991918130C970093C177 /* DBValueTransformerLastElement.m */,
+				078699361813147A0093C177 /* DBScrollableTextPanelController.h */,
+				078699371813147A0093C177 /* DBScrollableTextPanelController.m */,
+				07869A5E1813428D0093C177 /* DBValueTransformerPluginHasWebsite.h */,
+				07869A5F1813428D0093C177 /* DBValueTransformerPluginHasWebsite.m */,
 			);
 			name = cocoaui;
 			sourceTree = "<group>";
@@ -4902,10 +4928,11 @@
 		07C4ACB6180233A00086EB7F /* nib */ = {
 			isa = PBXGroup;
 			children = (
+				0782B9FC180F4DF900CB8120 /* PreferencesViewPlugins.xib */,
 				070297C917E9084800710234 /* MainWindow.xib */,
 				070297CB17E9084800710234 /* TextInputPanel.xib */,
 				073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */,
-				073B5D75180DF80C00AF2FE8 /* PreferencesViewPlugins.xib */,
+				078699331813114B0093C177 /* ScrollableTextPanel.xib */,
 			);
 			name = nib;
 			sourceTree = "<group>";
@@ -5274,6 +5301,10 @@
 				073B5D8E180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.h in Headers */,
 				073B5DA9180DFDC300AF2FE8 /* MASPreferencesViewController.h in Headers */,
 				073B5DAA180DFDC300AF2FE8 /* MASPreferencesWindowController.h in Headers */,
+				0786991618130C740093C177 /* DBValueTransformerFirstElement.h in Headers */,
+				0786991B18130C970093C177 /* DBValueTransformerLastElement.h in Headers */,
+				078699381813147A0093C177 /* DBScrollableTextPanelController.h in Headers */,
+				07869A601813428D0093C177 /* DBValueTransformerPluginHasWebsite.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6525,7 +6556,8 @@
 				0702982717E9090B00710234 /* volume-high.png in Resources */,
 				0702982817E9090B00710234 /* volume-low.png in Resources */,
 				073B5D73180DF7E100AF2FE8 /* PreferencesViewSound.xib in Resources */,
-				073B5D76180DF80C00AF2FE8 /* PreferencesViewPlugins.xib in Resources */,
+				0782B9FD180F4DF900CB8120 /* PreferencesViewPlugins.xib in Resources */,
+				078699341813114B0093C177 /* ScrollableTextPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6573,6 +6605,10 @@
 				073B5D8B180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m in Sources */,
 				073B5D8F180DFB9100AF2FE8 /* DBPreferencesViewControllerPlugins.m in Sources */,
 				073B5DAB180DFDC300AF2FE8 /* MASPreferencesWindowController.m in Sources */,
+				0786991718130C740093C177 /* DBValueTransformerFirstElement.m in Sources */,
+				0786991C18130C970093C177 /* DBValueTransformerLastElement.m in Sources */,
+				078699391813147A0093C177 /* DBScrollableTextPanelController.m in Sources */,
+				07869A611813428D0093C177 /* DBValueTransformerPluginHasWebsite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

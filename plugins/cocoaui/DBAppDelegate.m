@@ -774,5 +774,25 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	return;
 }
 
++ (NSDictionary *) pluginList {
+
+	NSMutableDictionary * list = [[NSMutableDictionary alloc] init];
+	char s[20];
+	
+	DB_plugin_t **plugins = deadbeef -> plug_get_list();
+	for (int i = 0; plugins[i]; ++i)
+	{
+		snprintf (s, sizeof (s), "%d.%d", plugins[i] -> version_major, plugins[i] -> version_minor);
+		[list setObject:[NSArray arrayWithObjects: 
+						 [NSString stringWithUTF8String: plugins[i]->descr],
+						 [NSString stringWithUTF8String: plugins[i]->copyright],
+						 [NSString stringWithUTF8String: plugins[i]->website],
+						 [NSString stringWithUTF8String: s],
+						 nil ] 
+				 forKey: [NSString stringWithUTF8String: plugins[i]->name] ];
+	}
+	
+	return list;
+}
 
 @end

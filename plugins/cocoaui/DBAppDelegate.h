@@ -25,6 +25,10 @@
 #import "DBPreferencesViewControllerSound.h"
 #import "DBPreferencesViewControllerPlugins.h"
 
+#define PLUGIN_DATA_NAME_POS 0
+#define PLUGIN_DATA_COPYRIGHT_POS 1
+#define PLUGIN_DATA_WEBSITE_POS 2
+#define PLUGIN_DATA_WEBSITE_VERSION 3
 
 @class DBFileImportPanelController; // needed for the addPathsToPlaylistAt method
 
@@ -90,5 +94,7 @@
 + (void) seekToPosition : (float) pos;
 
 + (void) updateSelectedTracksMetadata:(NSMutableDictionary *)metadata;
+
++ (NSDictionary *) pluginList;
 
 @end
