@@ -75,7 +75,7 @@
 
 - (IBAction) updateProperties : sender {
 
-	[DBAppDelegate updateSelectedTracksMetadata: metadataList ];
+	[DBAppDelegate updateSelectedTracksMetadata: trackMetadata ];
 	
 	[self close];
 	
