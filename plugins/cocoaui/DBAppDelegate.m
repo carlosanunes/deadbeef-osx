@@ -98,12 +98,23 @@
 
 	
 	NSViewController * viewControllerSound = [[DBPreferencesViewControllerSound alloc] init];
-	NSViewController * pluginsControllerSound = [[DBPreferencesViewControllerPlugins alloc] init];	
+	NSViewController * viewControllerPlayback = [[DBPreferencesViewControllerPlayback alloc] init];	
+	NSViewController * viewControllerNetwork = [[DBPreferencesViewControllerNetwork alloc] init];	
+	NSViewController * viewControllerPlugins = [[DBPreferencesViewControllerPlugins alloc] init];	
 
-	NSArray * controllers = [[NSArray alloc] initWithObjects:viewControllerSound, pluginsControllerSound, nil];
+	
+	NSArray * controllers = [[NSArray alloc] initWithObjects:
+							 viewControllerSound,
+							 viewControllerPlayback,
+							 viewControllerNetwork,
+							 viewControllerPlugins,
+							nil];
 							 
 	[viewControllerSound release];
-	[pluginsControllerSound release];
+	[viewControllerPlayback release];
+	[viewControllerNetwork release];
+	[viewControllerPlugins release];
+
 	
 	NSString * title = NSLocalizedString(@"Preferences", @"Common title for preferences window");
 	MASPreferencesWindowController * windowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];

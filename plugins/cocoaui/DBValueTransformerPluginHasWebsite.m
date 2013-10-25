@@ -6,7 +6,7 @@
 //  Copyright 2013 __MyCompanyName__. All rights reserved.
 //
 
-#import "DBValueTransformerPluginWebsite.h"
+#import "DBValueTransformerPluginHasWebsite.h"
 
 
 @implementation DBValueTransformerPluginHasWebsite
