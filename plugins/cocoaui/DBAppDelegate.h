@@ -24,6 +24,8 @@
 #import "MASPreferencesWindowController.h"
 #import "DBPreferencesViewControllerSound.h"
 #import "DBPreferencesViewControllerPlugins.h"
+#import "DBPreferencesViewControllerNetwork.h"
+#import "DBPreferencesViewControllerPlayback.h"
 
 #define PLUGIN_DATA_NAME_POS 0
 #define PLUGIN_DATA_COPYRIGHT_POS 1
