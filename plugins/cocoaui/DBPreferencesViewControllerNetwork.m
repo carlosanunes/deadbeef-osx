@@ -8,8 +8,15 @@
 
 #import "DBPreferencesViewControllerNetwork.h"
 
-
 @implementation DBPreferencesViewControllerNetwork
+
+@synthesize proxyServer;
+
+@synthesize	proxyServerAddress;
+@synthesize	proxyServerPort;
+@synthesize	proxyServerUsername;
+@synthesize	proxyServerPassword;
+@synthesize	proxyServerUserAgent;
 
 - (id)init
 {
