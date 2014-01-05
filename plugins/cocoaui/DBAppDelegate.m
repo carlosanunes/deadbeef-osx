@@ -96,32 +96,33 @@
 
 - (IBAction) openPreferences : (id) sender {
 
-	
-	NSViewController * viewControllerSound = [[DBPreferencesViewControllerSound alloc] init];
-	NSViewController * viewControllerPlayback = [[DBPreferencesViewControllerPlayback alloc] init];	
-	NSViewController * viewControllerNetwork = [[DBPreferencesViewControllerNetwork alloc] init];	
-	NSViewController * viewControllerPlugins = [[DBPreferencesViewControllerPlugins alloc] init];	
+	if (preferencesWindowController == nil) {
+    
+		NSViewController * viewControllerSound = [[DBPreferencesViewControllerSound alloc] init];
+		NSViewController * viewControllerPlayback = [[DBPreferencesViewControllerPlayback alloc] init];	
+		NSViewController * viewControllerNetwork = [[DBPreferencesViewControllerNetwork alloc] init];	
+		NSViewController * viewControllerPlugins = [[DBPreferencesViewControllerPlugins alloc] init];	
 
+		NSArray * controllers = [[NSArray alloc] initWithObjects:
+								 viewControllerSound,
+								 viewControllerPlayback,
+								 viewControllerNetwork,
+								 viewControllerPlugins,
+								nil];
+								 
+		[viewControllerSound release];
+		[viewControllerPlayback release];
+		[viewControllerNetwork release];
+		[viewControllerPlugins release];
+		
+		NSString * title = NSLocalizedString(@"Preferences", @"Common title for preferences window");
+		preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
+		
+		[controllers release];
+        
+    }
 	
-	NSArray * controllers = [[NSArray alloc] initWithObjects:
-							 viewControllerSound,
-							 viewControllerPlayback,
-							 viewControllerNetwork,
-							 viewControllerPlugins,
-							nil];
-							 
-	[viewControllerSound release];
-	[viewControllerPlayback release];
-	[viewControllerNetwork release];
-	[viewControllerPlugins release];
-
-	
-	NSString * title = NSLocalizedString(@"Preferences", @"Common title for preferences window");
-	MASPreferencesWindowController * windowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
-	
-	[controllers release];
-	
-	[windowController showWindow : nil];
+	[preferencesWindowController showWindow : nil];
 }
 
 
@@ -556,6 +557,18 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	return;
 }
 
++ (NSString *) stringConfiguration : (NSString *) key str:(NSString *) def {
+	
+	return [NSString stringWithUTF8String: deadbeef->conf_get_str_fast([key UTF8String], [def UTF8String]) ];
+}
+
++ (void) setStringConfiguration : (NSString *) key value:(NSString *) def {
+	
+	deadbeef->conf_set_str([key UTF8String], [def UTF8String]);
+	deadbeef->sendmessage (DB_EV_CONFIGCHANGED, 0, 0, 0);
+	
+	return;
+}
 
 + (NSMutableDictionary *) keyList : (NSInteger) propertiesNumber {
 
@@ -805,5 +818,45 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
 	return list;
 }
+
++ (NSArray *) outputPluginList {
+
+    DB_output_t ** plugins = deadbeef -> plug_get_output_list ();
+    NSMutableArray * list = [NSMutableArray arrayWithCapacity:2];
+    
+    for (int i = 0; plugins[i]; ++i) {
+        [list addObject: [NSString stringWithUTF8String: plugins[i]->plugin.name]];
+    }
+    
+    return list;
+}
+
++ (NSArray *) availablePlaylists {
+
+	int count = deadbeef-> plt_get_count();
+    NSMutableArray * list = [NSMutableArray arrayWithCapacity: count];
+    NSDictionary * item;
+    ddb_playlist_t *current = NULL;
+
+    deadbeef->pl_lock();
+    current = deadbeef-> plt_get_curr();
+	for (int i = 0; i < count; ++i)
+	{
+        char title[1000];
+        ddb_playlist_t *plt = deadbeef->plt_get_for_idx (i);
+        int c = current == plt; 
+        deadbeef->plt_get_title (plt, title, sizeof (title));
+        deadbeef->plt_unref (plt);
+
+        item = [NSMutableDictionary dictionaryWithObjectsAndKeys: [NSString stringWithUTF8String: title], @"name", [NSNumber numberWithInt: c], @"isCurrent", nil];
+        [list addObject: item];
+	}
+
+	deadbeef->plt_unref(current);
+    deadbeef->pl_unlock();
+    
+    return list;
+}
+
 
 @end

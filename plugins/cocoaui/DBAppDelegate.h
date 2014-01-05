@@ -39,7 +39,9 @@
 	NSWindow *mainWindow;
 	DBTableView *mainPlaylist;
 	DBFileImportPanel *fileImportPanel;
-
+    
+    MASPreferencesWindowController *preferencesWindowController;
+    
 }
 
 - (IBAction) openPreferences: (id) sender;
@@ -76,8 +78,10 @@
 + (NSInteger) mainPlayListCount;
 
 + (int) intConfiguration : (NSString *) key num:(NSInteger) def;
-
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def;
+
++ (NSString *) stringConfiguration : (NSString *) key str:(NSString *) def;
++ (void) setStringConfiguration : (NSString *) key value:(NSString *) def;
 
 + (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel mainList : (DBTableView *) playlist;
 
@@ -98,5 +102,9 @@
 + (void) updateSelectedTracksMetadata:(NSMutableDictionary *)metadata;
 
 + (NSDictionary *) pluginList;
+
++ (NSArray *) outputPluginList;
+
++ (NSDictionary *) availablePlaylists;
 
 @end
