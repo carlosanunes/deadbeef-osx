@@ -8,9 +8,20 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MASPreferencesViewController.h"
+#import "DBAppDelegate.h"
 
 @interface DBPreferencesViewControllerSound : NSViewController <MASPreferencesViewController> {
 
+    NSArray * outputPluginList;
+    
+    BOOL eightToSixteen;
+    BOOL sixteentToTwentyFour;
+    
 }
+
+@property (retain) NSArray * outputPluginList;
+@property BOOL eightToSixteen;
+@property BOOL sixteentToTwentyFour;
+
 
 @end

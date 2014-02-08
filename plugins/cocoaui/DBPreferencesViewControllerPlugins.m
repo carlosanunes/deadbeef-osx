@@ -49,6 +49,7 @@
 	[controller setText: [array objectAtIndex: PLUGIN_DATA_COPYRIGHT_POS ]  ];
 	
 	[controller runModal];
+    [controller release];
 }
 
 - (IBAction) openWebsite : (id)sender {
@@ -56,6 +57,7 @@
 	NSArray * array = [pluginListController valueForKeyPath:@"selection.value"];
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[array objectAtIndex: PLUGIN_DATA_WEBSITE_POS]]];
 }
+
 
 -(void) dealloc {
 	

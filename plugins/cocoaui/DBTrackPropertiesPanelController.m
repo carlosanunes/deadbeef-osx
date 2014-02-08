@@ -68,6 +68,7 @@
 
 	[trackProperties release];
 	[trackMetadata release];
+    [knownKeys release];
 	
 	[super dealloc];
 }

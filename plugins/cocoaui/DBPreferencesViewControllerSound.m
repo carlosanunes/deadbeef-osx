@@ -11,9 +11,21 @@
 
 @implementation DBPreferencesViewControllerSound
 
+@synthesize outputPluginList;
+
+@synthesize eightToSixteen;
+@synthesize sixteentToTwentyFour;
+
 - (id)init
 {
     return [super initWithNibName:@"PreferencesViewSound" bundle:nil];
+}
+
+- (void) awakeFromNib {
+	
+	outputPluginList = [DBAppDelegate outputPluginList];
+    eightToSixteen = [DBAppDelegate intConfiguration:@"streamer.8_to_16" num:1];
+    sixteentToTwentyFour = [DBAppDelegate intConfiguration:@"streamer.16_to_24" num:0];
 }
 
 - (NSString *) identifier
@@ -31,5 +43,11 @@
     return NSLocalizedString(@"Sound", @"Toolbar item name for the Sound preference pane");
 }
 
+
+-(void) dealloc {
+	
+	[outputPluginList release];
+	[super dealloc];
+}
 
 @end

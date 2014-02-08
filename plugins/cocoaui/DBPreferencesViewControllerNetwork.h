@@ -8,23 +8,18 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MASPreferencesViewController.h"
+#import "DBAppDelegate.h"
 
 @interface DBPreferencesViewControllerNetwork : NSViewController <MASPreferencesViewController> {
 
-	IBOutlet id checkBoxProxyEnabled;
-	IBOutlet id textInputServerAddress;
-	IBOutlet id textInputServerPort;
-	IBOutlet id textInputProxyType;
-	IBOutlet id textInputProxyUsername;
-	IBOutlet id textInputProxyPassword;
-	IBOutlet id textInputProxyUserAgent;
-	
-	BOOL		proxyServer;
-	NSString *	proxyServerAddress;
-	NSString *	proxyServerPort;
-	NSString *	proxyServerUsername;
-	NSString *	proxyServerPassword;
-	NSString *	proxyServerUserAgent;
+    BOOL proxyServer;
+    
+    NSString * proxyServerAddress;
+    NSString * proxyServerPort;
+    NSString * proxyServerUsername;
+    NSString * proxyServerPassword;
+    NSString * proxyServerUserAgent;
+
 }
 
 @property BOOL proxyServer;
