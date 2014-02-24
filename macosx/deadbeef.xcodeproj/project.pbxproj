@@ -16,12 +16,8 @@
 		0702979317E8EE4A00710234 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702979117E8EE4A00710234 /* parser.c */; };
 		070297A717E9014900710234 /* mms.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881ED01689C5550066142D /* mms.so */; };
 		0702981817E9090B00710234 /* deadbeef.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0702980617E9090B00710234 /* deadbeef.icns */; };
-		0702981917E9090B00710234 /* back-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980817E9090B00710234 /* back-pressed.png */; };
-		0702981A17E9090B00710234 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980917E9090B00710234 /* back.png */; };
 		0702981B17E9090B00710234 /* background-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980A17E9090B00710234 /* background-top.png */; };
 		0702981C17E9090B00710234 /* buffering.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980B17E9090B00710234 /* buffering.png */; };
-		0702981D17E9090B00710234 /* forward-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980C17E9090B00710234 /* forward-pressed.png */; };
-		0702981E17E9090B00710234 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980D17E9090B00710234 /* forward.png */; };
 		0702981F17E9090B00710234 /* FROM THE VLC PROJECT in Resources */ = {isa = PBXBuildFile; fileRef = 0702980E17E9090B00710234 /* FROM THE VLC PROJECT */; };
 		0702982017E9090B00710234 /* pause-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980F17E9090B00710234 /* pause-pressed.png */; };
 		0702982117E9090B00710234 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981017E9090B00710234 /* pause.png */; };
@@ -235,6 +231,16 @@
 		0776998E1842DAD6004DC501 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 077699701842DAD5004DC501 /* timer.h */; };
 		0776998F1842DAD6004DC501 /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = 077699731842DAD5004DC501 /* version.c */; };
 		077699901842DAD6004DC501 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 077699741842DAD5004DC501 /* version.h */; };
+		078060BE1868F328008319FD /* DBSplitViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 078060BC1868F328008319FD /* DBSplitViewController.h */; };
+		078060BF1868F328008319FD /* DBSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078060BD1868F328008319FD /* DBSplitViewController.m */; };
+		078060CB186A1F43008319FD /* DBSidebarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 078060C9186A1F43008319FD /* DBSidebarViewController.h */; };
+		078060CC186A1F43008319FD /* DBSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078060CA186A1F43008319FD /* DBSidebarViewController.m */; };
+		078060CF186B90A3008319FD /* DBSideBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 078060CD186B90A3008319FD /* DBSideBarItem.h */; };
+		078060D0186B90A3008319FD /* DBSideBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 078060CE186B90A3008319FD /* DBSideBarItem.m */; };
+		078060D5186BD746008319FD /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 078060D2186BD720008319FD /* next.png */; };
+		078060D6186BD74E008319FD /* next-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 078060D1186BD720008319FD /* next-pressed.png */; };
+		078060D7186BD754008319FD /* previous-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 078060D3186BD720008319FD /* previous-pressed.png */; };
+		078060D8186BD757008319FD /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 078060D4186BD720008319FD /* previous.png */; };
 		0782B9FD180F4DF900CB8120 /* PreferencesViewPlugins.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0782B9FC180F4DF900CB8120 /* PreferencesViewPlugins.xib */; };
 		078476FD16E80D3F00512E95 /* coredecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 07E582C11691E95000982BCB /* coredecoder.c */; };
 		0786991618130C740093C177 /* DBValueTransformerFirstElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 0786991318130C740093C177 /* DBValueTransformerFirstElement.h */; };
@@ -1407,12 +1413,8 @@
 		070297D317E9084800710234 /* DBTimeSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTimeSliderCell.h; sourceTree = "<group>"; };
 		070297D417E9084800710234 /* DBTimeSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTimeSliderCell.m; sourceTree = "<group>"; };
 		0702980617E9090B00710234 /* deadbeef.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = deadbeef.icns; sourceTree = "<group>"; };
-		0702980817E9090B00710234 /* back-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-pressed.png"; sourceTree = "<group>"; };
-		0702980917E9090B00710234 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		0702980A17E9090B00710234 /* background-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-top.png"; sourceTree = "<group>"; };
 		0702980B17E9090B00710234 /* buffering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buffering.png; sourceTree = "<group>"; };
-		0702980C17E9090B00710234 /* forward-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-pressed.png"; sourceTree = "<group>"; };
-		0702980D17E9090B00710234 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
 		0702980E17E9090B00710234 /* FROM THE VLC PROJECT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "FROM THE VLC PROJECT"; sourceTree = "<group>"; };
 		0702980F17E9090B00710234 /* pause-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-pressed.png"; sourceTree = "<group>"; };
 		0702981017E9090B00710234 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -1612,6 +1614,16 @@
 		077699701842DAD5004DC501 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
 		077699731842DAD5004DC501 /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
 		077699741842DAD5004DC501 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		078060BC1868F328008319FD /* DBSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBSplitViewController.h; path = ../plugins/cocoaui/DBSplitViewController.h; sourceTree = "<group>"; };
+		078060BD1868F328008319FD /* DBSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBSplitViewController.m; path = ../plugins/cocoaui/DBSplitViewController.m; sourceTree = "<group>"; };
+		078060C9186A1F43008319FD /* DBSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBSidebarViewController.h; path = ../plugins/cocoaui/DBSidebarViewController.h; sourceTree = "<group>"; };
+		078060CA186A1F43008319FD /* DBSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBSidebarViewController.m; path = ../plugins/cocoaui/DBSidebarViewController.m; sourceTree = "<group>"; };
+		078060CD186B90A3008319FD /* DBSideBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBSideBarItem.h; path = ../plugins/cocoaui/DBSideBarItem.h; sourceTree = "<group>"; };
+		078060CE186B90A3008319FD /* DBSideBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBSideBarItem.m; path = ../plugins/cocoaui/DBSideBarItem.m; sourceTree = "<group>"; };
+		078060D1186BD720008319FD /* next-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next-pressed.png"; sourceTree = "<group>"; };
+		078060D2186BD720008319FD /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		078060D3186BD720008319FD /* previous-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "previous-pressed.png"; sourceTree = "<group>"; };
+		078060D4186BD720008319FD /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous.png; sourceTree = "<group>"; };
 		0782B9FC180F4DF900CB8120 /* PreferencesViewPlugins.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PreferencesViewPlugins.xib; path = ../plugins/cocoaui/PreferencesViewPlugins.xib; sourceTree = SOURCE_ROOT; };
 		0786991318130C740093C177 /* DBValueTransformerFirstElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBValueTransformerFirstElement.h; path = ../plugins/cocoaui/DBValueTransformerFirstElement.h; sourceTree = SOURCE_ROOT; };
 		0786991418130C740093C177 /* DBValueTransformerFirstElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBValueTransformerFirstElement.m; path = ../plugins/cocoaui/DBValueTransformerFirstElement.m; sourceTree = SOURCE_ROOT; };
@@ -3077,6 +3089,12 @@
 				070568E2181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.m */,
 				070568E5181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.h */,
 				070568E6181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.m */,
+				078060BC1868F328008319FD /* DBSplitViewController.h */,
+				078060BD1868F328008319FD /* DBSplitViewController.m */,
+				078060C9186A1F43008319FD /* DBSidebarViewController.h */,
+				078060CA186A1F43008319FD /* DBSidebarViewController.m */,
+				078060CD186B90A3008319FD /* DBSideBarItem.h */,
+				078060CE186B90A3008319FD /* DBSideBarItem.m */,
 			);
 			name = cocoaui;
 			sourceTree = "<group>";
@@ -3109,12 +3127,12 @@
 		0702980717E9090B00710234 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				0702980817E9090B00710234 /* back-pressed.png */,
-				0702980917E9090B00710234 /* back.png */,
+				078060D1186BD720008319FD /* next-pressed.png */,
+				078060D2186BD720008319FD /* next.png */,
+				078060D3186BD720008319FD /* previous-pressed.png */,
+				078060D4186BD720008319FD /* previous.png */,
 				0702980A17E9090B00710234 /* background-top.png */,
 				0702980B17E9090B00710234 /* buffering.png */,
-				0702980C17E9090B00710234 /* forward-pressed.png */,
-				0702980D17E9090B00710234 /* forward.png */,
 				0702980E17E9090B00710234 /* FROM THE VLC PROJECT */,
 				0702980F17E9090B00710234 /* pause-pressed.png */,
 				0702981017E9090B00710234 /* pause.png */,
@@ -5465,9 +5483,12 @@
 				0715DF7517F63A2B00A15158 /* DBTrackPropertiesPanelController.h in Headers */,
 				07C4AB1F17F63F630086EB7F /* cocoaui_api.h in Headers */,
 				073B5D8A180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h in Headers */,
+				078060BE1868F328008319FD /* DBSplitViewController.h in Headers */,
 				073B5DA9180DFDC300AF2FE8 /* MASPreferencesViewController.h in Headers */,
 				073B5DAA180DFDC300AF2FE8 /* MASPreferencesWindowController.h in Headers */,
+				078060CB186A1F43008319FD /* DBSidebarViewController.h in Headers */,
 				0786991618130C740093C177 /* DBValueTransformerFirstElement.h in Headers */,
+				078060CF186B90A3008319FD /* DBSideBarItem.h in Headers */,
 				0786991B18130C970093C177 /* DBValueTransformerLastElement.h in Headers */,
 				078699381813147A0093C177 /* DBScrollableTextPanelController.h in Headers */,
 				07869A601813428D0093C177 /* DBValueTransformerPluginHasWebsite.h in Headers */,
@@ -6782,13 +6803,11 @@
 				073B5DF3180E030600AF2FE8 /* MASPreferencesWindow.xib in Resources */,
 				07C4ACB9180233D80086EB7F /* TextInputPanel.xib in Resources */,
 				0702981817E9090B00710234 /* deadbeef.icns in Resources */,
-				0702981917E9090B00710234 /* back-pressed.png in Resources */,
-				0702981A17E9090B00710234 /* back.png in Resources */,
 				0702981B17E9090B00710234 /* background-top.png in Resources */,
 				0702981C17E9090B00710234 /* buffering.png in Resources */,
-				0702981D17E9090B00710234 /* forward-pressed.png in Resources */,
-				0702981E17E9090B00710234 /* forward.png in Resources */,
 				0702981F17E9090B00710234 /* FROM THE VLC PROJECT in Resources */,
+				078060D8186BD757008319FD /* previous.png in Resources */,
+				078060D7186BD754008319FD /* previous-pressed.png in Resources */,
 				0702982017E9090B00710234 /* pause-pressed.png in Resources */,
 				0702982117E9090B00710234 /* pause.png in Resources */,
 				0702982217E9090B00710234 /* paused.png in Resources */,
@@ -6796,12 +6815,14 @@
 				0702982417E9090B00710234 /* play.png in Resources */,
 				0702982517E9090B00710234 /* stop-pressed.png in Resources */,
 				0702982617E9090B00710234 /* stop.png in Resources */,
+				078060D5186BD746008319FD /* next.png in Resources */,
 				0702982717E9090B00710234 /* volume-high.png in Resources */,
 				0702982817E9090B00710234 /* volume-low.png in Resources */,
 				073B5D73180DF7E100AF2FE8 /* PreferencesViewSound.xib in Resources */,
 				0782B9FD180F4DF900CB8120 /* PreferencesViewPlugins.xib in Resources */,
 				078699341813114B0093C177 /* ScrollableTextPanel.xib in Resources */,
 				07869AD218136B100093C177 /* PreferencesViewPlayback.xib in Resources */,
+				078060D6186BD74E008319FD /* next-pressed.png in Resources */,
 				07869AD418136B350093C177 /* PreferencesViewNetwork.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6840,15 +6861,18 @@
 				0715DF6317F63A0C00A15158 /* DBAppDelegate.m in Sources */,
 				0715DF6517F63A1000A15158 /* DBBottomBar.m in Sources */,
 				0715DF6717F63A1300A15158 /* DBFileImportPanel.m in Sources */,
+				078060BF1868F328008319FD /* DBSplitViewController.m in Sources */,
 				0715DF6A17F63A1700A15158 /* DBMainWindowController.m in Sources */,
 				0715DF6C17F63A2000A15158 /* DBPlayListController.m in Sources */,
 				0715DF7017F63A2500A15158 /* DBTableView.m in Sources */,
 				0715DF7217F63A2800A15158 /* DBTextInputPanelController.m in Sources */,
 				0715DF7417F63A2A00A15158 /* DBTimeSliderCell.m in Sources */,
+				078060D0186B90A3008319FD /* DBSideBarItem.m in Sources */,
 				0715DF7617F63A2C00A15158 /* DBTrackPropertiesPanelController.m in Sources */,
 				07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */,
 				073B5D8B180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m in Sources */,
 				073B5DAB180DFDC300AF2FE8 /* MASPreferencesWindowController.m in Sources */,
+				078060CC186A1F43008319FD /* DBSidebarViewController.m in Sources */,
 				0786991718130C740093C177 /* DBValueTransformerFirstElement.m in Sources */,
 				0786991C18130C970093C177 /* DBValueTransformerLastElement.m in Sources */,
 				078699391813147A0093C177 /* DBScrollableTextPanelController.m in Sources */,
