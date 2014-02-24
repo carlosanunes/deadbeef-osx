@@ -405,6 +405,9 @@
                                                                         <color key="textColor" red="0.43921568630000002" green="0.4941176471" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <binding destination="pev-yP-ONC" name="value" keyPath="objectValue.name" id="0rI-gT-ohk"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
@@ -428,6 +431,9 @@
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <binding destination="1s0-fB-ryE" name="value" keyPath="objectValue.name" id="hRm-0c-K00"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
@@ -436,8 +442,14 @@
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
+                                                    <connections>
+                                                        <binding destination="Mhz-7G-mcH" name="value" keyPath="arrangedObjects" id="71C-U6-OIH"/>
+                                                    </connections>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="delegate" destination="BGk-Cd-IRo" id="Y1d-zt-h3o"/>
+                                            </connections>
                                         </outlineView>
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -493,7 +505,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="928">
-                                            <rect key="frame" x="348" y="17" width="16" height="192"/>
+                                            <rect key="frame" x="349" y="17" width="15" height="192"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" id="931">
@@ -527,6 +539,8 @@
                 <outlet property="orderShuffleAlbumsMenuItem" destination="1201" id="1219"/>
                 <outlet property="orderShuffleTracksMenuItem" destination="1200" id="1220"/>
                 <outlet property="playlistTable" destination="930" id="1090"/>
+                <outlet property="sidebarTreeController" destination="Mhz-7G-mcH" id="mLZ-eS-VPM"/>
+                <outlet property="sidebarView" destination="HHP-xw-JpJ" id="S4v-rt-vEb"/>
                 <outlet property="timeSlider" destination="1180" id="1249"/>
                 <outlet property="volumeSlider" destination="963" id="986"/>
             </connections>
@@ -549,6 +563,12 @@
             </connections>
         </customObject>
         <customObject id="cR5-PM-Dmf" userLabel="Split View Controller" customClass="DBSplitViewController"/>
+        <treeController objectClassName="DBSideBarItem" childrenKeyPath="children" leafKeyPath="isLeaf" id="Mhz-7G-mcH"/>
+        <customObject id="BGk-Cd-IRo" userLabel="Outline View Controller" customClass="DBSidebarViewController">
+            <connections>
+                <outlet property="outlineView" destination="HHP-xw-JpJ" id="Yp2-9G-Q4d"/>
+            </connections>
+        </customObject>
         <userDefaultsController representsSharedInstance="YES" id="1224"/>
         <window title="File Import" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="1254" userLabel="Import Panel" customClass="DBFileImportPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
