@@ -329,6 +329,8 @@
 		else
 		{}
 	}
+    
+    [controller release];
 }
 
 // opens a file import dialog and adds the selected

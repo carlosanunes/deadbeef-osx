@@ -10,11 +10,10 @@
 
 @interface DBSideBarItem : NSObject {
     
-    BOOL _flagHeader;
-    
     NSString * name;
     NSString * identifier;
     NSMutableArray * children;
+    
 }
     
 @property (nonatomic, copy) NSString * name;

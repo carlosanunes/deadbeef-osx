@@ -8,19 +8,26 @@
 
 #import "DBSideBarItem.h"
 
+@interface DBSideBarItem ()
+
+@property (readwrite) BOOL isHeader;
+
+@end
+
+
 @implementation DBSideBarItem
 
-@synthesize isHeader;
 @synthesize name;
 @synthesize children;
 @synthesize identifier;
+
 
 + (DBSideBarItem *) itemWithName:(NSString *)name  isHeader:(BOOL) header {
 
     DBSideBarItem * item = [[[DBSideBarItem alloc] init] autorelease];
     
     [item setName:name];
-    item -> _flagHeader = header;
+    [item setIsHeader:header];
 
     return item;
 }
@@ -30,7 +37,7 @@
     
     [item setName:name];
     [item setIdentifier:aIdentifier];
-    item -> _flagHeader = header;
+    [item setIsHeader:header];
     
     return item;
     
@@ -43,11 +50,6 @@
         return NO;
     
     return [children count] == 0;
-}
-
-- (BOOL) isHeader {
-
-    return _flagHeader;
 }
 
 - (void)dealloc
