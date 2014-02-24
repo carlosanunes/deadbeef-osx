@@ -10,51 +10,46 @@
 
 @implementation DBSidebarViewController 
 
-@synthesize sidebarItems;
 
-- (id) init {
+#pragma mark - Helpers
+
+- (BOOL) isItemHeader:(id)item{
     
-    self = [super init];
-    if (self) {
- 
-        sidebarItems = [[NSMutableArray array] retain];
-
-        [sidebarItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                                 [NSNumber numberWithBool:YES], @"isSourceGroup",
-                                 @"Library", @"name",
-                                 [NSArray arrayWithObjects:
-                                  [NSDictionary dictionaryWithObjectsAndKeys:
-                                   @"Music", @"name",
-                                   nil],
-                                  [NSDictionary dictionaryWithObjectsAndKeys:
-                                   @"Movies", @"name",
-                                   nil],
-                                  [NSDictionary dictionaryWithObjectsAndKeys:
-                                   @"TV Shows", @"name",
-                                   nil],
-                                  [NSDictionary dictionaryWithObjectsAndKeys:
-                                   @"Podcasts", @"name",
-                                   nil],
-                                  [NSDictionary dictionaryWithObjectsAndKeys:
-                                   @"Radio", @"name",
-                                   [NSArray arrayWithObjects:
-                                    [NSDictionary dictionaryWithObjectsAndKeys:
-                                     @"CBC Vancouver", @"name",
-                                     nil],
-                                    [NSDictionary dictionaryWithObjectsAndKeys:
-                                     @"CBC Victoria", @"name",
-                                     nil],
-                                    nil], @"children",
-                                   nil],
-                                  nil], @"children",
-                                 nil]];
-
+    if([item isKindOfClass:[NSTreeNode class]]){
+        if ([((NSTreeNode *)item).representedObject respondsToSelector:@selector(isHeader)]) {
+            return [((NSTreeNode *)item).representedObject performSelector:@selector(isHeader)];
+        }
     }
     
-    return self;
+    return NO;
 }
 
 
+#pragma mark - NSOutlineViewDelegate
+
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item{
+    
+    return ![self isItemHeader:item];
+}
+
+- (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
+    
+    if ([self isItemHeader:item]) {
+        return [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
+    } else {
+        return [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
+    }
+    
+    return nil;
+}
+
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item{
+    // This converts a group to a header which influences its style
+
+    return [self isItemHeader:item];
+}
 
 
 @end

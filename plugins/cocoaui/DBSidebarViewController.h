@@ -7,17 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <DBSideBarItem.h>
+#import <DBAppDelegate.h>
 
 @interface DBSidebarViewController : NSViewController <NSOutlineViewDelegate> {
 
-	IBOutlet NSTreeController * itemListController;
     
-    NSMutableArray * sidebarItems;
-
 }
-
-@property (retain) NSMutableArray * sidebarItems;
-
 
 @end

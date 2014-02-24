@@ -8,10 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DBSideBarItem : NSObject
+@interface DBSideBarItem : NSObject {
+    
+    BOOL _flagHeader;
+    
+    NSString * name;
+    NSString * identifier;
+    NSMutableArray * children;
+}
+    
+@property (nonatomic, copy) NSString * name;
+@property (nonatomic, copy) NSString * identifier;
+@property (nonatomic, copy) NSMutableArray * children;
 
-@property (nonatomic, strong) NSString * name;
-@property (nonatomic, assign) BOOL isGroup;
-@property (nonatomic, strong) NSMutableArray *children;
+@property (readonly) BOOL isLeaf;
+@property (readonly) BOOL isHeader;
+
++ (DBSideBarItem *) itemWithName:(NSString *)name isHeader:(BOOL) header;
++ (DBSideBarItem *) itemWithName:(NSString *)name isHeader:(BOOL) header identifier:(NSString *) aIdentifier;
 
 @end

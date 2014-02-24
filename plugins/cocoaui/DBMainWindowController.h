@@ -21,6 +21,7 @@
 #import "DBAppDelegate.h"
 #import "DBPlayListController.h"
 #import "DBTextInputPanelController.h"
+#import <DBSideBarItem.h>
 
 @interface DBMainWindowController : NSObject <NSWindowDelegate> {
 		
@@ -30,7 +31,10 @@
 	IBOutlet NSSlider * volumeSlider;
 	IBOutlet DBTableView * playlistTable;
 	IBOutlet DBFileImportPanel *fileImportPanel;
+    IBOutlet NSOutlineView * sidebarView;
 	
+    IBOutlet NSTreeController * sidebarTreeController;
+    
 	NSImage * playImage;
 	NSImage * playAlternateImage;
 	NSImage * pauseImage;
@@ -56,7 +60,13 @@
 	
 	NSRect currentStatusCell;
 	NSRect oldStatusCell;
+    
+    NSMutableArray * sidebarItems;
+    
 }
+
+@property (retain) NSMutableArray * sidebarItems;
+
 
 
 // helper functions
