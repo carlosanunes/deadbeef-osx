@@ -107,4 +107,6 @@
 
 + (NSDictionary *) availablePlaylists;
 
++ (NSInteger) currentPlaylistIndex;
+
 @end
