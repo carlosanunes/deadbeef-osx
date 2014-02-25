@@ -1,3 +1,6 @@
 [submodule "macosx/libs/MASPreferences"]
 	path = macosx/libs/MASPreferences
 	url = https://github.com/shpakovski/MASPreferences.git
+[submodule "macosx/libs/AudioFrameworks"]
+	path = macosx/libs/AudioFrameworks
+	url = https://github.com/sbooth/AudioFrameworks.git
