@@ -155,12 +155,12 @@
 	
 	// deselect old
 	[indexesToDeselect enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-		[DBAppDelegate setItemSelected:idx value:NO];
+		[DBAppDelegate setPlaylistItemSelected:idx value:NO];
 	}];
 	
 	// select new
 	[proposedSelectionIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-		[DBAppDelegate setItemSelected:idx value:YES];
+		[DBAppDelegate setPlaylistItemSelected:idx value:YES];
 	}];
 	
 	
