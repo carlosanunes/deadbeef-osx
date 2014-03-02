@@ -319,9 +319,8 @@
 
 -(IBAction) openStream: sender {
 
-	DBTextInputPanelController * controller = [[DBTextInputPanelController alloc] initWithWindowNibName:@"TextInputPanel" ];
-	[controller setPanelTitle: NSLocalizedString(@"Open Stream...", "Panel title")];
-	
+    DBTextInputPanelController * controller = [DBTextInputPanelController initPanelWithTitle:@"Open Stream..."];
+    
 	if ([controller runModal] == NSOKButton)
 	{
 		if ([DBAppDelegate addPathToPlaylistAtEnd: [controller textInput] ])
@@ -359,6 +358,25 @@
     }
 	
 	return NO;
+}
+
+
+// playlist
+
+
+- (IBAction) newPlaylist: (id) sender {
+    
+    
+}
+
+- (IBAction) loadPlaylist: (id) sender {
+    
+    
+}
+
+- (IBAction) savePlaylist: (id) sender {
+    
+    
 }
 
 
