@@ -623,8 +623,15 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	return list;
 }
 
++ (void) setCurrentPlaylist : (NSInteger) index {
 
-+ (void) setItemSelected : (NSInteger) index value:(BOOL) def {
+    deadbeef->plt_set_curr_idx (index);
+    deadbeef->conf_set_int ("playlist.current", index);
+    
+}
+
+
++ (void) setPlaylistItemSelected : (NSInteger) index value:(BOOL) def {
 
 	deadbeef->pl_lock();
 	
