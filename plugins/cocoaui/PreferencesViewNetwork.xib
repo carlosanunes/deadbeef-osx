@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A2093" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DBPreferencesViewControllerNetwork">
@@ -19,10 +19,13 @@
                 <button id="2">
                     <rect key="frame" x="18" y="298" width="193" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Enable proxy server" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="3">
+                    <buttonCell key="cell" type="check" title="Enable proxy server" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="3">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="proxyServer" id="Sej-X4-g7K"/>
+                    </connections>
                 </button>
                 <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="4">
                     <rect key="frame" x="17" y="56" width="476" height="230"/>
@@ -83,6 +86,9 @@
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="proxyServerAddress" id="oMC-GS-FGj"/>
+                                    </connections>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" id="17">
@@ -92,6 +98,9 @@
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="proxyServerPort" id="FWV-4t-q42"/>
+                                    </connections>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" id="21">
@@ -101,6 +110,9 @@
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="proxyServerUsername" id="4Fr-fH-cb7"/>
+                                    </connections>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" id="23">
@@ -110,6 +122,9 @@
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="proxyServerPassword" id="SDK-Jm-qpL"/>
+                                    </connections>
                                 </textFieldCell>
                             </textField>
                             <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="25">
@@ -135,6 +150,9 @@
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="proxyServerUserAgent" id="Hcy-p5-b8A"/>
+                                    </connections>
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" id="Jwl-Dg-ZwV">
