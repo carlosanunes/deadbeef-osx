@@ -90,6 +90,9 @@
                                         <binding destination="-2" name="value" keyPath="proxyServerAddress" id="oMC-GS-FGj"/>
                                     </connections>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="RoO-go-EQ1"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" id="17">
                                 <rect key="frame" x="175" y="163" width="96" height="22"/>
@@ -102,6 +105,9 @@
                                         <binding destination="-2" name="value" keyPath="proxyServerPort" id="FWV-4t-q42"/>
                                     </connections>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="WlZ-Sm-WGL"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" id="21">
                                 <rect key="frame" x="175" y="93" width="153" height="22"/>
@@ -114,6 +120,9 @@
                                         <binding destination="-2" name="value" keyPath="proxyServerUsername" id="4Fr-fH-cb7"/>
                                     </connections>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="8eR-20-3h8"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" id="23">
                                 <rect key="frame" x="175" y="61" width="153" height="22"/>
@@ -126,6 +135,9 @@
                                         <binding destination="-2" name="value" keyPath="proxyServerPassword" id="SDK-Jm-qpL"/>
                                     </connections>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="J97-A6-IQa"/>
+                                </connections>
                             </textField>
                             <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="25">
                                 <rect key="frame" x="18" y="42" width="438" height="5"/>
@@ -154,6 +166,9 @@
                                         <binding destination="-2" name="value" keyPath="proxyServerUserAgent" id="Hcy-p5-b8A"/>
                                     </connections>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="ECj-Px-8Dg"/>
+                                </connections>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" id="Jwl-Dg-ZwV">
                                 <rect key="frame" x="173" y="126" width="286" height="26"/>
@@ -169,6 +184,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="MPg-XX-oz1"/>
+                                </connections>
                             </popUpButton>
                         </subviews>
                     </view>
