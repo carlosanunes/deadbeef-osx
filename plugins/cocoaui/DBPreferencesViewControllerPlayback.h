@@ -18,10 +18,18 @@
     BOOL autoResetStopAfterCurrent;
 
     NSInteger replaygainPreamp;
+    NSInteger minReplaygainPreamp;
+    NSInteger maxReplaygainPreamp;
+
     NSInteger globalPreamp;
+    NSInteger minGlobalPreamp;
+    NSInteger maxGlobalPreamp;
     
     NSString * cliAddPlaylist; // name of default playlist on which to add file added through the cli
     
+    NSArray * replaygainModeList;
+    
+    IBOutlet NSArrayController * replaygainModeListController;
 }
 
 @property BOOL replaygainScale;
@@ -34,5 +42,10 @@
 @property NSInteger replaygainPreamp;
 @property NSInteger globalPreamp;
 
+@property NSInteger minReplaygainPreamp;
+@property NSInteger maxReplaygainPreamp;
+
+@property NSInteger minGlobalPreamp;
+@property NSInteger maxGlobalPreamp;
 
 @end
