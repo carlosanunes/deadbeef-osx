@@ -14,14 +14,12 @@
 
     NSArray * outputPluginList;
     
-    BOOL eightToSixteen;
-    BOOL sixteentToTwentyFour;
-    
+    IBOutlet NSArrayController * outputPluginListController;
 }
 
 @property (retain) NSArray * outputPluginList;
 @property BOOL eightToSixteen;
-@property BOOL sixteentToTwentyFour;
+@property BOOL sixteenToTwentyFour;
 
 
 @end

@@ -13,8 +13,6 @@
 
 @synthesize outputPluginList;
 
-@synthesize eightToSixteen;
-@synthesize sixteentToTwentyFour;
 
 - (id)init
 {
@@ -23,9 +21,19 @@
 
 - (void) awakeFromNib {
 	
+    NSString * currentPlugin = [DBAppDelegate stringConfiguration:@"output_plugin" str:@""];
+    NSUInteger i;
+    
 	outputPluginList = [DBAppDelegate outputPluginList];
-    eightToSixteen = [DBAppDelegate intConfiguration:@"streamer.8_to_16" num:1];
-    sixteentToTwentyFour = [DBAppDelegate intConfiguration:@"streamer.16_to_24" num:0];
+	[outputPluginListController setContent: outputPluginList];
+    
+    i = [outputPluginList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        if ([currentPlugin isEqualToString: obj])
+            return YES;
+        return NO;
+    }];
+    
+    [outputPluginListController setSelectionIndex:i];
 }
 
 - (NSString *) identifier
@@ -41,6 +49,16 @@
 - (NSString *)toolbarItemLabel
 {
     return NSLocalizedString(@"Sound", @"Toolbar item name for the Sound preference pane");
+}
+
+- (BOOL) eightToSixteen {
+    
+    return [DBAppDelegate intConfiguration:@"streamer.8_to_16" num:1];
+}
+
+- (BOOL) sixteenToTwentyFour {
+    
+     return [DBAppDelegate intConfiguration:@"streamer.16_to_24" num:0];
 }
 
 
