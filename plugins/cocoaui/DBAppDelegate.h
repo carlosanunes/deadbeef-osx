@@ -107,6 +107,10 @@
 
 + (NSArray *) outputPluginList;
 
++ (NSArray *) replaygainModeList;
+
++ (NSArray *) proxyTypeList;
+
 + (NSDictionary *) availablePlaylists;
 
 + (NSInteger) currentPlaylistIndex;
