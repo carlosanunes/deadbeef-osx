@@ -19,6 +19,11 @@
     NSString * proxyServerUsername;
     NSString * proxyServerPassword;
     NSString * proxyServerUserAgent;
+    
+    NSArray * proxyTypeList;
+    
+    IBOutlet NSArrayController * proxyTypeListController;
+    
 
 }
 

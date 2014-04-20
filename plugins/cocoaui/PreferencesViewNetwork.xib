@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DBPreferencesViewControllerNetwork">
             <connections>
+                <outlet property="proxyTypeListController" destination="VM7-Px-CTq" id="BZe-Ry-Av1"/>
                 <outlet property="view" destination="1" id="32"/>
             </connections>
         </customObject>
@@ -185,6 +186,7 @@
                                     </menu>
                                 </popUpButtonCell>
                                 <connections>
+                                    <binding destination="VM7-Px-CTq" name="contentValues" keyPath="arrangedObjects" id="ZdJ-s4-zfo"/>
                                     <binding destination="-2" name="enabled" keyPath="proxyServer" id="MPg-XX-oz1"/>
                                 </connections>
                             </popUpButton>
@@ -203,6 +205,7 @@
                 </button>
             </subviews>
         </customView>
+        <arrayController id="VM7-Px-CTq"/>
         <userDefaultsController representsSharedInstance="YES" id="70"/>
     </objects>
 </document>

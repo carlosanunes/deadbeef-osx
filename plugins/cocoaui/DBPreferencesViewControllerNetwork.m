@@ -21,11 +21,6 @@
 - (id)init
 {
 
-    return [super initWithNibName:@"PreferencesViewNetwork" bundle:nil];
-}
-
-- (void) awakeFromNib {
-
 	proxyServerAddress = [DBAppDelegate stringConfiguration:@"network.proxy.address" str:@""];
 	proxyServerPort = [DBAppDelegate stringConfiguration:@"network.proxy.port" str:@"8080"];
 	proxyServerUsername = [DBAppDelegate stringConfiguration:@"network.proxy.username" str:@""];
@@ -34,6 +29,25 @@
     
     proxyServer = [DBAppDelegate intConfiguration:@"proxy.server" num:0];
 
+    return [super initWithNibName:@"PreferencesViewNetwork" bundle:nil];
+}
+
+- (void) awakeFromNib {
+    
+    NSUInteger index;
+    NSString * currentProxyType = [DBAppDelegate stringConfiguration:@"network.proxy.type" str:@"HTTP"];
+    proxyTypeList = [DBAppDelegate proxyTypeList];
+    [proxyTypeListController setContent: proxyTypeList];
+    
+    index = [proxyTypeList indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        
+        if ([currentProxyType isEqualToString: obj])
+            return YES;
+        return NO;
+    }];
+    
+    [proxyTypeListController setSelectionIndex: index];
+    
 }
 
 - (NSString *) identifier
