@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A2093" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DBPreferencesViewControllerPlayback">
             <connections>
+                <outlet property="replaygainModeListController" destination="u8B-Vm-aFg" id="IOk-m6-YYe"/>
                 <outlet property="view" destination="1" id="47"/>
             </connections>
         </customObject>
@@ -32,16 +33,29 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="replaygainScale" id="0ic-cD-DgQ"/>
+                    </connections>
                 </button>
                 <slider verticalHuggingPriority="750" id="8">
                     <rect key="frame" x="174" y="243" width="389" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" state="on" alignment="left" minValue="-12" maxValue="12" tickMarkPosition="below" numberOfTickMarks="3" sliderType="linear" id="9"/>
+                    <connections>
+                        <binding destination="-2" name="maxValue" keyPath="maxReplaygainPreamp" id="0Iu-UY-up6"/>
+                        <binding destination="-2" name="minValue" keyPath="minReplaygainPreamp" previousBinding="0Iu-UY-up6" id="yj9-ft-VtG"/>
+                        <binding destination="-2" name="value" keyPath="replaygainPreamp" previousBinding="yj9-ft-VtG" id="VNZ-mc-Ngp"/>
+                    </connections>
                 </slider>
                 <slider verticalHuggingPriority="750" id="10">
                     <rect key="frame" x="174" y="187" width="389" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" state="on" alignment="left" minValue="-12" maxValue="12" tickMarkPosition="below" numberOfTickMarks="3" sliderType="linear" id="11"/>
+                    <connections>
+                        <binding destination="-2" name="maxValue" keyPath="maxGlobalPreamp" id="3lg-xg-idt"/>
+                        <binding destination="-2" name="minValue" keyPath="minGlobalPreamp" previousBinding="3lg-xg-idt" id="XBh-zy-VmY"/>
+                        <binding destination="-2" name="value" keyPath="globalPreamp" previousBinding="XBh-zy-VmY" id="aLY-MZ-a4v"/>
+                    </connections>
                 </slider>
                 <button id="14">
                     <rect key="frame" x="18" y="87" width="331" height="18"/>
@@ -50,6 +64,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="resumePreviousSession" id="RJm-5K-m2A"/>
+                    </connections>
                 </button>
                 <button id="16">
                     <rect key="frame" x="18" y="55" width="331" height="18"/>
@@ -58,6 +75,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="ignoreArchivesOnAddFolder" id="vKn-Mh-0Lt"/>
+                    </connections>
                 </button>
                 <button id="18">
                     <rect key="frame" x="18" y="22" width="315" height="18"/>
@@ -66,6 +86,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="autoResetStopAfterCurrent" id="7do-Qo-uOg"/>
+                    </connections>
                 </button>
                 <textField verticalHuggingPriority="750" id="20">
                     <rect key="frame" x="17" y="252" width="143" height="17"/>
@@ -154,6 +177,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="cliAddPlaylist" id="9hQ-rB-jNA"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="GRa-g0-caa">
                     <rect key="frame" x="18" y="122" width="425" height="17"/>
@@ -178,9 +204,13 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="u8B-Vm-aFg" name="contentValues" keyPath="arrangedObjects" id="qPh-8D-uX0"/>
+                    </connections>
                 </popUpButton>
             </subviews>
         </customView>
+        <arrayController id="u8B-Vm-aFg"/>
         <userDefaultsController representsSharedInstance="YES" id="ap8-5W-xsg"/>
     </objects>
 </document>
