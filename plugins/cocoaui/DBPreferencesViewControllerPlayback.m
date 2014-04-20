@@ -21,12 +21,13 @@
 @synthesize replaygainPreamp;
 @synthesize globalPreamp;
 
+@synthesize minReplaygainPreamp;
+@synthesize minGlobalPreamp;
+@synthesize maxReplaygainPreamp;
+@synthesize maxGlobalPreamp;
+
 - (id)init
 {
-    return [super initWithNibName:@"PreferencesViewPlayback" bundle:nil];
-}
-
-- (void) awakeFromNib {
 
     replaygainScale = [DBAppDelegate intConfiguration:@"pref_replaygain_scale" num:1];
     resumePreviousSession = [DBAppDelegate intConfiguration:@"resume_last_session" num:0];
@@ -35,9 +36,24 @@
     
     replaygainPreamp = [DBAppDelegate intConfiguration:@"replaygain_preamp" num:0];
     globalPreamp = [DBAppDelegate intConfiguration:@"global_preamp" num:0];
+
+    minReplaygainPreamp = -12;
+    maxReplaygainPreamp = 12;
+    minGlobalPreamp = -12;
+    maxGlobalPreamp = 12;
     
     cliAddPlaylist = [DBAppDelegate stringConfiguration:@"cli_add_playlist_name" str:@"Default"];
+
+    return [super initWithNibName:@"PreferencesViewPlayback" bundle:nil];
+}
+
+- (void) awakeFromNib {
     
+    NSUInteger replaygainMode = [DBAppDelegate intConfiguration:@"replay_gain_mode" num:0];
+    
+    replaygainModeList = [DBAppDelegate replaygainModeList];
+    [replaygainModeListController setContent: replaygainModeList];
+    [replaygainModeListController setSelectionIndex: replaygainMode];
 }
 
 - (NSString *) identifier
