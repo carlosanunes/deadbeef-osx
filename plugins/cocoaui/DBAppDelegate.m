@@ -861,6 +861,16 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     return list;
 }
 
++ (NSArray *) replaygainModeList {
+
+	return [NSArray arrayWithObjects: NSLocalizedString(@"Disable", "Disable"), NSLocalizedString(@"Track", "Track"), NSLocalizedString(@"Album", "Album"), nil ];
+}
+
++ (NSArray *) proxyTypeList {
+    
+    return [NSArray arrayWithObjects: @"HTTP", @"HTTP_1_0", @"SOCKS4", @"SOCKS5", @"SOCKS4A", @"SOCKS5_HOSTNAME", nil];
+}
+
 + (NSInteger) currentPlaylistIndex {
     
     return deadbeef->plt_get_curr_idx ();
