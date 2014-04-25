@@ -118,7 +118,7 @@
 
 + (BOOL) saveCurrentPlaylist: (NSURL *) fname;
 
-+ (BOOL) loadPlaylist: (NSURL *) url;
++ (void) loadPlaylist: (NSURL *) url;
 
 + (BOOL) newPlaylist;
 

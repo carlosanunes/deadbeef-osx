@@ -900,7 +900,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     return deadbeef->plt_get_curr_idx ();
 }
 
-+ (BOOL) loadPlaylist: (NSURL *) url
++ (void) loadPlaylist: (NSURL *) url
 {
     NSString * str = [url path];
     const char * fname = [str UTF8String];
@@ -923,11 +923,10 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
                 deadbeef->plt_unref (plt);
             }
             deadbeef->sendmessage (DB_EV_PLAYLISTCHANGED, 0, 0, 0);
+            
         });
-        return YES;
     }
     
-    return NO;
 }
 
 + (BOOL) saveCurrentPlaylist: (NSURL *) url {
@@ -936,6 +935,9 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     
     if (fname) {
         
+        dispatch_async(dispatch_get_global_queue(0, 0),
+                       ^ {
+                           
             ddb_playlist_t *plt = deadbeef->plt_get_curr ();
             if (plt) {
                 int res = deadbeef->plt_save (plt, NULL, NULL, fname, NULL, NULL, NULL);
@@ -944,6 +946,8 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
                 }
                 deadbeef->plt_unref (plt);
             }
+        
+        });
         
         return YES;
         
