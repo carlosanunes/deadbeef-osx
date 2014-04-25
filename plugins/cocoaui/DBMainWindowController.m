@@ -319,7 +319,7 @@
 
 -(IBAction) openStream: sender {
 
-    DBTextInputPanelController * controller = [DBTextInputPanelController initPanelWithTitle:@"Open Stream..."];
+    DBTextInputPanelController * controller = [DBTextInputPanelController initPanelWithTitle:NSLocalizedString(@"Open Stream...", "Open stream")];
     
 	if ([controller runModal] == NSOKButton)
 	{
@@ -357,6 +357,7 @@
 		return YES;
     }
 	
+    [openPanel release];
 	return NO;
 }
 
@@ -366,17 +367,46 @@
 
 - (IBAction) newPlaylist: (id) sender {
     
+    [DBAppDelegate newPlaylist];
     
 }
 
 - (IBAction) loadPlaylist: (id) sender {
+
+    NSOpenPanel * openPanel = [NSOpenPanel openPanel];
+    NSURL * currentPath = [NSURL URLWithString: [DBAppDelegate stringConfiguration:@"filechooser.playlist.lastdir" str:@""] ];
     
+    [openPanel setAllowedFileTypes: [DBAppDelegate supportedSavePlaylistExtensions] ];
+    [openPanel setDirectoryURL:currentPath];
+    
+    if ([openPanel runModal] == NSOKButton)
+    {
+        if ([DBAppDelegate loadPlaylist: [openPanel URL] ] == NO)
+            ;
+        
+        // TODO: error on opening
+    }
+    
+    [openPanel release];
+
     
 }
 
 - (IBAction) savePlaylist: (id) sender {
     
+    NSSavePanel * savePanel = [NSSavePanel savePanel];
+    NSURL * currentPath = [NSURL URLWithString: [DBAppDelegate stringConfiguration:@"filechooser.playlist.lastdir" str:@""] ];
     
+    [savePanel setAllowedFileTypes: [DBAppDelegate supportedSavePlaylistExtensions] ];
+    [savePanel setDirectoryURL:currentPath];
+    [savePanel setCanSelectHiddenExtension: YES];
+    
+    if ([savePanel runModal] == NSOKButton)
+    {
+        [DBAppDelegate saveCurrentPlaylist: [savePanel URL] ];
+    }
+    
+    [savePanel release];
 }
 
 
