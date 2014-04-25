@@ -354,6 +354,7 @@
 		NSArray * files = [openPanel URLs];
 		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel  mainList: playlistTable  ];
 		[playlistTable reloadData];
+        [openPanel release];
 		return YES;
     }
 	
@@ -381,10 +382,8 @@
     
     if ([openPanel runModal] == NSOKButton)
     {
-        if ([DBAppDelegate loadPlaylist: [openPanel URL] ] == NO)
-            ;
+        [DBAppDelegate loadPlaylist: [openPanel URL] ];
         
-        // TODO: error on opening
     }
     
     [openPanel release];
