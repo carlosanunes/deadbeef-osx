@@ -106,4 +106,11 @@
 - (IBAction) addMusic: (id)sender;
 - (IBAction) openStream: (id)sender;
 
+// playlist management
+
+- (IBAction) newPlaylist: (id) sender;
+- (IBAction) loadPlaylist: (id) sender;
+- (IBAction) savePlaylist: (id) sender;
+
+
 @end

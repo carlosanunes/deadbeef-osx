@@ -123,6 +123,7 @@
     }
 	
 	[preferencesWindowController showWindow : nil];
+
 }
 
 
@@ -452,7 +453,27 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
  }
  */
 
-
++ (NSArray *) supportedSavePlaylistExtensions {
+    
+    NSMutableArray * array = [NSMutableArray arrayWithCapacity: 5];
+    
+    [array addObject: @"dbpl"];
+    
+    DB_playlist_t **plug = deadbeef->plug_get_playlist_list ();
+    for (int i = 0; plug[i]; i++) {
+        if (plug[i]->extensions && plug[i]->load) {
+            const char **exts = plug[i]->extensions;
+            if (exts && plug[i]->save) {
+                for (int e = 0; exts[e]; e++) {
+                    [array addObject: [NSString stringWithCString:exts[e] encoding:NSUTF8StringEncoding]];
+                }
+            }
+        }
+    }
+    
+    return array;
+    
+}
 
 + (NSArray *) supportedFormatsExtensions {
     
@@ -482,7 +503,6 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
 	return array;
 }
-
 
 + (void) movePlayListItems : (NSIndexSet*) rowIndexes row:(NSInteger) rowBefore {
 	
@@ -559,7 +579,11 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 + (NSString *) stringConfiguration : (NSString *) key str:(NSString *) def {
 	
-	return [NSString stringWithUTF8String: deadbeef->conf_get_str_fast([key UTF8String], [def UTF8String]) ];
+    deadbeef->conf_lock();
+	NSString * str = [NSString stringWithUTF8String: deadbeef->conf_get_str_fast([key UTF8String], [def UTF8String]) ];
+    deadbeef->conf_unlock();
+    
+    return str;
 }
 
 + (void) setStringConfiguration : (NSString *) key value:(NSString *) def {
@@ -874,6 +898,100 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 + (NSInteger) currentPlaylistIndex {
     
     return deadbeef->plt_get_curr_idx ();
+}
+
++ (BOOL) loadPlaylist: (NSURL *) url
+{
+    NSString * str = [url path];
+    const char * fname = [str UTF8String];
+    [DBAppDelegate setStringConfiguration:@"filechooser.playlist.lastdir" value: [str stringByDeletingLastPathComponent] ];
+    
+    if (fname) {
+    
+        // the add files code is executed in another thread
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+            ddb_playlist_t *plt = deadbeef->plt_get_curr ();
+            if (plt) {
+                if (!deadbeef->plt_add_files_begin (plt, 0)) {
+                    deadbeef->plt_clear (plt);
+                    int abort = 0;
+                    DB_playItem_t *it = deadbeef->plt_load2 (0, plt, NULL, fname, &abort, NULL, NULL);
+                    deadbeef->plt_save_config (plt);
+                    deadbeef->plt_add_files_end (plt, 0);
+                }
+                deadbeef->plt_unref (plt);
+            }
+            deadbeef->sendmessage (DB_EV_PLAYLISTCHANGED, 0, 0, 0);
+        });
+        return YES;
+    }
+    
+    return NO;
+}
+
++ (BOOL) saveCurrentPlaylist: (NSURL *) url {
+    
+    const char * fname = [[url path] UTF8String];
+    
+    if (fname) {
+        
+            ddb_playlist_t *plt = deadbeef->plt_get_curr ();
+            if (plt) {
+                int res = deadbeef->plt_save (plt, NULL, NULL, fname, NULL, NULL, NULL);
+                if (res >= 0 && strlen (fname) < 1024) {
+                    ;
+                }
+                deadbeef->plt_unref (plt);
+            }
+        
+        return YES;
+        
+    }
+    
+    return NO;
+}
+
++ (BOOL) newPlaylist {
+    
+    int cnt = deadbeef->plt_get_count ();
+    int i;
+    int idx = 0;
+    int pl = -1;
+    
+    for (;;) {
+        char name[100];
+        if (!idx) {
+            strcpy (name, [NSLocalizedString(@"New Playlist", "new playlist") UTF8String]);
+        }
+        else {
+            snprintf (name, sizeof (name), [NSLocalizedString(@"New Playlist (%d)", "new playlist seq") UTF8String], idx);
+        }
+        deadbeef->pl_lock ();
+        for (i = 0; i < cnt; i++) {
+            char t[100];
+            ddb_playlist_t *plt = deadbeef->plt_get_for_idx (i);
+            deadbeef->plt_get_title (plt, t, sizeof (t));
+            deadbeef->plt_unref (plt);
+            if (!strcasecmp (t, name)) {
+                break;
+            }
+        }
+        deadbeef->pl_unlock ();
+        if (i == cnt) {
+            pl = deadbeef->plt_add (cnt, name);
+            break;
+        }
+        idx++;
+    }
+
+    if (pl != -1) {
+        deadbeef->plt_set_curr_idx (pl);
+        [DBAppDelegate setIntConfiguration:@"playlist.current" value: pl];
+    }
+    
+    return YES;
+
 }
 
 @end

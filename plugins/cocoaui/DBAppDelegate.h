@@ -64,6 +64,7 @@
 + (NSMutableDictionary *) knownMetadataKeys;
 
 + (NSArray *) supportedFormatsExtensions;
++ (NSArray *) supportedSavePlaylistExtensions;
 
 + (NSString *) totalPlaytimeAndSongCount;
 
@@ -114,5 +115,11 @@
 + (NSDictionary *) availablePlaylists;
 
 + (NSInteger) currentPlaylistIndex;
+
++ (BOOL) saveCurrentPlaylist: (NSURL *) fname;
+
++ (BOOL) loadPlaylist: (NSURL *) url;
+
++ (BOOL) newPlaylist;
 
 @end

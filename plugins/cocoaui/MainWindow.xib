@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -103,12 +103,22 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="1616"/>
-                            <menuItem title="New Playlist" keyEquivalent="n" id="1617"/>
+                            <menuItem title="New Playlist" keyEquivalent="n" id="1617">
+                                <connections>
+                                    <action selector="newPlaylist:" target="844" id="FTv-aG-NoH"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Load Playlist" id="1619">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="loadPlaylist:" target="844" id="0ml-IK-R9C"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Save Playlist" id="1618">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="savePlaylist:" target="844" id="faV-b5-ouj"/>
+                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="1580"/>
                             <menuItem title="Close" keyEquivalent="w" id="73">
@@ -427,7 +437,7 @@
                                                                     <rect key="frame" x="25" y="0.0" width="84" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="dHW-L2-o8V">
-                                                                        <font key="font" metaFont="system"/>
+                                                                        <font key="font" metaFont="miniSystem"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -505,7 +515,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="928">
-                                            <rect key="frame" x="349" y="17" width="15" height="192"/>
+                                            <rect key="frame" x="348" y="17" width="16" height="192"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" id="931">
