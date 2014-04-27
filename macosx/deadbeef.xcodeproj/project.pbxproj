@@ -5122,11 +5122,11 @@
 		07C4ACB6180233A00086EB7F /* nib */ = {
 			isa = PBXGroup;
 			children = (
-				0782B9FC180F4DF900CB8120 /* PreferencesViewPlugins.xib */,
 				070297C917E9084800710234 /* MainWindow.xib */,
 				070297CB17E9084800710234 /* TextInputPanel.xib */,
-				073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */,
 				078699331813114B0093C177 /* ScrollableTextPanel.xib */,
+				073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */,
+				0782B9FC180F4DF900CB8120 /* PreferencesViewPlugins.xib */,
 				07869AD118136B0F0093C177 /* PreferencesViewPlayback.xib */,
 				07869AD318136B350093C177 /* PreferencesViewNetwork.xib */,
 			);
@@ -7768,7 +7768,7 @@
 					$SRCROOT/,
 				);
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = coreaudio;
 				SKIP_INSTALL = YES;
@@ -7795,7 +7795,7 @@
 					$SRCROOT/,
 				);
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = coreaudio;
 				SKIP_INSTALL = YES;
@@ -7821,7 +7821,7 @@
 					$SRCROOT/,
 				);
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = wma;
 				SKIP_INSTALL = YES;
@@ -7845,7 +7845,7 @@
 					$SRCROOT/,
 				);
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = wma;
 				SKIP_INSTALL = YES;
@@ -7980,10 +7980,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = (
-					"-lm",
-					"-module",
-				);
+				OTHER_LDFLAGS = "-lm";
 				PREBINDING = NO;
 				PRODUCT_NAME = m3u;
 				SKIP_INSTALL = YES;
@@ -8001,10 +7998,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = (
-					"-lm",
-					"-module",
-				);
+				OTHER_LDFLAGS = "-lm";
 				PREBINDING = NO;
 				PRODUCT_NAME = m3u;
 				SKIP_INSTALL = YES;
@@ -8029,7 +8023,7 @@
 					$SRCROOT/,
 				);
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = mms;
 				SKIP_INSTALL = YES;
@@ -8053,7 +8047,7 @@
 					$SRCROOT/,
 				);
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = mms;
 				SKIP_INSTALL = YES;
@@ -8120,10 +8114,7 @@
 				HEADER_SEARCH_PATHS = $SRCROOT/;
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-lm",
-					"-module",
-				);
+				OTHER_LDFLAGS = "-lm";
 				PREBINDING = NO;
 				PRODUCT_NAME = shn;
 				SKIP_INSTALL = YES;
@@ -8149,10 +8140,7 @@
 				HEADER_SEARCH_PATHS = $SRCROOT/;
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-lm",
-					"-module",
-				);
+				OTHER_LDFLAGS = "-lm";
 				PREBINDING = NO;
 				PRODUCT_NAME = shn;
 				SKIP_INSTALL = YES;
@@ -8456,7 +8444,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = vtx;
 				SKIP_INSTALL = YES;
@@ -8474,7 +8462,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = vtx;
 				SKIP_INSTALL = YES;
@@ -8579,7 +8567,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_CONFIG_H;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = flac;
 				SKIP_INSTALL = YES;
@@ -8600,7 +8588,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_CONFIG_H;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = flac;
 				SKIP_INSTALL = YES;
@@ -8626,7 +8614,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = FPM_DEFAULT;
 				HEADER_SEARCH_PATHS = "$SRCROOT/libs/libmad-0.15.1b/";
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = mpgmad;
 				SKIP_INSTALL = YES;
@@ -8650,7 +8638,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = FPM_DEFAULT;
 				HEADER_SEARCH_PATHS = "$SRCROOT/libs/libmad-0.15.1b/";
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-module";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = mpgmad;
 				SKIP_INSTALL = YES;
@@ -9016,10 +9004,7 @@
 				);
 				INSTALL_PATH = /usr/local/lib;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				OTHER_LDFLAGS = (
-					"-lz",
-					"-module",
-				);
+				OTHER_LDFLAGS = "-lz";
 				PREBINDING = NO;
 				PRODUCT_NAME = gme;
 				SKIP_INSTALL = YES;
@@ -9056,10 +9041,7 @@
 				);
 				INSTALL_PATH = /usr/local/lib;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				OTHER_LDFLAGS = (
-					"-lz",
-					"-module",
-				);
+				OTHER_LDFLAGS = "-lz";
 				PREBINDING = NO;
 				PRODUCT_NAME = gme;
 				SKIP_INSTALL = YES;
