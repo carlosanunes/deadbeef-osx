@@ -94,12 +94,12 @@
 
     sidebarItems = [[NSMutableArray array] retain];
     
-    DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:@"playlistItem"];
+    DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:@"playlistGroup"];
     NSMutableArray * playlists = [NSMutableArray arrayWithCapacity:1];
     
     for (NSDictionary * object in [DBAppDelegate availablePlaylists]) {
         
-        [playlists addObject:[DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO ] ];
+        [playlists addObject:[DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO identifier:@"playlist" ] ];
     }
     
     [playlistItem setChildren:playlists];

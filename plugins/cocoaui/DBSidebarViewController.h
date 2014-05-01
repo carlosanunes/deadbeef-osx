@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <DBAppDelegate.h>
+#import "DBSideBarItem.h"
 
 @interface DBSidebarViewController : NSViewController <NSOutlineViewDelegate> {
 

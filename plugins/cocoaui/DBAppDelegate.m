@@ -774,9 +774,10 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 + (BOOL) addPathToPlaylistAtEnd : (NSString *) path {
 
 	ddb_playlist_t *plt = deadbeef->plt_get_curr ();
+    int  res = -1;
 	
 	if (!deadbeef->pl_add_files_begin (plt)) {
-		deadbeef->plt_add_file (plt, [path UTF8String], NULL, NULL);
+		res = deadbeef->plt_add_file (plt, [path UTF8String], NULL, NULL);
 		deadbeef->pl_add_files_end ();
 	} else {
 		if (plt)
@@ -786,6 +787,9 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
 	if (plt)
 		deadbeef->plt_unref (plt);
+    
+    if (res < 0)
+        return NO;
 	
 	return YES;
 }

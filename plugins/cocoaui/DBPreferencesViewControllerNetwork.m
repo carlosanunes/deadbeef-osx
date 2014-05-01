@@ -33,7 +33,7 @@
 }
 
 - (void) awakeFromNib {
-    
+ 
     NSUInteger index;
     NSString * currentProxyType = [DBAppDelegate stringConfiguration:@"network.proxy.type" str:@"HTTP"];
     proxyTypeList = [DBAppDelegate proxyTypeList];
