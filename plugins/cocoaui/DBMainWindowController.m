@@ -109,7 +109,8 @@
     
     [sidebarView reloadData];
     [sidebarView expandItem:nil expandChildren:YES];
-
+    [sidebarView selectRowIndexes: [NSIndexSet indexSetWithIndex: [DBAppDelegate currentPlaylistIndex] + 1 ] byExtendingSelection:NO ];
+    
 }
 
 
@@ -354,11 +355,9 @@
 		NSArray * files = [openPanel URLs];
 		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel  mainList: playlistTable  ];
 		[playlistTable reloadData];
-        [openPanel release];
 		return YES;
     }
 	
-    [openPanel release];
 	return NO;
 }
 
@@ -386,7 +385,6 @@
         
     }
     
-    [openPanel release];
 
     
 }
@@ -405,7 +403,6 @@
         [DBAppDelegate saveCurrentPlaylist: [savePanel URL] ];
     }
     
-    [savePanel release];
 }
 
 
