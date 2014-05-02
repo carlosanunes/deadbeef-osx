@@ -90,6 +90,8 @@
 
 + (NSMutableDictionary *) keyList : (NSInteger) propertiesNumber;
 
++ (void) setPlaylistItemsSelected : (NSIndexSet *) indexSet;
+
 + (void) setPlaylistItemSelected : (NSInteger) index value:(BOOL) def;
 
 + (void) setCurrentPlaylist : (NSInteger) index;

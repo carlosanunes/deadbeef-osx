@@ -654,6 +654,24 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     
 }
 
++ (void) setPlaylistItemsSelected : (NSIndexSet *) indexSet {
+    
+    deadbeef->pl_lock();
+    ddb_playlist_t * plt = deadbeef -> plt_get_curr();
+
+    deadbeef->plt_deselect_all (plt);
+    
+    [indexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+       
+        ddb_playItem_t * it = deadbeef->pl_get_for_idx ( (int) idx);
+        deadbeef->pl_set_selected(it, 1);
+        
+    }];
+    
+    deadbeef->plt_unref(plt);
+    deadbeef->pl_unlock();
+    
+}
 
 + (void) setPlaylistItemSelected : (NSInteger) index value:(BOOL) def {
 
