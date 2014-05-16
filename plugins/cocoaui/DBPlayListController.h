@@ -21,7 +21,7 @@
 #import "DBAppDelegate.h"
 #import "views/DBTableView.h"
 #import "views/DBFileImportPanel.h"
-#import "DBTrackPropertiesPanelController.h"
+#import "DBTrackInspectorPanelController.h"
 
 
 @interface DBPlayListController : NSViewController <NSTableViewDelegate, NSTableViewDataSource> {
@@ -31,7 +31,6 @@
 	IBOutlet NSWindow * mainWindow;
 	IBOutlet id playListInfoTable;
 	IBOutlet DBFileImportPanel * fileImportPanel;
-	IBOutlet NSPanel * trackPropertiesPanel;
 	
 	NSMutableDictionary * metadataTypes;
 }
