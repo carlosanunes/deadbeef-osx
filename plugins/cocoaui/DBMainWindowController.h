@@ -35,15 +35,6 @@
 	
     IBOutlet NSTreeController * sidebarTreeController;
     
-	NSImage * playImage;
-	NSImage * playAlternateImage;
-	NSImage * pauseImage;
-	NSImage * pauseAlternateImage;
-	
-	NSTimer * windowUpdateTimer;
-	
-	BOOL shouldUpdate;
-	
 	// order menu items
 	IBOutlet NSMenuItem * orderLinearMenuItem;
 	IBOutlet NSMenuItem * orderShuffleTracksMenuItem;
@@ -62,6 +53,17 @@
 	NSRect oldStatusCell;
     
     NSMutableArray * sidebarItems;
+    
+    @private
+    
+	NSImage * playImage;
+	NSImage * playAlternateImage;
+	NSImage * pauseImage;
+	NSImage * pauseAlternateImage;
+	
+	NSTimer * windowUpdateTimer;
+	
+	BOOL shouldUpdate;
     
 }
 
