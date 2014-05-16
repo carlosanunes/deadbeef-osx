@@ -255,6 +255,15 @@
 	return [NSString stringWithUTF8String: meta];
 }
 
+// selection change
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+
+    [DBAppDelegate setPlaylistItemsSelected: [playlistTable selectedRowIndexes] ];
+    
+}
+
+
 
 - (IBAction) playSelectedItem: sender
 {
@@ -336,8 +345,10 @@
 
 - (IBAction) showTrackInfo: sender
 {
-	[[trackPropertiesPanel windowController] fillProperties];
-	[trackPropertiesPanel makeKeyAndOrderFront:self];
+    DBTrackInspectorPanelController * controller = [DBTrackInspectorPanelController sharedController];
+    [controller showWindow: self];
+//    [[controller window] makeKeyAndOrderFront: self];
+
 }
 
 
