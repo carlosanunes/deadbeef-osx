@@ -12,18 +12,12 @@
 
 @interface DBPreferencesViewControllerNetwork : NSViewController <MASPreferencesViewController> {
 
-    BOOL proxyServer;
-    
-    NSString * proxyServerAddress;
-    NSString * proxyServerPort;
-    NSString * proxyServerUsername;
-    NSString * proxyServerPassword;
-    NSString * proxyServerUserAgent;
-    
-    NSArray * proxyTypeList;
     
     IBOutlet NSArrayController * proxyTypeListController;
-    
+
+    @private
+
+    NSArray * proxyTypeList;
 
 }
 

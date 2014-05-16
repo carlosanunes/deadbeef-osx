@@ -21,14 +21,6 @@
 - (id)init
 {
 
-	proxyServerAddress = [DBAppDelegate stringConfiguration:@"network.proxy.address" str:@""];
-	proxyServerPort = [DBAppDelegate stringConfiguration:@"network.proxy.port" str:@"8080"];
-	proxyServerUsername = [DBAppDelegate stringConfiguration:@"network.proxy.username" str:@""];
-	proxyServerPassword = [DBAppDelegate stringConfiguration:@"network.proxy.password" str:@""];
-	proxyServerUserAgent = [DBAppDelegate stringConfiguration:@"network.http_user_agent" str:@"deadbeef"];
-    
-    proxyServer = [DBAppDelegate intConfiguration:@"proxy.server" num:0];
-
     return [super initWithNibName:@"PreferencesViewNetwork" bundle:nil];
 }
 
@@ -49,6 +41,35 @@
     [proxyTypeListController setSelectionIndex: index];
     
 }
+
+- (NSString *) proxyServerAddress {
+    
+    return [DBAppDelegate stringConfiguration:@"network.proxy.address" str:@""];
+}
+
+- (NSString *) proxyServerPort {
+	
+    return [DBAppDelegate stringConfiguration:@"network.proxy.port" str:@"8080"];
+}
+- (NSString *) proxyServerUsername {
+	
+    return [DBAppDelegate stringConfiguration:@"network.proxy.username" str:@""];
+}
+- (NSString *) proxyServerPassword {
+	
+    return [DBAppDelegate stringConfiguration:@"network.proxy.password" str:@""];
+}
+- (NSString *) proxyServerUserAgent {
+	
+    return [DBAppDelegate stringConfiguration:@"network.http_user_agent" str:@"deadbeef"];
+}
+
+- (BOOL) proxyServer {
+	
+    return [DBAppDelegate intConfiguration:@"proxy.server" num:0];
+}
+
+
 
 - (NSString *) identifier
 {

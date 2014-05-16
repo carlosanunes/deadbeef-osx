@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DBPreferencesViewControllerNetwork">
@@ -93,6 +93,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <binding destination="-2" name="enabled" keyPath="proxyServer" id="RoO-go-EQ1"/>
+                                    <binding destination="-2" name="value" keyPath="proxyServerAddress" id="a13-Uj-MA1"/>
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" id="17">
@@ -108,6 +109,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <binding destination="-2" name="enabled" keyPath="proxyServer" id="WlZ-Sm-WGL"/>
+                                    <binding destination="-2" name="value" keyPath="proxyServerPort" id="ORm-Xn-peg"/>
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" id="21">
@@ -123,6 +125,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <binding destination="-2" name="enabled" keyPath="proxyServer" id="8eR-20-3h8"/>
+                                    <binding destination="-2" name="value" keyPath="proxyServerUsername" id="664-mt-58C"/>
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" id="23">
@@ -138,6 +141,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <binding destination="-2" name="enabled" keyPath="proxyServer" id="J97-A6-IQa"/>
+                                    <binding destination="-2" name="value" keyPath="proxyServerPassword" id="c6k-hU-REb"/>
                                 </connections>
                             </textField>
                             <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="25">
@@ -169,6 +173,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <binding destination="-2" name="enabled" keyPath="proxyServer" id="ECj-Px-8Dg"/>
+                                    <binding destination="-2" name="value" keyPath="proxyServerUserAgent" id="vdE-Rx-L0H"/>
                                 </connections>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" id="Jwl-Dg-ZwV">

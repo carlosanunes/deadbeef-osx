@@ -29,21 +29,6 @@
 - (id)init
 {
 
-    replaygainScale = [DBAppDelegate intConfiguration:@"pref_replaygain_scale" num:1];
-    resumePreviousSession = [DBAppDelegate intConfiguration:@"resume_last_session" num:0];
-    ignoreArchivesOnAddFolder = [DBAppDelegate intConfiguration:@"ignore_archives" num:1];
-    autoResetStopAfterCurrent = [DBAppDelegate intConfiguration:@"playlist.stop_after_current_reset" num:0];
-    
-    replaygainPreamp = [DBAppDelegate intConfiguration:@"replaygain_preamp" num:0];
-    globalPreamp = [DBAppDelegate intConfiguration:@"global_preamp" num:0];
-
-    minReplaygainPreamp = -12;
-    maxReplaygainPreamp = 12;
-    minGlobalPreamp = -12;
-    maxGlobalPreamp = 12;
-    
-    cliAddPlaylist = [DBAppDelegate stringConfiguration:@"cli_add_playlist_name" str:@"Default"];
-
     return [super initWithNibName:@"PreferencesViewPlayback" bundle:nil];
 }
 
@@ -55,6 +40,64 @@
     [replaygainModeListController setContent: replaygainModeList];
     [replaygainModeListController setSelectionIndex: replaygainMode];
 }
+
+
+- (BOOL) replaygainScale {
+    
+	return [DBAppDelegate intConfiguration:@"pref_replaygain_scale" num:1];
+}
+
+- (BOOL) resumePreviousSession {
+    
+    return [DBAppDelegate intConfiguration:@"resume_last_session" num:0];
+}
+
+- (BOOL) ignoreArchivesOnAddFolder {
+    
+	return [DBAppDelegate intConfiguration:@"ignore_archives" num:1];
+}
+
+- (BOOL) autoResetStopAfterCurrent {
+
+    return [DBAppDelegate intConfiguration:@"playlist.stop_after_current_reset" num:0];
+}
+
+- (NSString *) cliAddPlaylist {
+
+    return [DBAppDelegate stringConfiguration:@"cli_add_playlist_name" str:@"Default"];
+	
+}
+
+- (NSInteger) replaygainPreamp {
+    
+    return [DBAppDelegate intConfiguration:@"replaygain_preamp" num:0];
+}
+
+- (NSInteger) globalPreamp {
+
+    return [DBAppDelegate intConfiguration:@"global_preamp" num:0];
+}
+
+- (NSInteger) minReplaygainPreamp {
+	
+    return -12;
+}
+
+- (NSInteger) maxReplaygainPreamp {
+    
+    return 12;
+}
+
+- (NSInteger) minGlobalPreamp {
+    
+    return -12;
+}
+
+- (NSInteger) maxGlobalPreamp {
+    
+    return 12;
+}
+
 
 - (NSString *) identifier
 {
