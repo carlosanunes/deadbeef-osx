@@ -27,10 +27,10 @@
 @property NSInteger replaygainPreamp;
 @property NSInteger globalPreamp;
 
-@property NSInteger minReplaygainPreamp;
-@property NSInteger maxReplaygainPreamp;
+@property (nonatomic) NSInteger minReplaygainPreamp;
+@property (nonatomic) NSInteger maxReplaygainPreamp;
 
-@property NSInteger minGlobalPreamp;
-@property NSInteger maxGlobalPreamp;
+@property (nonatomic) NSInteger minGlobalPreamp;
+@property (nonatomic) NSInteger maxGlobalPreamp;
 
 @end
