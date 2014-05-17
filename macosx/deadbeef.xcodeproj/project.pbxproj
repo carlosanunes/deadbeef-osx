@@ -80,8 +80,8 @@
 		0715DF7217F63A2800A15158 /* DBTextInputPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C617E9084800710234 /* DBTextInputPanelController.m */; };
 		0715DF7317F63A2900A15158 /* DBTimeSliderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297D317E9084800710234 /* DBTimeSliderCell.h */; };
 		0715DF7417F63A2A00A15158 /* DBTimeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297D417E9084800710234 /* DBTimeSliderCell.m */; };
-		0715DF7517F63A2B00A15158 /* DBTrackPropertiesPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */; };
-		0715DF7617F63A2C00A15158 /* DBTrackPropertiesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */; };
+		0715DF7517F63A2B00A15158 /* DBTrackInspectorPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297C717E9084800710234 /* DBTrackInspectorPanelController.h */; };
+		0715DF7617F63A2C00A15158 /* DBTrackInspectorPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297C817E9084800710234 /* DBTrackInspectorPanelController.m */; };
 		073B5D73180DF7E100AF2FE8 /* PreferencesViewSound.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073B5D72180DF7E100AF2FE8 /* PreferencesViewSound.xib */; };
 		073B5D8A180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5D88180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h */; };
 		073B5D8B180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 073B5D89180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m */; };
@@ -1059,6 +1059,7 @@
 		07D5877E17751164003A01DE /* osd_cpu.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D5872417751164003A01DE /* osd_cpu.h */; };
 		07D5877F17751164003A01DE /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 07D5872517751164003A01DE /* plugin.c */; };
 		07D5884B1775192C003A01DE /* sndfile.c in Sources */ = {isa = PBXBuildFile; fileRef = 07D5884A1775192C003A01DE /* sndfile.c */; };
+		07FDD90E19157313009E0E56 /* TrackInspectorPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FDD90D19157313009E0E56 /* TrackInspectorPanel.xib */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -1400,8 +1401,8 @@
 		070297C217E9084800710234 /* DBPlayListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPlayListController.m; path = ../plugins/cocoaui/DBPlayListController.m; sourceTree = SOURCE_ROOT; };
 		070297C517E9084800710234 /* DBTextInputPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBTextInputPanelController.h; path = ../plugins/cocoaui/DBTextInputPanelController.h; sourceTree = SOURCE_ROOT; };
 		070297C617E9084800710234 /* DBTextInputPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBTextInputPanelController.m; path = ../plugins/cocoaui/DBTextInputPanelController.m; sourceTree = SOURCE_ROOT; };
-		070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBTrackPropertiesPanelController.h; path = ../plugins/cocoaui/DBTrackPropertiesPanelController.h; sourceTree = SOURCE_ROOT; };
-		070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBTrackPropertiesPanelController.m; path = ../plugins/cocoaui/DBTrackPropertiesPanelController.m; sourceTree = SOURCE_ROOT; };
+		070297C717E9084800710234 /* DBTrackInspectorPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBTrackInspectorPanelController.h; path = ../plugins/cocoaui/DBTrackInspectorPanelController.h; sourceTree = SOURCE_ROOT; };
+		070297C817E9084800710234 /* DBTrackInspectorPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBTrackInspectorPanelController.m; path = ../plugins/cocoaui/DBTrackInspectorPanelController.m; sourceTree = SOURCE_ROOT; };
 		070297C917E9084800710234 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../plugins/cocoaui/MainWindow.xib; sourceTree = SOURCE_ROOT; };
 		070297CB17E9084800710234 /* TextInputPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TextInputPanel.xib; path = ../plugins/cocoaui/TextInputPanel.xib; sourceTree = SOURCE_ROOT; };
 		070297CD17E9084800710234 /* DBBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBottomBar.h; sourceTree = "<group>"; };
@@ -2800,6 +2801,7 @@
 		07D5884A1775192C003A01DE /* sndfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sndfile.c; sourceTree = "<group>"; };
 		07DC88FB1691AA2C00DB0456 /* coredecoder.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = coredecoder.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E582C11691E95000982BCB /* coredecoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = coredecoder.c; path = ../plugins/coredecoder/coredecoder.c; sourceTree = SOURCE_ROOT; };
+		07FDD90D19157313009E0E56 /* TrackInspectorPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrackInspectorPanel.xib; path = ../plugins/cocoaui/TrackInspectorPanel.xib; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -3072,8 +3074,8 @@
 				070297C217E9084800710234 /* DBPlayListController.m */,
 				070297C517E9084800710234 /* DBTextInputPanelController.h */,
 				070297C617E9084800710234 /* DBTextInputPanelController.m */,
-				070297C717E9084800710234 /* DBTrackPropertiesPanelController.h */,
-				070297C817E9084800710234 /* DBTrackPropertiesPanelController.m */,
+				070297C717E9084800710234 /* DBTrackInspectorPanelController.h */,
+				070297C817E9084800710234 /* DBTrackInspectorPanelController.m */,
 				070297CC17E9084800710234 /* views */,
 				073B5D88180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h */,
 				073B5D89180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m */,
@@ -5129,6 +5131,7 @@
 				0782B9FC180F4DF900CB8120 /* PreferencesViewPlugins.xib */,
 				07869AD118136B0F0093C177 /* PreferencesViewPlayback.xib */,
 				07869AD318136B350093C177 /* PreferencesViewNetwork.xib */,
+				07FDD90D19157313009E0E56 /* TrackInspectorPanel.xib */,
 			);
 			name = nib;
 			sourceTree = "<group>";
@@ -5480,7 +5483,7 @@
 				0715DF6F17F63A2400A15158 /* DBTableView.h in Headers */,
 				0715DF7117F63A2700A15158 /* DBTextInputPanelController.h in Headers */,
 				0715DF7317F63A2900A15158 /* DBTimeSliderCell.h in Headers */,
-				0715DF7517F63A2B00A15158 /* DBTrackPropertiesPanelController.h in Headers */,
+				0715DF7517F63A2B00A15158 /* DBTrackInspectorPanelController.h in Headers */,
 				07C4AB1F17F63F630086EB7F /* cocoaui_api.h in Headers */,
 				073B5D8A180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h in Headers */,
 				078060BE1868F328008319FD /* DBSplitViewController.h in Headers */,
@@ -6819,6 +6822,7 @@
 				0702982717E9090B00710234 /* volume-high.png in Resources */,
 				0702982817E9090B00710234 /* volume-low.png in Resources */,
 				073B5D73180DF7E100AF2FE8 /* PreferencesViewSound.xib in Resources */,
+				07FDD90E19157313009E0E56 /* TrackInspectorPanel.xib in Resources */,
 				0782B9FD180F4DF900CB8120 /* PreferencesViewPlugins.xib in Resources */,
 				078699341813114B0093C177 /* ScrollableTextPanel.xib in Resources */,
 				07869AD218136B100093C177 /* PreferencesViewPlayback.xib in Resources */,
@@ -6868,7 +6872,7 @@
 				0715DF7217F63A2800A15158 /* DBTextInputPanelController.m in Sources */,
 				0715DF7417F63A2A00A15158 /* DBTimeSliderCell.m in Sources */,
 				078060D0186B90A3008319FD /* DBSideBarItem.m in Sources */,
-				0715DF7617F63A2C00A15158 /* DBTrackPropertiesPanelController.m in Sources */,
+				0715DF7617F63A2C00A15158 /* DBTrackInspectorPanelController.m in Sources */,
 				07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */,
 				073B5D8B180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.m in Sources */,
 				073B5DAB180DFDC300AF2FE8 /* MASPreferencesWindowController.m in Sources */,
