@@ -56,11 +56,22 @@
     return [DBAppDelegate intConfiguration:@"streamer.8_to_16" num:1];
 }
 
+- (void) setEightToSixteen:(BOOL)eightToSixteen {
+    
+    [DBAppDelegate setIntConfiguration:@"streamer.8_to_16" value:eightToSixteen];
+    
+    return;
+}
+
 - (BOOL) sixteenToTwentyFour {
     
      return [DBAppDelegate intConfiguration:@"streamer.16_to_24" num:0];
 }
 
+- (void) setSixteenToTwentyFour:(BOOL)sixteenToTwentyFour {
+    
+    return [DBAppDelegate setIntConfiguration:@"streamer.16_to_24" value:sixteenToTwentyFour];
+}
 
 -(void) dealloc {
 	

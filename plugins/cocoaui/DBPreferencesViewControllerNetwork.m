@@ -47,21 +47,49 @@
     return [DBAppDelegate stringConfiguration:@"network.proxy.address" str:@""];
 }
 
+- (void) setProxyServerAddress:(NSString *)proxyServerAddress {
+    
+   return [DBAppDelegate setStringConfiguration:@"network.proxy.address" value:proxyServerAddress];
+}
+
 - (NSString *) proxyServerPort {
 	
     return [DBAppDelegate stringConfiguration:@"network.proxy.port" str:@"8080"];
 }
+
+- (void) setProxyServerPort:(NSString *)proxyServerPort {
+    
+    return [DBAppDelegate setStringConfiguration:@"network.proxy.port" value:proxyServerPort];
+}
+
 - (NSString *) proxyServerUsername {
 	
     return [DBAppDelegate stringConfiguration:@"network.proxy.username" str:@""];
 }
+
+- (void) setProxyServerUsername:(NSString *)proxyServerUsername {
+    
+    return [DBAppDelegate setStringConfiguration:@"network.proxy.username" value:proxyServerUsername];
+}
+
 - (NSString *) proxyServerPassword {
 	
     return [DBAppDelegate stringConfiguration:@"network.proxy.password" str:@""];
 }
+
+- (void) setProxyServerPassword:(NSString *)proxyServerPassword {
+    
+    return [DBAppDelegate setStringConfiguration:@"network.proxy.password" value:proxyServerPassword];
+}
+
 - (NSString *) proxyServerUserAgent {
 	
     return [DBAppDelegate stringConfiguration:@"network.http_user_agent" str:@"deadbeef"];
+}
+
+- (void) setProxyServerUserAgent:(NSString *)proxyServerUserAgent {
+    
+    return [DBAppDelegate setStringConfiguration:@"network.http_user_agent" value:proxyServerUserAgent];
 }
 
 - (BOOL) proxyServer {
@@ -69,7 +97,10 @@
     return [DBAppDelegate intConfiguration:@"proxy.server" num:0];
 }
 
-
+- (void) setProxyServer:(BOOL)proxyServer {
+    
+    return [DBAppDelegate setIntConfiguration:@"proxy.server" value:proxyServer];
+}
 
 - (NSString *) identifier
 {

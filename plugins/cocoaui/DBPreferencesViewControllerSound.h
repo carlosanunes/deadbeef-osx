@@ -21,5 +21,4 @@
 @property BOOL eightToSixteen;
 @property BOOL sixteenToTwentyFour;
 
-
 @end

@@ -47,9 +47,19 @@
 	return [DBAppDelegate intConfiguration:@"pref_replaygain_scale" num:1];
 }
 
+- (void) setReplaygainScale:(BOOL)replaygainScale {
+    
+    return [DBAppDelegate setIntConfiguration:@"pref_replaygain_scale" value:replaygainScale];
+}
+
 - (BOOL) resumePreviousSession {
     
     return [DBAppDelegate intConfiguration:@"resume_last_session" num:0];
+}
+
+- (void) setResumePreviousSession:(BOOL)resumePreviousSession {
+    
+    return [DBAppDelegate setIntConfiguration:@"resume_last_session" value:resumePreviousSession];
 }
 
 - (BOOL) ignoreArchivesOnAddFolder {
@@ -57,9 +67,19 @@
 	return [DBAppDelegate intConfiguration:@"ignore_archives" num:1];
 }
 
+- (void) setIgnoreArchivesOnAddFolder:(BOOL)ignoreArchivesOnAddFolder {
+    
+    return [DBAppDelegate setIntConfiguration:@"ignore_archives" value:ignoreArchivesOnAddFolder];
+}
+
 - (BOOL) autoResetStopAfterCurrent {
 
     return [DBAppDelegate intConfiguration:@"playlist.stop_after_current_reset" num:0];
+}
+
+- (void) setAutoResetStopAfterCurrent:(BOOL)autoResetStopAfterCurrent {
+    
+    return [DBAppDelegate setIntConfiguration:@"playlist.stop_after_current_reset" value: autoResetStopAfterCurrent];
 }
 
 - (NSString *) cliAddPlaylist {
@@ -68,14 +88,29 @@
 	
 }
 
+- (void) setCliAddPlaylist:(NSString *)cliAddPlaylist {
+    
+    return [DBAppDelegate setStringConfiguration:@"cli_add_playlist_name" value:cliAddPlaylist];
+}
+
 - (NSInteger) replaygainPreamp {
     
     return [DBAppDelegate intConfiguration:@"replaygain_preamp" num:0];
 }
 
+- (void) setReplaygainPreamp:(NSInteger)replaygainPreamp {
+    
+    return [DBAppDelegate setIntConfiguration:@"replaygain_preamp" value:replaygainPreamp];
+}
+
 - (NSInteger) globalPreamp {
 
     return [DBAppDelegate intConfiguration:@"global_preamp" num:0];
+}
+
+- (void) setGlobalPreamp:(NSInteger)globalPreamp {
+    
+    return [DBAppDelegate setIntConfiguration:@"global_preamp" value:globalPreamp];
 }
 
 - (NSInteger) minReplaygainPreamp {
