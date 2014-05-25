@@ -118,10 +118,14 @@
 
 + (NSInteger) currentPlaylistIndex;
 
++ (NSInteger) currentTrackIndex;
+
 + (BOOL) saveCurrentPlaylist: (NSURL *) fname;
 
 + (void) loadPlaylist: (NSURL *) url;
 
 + (BOOL) newPlaylist;
+
++ (BOOL) streamerOkToRead;
 
 @end
