@@ -1015,15 +1015,21 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 }
 
-+ (NSInteger) currentTrackIndex {
++ (NSInteger) streamingTrackIndex {
     
     DB_playItem_t * streamingTrack = deadbeef->streamer_get_streaming_track();
+    NSInteger index = 0;
+    
 	if (streamingTrack <= 0) {
 		return -1;
 	}
-	
-	return (NSInteger) deadbeef->pl_get_idx_of(streamingTrack);
     
+    index = (NSInteger) deadbeef->pl_get_idx_of(streamingTrack);
+    
+    if (streamingTrack)
+        deadbeef->pl_item_unref (streamingTrack);
+	
+    return index;
 }
 
 + (BOOL) streamerOkToRead {

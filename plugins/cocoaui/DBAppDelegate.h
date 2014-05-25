@@ -118,7 +118,7 @@
 
 + (NSInteger) currentPlaylistIndex;
 
-+ (NSInteger) currentTrackIndex;
++ (NSInteger) streamingTrackIndex;
 
 + (BOOL) saveCurrentPlaylist: (NSURL *) fname;
 
