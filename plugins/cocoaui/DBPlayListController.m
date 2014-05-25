@@ -93,9 +93,9 @@
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
 
     [notificationCenter addObserver: self
-                        selector: @selector(reloadPlaylist:)
-                        name: @"DB_EventPlaylistSwitched"
-                        object: nil];
+                           selector: @selector(reloadPlaylist:)
+                               name: @"DB_EventPlaylistSwitched"
+                             object: nil];
 
     [notificationCenter addObserver: self
                            selector: @selector(reloadPlaylist:)
@@ -122,6 +122,7 @@
 }
 
 - (IBAction) reloadPlaylist : sender {
+    
 	[playlistTable reloadData];
 }
 
@@ -209,24 +210,12 @@
 			objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			row:(NSInteger)rowIndex {
 	
-	DB_playItem_t * it = deadbeef->pl_get_first(PL_MAIN);
-	int index = 0;
-    while (it) {
-		if (rowIndex == index)
-			break;
-        DB_playItem_t *next = deadbeef->pl_get_next (it, PL_MAIN);
-        deadbeef->pl_item_unref (it);
-        it = next;
-		++index;
-    }
-	
 	const char * meta = NULL;
 	NSString * ident = [aTableColumn identifier];
 	
 	if ( [ident isEqualToString:@"playing"] )
 	{
-		DB_playItem_t * playing_track = deadbeef->streamer_get_playing_track();
-		if (playing_track == it) {
+		if ([DBAppDelegate streamingTrackIndex] == rowIndex) {
 			
 			int paused = [DBAppDelegate outputState] == OUTPUT_STATE_PAUSED;
 			BOOL buffering = ! [DBAppDelegate streamerOkToRead];
@@ -241,14 +230,17 @@
 			} else {
 				image = [NSImage imageNamed:@"NSRightFacingTriangleTemplate"];			
 			}
-			
-			deadbeef->pl_item_unref(it);
-			deadbeef->pl_item_unref(playing_track);
-			
+					
 			return image;
 		}
 	}
 	
+    ddb_playlist_t *plt = deadbeef->plt_get_curr ();
+    ddb_playItem_t *it = deadbeef->plt_get_item_for_idx (plt, (int) rowIndex, PL_MAIN);
+
+    if (it == NULL)
+        return NULL;
+    
 	deadbeef->pl_lock();
 	if ( [ident isEqualToString: @"title"] )
 	{
@@ -277,8 +269,11 @@
 		meta = deadbeef->pl_find_meta_raw(it, "album");
 	
 	deadbeef->pl_unlock();
-	deadbeef->pl_item_unref(it);
-		
+    if (it)
+        deadbeef->pl_item_unref(it);
+	if (plt)
+        deadbeef->plt_unref(plt);
+	
 	if (meta == NULL)
 		return NULL;
 	return [NSString stringWithUTF8String: meta];
@@ -349,7 +344,6 @@
 {
 
 	[DBAppDelegate clearPlayList];
-	
 	[playlistTable deselectAll: self];
 }
 
@@ -367,7 +361,7 @@
 	
 	[playlistTable setNeedsDisplayInRect:currentStatusCell];
     
-    NSInteger rowOfTrack = [DBAppDelegate currentTrackIndex];
+    NSInteger rowOfTrack = [DBAppDelegate streamingTrackIndex];
     
 	NSRect cellRect = [playlistTable frameOfCellAtColumn:0 row: rowOfTrack];
     
