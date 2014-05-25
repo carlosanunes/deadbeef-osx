@@ -89,9 +89,40 @@
         }
     }
 */
-	
+    
+    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+
+    [notificationCenter addObserver: self
+                        selector: @selector(reloadPlaylist:)
+                        name: @"DB_EventPlaylistSwitched"
+                        object: nil];
+
+    [notificationCenter addObserver: self
+                           selector: @selector(reloadPlaylist:)
+                               name: @"DB_EventPlaylistChanged"
+                             object: nil];
+
+    [notificationCenter addObserver: self
+                           selector: @selector(updateStatusColumn:)
+                               name: @"DB_EventPaused"
+                             object: nil];
+
+    [notificationCenter addObserver: self
+                           selector: @selector(updateStatusColumn:)
+                               name: @"DB_EventSongChanged"
+                             object: nil];
+    
+    [notificationCenter addObserver: self
+                           selector: @selector(updateStatusColumn:)
+                               name: @"DB_EventTrackInfoChanged"
+                             object: nil];
+    
 	[self updatePlaylistInfo: self];
 
+}
+
+- (IBAction) reloadPlaylist : sender {
+	[playlistTable reloadData];
 }
 
 
@@ -131,7 +162,6 @@
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
 		BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:files row: row progressPanel: fileImportPanel  mainList: playlistTable ];
 
-		[playlistTable reloadData];
 		return inserted;
     }
 	
@@ -142,8 +172,7 @@
 	
     NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
 //    NSInteger dragRow = [rowIndexes firstIndex];
-	[DBAppDelegate movePlayListItems:rowIndexes row:row]; 
-	[playlistTable reloadData];
+	[DBAppDelegate movePlayListItems:rowIndexes row:row];
 	
 	return YES;
 }
@@ -200,7 +229,7 @@
 		if (playing_track == it) {
 			
 			int paused = [DBAppDelegate outputState] == OUTPUT_STATE_PAUSED;
-			int buffering = ! deadbeef->streamer_ok_to_read (-1);
+			BOOL buffering = ! [DBAppDelegate streamerOkToRead];
 			NSImage * image = NULL;
 			//TODO
 			if (paused) {
@@ -303,7 +332,8 @@
 {
 	NSIndexSet * indexSet = [playlistTable selectedRowIndexes];
 	__block int i = 0;
-
+    [playlistTable deselectAll: self];
+    
 	deadbeef->pl_lock();
 	ddb_playlist_t * plt = deadbeef->plt_get_curr ();
 	[indexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
@@ -313,8 +343,6 @@
 	deadbeef->pl_save_all();	
 	deadbeef->pl_unlock();
 
-	[playlistTable deselectAll: self];
-	[playlistTable reloadData];
 }
 
 - (IBAction) playlistClear: sender
@@ -323,8 +351,6 @@
 	[DBAppDelegate clearPlayList];
 	
 	[playlistTable deselectAll: self];
-	[playlistTable reloadData];
-
 }
 
 - (IBAction) invertSelection: sender
@@ -337,6 +363,24 @@
 	
 }
 
+- (IBAction) updateStatusColumn : sender {
+	
+	[playlistTable setNeedsDisplayInRect:currentStatusCell];
+    
+    NSInteger rowOfTrack = [DBAppDelegate currentTrackIndex];
+    
+	NSRect cellRect = [playlistTable frameOfCellAtColumn:0 row: rowOfTrack];
+    
+	if(!NSContainsRect(currentStatusCell, cellRect)) {
+		oldStatusCell = currentStatusCell;
+		currentStatusCell = cellRect;
+	}
+    
+	[playlistTable setNeedsDisplayInRect:currentStatusCell];
+	[playlistTable setNeedsDisplayInRect:oldStatusCell];
+            
+}
+
 - (IBAction) updatePlaylistInfo: sender
 {		
 	[playListInfoTable setStringValue: [DBAppDelegate totalPlaytimeAndSongCount] ];
@@ -347,7 +391,6 @@
 {
     DBTrackInspectorPanelController * controller = [DBTrackInspectorPanelController sharedController];
     [controller showWindow: self];
-//    [[controller window] makeKeyAndOrderFront: self];
 
 }
 
