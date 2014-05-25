@@ -40,9 +40,7 @@
 		DBPlayListController * controller = (DBPlayListController *) [mainPlaylist delegate];
 		[controller playSelectedItem: nil];
 	}
-	
-	[mainPlaylist reloadData];
-	
+		
 	return inserted;
 }
 
@@ -56,9 +54,7 @@
 		DBPlayListController * controller = (DBPlayListController *) [mainPlaylist delegate];
 		[controller playSelectedItem: nil];
 	}
-	
-	[mainPlaylist reloadData];
-	
+		
 	return;
 }
 
@@ -918,7 +914,6 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 }
 
 + (NSInteger) currentPlaylistIndex {
-    
     return deadbeef->plt_get_curr_idx ();
 }
 
@@ -1018,6 +1013,24 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     
     return YES;
 
+}
+
++ (NSInteger) currentTrackIndex {
+    
+    DB_playItem_t * streamingTrack = deadbeef->streamer_get_streaming_track();
+	if (streamingTrack <= 0) {
+		return -1;
+	}
+	
+	return (NSInteger) deadbeef->pl_get_idx_of(streamingTrack);
+    
+}
+
++ (BOOL) streamerOkToRead {
+    if (deadbeef->streamer_ok_to_read (-1) == 1)
+        return YES;
+
+    return NO;
 }
 
 @end
