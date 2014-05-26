@@ -32,18 +32,6 @@
 	deleteAction = aSelector;
 }
 
-- (void)setReloadAction:(SEL)aSelector
-{
-	reloadAction = aSelector;
-}
-
-
-- (void) reloadData
-{
-	[_target performSelector:reloadAction];
-	[super reloadData];
-}
-
 
 - (void)keyDown:(NSEvent *)event
 {

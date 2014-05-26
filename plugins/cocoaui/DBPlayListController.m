@@ -36,7 +36,6 @@
 	[playlistTable setDoubleAction: @selector(playSelectedItem:)]; // row double click
 	[playlistTable setEnterAction: @selector(playSelectedItem:)]; // row + enter
 	[playlistTable setDeleteAction: @selector(deleteSelectedItems:)]; // delete
-	[playlistTable setReloadAction: @selector(updatePlaylistInfo:)]; // on data reload
 
 	[playlistTable registerForDraggedTypes: [NSArray arrayWithObjects: DB_TABLE_VIEW_TYPE, (NSString*)kUTTypeFileURL, nil]];
 	
@@ -116,8 +115,7 @@
                            selector: @selector(updateStatusColumn:)
                                name: @"DB_EventTrackInfoChanged"
                              object: nil];
-    
-	[self updatePlaylistInfo: self];
+
 
 }
 
@@ -161,7 +159,7 @@
 	// check for file paths
 	if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
-		BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:files row: row progressPanel: fileImportPanel  mainList: playlistTable ];
+		BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:files row: row progressPanel: fileImportPanel ];
 
 		return inserted;
     }
@@ -269,6 +267,7 @@
 		meta = deadbeef->pl_find_meta_raw(it, "album");
 	
 	deadbeef->pl_unlock();
+    
     if (it)
         deadbeef->pl_item_unref(it);
 	if (plt)
@@ -276,6 +275,7 @@
 	
 	if (meta == NULL)
 		return NULL;
+    
 	return [NSString stringWithUTF8String: meta];
 }
 
@@ -374,12 +374,6 @@
 	[playlistTable setNeedsDisplayInRect:oldStatusCell];
             
 }
-
-- (IBAction) updatePlaylistInfo: sender
-{		
-	[playListInfoTable setStringValue: [DBAppDelegate totalPlaytimeAndSongCount] ];
-}
-
 
 - (IBAction) showTrackInfo: sender
 {

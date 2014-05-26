@@ -27,8 +27,6 @@
 @interface DBPlayListController : NSViewController <NSTableViewDelegate, NSTableViewDataSource> {
 	
 	IBOutlet DBTableView * playlistTable;
-	IBOutlet NSWindow * mainWindow;
-	IBOutlet id playListInfoTable;
 	IBOutlet DBFileImportPanel * fileImportPanel;
 	
     @private
@@ -40,8 +38,6 @@
 
 - (IBAction) reloadPlaylist: sender;
 - (IBAction) updateStatusColumn:(id)sender;
-
-- (IBAction) updatePlaylistInfo: sender;
 - (IBAction) playSelectedItem: sender;
 - (IBAction) deleteSelectedItems: sender;
 - (IBAction) playlistClear: sender;

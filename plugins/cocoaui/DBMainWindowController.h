@@ -29,11 +29,13 @@
 	IBOutlet id btnTogglePlay;
 
 	IBOutlet NSSlider * volumeSlider;
-	IBOutlet DBTableView * playlistTable;
 	IBOutlet DBFileImportPanel *fileImportPanel;
     IBOutlet NSOutlineView * sidebarView;
 	
     IBOutlet NSTreeController * sidebarTreeController;
+    
+    // status bar label
+    IBOutlet NSTextField * statusTextField;
     
 	// order menu items
 	IBOutlet NSMenuItem * orderLinearMenuItem;
@@ -49,9 +51,6 @@
 	NSMenuItem * currentSelectedOrderMenuItem;
 	NSMenuItem * currentSelectedLoopMenuItem;
 	
-	NSRect currentStatusCell;
-	NSRect oldStatusCell;
-    
     NSMutableArray * sidebarItems;
     
     @private
@@ -62,9 +61,7 @@
 	NSImage * pauseAlternateImage;
 	
 	NSTimer * windowUpdateTimer;
-	
-	BOOL shouldUpdate;
-    
+	   
 }
 
 @property (retain) NSMutableArray * sidebarItems;
@@ -76,10 +73,11 @@
 
 // update functions
 
-- (void) updateSeekBar;
-- (void) updateWindow;
-- (void) updateButtons;
-- (void) updateStatusColumn;
+- (IBAction) updateSeekBar : (id) sender;
+- (IBAction) updateVolumeSlider: (id)sender;
+- (IBAction) updateButtons: (id) sender;
+- (IBAction) updateStatusTextField: (id) sender;
+
 
 // sliders
 

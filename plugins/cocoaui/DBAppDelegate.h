@@ -84,7 +84,7 @@
 + (NSString *) stringConfiguration : (NSString *) key str:(NSString *) def;
 + (void) setStringConfiguration : (NSString *) key value:(NSString *) def;
 
-+ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel mainList : (DBTableView *) playlist;
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel;
 
 + (BOOL) addPathToPlaylistAtEnd : (NSString *) path;
 
