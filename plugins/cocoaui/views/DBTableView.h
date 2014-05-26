@@ -21,13 +21,10 @@
 
 	SEL enterAction;
 	SEL deleteAction;
-	SEL reloadAction;
 }
 
 - (void)setEnterAction:(SEL)aSelector;
-
 - (void)setDeleteAction:(SEL)aSelector;
 
-- (void) setReloadAction:(SEL)aSelector;
 
 @end

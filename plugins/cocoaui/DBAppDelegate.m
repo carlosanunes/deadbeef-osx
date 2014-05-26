@@ -27,15 +27,18 @@
 @synthesize mainPlaylist;
 @synthesize fileImportPanel;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
+- (void)applicationWillTerminate:(NSNotification *)aNotification {
 
+    // save config
+    deadbeef->pl_save_all ();
+    deadbeef->conf_save ();
 }
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
 	
 	[DBAppDelegate clearPlayList];
-	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:[NSArray arrayWithObject:filename] row:-1 progressPanel: fileImportPanel mainList: mainPlaylist ];
+	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:[NSArray arrayWithObject:filename] row:-1 progressPanel: fileImportPanel ];
 	if (inserted) {
 		DBPlayListController * controller = (DBPlayListController *) [mainPlaylist delegate];
 		[controller playSelectedItem: nil];
@@ -49,7 +52,7 @@
 	printf("Opening: %s\n", [[filenames objectAtIndex:0] UTF8String]);
 	
 	[DBAppDelegate clearPlayList];
-	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:filenames row:-1 progressPanel: fileImportPanel mainList: mainPlaylist ];
+	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:filenames row:-1 progressPanel: fileImportPanel ];
 	if (inserted) {
 		DBPlayListController * controller = (DBPlayListController *) [mainPlaylist delegate];
 		[controller playSelectedItem: nil];
@@ -227,7 +230,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 /*
  accepts both a NSURL list as well as a NSSring list
  */
-+ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : panel mainList : playlist {
++ (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : panel {
 	
     ddb_playlist_t * plt = deadbeef->plt_get_curr ();
     if ( deadbeef->pl_add_files_begin (plt) < 0) {
@@ -292,7 +295,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 					   deadbeef->pl_save_all ();
 					   deadbeef->conf_save ();
 					   
-					   dispatch_async(dispatch_get_main_queue(), ^{ [panel close]; [playlist reloadData]; });
+					   dispatch_async(dispatch_get_main_queue(), ^{ [panel close]; });
 					   
 				   });
 	

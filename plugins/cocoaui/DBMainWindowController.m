@@ -39,12 +39,11 @@
 	[volumeSlider setMinValue: (double) [DBAppDelegate minVolumeDB] ];
 	[volumeSlider setFloatValue: [DBAppDelegate volumeDB] ];
 	
-	shouldUpdate = YES;
 	
 	// global update timer
-	windowUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.3 
+	windowUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.3
 														  target: self
-														selector: @selector(updateWindow)
+                                                       selector: @selector(updateSeekBar:)
 														userInfo:nil
 														 repeats:YES];
 	
@@ -109,37 +108,42 @@
     
     [sidebarView reloadData];
     [sidebarView expandItem:nil expandChildren:YES];
-    [sidebarView selectRowIndexes: [NSIndexSet indexSetWithIndex: [DBAppDelegate currentPlaylistIndex] + 1 ] byExtendingSelection:NO ];
+    
+    [sidebarView selectRowIndexes: [NSIndexSet indexSetWithIndex: [DBAppDelegate intConfiguration:@"playlist.current" num:0] + 1 ] byExtendingSelection:NO ];
+  
+    [self updateStatusTextField: self];
+    
+    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+    
+    [notificationCenter addObserver: self
+                           selector: @selector(updateButtons:)
+                               name: @"DB_EventPaused"
+                             object: nil];
+
+    [notificationCenter addObserver: self
+                           selector: @selector(updateButtons:)
+                               name: @"DB_EventSongChanged"
+                             object: nil];
+    
+    [notificationCenter addObserver:self
+                           selector:@selector(updateVolumeSlider:)
+                               name:@"DB_EventVolumeChanged"
+                             object:nil];
+    
+    [notificationCenter addObserver: self
+                           selector: @selector(updateStatusTextField:)
+                               name: @"DB_EventPlaylistSwitched"
+                             object: nil];
+    
+    [notificationCenter addObserver: self
+                           selector: @selector(updateStatusTextField:)
+                               name: @"DB_EventPlaylistChanged"
+                             object: nil];
     
 }
 
-
-- (void)windowDidDeminiaturize:(NSNotification *)notification {
-	shouldUpdate = YES;
-}
-
-- (void)windowDidMiniaturize:(NSNotification *)notification {
-	shouldUpdate = NO;
-}
-
-
-- (void) updateWindow {
+- (IBAction) updateSeekBar :(id)sender {
 	
-	if (shouldUpdate)
-	{
-		[self updateSeekBar];
-		[self updateButtons];
-		// reload the status column (playing/loading/stopped) 
-//		[playlistTable reloadDataForRowIndexes:[NSIndexSet indexSetWithIndexesInRange: NSMakeRange(0, [playlistTable numberOfRows]) ] columnIndexes: [NSIndexSet indexSetWithIndex: 0]];
-		[self updateStatusColumn];
-	}
-	
-}
-
-
-- (void) updateSeekBar {
-	
-		
 	float duration = [DBAppDelegate playingItemDuration];
 	if (duration < 0) {
 		[timeSlider setFloatValue:[timeSlider minValue]];
@@ -164,7 +168,7 @@
 }
 
 
-- (void) updateButtons {
+- (IBAction) updateButtons: (id) sender {
 	
 	int state = [DBAppDelegate outputState];
 	
@@ -177,28 +181,11 @@
 	}
 }
 
-// updates the status indicator column of the playlist widget (playing/loading/stopped)
-- (void) updateStatusColumn {
-	
-	[playlistTable setNeedsDisplayInRect:currentStatusCell];
-		
-	playItem_t * streamingTrack = deadbeef->streamer_get_streaming_track();
-	if (streamingTrack <= 0) {
-		return;
-	}
-	
-	NSInteger rowOfTrack = deadbeef->pl_get_idx_of(streamingTrack);
-	NSRect cellRect = [playlistTable frameOfCellAtColumn:0 row: rowOfTrack];
-
-	if(!NSContainsRect(currentStatusCell, cellRect)) {
-		oldStatusCell = currentStatusCell;
-		currentStatusCell = cellRect;
-	}
-
-	[playlistTable setNeedsDisplayInRect:currentStatusCell];
-	[playlistTable setNeedsDisplayInRect:oldStatusCell];
-
+- (IBAction) updateStatusTextField:(id) sender
+{
+	[statusTextField setStringValue: [DBAppDelegate totalPlaytimeAndSongCount] ];
 }
+
 
 - (IBAction) seekBarAction: (id)sender {
 
@@ -231,6 +218,11 @@
 	[DBAppDelegate setVolumeDB:volume];
 }
 
+
+- (IBAction) updateVolumeSlider: (id)sender {
+    
+    [volumeSlider setFloatValue: [DBAppDelegate volumeDB] ];
+}
 
 // playback commands
 
@@ -307,8 +299,9 @@
 - (IBAction) openFiles : sender {
 
     if ([self doFileImport:YES]) {
-		DBPlayListController * controller = (DBPlayListController *) [playlistTable delegate];
-		[controller playSelectedItem: sender];
+// TODO
+//		DBPlayListController * controller = (DBPlayListController *) [playlistTable delegate];
+//		[controller playSelectedItem: sender];
 	}
 }
 
@@ -324,10 +317,9 @@
     
 	if ([controller runModal] == NSOKButton)
 	{
-		if ([DBAppDelegate addPathToPlaylistAtEnd: [controller textInput] ])
-			[playlistTable reloadData];
-		else
-		{}
+		if (![DBAppDelegate addPathToPlaylistAtEnd: [controller textInput] ])
+		{
+        }
 	}
     
     [controller release];
@@ -353,8 +345,7 @@
 			[DBAppDelegate clearPlayList];
 		
 		NSArray * files = [openPanel URLs];
-		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel  mainList: playlistTable  ];
-		[playlistTable reloadData];
+		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel ];
 		return YES;
     }
 	
