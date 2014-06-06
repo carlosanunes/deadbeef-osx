@@ -36,8 +36,8 @@
 	NSRect oldStatusCell;
 }
 
-- (IBAction) reloadPlaylist: sender;
-- (IBAction) updateStatusColumn:(id)sender;
+- (void) reloadPlaylist;
+- (void) updateStatusColumn;
 - (IBAction) playSelectedItem: sender;
 - (IBAction) deleteSelectedItems: sender;
 - (IBAction) playlistClear: sender;
