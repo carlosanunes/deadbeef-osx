@@ -21,7 +21,7 @@
 #import "DBAppDelegate.h"
 #import "DBPlayListController.h"
 #import "DBTextInputPanelController.h"
-#import <DBSideBarItem.h>
+
 
 @interface DBMainWindowController : NSObject <NSWindowDelegate> {
 		
@@ -30,9 +30,6 @@
 
 	IBOutlet NSSlider * volumeSlider;
 	IBOutlet DBFileImportPanel *fileImportPanel;
-    IBOutlet NSOutlineView * sidebarView;
-	
-    IBOutlet NSTreeController * sidebarTreeController;
     
     // status bar label
     IBOutlet NSTextField * statusTextField;
@@ -50,8 +47,6 @@
 	
 	NSMenuItem * currentSelectedOrderMenuItem;
 	NSMenuItem * currentSelectedLoopMenuItem;
-	
-    NSMutableArray * sidebarItems;
     
     @private
     
@@ -63,9 +58,6 @@
 	NSTimer * windowUpdateTimer;
 	   
 }
-
-@property (retain) NSMutableArray * sidebarItems;
-
 
 
 // helper functions

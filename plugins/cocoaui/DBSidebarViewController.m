@@ -10,6 +10,52 @@
 
 @implementation DBSidebarViewController 
 
+@synthesize sidebarItems;
+
+- (void) awakeFromNib {
+    
+    sidebarItems = [[NSMutableArray array] retain];
+    
+    DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:@"playlistGroup"];
+    NSMutableArray * playlists = [NSMutableArray arrayWithCapacity:1];
+    
+    for (NSDictionary * object in [DBAppDelegate availablePlaylists]) {
+        
+        [playlists addObject:[DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO identifier:@"playlist" ] ];
+    }
+    
+    [playlistItem setChildren:playlists];
+    
+    [sidebarItems addObject: playlistItem];
+    [sidebarTreeController setContent: sidebarItems];
+    
+    [sidebarView reloadData];
+    [sidebarView expandItem:nil expandChildren:YES];
+    
+    [sidebarView selectRowIndexes: [NSIndexSet indexSetWithIndex: [DBAppDelegate intConfiguration:@"playlist.current" num:0] + 1 ] byExtendingSelection:NO ];
+
+    
+    
+    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+    
+    [notificationCenter addObserver: self
+                           selector: @selector(updateItems)
+                               name: @"DB_EventPlaylistSwitched"
+                             object: nil];
+    
+    [notificationCenter addObserver: self
+                           selector: @selector(updateItems)
+                               name: @"DB_EventPlaylistChanged"
+                             object: nil];
+    
+}
+
+- (void) updateItems {
+
+// TODO
+    
+    
+}
 
 #pragma mark - Helpers
 
@@ -27,23 +73,21 @@
 
 #pragma mark - NSOutlineViewDelegate
 
-
 - (void) outlineViewSelectionDidChange:(NSNotification *)notification {
     
     NSOutlineView * mOutlineView = [notification object];
-    NSInteger row = [mOutlineView selectedRow];
-    NSTreeNode * item = (NSTreeNode *) [mOutlineView itemAtRow: row];
+    NSInteger rowNumber = [mOutlineView selectedRow];
+    NSTreeNode * item = (NSTreeNode *) [mOutlineView itemAtRow: rowNumber];
     DBSideBarItem * sidebarItem = (DBSideBarItem *) item.representedObject;
     
     if ( [[sidebarItem identifier] isEqualToString:@"playlist"] ) {
         // figuring out the correct index
         NSTreeNode * parentNode = [item parentNode];
-        NSInteger parentRow = [mOutlineView rowForItem: parentNode];
-        parentRow++;
+        NSInteger parentRowNumber = [mOutlineView rowForItem: parentNode];
+        parentRowNumber++;
         
-        [DBAppDelegate setCurrentPlaylist: row - parentRow ];
+        [DBAppDelegate setCurrentPlaylist: rowNumber - parentRowNumber ];
     }
-    
     
 }
 

@@ -11,8 +11,17 @@
 #import "DBSideBarItem.h"
 
 @interface DBSidebarViewController : NSViewController <NSOutlineViewDelegate> {
-
+ 
+    IBOutlet NSTreeController * sidebarTreeController;
+    IBOutlet NSOutlineView * sidebarView;
+    
+    NSMutableArray * sidebarItems;
     
 }
+
+@property (retain) NSMutableArray * sidebarItems;
+
+
+- (void) updateItems;
 
 @end
