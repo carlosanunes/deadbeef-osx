@@ -31,7 +31,6 @@
 
 @implementation DBMainWindowController
 
-@synthesize sidebarItems;
 
 - (void) awakeFromNib {
 
@@ -91,26 +90,6 @@
 	[currentSelectedLoopMenuItem setState: NSOnState];
     
 
-    sidebarItems = [[NSMutableArray array] retain];
-    
-    DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:@"playlistGroup"];
-    NSMutableArray * playlists = [NSMutableArray arrayWithCapacity:1];
-    
-    for (NSDictionary * object in [DBAppDelegate availablePlaylists]) {
-        
-        [playlists addObject:[DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO identifier:@"playlist" ] ];
-    }
-    
-    [playlistItem setChildren:playlists];
-    
-    [sidebarItems addObject: playlistItem];
-    [sidebarTreeController setContent: sidebarItems];
-    
-    [sidebarView reloadData];
-    [sidebarView expandItem:nil expandChildren:YES];
-    
-    [sidebarView selectRowIndexes: [NSIndexSet indexSetWithIndex: [DBAppDelegate intConfiguration:@"playlist.current" num:0] + 1 ] byExtendingSelection:NO ];
-  
     [self updateStatusTextField: self];
     
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
