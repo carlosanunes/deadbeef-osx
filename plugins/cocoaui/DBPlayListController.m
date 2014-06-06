@@ -200,7 +200,7 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
 	
-	return [DBAppDelegate mainPlayListCount];
+	return [DBAppDelegate currentPlaylistItemCount];
 }
 
 

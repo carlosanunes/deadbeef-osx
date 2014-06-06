@@ -76,7 +76,7 @@
 + (float) volumeDB;
 + (float) minVolumeDB;
 
-+ (NSInteger) mainPlayListCount;
++ (NSInteger) currentPlaylistItemCount;
 
 + (int) intConfiguration : (NSString *) key num:(NSInteger) def;
 + (void) setIntConfiguration : (NSString *) key value:(NSInteger) def;
