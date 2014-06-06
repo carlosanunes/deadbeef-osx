@@ -648,8 +648,8 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 
 + (void) setCurrentPlaylist : (NSInteger) index {
 
-    deadbeef->plt_set_curr_idx (index);
-    deadbeef->conf_set_int ("playlist.current", index);
+    deadbeef->plt_set_curr_idx ( (int) index);
+    deadbeef->conf_set_int ("playlist.current", (int) index);
     
 }
 
@@ -811,7 +811,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	return YES;
 }
 
-+ (NSInteger) mainPlayListCount {
++ (NSInteger) currentPlaylistItemCount {
 
 	return (NSInteger) deadbeef->pl_getcount(PL_MAIN);
 }
