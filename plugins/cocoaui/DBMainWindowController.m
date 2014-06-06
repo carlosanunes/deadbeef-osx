@@ -42,7 +42,7 @@
 	// global update timer
 	windowUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.3
 														  target: self
-                                                       selector: @selector(updateSeekBar:)
+                                                       selector: @selector(updateSeekBar)
 														userInfo:nil
 														 repeats:YES];
 	
@@ -90,38 +90,38 @@
 	[currentSelectedLoopMenuItem setState: NSOnState];
     
 
-    [self updateStatusTextField: self];
+    [self updateStatusTextField];
     
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
     
     [notificationCenter addObserver: self
-                           selector: @selector(updateButtons:)
+                           selector: @selector(updateButtons)
                                name: @"DB_EventPaused"
                              object: nil];
 
     [notificationCenter addObserver: self
-                           selector: @selector(updateButtons:)
+                           selector: @selector(updateButtons)
                                name: @"DB_EventSongChanged"
                              object: nil];
     
     [notificationCenter addObserver:self
-                           selector:@selector(updateVolumeSlider:)
+                           selector:@selector(updateVolumeSlider)
                                name:@"DB_EventVolumeChanged"
                              object:nil];
     
     [notificationCenter addObserver: self
-                           selector: @selector(updateStatusTextField:)
+                           selector: @selector(updateStatusTextField)
                                name: @"DB_EventPlaylistSwitched"
                              object: nil];
     
     [notificationCenter addObserver: self
-                           selector: @selector(updateStatusTextField:)
+                           selector: @selector(updateStatusTextField)
                                name: @"DB_EventPlaylistChanged"
                              object: nil];
     
 }
 
-- (IBAction) updateSeekBar :(id)sender {
+- (void) updateSeekBar  {
 	
 	float duration = [DBAppDelegate playingItemDuration];
 	if (duration < 0) {
@@ -147,7 +147,7 @@
 }
 
 
-- (IBAction) updateButtons: (id) sender {
+- (void) updateButtons {
 	
 	int state = [DBAppDelegate outputState];
 	
@@ -160,7 +160,7 @@
 	}
 }
 
-- (IBAction) updateStatusTextField:(id) sender
+- (void) updateStatusTextField
 {
 	[statusTextField setStringValue: [DBAppDelegate totalPlaytimeAndSongCount] ];
 }
@@ -198,7 +198,7 @@
 }
 
 
-- (IBAction) updateVolumeSlider: (id)sender {
+- (void) updateVolumeSlider {
     
     [volumeSlider setFloatValue: [DBAppDelegate volumeDB] ];
 }

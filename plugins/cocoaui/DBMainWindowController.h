@@ -65,10 +65,10 @@
 
 // update functions
 
-- (IBAction) updateSeekBar : (id) sender;
-- (IBAction) updateVolumeSlider: (id)sender;
-- (IBAction) updateButtons: (id) sender;
-- (IBAction) updateStatusTextField: (id) sender;
+- (void) updateSeekBar;
+- (void) updateVolumeSlider;
+- (void) updateButtons;
+- (void) updateStatusTextField;
 
 
 // sliders

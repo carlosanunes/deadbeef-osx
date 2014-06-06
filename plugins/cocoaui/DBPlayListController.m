@@ -92,34 +92,34 @@
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
 
     [notificationCenter addObserver: self
-                           selector: @selector(reloadPlaylist:)
+                           selector: @selector(reloadPlaylist)
                                name: @"DB_EventPlaylistSwitched"
                              object: nil];
 
     [notificationCenter addObserver: self
-                           selector: @selector(reloadPlaylist:)
+                           selector: @selector(reloadPlaylist)
                                name: @"DB_EventPlaylistChanged"
                              object: nil];
 
     [notificationCenter addObserver: self
-                           selector: @selector(updateStatusColumn:)
+                           selector: @selector(updateStatusColumn)
                                name: @"DB_EventPaused"
                              object: nil];
 
     [notificationCenter addObserver: self
-                           selector: @selector(updateStatusColumn:)
+                           selector: @selector(updateStatusColumn)
                                name: @"DB_EventSongChanged"
                              object: nil];
     
     [notificationCenter addObserver: self
-                           selector: @selector(updateStatusColumn:)
+                           selector: @selector(updateStatusColumn)
                                name: @"DB_EventTrackInfoChanged"
                              object: nil];
 
 
 }
 
-- (IBAction) reloadPlaylist : sender {
+- (void) reloadPlaylist  {
     
 	[playlistTable reloadData];
 }
@@ -357,7 +357,7 @@
 	
 }
 
-- (IBAction) updateStatusColumn : sender {
+- (void) updateStatusColumn  {
 	
 	[playlistTable setNeedsDisplayInRect:currentStatusCell];
     
