@@ -199,7 +199,7 @@
 // datasource methods //
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-	
+	    
 	return [DBAppDelegate currentPlaylistItemCount];
 }
 
@@ -210,7 +210,7 @@
 	
 	const char * meta = NULL;
 	NSString * ident = [aTableColumn identifier];
-	
+
 	if ( [ident isEqualToString:@"playing"] )
 	{
 		if ([DBAppDelegate streamingTrackIndex] == rowIndex) {
