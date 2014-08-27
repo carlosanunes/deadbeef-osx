@@ -92,7 +92,6 @@
                                     </connections>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="RoO-go-EQ1"/>
                                     <binding destination="-2" name="value" keyPath="proxyServerAddress" id="a13-Uj-MA1"/>
                                 </connections>
                             </textField>
@@ -108,7 +107,6 @@
                                     </connections>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="WlZ-Sm-WGL"/>
                                     <binding destination="-2" name="value" keyPath="proxyServerPort" id="ORm-Xn-peg"/>
                                 </connections>
                             </textField>
@@ -124,7 +122,6 @@
                                     </connections>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="8eR-20-3h8"/>
                                     <binding destination="-2" name="value" keyPath="proxyServerUsername" id="664-mt-58C"/>
                                 </connections>
                             </textField>
@@ -140,7 +137,6 @@
                                     </connections>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="J97-A6-IQa"/>
                                     <binding destination="-2" name="value" keyPath="proxyServerPassword" id="c6k-hU-REb"/>
                                 </connections>
                             </textField>
@@ -172,7 +168,6 @@
                                     </connections>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="ECj-Px-8Dg"/>
                                     <binding destination="-2" name="value" keyPath="proxyServerUserAgent" id="vdE-Rx-L0H"/>
                                 </connections>
                             </textField>
@@ -192,7 +187,6 @@
                                 </popUpButtonCell>
                                 <connections>
                                     <binding destination="VM7-Px-CTq" name="contentValues" keyPath="arrangedObjects" id="ZdJ-s4-zfo"/>
-                                    <binding destination="-2" name="enabled" keyPath="proxyServer" id="MPg-XX-oz1"/>
                                 </connections>
                             </popUpButton>
                         </subviews>
