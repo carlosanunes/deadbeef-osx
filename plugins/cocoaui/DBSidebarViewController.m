@@ -91,24 +91,6 @@
     
 }
 
-- (void) outlineViewSelectionDidChange:(NSNotification *)notification {
-    
-    NSOutlineView * mOutlineView = [notification object];
-    NSInteger row = [mOutlineView selectedRow];
-    NSTreeNode * item = (NSTreeNode *) [mOutlineView itemAtRow: row];
-    DBSideBarItem * sidebarItem = (DBSideBarItem *) item.representedObject;
-    
-    if ( [[sidebarItem identifier] isEqualToString:@"playlist"] ) {
-        // figuring out the correct index
-        NSTreeNode * parentNode = [item parentNode];
-        NSInteger parentRow = [mOutlineView rowForItem: parentNode];
-        parentRow++;
-        
-        [DBAppDelegate setCurrentPlaylist: row - parentRow ];
-    }
-    
-    
-}
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item{
     
