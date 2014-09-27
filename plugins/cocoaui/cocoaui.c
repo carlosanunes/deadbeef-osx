@@ -9,7 +9,6 @@ DB_functions_t *deadbeef;
 
 static int
 cocoaui_start (void) {
-//    fprintf (stderr, "cocoaui plugin compiled for : %d.%d.%d\n", GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION);
 
     // Call cocoa ui (main loop)
     // this function never returns, instead it calls exit()
