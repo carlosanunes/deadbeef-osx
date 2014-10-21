@@ -57,17 +57,11 @@
                                name: @"DB_EventPlaylistSwitched"
                              object: nil];
     
-    [notificationCenter addObserver: self
-                           selector: @selector(updateItems)
-                               name: @"DB_EventPlaylistChanged"
-                             object: nil];
-    
 }
 
 - (void) updateItems {
 
-// TODO
-    
+    return;
     
 }
 
