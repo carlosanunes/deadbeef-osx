@@ -14,7 +14,7 @@
 		0702977917E8EBE700710234 /* fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702977417E8EBE700710234 /* fft.c */; };
 		0702977A17E8EBE700710234 /* handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702977617E8EBE700710234 /* handler.c */; };
 		0702979317E8EE4A00710234 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702979117E8EE4A00710234 /* parser.c */; };
-		070297A717E9014900710234 /* mms.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881ED01689C5550066142D /* mms.so */; };
+		070297A717E9014900710234 /* mms.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881ED01689C5550066142D /* mms.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0702981817E9090B00710234 /* deadbeef.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0702980617E9090B00710234 /* deadbeef.icns */; };
 		0702981B17E9090B00710234 /* background-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980A17E9090B00710234 /* background-top.png */; };
 		0702981C17E9090B00710234 /* buffering.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702980B17E9090B00710234 /* buffering.png */; };
@@ -29,7 +29,7 @@
 		0702982717E9090B00710234 /* volume-high.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981617E9090B00710234 /* volume-high.png */; };
 		0702982817E9090B00710234 /* volume-low.png in Resources */ = {isa = PBXBuildFile; fileRef = 0702981717E9090B00710234 /* volume-low.png */; };
 		0702984F17E911A500710234 /* coreaudio.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702984D17E911A500710234 /* coreaudio.c */; };
-		0702995C17E9148700710234 /* coreaudio.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0702984A17E9113200710234 /* coreaudio.so */; };
+		0702995C17E9148700710234 /* coreaudio.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0702984A17E9113200710234 /* coreaudio.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0702999D17E9171400710234 /* asfheader.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702998417E9171400710234 /* asfheader.c */; };
 		0702999E17E9171400710234 /* asf.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702998617E9171400710234 /* asf.c */; };
 		0702999F17E9171400710234 /* asf.h in Headers */ = {isa = PBXBuildFile; fileRef = 0702998717E9171400710234 /* asf.h */; };
@@ -52,11 +52,11 @@
 		070299B017E9171400710234 /* wmafixed.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702999917E9171400710234 /* wmafixed.c */; };
 		070299B117E9171400710234 /* wmafixed.h in Headers */ = {isa = PBXBuildFile; fileRef = 0702999A17E9171400710234 /* wmafixed.h */; };
 		070299B217E9171400710234 /* wma_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702999C17E9171400710234 /* wma_plugin.c */; };
-		070299BB17E9178E00710234 /* wma.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0702997317E916C200710234 /* wma.so */; };
-		07029A0D17E91CA600710234 /* dumb.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B12E1688F3B10079D590 /* dumb.so */; };
-		07029A1417E91CD500710234 /* ffap.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B2DF1688F7860079D590 /* ffap.so */; };
-		07029A1917E91D1000710234 /* gme.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B314168920E10079D590 /* gme.so */; };
-		07029A1E17E91D3900710234 /* shn.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881F431689C8200066142D /* shn.so */; };
+		070299BB17E9178E00710234 /* wma.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0702997317E916C200710234 /* wma.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		07029A0D17E91CA600710234 /* dumb.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B12E1688F3B10079D590 /* dumb.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		07029A1417E91CD500710234 /* ffap.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B2DF1688F7860079D590 /* ffap.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		07029A1917E91D1000710234 /* gme.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B314168920E10079D590 /* gme.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		07029A1E17E91D3900710234 /* shn.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881F431689C8200066142D /* shn.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		070568B9181B13D700B094E4 /* DBPreferencesViewControllerPlugins.h in Headers */ = {isa = PBXBuildFile; fileRef = 070568B7181B13D700B094E4 /* DBPreferencesViewControllerPlugins.h */; };
 		070568BA181B13D700B094E4 /* DBPreferencesViewControllerPlugins.m in Sources */ = {isa = PBXBuildFile; fileRef = 070568B8181B13D700B094E4 /* DBPreferencesViewControllerPlugins.m */; };
 		070568E3181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 070568E1181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.h */; };
@@ -97,7 +97,7 @@
 		07458CAE19AEC33800DB2B62 /* oggedit_opus.c in Sources */ = {isa = PBXBuildFile; fileRef = 07458CA619AEC2EE00DB2B62 /* oggedit_opus.c */; };
 		07458CAF19AEC33800DB2B62 /* oggedit_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 07458CA719AEC2EE00DB2B62 /* oggedit_utils.c */; };
 		07458CB019AEC33800DB2B62 /* oggedit_vorbis.c in Sources */ = {isa = PBXBuildFile; fileRef = 07458CA819AEC2EE00DB2B62 /* oggedit_vorbis.c */; };
-		075D94DA1842CB4400701D65 /* vorbis.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075D94D71842CADB00701D65 /* vorbis.framework */; };
+		075D94DA1842CB4400701D65 /* vorbis.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075D94D71842CADB00701D65 /* vorbis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		075E32FA184292D400222503 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32F9184292D400222503 /* CoreAudio.framework */; };
 		075E32FC1842930B00222503 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32FB1842930B00222503 /* AudioToolbox.framework */; };
 		075E32FE1842931400222503 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32FD1842931400222503 /* AudioUnit.framework */; };
@@ -108,8 +108,8 @@
 		075E33041842936600222503 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32FD1842931400222503 /* AudioUnit.framework */; };
 		075E335B1842A0A200222503 /* FLAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E334A18429DED00222503 /* FLAC.framework */; };
 		075E335C1842A0A200222503 /* ogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E330A18429D9500222503 /* ogg.framework */; };
-		075E335D1842A0BD00222503 /* FLAC.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075E334A18429DED00222503 /* FLAC.framework */; };
-		075E335E1842A0BD00222503 /* ogg.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075E330A18429D9500222503 /* ogg.framework */; };
+		075E335D1842A0BD00222503 /* FLAC.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075E334A18429DED00222503 /* FLAC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		075E335E1842A0BD00222503 /* ogg.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075E330A18429D9500222503 /* ogg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0774F1081845621F00D56194 /* mkstemp.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F05A184560F400D56194 /* mkstemp.c */; };
 		0774F1091845621F00D56194 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0774F05B184560F400D56194 /* zip.h */; };
 		0774F10A1845621F00D56194 /* zip_add.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F05C184560F400D56194 /* zip_add.c */; };
@@ -264,7 +264,7 @@
 		07881EA11689C3A70066142D /* lastfm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881E9F1689C3A70066142D /* lastfm.c */; };
 		07881EA61689C3FD0066142D /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07881EA51689C3FD0066142D /* libcurl.dylib */; };
 		07881EB51689C4CC0066142D /* m3u.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881EB31689C4CC0066142D /* m3u.c */; };
-		07881EB91689C5100066142D /* m3u.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881EAD1689C4920066142D /* m3u.so */; };
+		07881EB91689C5100066142D /* m3u.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881EAD1689C4920066142D /* m3u.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07881EE91689C58D0066142D /* asfheader.h in Headers */ = {isa = PBXBuildFile; fileRef = 07881ED71689C58D0066142D /* asfheader.h */; };
 		07881EEA1689C58D0066142D /* bswap.h in Headers */ = {isa = PBXBuildFile; fileRef = 07881ED91689C58D0066142D /* bswap.h */; };
 		07881EEB1689C58D0066142D /* mms-common.h in Headers */ = {isa = PBXBuildFile; fileRef = 07881EDB1689C58D0066142D /* mms-common.h */; };
@@ -299,7 +299,7 @@
 		07881F2C1689C7230066142D /* requant.h in Headers */ = {isa = PBXBuildFile; fileRef = 07881F171689C7230066142D /* requant.h */; };
 		07881F2D1689C7230066142D /* streaminfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881F181689C7230066142D /* streaminfo.c */; };
 		07881F2E1689C7230066142D /* synth_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881F191689C7230066142D /* synth_filter.c */; };
-		07881F361689C7BD0066142D /* musepack.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881EFD1689C6FF0066142D /* musepack.so */; };
+		07881F361689C7BD0066142D /* musepack.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881EFD1689C6FF0066142D /* musepack.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07881F5A1689C85A0066142D /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881F491689C85A0066142D /* array.c */; };
 		07881F5B1689C85A0066142D /* bitshift.h in Headers */ = {isa = PBXBuildFile; fileRef = 07881F4B1689C85A0066142D /* bitshift.h */; };
 		07881F5C1689C85A0066142D /* convert.c in Sources */ = {isa = PBXBuildFile; fileRef = 07881F4C1689C85A0066142D /* convert.c */; };
@@ -317,7 +317,7 @@
 		078821461689CC3D0066142D /* ttadec.c in Sources */ = {isa = PBXBuildFile; fileRef = 078821421689CC3D0066142D /* ttadec.c */; };
 		078821471689CC3D0066142D /* ttadec.h in Headers */ = {isa = PBXBuildFile; fileRef = 078821431689CC3D0066142D /* ttadec.h */; };
 		078821481689CC3D0066142D /* ttaplug.c in Sources */ = {isa = PBXBuildFile; fileRef = 078821441689CC3D0066142D /* ttaplug.c */; };
-		0788214C1689CC580066142D /* tta.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078821391689CC120066142D /* tta.so */; };
+		0788214C1689CC580066142D /* tta.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078821391689CC120066142D /* tta.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		078821A51689CCC70066142D /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 078821611689CCC70066142D /* plugin.c */; };
 		078821A61689CCC70066142D /* amifilemagic.c in Sources */ = {isa = PBXBuildFile; fileRef = 0788216C1689CCC70066142D /* amifilemagic.c */; };
 		078821A71689CCC70066142D /* amifilemagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 0788216D1689CCC70066142D /* amifilemagic.h */; };
@@ -375,7 +375,7 @@
 		078821DB1689CCC70066142D /* unixsupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 078821A41689CCC70066142D /* unixsupport.c */; };
 		078821ED1689CDC50066142D /* vfs_curl.c in Sources */ = {isa = PBXBuildFile; fileRef = 078821EC1689CDC50066142D /* vfs_curl.c */; };
 		078821EF1689CDDF0066142D /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07881EA51689C3FD0066142D /* libcurl.dylib */; };
-		078821F21689CDF70066142D /* vfs_curl.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078821E51689CD850066142D /* vfs_curl.so */; };
+		078821F21689CDF70066142D /* vfs_curl.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078821E51689CD850066142D /* vfs_curl.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		078822011689CE6F0066142D /* vfs_zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 078822001689CE6F0066142D /* vfs_zip.c */; };
 		078822191689CF000066142D /* vorbis.c in Sources */ = {isa = PBXBuildFile; fileRef = 078822141689CF000066142D /* vorbis.c */; };
 		0788222D1689CF5D0066142D /* ay8912.c in Sources */ = {isa = PBXBuildFile; fileRef = 078822251689CF5D0066142D /* ay8912.c */; };
@@ -385,7 +385,7 @@
 		078822311689CF5D0066142D /* lh5dec.c in Sources */ = {isa = PBXBuildFile; fileRef = 078822291689CF5D0066142D /* lh5dec.c */; };
 		078822321689CF5D0066142D /* vtx.c in Sources */ = {isa = PBXBuildFile; fileRef = 0788222B1689CF5D0066142D /* vtx.c */; };
 		078822331689CF5D0066142D /* vtxfile.c in Sources */ = {isa = PBXBuildFile; fileRef = 0788222C1689CF5D0066142D /* vtxfile.c */; };
-		078822371689CF780066142D /* vtx.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788221F1689CF270066142D /* vtx.so */; };
+		078822371689CF780066142D /* vtx.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788221F1689CF270066142D /* vtx.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		078822511689CFD80066142D /* wavpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 078822501689CFD80066142D /* wavpack.c */; };
 		078822671689D04C0066142D /* wildmidi_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 078822601689D04C0066142D /* wildmidi_lib.h */; };
 		078822681689D04C0066142D /* wildmidi.c in Sources */ = {isa = PBXBuildFile; fileRef = 078822641689D04C0066142D /* wildmidi.c */; };
@@ -400,10 +400,10 @@
 		07882405168A05BD0066142D /* escape.h in Headers */ = {isa = PBXBuildFile; fileRef = 078823FC168A05BD0066142D /* escape.h */; };
 		07882406168A05BD0066142D /* lastfm.c in Sources */ = {isa = PBXBuildFile; fileRef = 078823FD168A05BD0066142D /* lastfm.c */; };
 		07882407168A05BD0066142D /* lastfm.h in Headers */ = {isa = PBXBuildFile; fileRef = 078823FE168A05BD0066142D /* lastfm.h */; };
-		07882695168A19060066142D /* vorbis.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822091689CEC80066142D /* vorbis.so */; };
-		07882A51168A73540066142D /* flac.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822711689D0710066142D /* flac.so */; };
+		07882695168A19060066142D /* vorbis.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822091689CEC80066142D /* vorbis.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		07882A51168A73540066142D /* flac.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822711689D0710066142D /* flac.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07882AC3168A7D4D0066142D /* flac.c in Sources */ = {isa = PBXBuildFile; fileRef = 078822771689D0D90066142D /* flac.c */; };
-		07882BA4168B91A30066142D /* wavpack.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822481689CF9D0066142D /* wavpack.so */; };
+		07882BA4168B91A30066142D /* wavpack.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078822481689CF9D0066142D /* wavpack.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0796AC84168772760079D590 /* conf.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC5C168772760079D590 /* conf.c */; };
 		0796AC85168772760079D590 /* dsppreset.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC5F168772760079D590 /* dsppreset.c */; };
 		0796AC86168772760079D590 /* junklib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796AC62168772760079D590 /* junklib.c */; };
@@ -546,7 +546,7 @@
 		0796AFCF1688DE720079D590 /* xad.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796AF3B1688DDDE0079D590 /* xad.h */; };
 		0796AFD01688DE730079D590 /* xsm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0796AF3C1688DDDE0079D590 /* xsm.cpp */; };
 		0796AFD11688DE730079D590 /* xsm.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796AF3D1688DDDE0079D590 /* xsm.h */; };
-		0796B0AA1688EE1B0079D590 /* adplug.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796AF4F1688DE100079D590 /* adplug.so */; };
+		0796B0AA1688EE1B0079D590 /* adplug.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796AF4F1688DE100079D590 /* adplug.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0796B0C81688EF570079D590 /* alac.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B0BE1688EF570079D590 /* alac.c */; };
 		0796B0C91688EF570079D590 /* alac_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 0796B0BF1688EF570079D590 /* alac_plugin.c */; };
 		0796B0CA1688EF570079D590 /* decomp.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B0C01688EF570079D590 /* decomp.h */; };
@@ -965,10 +965,10 @@
 		079AF7B817BA8EEC00BDCBC4 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 079AF7A617BA8EEC00BDCBC4 /* version.h */; };
 		079AF7F817BA94D300BDCBC4 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 079AF7F717BA94D300BDCBC4 /* config.h */; };
 		079AF80017BA97AB00BDCBC4 /* solaris.c in Sources */ = {isa = PBXBuildFile; fileRef = 079AF6B817BA8CAC00BDCBC4 /* solaris.c */; };
-		07A6E7B11764D2D400F3F133 /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; };
+		07A6E7B11764D2D400F3F133 /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07C4AB1F17F63F630086EB7F /* cocoaui_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 0715DF4F17F6389800A15158 /* cocoaui_api.h */; };
 		07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */ = {isa = PBXBuildFile; fileRef = 0715DF0D17F6342300A15158 /* cocoaui.c */; };
-		07C4AC0C180217C80086EB7F /* ddb_gui_cocoa.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */; };
+		07C4AC0C180217C80086EB7F /* ddb_gui_cocoa.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07C4ACB7180233D80086EB7F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297C917E9084800710234 /* MainWindow.xib */; };
 		07C4ACB9180233D80086EB7F /* TextInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CB17E9084800710234 /* TextInputPanel.xib */; };
 		07D5872717751164003A01DE /* ao.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D586C317751164003A01DE /* ao.h */; };
@@ -6188,6 +6188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 078822861689D18A0066142D /* Build configuration list for PBXNativeTarget "mpgmad" */;
 			buildPhases = (
+				072CB32A19EC2A3B0035F557 /* Run Configure Script */,
 				0788227B1689D10B0066142D /* Headers */,
 				0788227C1689D10B0066142D /* Sources */,
 				0788227D1689D10B0066142D /* Frameworks */,
@@ -6435,6 +6436,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "deadbeef" */;
 			compatibilityVersion = "Xcode 3.1";
@@ -6621,6 +6623,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		072CB32A19EC2A3B0035F557 /* Run Configure Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Configure Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh $(SRCROOT)/libs/libmad/configure";
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0702984017E9113200710234 /* Sources */ = {
@@ -7543,6 +7562,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -7571,6 +7591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -7599,6 +7620,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -7624,6 +7646,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -7649,6 +7672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7677,7 +7701,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = ddb_gui_cocoa;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -7686,6 +7710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -7713,7 +7738,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = ddb_gui_cocoa;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				USE_HEADERMAP = NO;
 				ZERO_LINK = NO;
 			};
@@ -7723,6 +7748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -7743,6 +7769,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -7763,6 +7790,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -7782,6 +7810,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -7801,6 +7830,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -7826,6 +7856,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -7851,6 +7882,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -7870,6 +7902,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -7889,6 +7922,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -7916,6 +7950,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -7943,6 +7978,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -7980,6 +8016,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8017,6 +8054,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8035,6 +8073,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8053,6 +8092,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8077,6 +8117,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8101,6 +8142,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8120,6 +8162,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8139,6 +8182,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8159,6 +8203,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8179,6 +8224,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8203,6 +8249,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8227,6 +8274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8246,6 +8294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8265,6 +8314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8283,6 +8333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8301,6 +8352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8324,6 +8376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8347,6 +8400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8369,6 +8423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8391,6 +8446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8416,6 +8472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8441,6 +8498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8460,6 +8518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8479,6 +8538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8510,6 +8570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8541,6 +8602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8558,6 +8620,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8575,6 +8638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8609,6 +8673,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8643,6 +8708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8661,6 +8727,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8679,6 +8746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8706,6 +8774,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8733,6 +8802,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8751,6 +8821,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8769,6 +8840,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8807,6 +8879,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8845,6 +8918,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8879,6 +8953,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8913,6 +8988,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8939,6 +9015,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -8965,6 +9042,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
@@ -8983,6 +9061,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
@@ -9002,6 +9081,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -9034,7 +9114,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = deadbeef;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -9044,6 +9124,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -9073,7 +9154,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = deadbeef;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -9081,7 +9162,6 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
@@ -9092,14 +9172,13 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -9108,7 +9187,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/plugins";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PREBINDING = NO;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
