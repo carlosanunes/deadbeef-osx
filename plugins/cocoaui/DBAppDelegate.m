@@ -23,7 +23,8 @@
 #import "DBAppDelegate.h"
 
 #include "deadbeef.h"
-#include "cocoaui_api.h"
+
+extern DB_functions_t *deadbeef;
 
 @implementation DBAppDelegate
 
