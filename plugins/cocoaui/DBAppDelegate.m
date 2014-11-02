@@ -123,12 +123,59 @@ extern DB_functions_t *deadbeef;
 		preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
 		
 		[controllers release];
-        
+
     }
 	
 	[preferencesWindowController showWindow : nil];
 
 }
+
+
+- (void) handleMessage: (NSNumber *) idx
+{
+
+    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+    
+    switch ( [idx intValue] ) {
+        case DB_EV_ACTIVATED:
+            [notificationCenter postNotificationName:@"DB_EventActivated" object:nil];
+            break;
+        case DB_EV_SONGCHANGED:
+            [notificationCenter postNotificationName:@"DB_EventSongChanged" object:nil];
+            break;
+        case DB_EV_TRACKINFOCHANGED:
+            [notificationCenter postNotificationName:@"DB_EventTrackInfoChanged" object:nil];
+            break;
+        case DB_EV_PAUSED:
+            [notificationCenter postNotificationName:@"DB_EventPaused" object:nil];
+            break;
+        case DB_EV_PLAYLISTCHANGED:
+            [notificationCenter postNotificationName:@"DB_EventPlaylistChanged" object:nil];
+            break;
+        case DB_EV_VOLUMECHANGED:
+            [notificationCenter postNotificationName:@"DB_EventVolumeChanged" object:nil];
+            break;
+        case DB_EV_CONFIGCHANGED:
+            [notificationCenter postNotificationName:@"DB_EventConfigChanged" object:nil];
+            break;
+        case DB_EV_OUTPUTCHANGED:
+            [notificationCenter postNotificationName:@"DB_EventOutputChanged" object:nil];
+            break;
+        case DB_EV_PLAYLISTSWITCHED:
+            [notificationCenter postNotificationName:@"DB_EventPlaylistSwitched" object:nil];
+            break;
+        case DB_EV_ACTIONSCHANGED:
+            [notificationCenter postNotificationName:@"DB_EventActionChanged" object:nil];
+            break;
+        case DB_EV_DSPCHAINCHANGED:
+            [notificationCenter postNotificationName:@"DB_EventDSPChainChanged" object:nil];
+            break;
+    }
+
+    
+    
+}
+
 
 
 /* = deadbeef core functionality
