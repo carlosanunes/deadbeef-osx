@@ -18,6 +18,17 @@
 			name = libmad;
 			productName = libmad;
 		};
+		075F8B261A097B15005A4409 /* libwavpack */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 075F8B281A097B15005A4409 /* Build configuration list for PBXAggregateTarget "libwavpack" */;
+			buildPhases = (
+				075F8B271A097B15005A4409 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = libwavpack;
+			productName = libmad;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -127,6 +138,8 @@
 		075F8B091A096FD1005A4409 /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		075F8B191A097775005A4409 /* libmad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F8B171A097775005A4409 /* libmad.a */; };
 		075F8B1A1A0977AD005A4409 /* mad.h in Headers */ = {isa = PBXBuildFile; fileRef = 075F8B161A097775005A4409 /* mad.h */; };
+		075F8B2F1A097CD3005A4409 /* wavpack.h in Headers */ = {isa = PBXBuildFile; fileRef = 075F8B2D1A097CD3005A4409 /* wavpack.h */; };
+		075F8B301A097CD3005A4409 /* libwavpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F8B2E1A097CD3005A4409 /* libwavpack.a */; };
 		0774F1081845621F00D56194 /* mkstemp.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F05A184560F400D56194 /* mkstemp.c */; };
 		0774F1091845621F00D56194 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0774F05B184560F400D56194 /* zip.h */; };
 		0774F10A1845621F00D56194 /* zip_add.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F05C184560F400D56194 /* zip_add.c */; };
@@ -214,21 +227,6 @@
 		0774F15C1845621F00D56194 /* zip_utf-8.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F0AE184560F400D56194 /* zip_utf-8.c */; };
 		0774F15D1845621F00D56194 /* zipconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 0774F0AF184560F400D56194 /* zipconf.h */; };
 		0774F15E1845621F00D56194 /* zipint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0774F0B0184560F400D56194 /* zipint.h */; };
-		0774F178184565A000D56194 /* wavpack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0774F166184565A000D56194 /* wavpack.h */; };
-		0774F179184565A000D56194 /* bits.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F168184565A000D56194 /* bits.c */; };
-		0774F17A184565A000D56194 /* extra1.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F169184565A000D56194 /* extra1.c */; };
-		0774F17B184565A000D56194 /* extra2.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F16A184565A000D56194 /* extra2.c */; };
-		0774F17C184565A000D56194 /* float.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F16B184565A000D56194 /* float.c */; };
-		0774F17D184565A000D56194 /* metadata.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F16E184565A000D56194 /* metadata.c */; };
-		0774F17E184565A000D56194 /* pack.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F16F184565A000D56194 /* pack.c */; };
-		0774F17F184565A000D56194 /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F170184565A000D56194 /* tags.c */; };
-		0774F180184565A000D56194 /* unpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F171184565A000D56194 /* unpack.c */; };
-		0774F181184565A000D56194 /* unpack3.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F172184565A000D56194 /* unpack3.c */; };
-		0774F182184565A000D56194 /* unpack3.h in Headers */ = {isa = PBXBuildFile; fileRef = 0774F173184565A000D56194 /* unpack3.h */; };
-		0774F183184565A000D56194 /* wavpack_local.h in Headers */ = {isa = PBXBuildFile; fileRef = 0774F174184565A000D56194 /* wavpack_local.h */; };
-		0774F184184565A000D56194 /* wavpack_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 0774F175184565A000D56194 /* wavpack_version.h */; };
-		0774F185184565A000D56194 /* words.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F176184565A000D56194 /* words.c */; };
-		0774F186184565A000D56194 /* wputils.c in Sources */ = {isa = PBXBuildFile; fileRef = 0774F177184565A000D56194 /* wputils.c */; };
 		077E55A419B5429100DC97FA /* escape.c in Sources */ = {isa = PBXBuildFile; fileRef = 077E55A119B5429100DC97FA /* escape.c */; };
 		078060BE1868F328008319FD /* DBSplitViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 078060BC1868F328008319FD /* DBSplitViewController.h */; };
 		078060BF1868F328008319FD /* DBSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078060BD1868F328008319FD /* DBSplitViewController.m */; };
@@ -1244,6 +1242,20 @@
 			remoteGlobalIDString = 0788227E1689D10B0066142D;
 			remoteInfo = mpgmad;
 		};
+		075F8B1F1A0979E0005A4409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 075F8B111A097261005A4409;
+			remoteInfo = libmad;
+		};
+		075F8B311A097CF6005A4409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 075F8B261A097B15005A4409;
+			remoteInfo = libwavpack;
+		};
 		078823AC1689E4F30066142D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -1464,6 +1476,8 @@
 		075E332C18429DEC00222503 /* flac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = flac.xcodeproj; path = libs/AudioFrameworks/flac/flac.xcodeproj; sourceTree = "<group>"; };
 		075F8B161A097775005A4409 /* mad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mad.h; path = libs/libmad/build/include/mad.h; sourceTree = "<group>"; };
 		075F8B171A097775005A4409 /* libmad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmad.a; path = libs/libmad/build/lib/libmad.a; sourceTree = "<group>"; };
+		075F8B2D1A097CD3005A4409 /* wavpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack.h; sourceTree = "<group>"; };
+		075F8B2E1A097CD3005A4409 /* libwavpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwavpack.a; path = libs/wavpack/build/lib/libwavpack.a; sourceTree = "<group>"; };
 		0774F05A184560F400D56194 /* mkstemp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mkstemp.c; sourceTree = "<group>"; };
 		0774F05B184560F400D56194 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		0774F05C184560F400D56194 /* zip_add.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip_add.c; sourceTree = "<group>"; };
@@ -1551,21 +1565,6 @@
 		0774F0AE184560F400D56194 /* zip_utf-8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "zip_utf-8.c"; sourceTree = "<group>"; };
 		0774F0AF184560F400D56194 /* zipconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zipconf.h; sourceTree = "<group>"; };
 		0774F0B0184560F400D56194 /* zipint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zipint.h; sourceTree = "<group>"; };
-		0774F166184565A000D56194 /* wavpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack.h; sourceTree = "<group>"; };
-		0774F168184565A000D56194 /* bits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bits.c; sourceTree = "<group>"; };
-		0774F169184565A000D56194 /* extra1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extra1.c; sourceTree = "<group>"; };
-		0774F16A184565A000D56194 /* extra2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extra2.c; sourceTree = "<group>"; };
-		0774F16B184565A000D56194 /* float.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = float.c; sourceTree = "<group>"; };
-		0774F16E184565A000D56194 /* metadata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = metadata.c; sourceTree = "<group>"; };
-		0774F16F184565A000D56194 /* pack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pack.c; sourceTree = "<group>"; };
-		0774F170184565A000D56194 /* tags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tags.c; sourceTree = "<group>"; };
-		0774F171184565A000D56194 /* unpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unpack.c; sourceTree = "<group>"; };
-		0774F172184565A000D56194 /* unpack3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unpack3.c; sourceTree = "<group>"; };
-		0774F173184565A000D56194 /* unpack3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unpack3.h; sourceTree = "<group>"; };
-		0774F174184565A000D56194 /* wavpack_local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack_local.h; sourceTree = "<group>"; };
-		0774F175184565A000D56194 /* wavpack_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack_version.h; sourceTree = "<group>"; };
-		0774F176184565A000D56194 /* words.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = words.c; sourceTree = "<group>"; };
-		0774F177184565A000D56194 /* wputils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wputils.c; sourceTree = "<group>"; };
 		077E55A119B5429100DC97FA /* escape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = escape.c; path = ../escape.c; sourceTree = "<group>"; };
 		077E55A219B5429100DC97FA /* escape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = escape.h; path = ../escape.h; sourceTree = "<group>"; };
 		077E55A319B5429100DC97FA /* fastftoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fastftoi.h; path = ../fastftoi.h; sourceTree = "<group>"; };
@@ -2806,6 +2805,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075F8B301A097CD3005A4409 /* libwavpack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3162,6 +3162,7 @@
 		075F8ADD1A096334005A4409 /* External Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				075F8B2B1A097CA3005A4409 /* libwavpack */,
 				075F8ADE1A0963D9005A4409 /* libmad */,
 			);
 			name = "External Libraries";
@@ -3174,6 +3175,24 @@
 				075F8B171A097775005A4409 /* libmad.a */,
 			);
 			name = libmad;
+			sourceTree = "<group>";
+		};
+		075F8B2B1A097CA3005A4409 /* libwavpack */ = {
+			isa = PBXGroup;
+			children = (
+				075F8B2C1A097CD3005A4409 /* wavpack */,
+				075F8B2E1A097CD3005A4409 /* libwavpack.a */,
+			);
+			name = libwavpack;
+			sourceTree = "<group>";
+		};
+		075F8B2C1A097CD3005A4409 /* wavpack */ = {
+			isa = PBXGroup;
+			children = (
+				075F8B2D1A097CD3005A4409 /* wavpack.h */,
+			);
+			name = wavpack;
+			path = libs/wavpack/build/include/wavpack;
 			sourceTree = "<group>";
 		};
 		0760ECEB1724857D0018A9BF /* Libraries */ = {
@@ -3279,37 +3298,6 @@
 			);
 			name = libzip;
 			path = libs/libzip/lib;
-			sourceTree = SOURCE_ROOT;
-		};
-		0774F163184565A000D56194 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				0774F166184565A000D56194 /* wavpack.h */,
-			);
-			name = include;
-			path = libs/wavpack/include;
-			sourceTree = SOURCE_ROOT;
-		};
-		0774F167184565A000D56194 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				0774F168184565A000D56194 /* bits.c */,
-				0774F169184565A000D56194 /* extra1.c */,
-				0774F16A184565A000D56194 /* extra2.c */,
-				0774F16B184565A000D56194 /* float.c */,
-				0774F16E184565A000D56194 /* metadata.c */,
-				0774F16F184565A000D56194 /* pack.c */,
-				0774F170184565A000D56194 /* tags.c */,
-				0774F171184565A000D56194 /* unpack.c */,
-				0774F172184565A000D56194 /* unpack3.c */,
-				0774F173184565A000D56194 /* unpack3.h */,
-				0774F174184565A000D56194 /* wavpack_local.h */,
-				0774F175184565A000D56194 /* wavpack_version.h */,
-				0774F176184565A000D56194 /* words.c */,
-				0774F177184565A000D56194 /* wputils.c */,
-			);
-			name = src;
-			path = libs/wavpack/src;
 			sourceTree = SOURCE_ROOT;
 		};
 		07881E9E1689C3A70066142D /* lastfm */ = {
@@ -3578,8 +3566,6 @@
 		0788224D1689CFD80066142D /* wavpack */ = {
 			isa = PBXGroup;
 			children = (
-				0774F163184565A000D56194 /* include */,
-				0774F167184565A000D56194 /* src */,
 				078822501689CFD80066142D /* wavpack.c */,
 			);
 			name = wavpack;
@@ -5389,10 +5375,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0774F182184565A000D56194 /* unpack3.h in Headers */,
-				0774F184184565A000D56194 /* wavpack_version.h in Headers */,
-				0774F178184565A000D56194 /* wavpack.h in Headers */,
-				0774F183184565A000D56194 /* wavpack_local.h in Headers */,
+				075F8B2F1A097CD3005A4409 /* wavpack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6065,6 +6048,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				075F8B321A097CF6005A4409 /* PBXTargetDependency */,
 			);
 			name = wavpack;
 			productName = wavpack;
@@ -6118,6 +6102,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				075F8B201A0979E0005A4409 /* PBXTargetDependency */,
 			);
 			name = mpgmad;
 			productName = mpgmad;
@@ -6425,6 +6410,7 @@
 				07D587B717751897003A01DE /* sndfile */,
 				0702996717E916C200710234 /* wma */,
 				075F8B111A097261005A4409 /* libmad */,
+				075F8B261A097B15005A4409 /* libwavpack */,
 			);
 		};
 /* End PBXProject section */
@@ -6566,7 +6552,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd $SRCROOT/libs/libmad/\n./configure x86_64-apple-darwin10.6.0 --prefix=$SRCROOT/libs/libmad/build --libdir=.\nmake install";
+			shellScript = "cd $SRCROOT/libs/libmad/\n./configure x86_64-apple-darwin10.6.0 --prefix=$SRCROOT/libs/libmad/build\nmake install";
+		};
+		075F8B271A097B15005A4409 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/libs/libmad/build/lib/libwavpack.a,
+				$SRCROOT/libs/libmad/build/include/wavpack/wavpack.h,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $SRCROOT/libs/wavpack/\n./configure x86_64-apple-darwin10.6.0 --prefix=$SRCROOT/libs/wavpack/build\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -6857,17 +6858,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				078822511689CFD80066142D /* wavpack.c in Sources */,
-				0774F181184565A000D56194 /* unpack3.c in Sources */,
-				0774F179184565A000D56194 /* bits.c in Sources */,
-				0774F17A184565A000D56194 /* extra1.c in Sources */,
-				0774F185184565A000D56194 /* words.c in Sources */,
-				0774F180184565A000D56194 /* unpack.c in Sources */,
-				0774F17B184565A000D56194 /* extra2.c in Sources */,
-				0774F17D184565A000D56194 /* metadata.c in Sources */,
-				0774F17E184565A000D56194 /* pack.c in Sources */,
-				0774F17F184565A000D56194 /* tags.c in Sources */,
-				0774F186184565A000D56194 /* wputils.c in Sources */,
-				0774F17C184565A000D56194 /* float.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7422,6 +7412,16 @@
 			target = 0788227E1689D10B0066142D /* mpgmad */;
 			targetProxy = 075F8B071A096FBA005A4409 /* PBXContainerItemProxy */;
 		};
+		075F8B201A0979E0005A4409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 075F8B111A097261005A4409 /* libmad */;
+			targetProxy = 075F8B1F1A0979E0005A4409 /* PBXContainerItemProxy */;
+		};
+		075F8B321A097CF6005A4409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 075F8B261A097B15005A4409 /* libwavpack */;
+			targetProxy = 075F8B311A097CF6005A4409 /* PBXContainerItemProxy */;
+		};
 		078823AD1689E4F30066142D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0796AF4E1688DE100079D590 /* adplug */;
@@ -7676,6 +7676,24 @@
 				CFLAGS = "-Qunused-arguments";
 				CPPFLAGS = "-Qunused-arguments";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		075F8B291A097B15005A4409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CFLAGS = "-Qunused-arguments";
+				CPPFLAGS = "-Qunused-arguments";
+				PRODUCT_NAME = wavpack;
+			};
+			name = Debug;
+		};
+		075F8B2A1A097B15005A4409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CFLAGS = "-Qunused-arguments";
+				CPPFLAGS = "-Qunused-arguments";
+				PRODUCT_NAME = wavpack;
 			};
 			name = Release;
 		};
@@ -8259,6 +8277,10 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/wavpack/build/lib",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = wavpack;
 			};
@@ -8277,6 +8299,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/wavpack/build/lib",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = wavpack;
 				ZERO_LINK = NO;
@@ -9171,6 +9197,15 @@
 				075F8B141A097261005A4409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+		};
+		075F8B281A097B15005A4409 /* Build configuration list for PBXAggregateTarget "libwavpack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				075F8B291A097B15005A4409 /* Debug */,
+				075F8B2A1A097B15005A4409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07881EA21689C3A70066142D /* Build configuration list for PBXNativeTarget "lastfm" */ = {
 			isa = XCConfigurationList;
