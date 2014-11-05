@@ -6560,6 +6560,7 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/libs/wavpack/src/wavpack_version.h",
 			);
 			outputPaths = (
 				$SRCROOT/libs/libmad/build/lib/libwavpack.a,
@@ -6567,7 +6568,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd $SRCROOT/libs/wavpack/\n./configure x86_64-apple-darwin10.6.0 --prefix=$SRCROOT/libs/wavpack/build\n";
+			shellScript = "cd $SRCROOT/libs/wavpack/\n./configure x86_64-apple-darwin10.6.0 --prefix=$SRCROOT/libs/wavpack/build\nmake install";
 		};
 /* End PBXShellScriptBuildPhase section */
 
