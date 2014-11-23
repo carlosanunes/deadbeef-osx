@@ -48,22 +48,75 @@
     
     [sidebarView selectRowIndexes: [NSIndexSet indexSetWithIndex: [DBAppDelegate intConfiguration:@"playlist.current" num:0] + 1 ] byExtendingSelection:NO ];
 
-    
-    
+
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
     
     [notificationCenter addObserver: self
-                           selector: @selector(updateItems)
+                           selector: @selector(updatePlaylistItems)
                                name: @"DB_EventPlaylistSwitched"
                              object: nil];
-    
+
 }
 
-- (void) updateItems {
 
+
+
+- (void) updatePlaylistItems {
+    
+    
+    // we rely on the treecontroller for insertion and removal
+    // docs says the controller is optimized and we choose to believe it
+    // aditionally, it takes care of view update for us
+    
+    NSUInteger idx = [sidebarItems indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        DBSideBarItem * item = (DBSideBarItem *) obj;
+        if ( [[item identifier] isEqualToString:@"playlistGroup"] )
+            return TRUE;
+        return false;
+    }];
+    
+    DBSideBarItem * item = [sidebarItems objectAtIndex: idx];
+    NSUInteger count = [[item children] count];
+    NSUInteger i = 0;
+    
+    NSDictionary * playlists = [DBAppDelegate availablePlaylists];
+    for (NSDictionary * object in playlists ) {
+    
+        
+        if (i >= count) {
+            
+            NSUInteger array[] = {idx, i};
+            [sidebarTreeController insertObject: [DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO identifier:@"playlist"] atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length: 2] ];
+        }
+        
+        else if ( ![[[[item children] objectAtIndex: i] name ] isEqualToString: [object valueForKey:@"name"] ] ) {
+            
+            NSUInteger array[] = {idx, i};
+            [sidebarTreeController removeObjectAtArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length:2]];
+            
+            // only if there was an add operation
+            if ( [playlists count] >= count ) {
+                
+            [sidebarTreeController insertObject: [DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO identifier:@"playlist"] atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length: 2] ];
+                
+            }
+            
+        }
+    
+        ++i;
+    }
+
+}
+
+
+
+
+- (void)outlineViewColumnDidMove:(NSNotification *)notification {
+    
     return;
     
 }
+
 
 #pragma mark - Helpers
 
@@ -89,10 +142,14 @@
     DBSideBarItem * sidebarItem = (DBSideBarItem *) item.representedObject;
     
     if ( [[sidebarItem identifier] isEqualToString:@"playlist"] ) {
+        
         // figuring out the correct index
         NSTreeNode * parentNode = [item parentNode];
         NSInteger parentRowNumber = [mOutlineView rowForItem: parentNode];
         parentRowNumber++;
+        
+        if ([DBAppDelegate currentPlaylistIndex] == (rowNumber - parentRowNumber) )
+            return; // already selected
         
         [DBAppDelegate setCurrentPlaylist: rowNumber - parentRowNumber ];
     }

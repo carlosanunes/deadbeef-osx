@@ -31,12 +31,12 @@
     IBOutlet NSOutlineView * sidebarView;
     
     NSMutableArray * sidebarItems;
-    
+        
 }
 
 @property (retain) NSMutableArray * sidebarItems;
 
 
-- (void) updateItems;
+- (void) updatePlaylistItems;
 
 @end
