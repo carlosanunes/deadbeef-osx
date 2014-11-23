@@ -126,7 +126,7 @@ extern DB_functions_t *deadbeef;
 
     }
 	
-	[preferencesWindowController showWindow : nil];
+	[preferencesWindowController showWindow : sender];
 
 }
 
