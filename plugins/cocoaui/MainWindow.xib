@@ -96,6 +96,12 @@
                                     <action selector="addMusic:" target="844" id="1253"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Add Folder..." id="eQm-id-dCA" userLabel="Add Folder...">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="addFolder:" target="844" id="FMM-sx-qtI"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="79"/>
                             <menuItem title="Open Stream..." keyEquivalent="u" id="1581">
                                 <connections>

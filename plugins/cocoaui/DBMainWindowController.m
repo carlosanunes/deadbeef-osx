@@ -294,6 +294,13 @@
 	
 }
 
+- (IBAction) addFolder:(id)sender {
+
+    [self doFolderImport];
+
+}
+
+
 -(IBAction) openStream: sender {
 
     DBTextInputPanelController * controller = [DBTextInputPanelController initPanelWithTitle:NSLocalizedString(@"Open Stream...", "Open stream")];
@@ -319,7 +326,7 @@
 	NSArray * extensions = [DBAppDelegate supportedFormatsExtensions];
 	
 	if ( [extensions count] == 0 )
-		return FALSE; // TODO: Launch Error Message
+		return NO; // TODO: Launch Error Message
 	[openPanel setAllowedFileTypes: extensions ];
 	
     if ( [openPanel runModal] == NSOKButton )
@@ -331,10 +338,26 @@
 		[DBAppDelegate  addPathsToPlaylistAt:files row: -1 progressPanel: fileImportPanel ];
 		return YES;
     }
-	
 	return NO;
 }
 
+- (BOOL) doFolderImport {
+    
+    NSOpenPanel * openPanel = [NSOpenPanel openPanel];
+    [openPanel setCanChooseDirectories: YES];
+    [openPanel setCanChooseFiles: NO];
+    
+    if ([openPanel runModal] == NSOKButton)
+    {
+        NSArray * folders = [openPanel URLs];
+        [DBAppDelegate  addPathsToPlaylistAt:folders row: -1 progressPanel: fileImportPanel ];
+        
+        return YES; 
+    }
+    
+    
+    return NO;
+}
 
 // playlist
 

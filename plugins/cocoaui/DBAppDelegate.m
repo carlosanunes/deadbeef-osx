@@ -41,7 +41,9 @@ extern DB_functions_t *deadbeef;
 }
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
-	
+
+   	printf("Opening: %s\n", [filename UTF8String]);
+    
 	[DBAppDelegate clearPlayList];
 	BOOL inserted = [DBAppDelegate addPathsToPlaylistAt:[NSArray arrayWithObject:filename] row:-1 progressPanel: fileImportPanel ];
 	if (inserted) {
@@ -278,7 +280,6 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
 }
 
-
 /*
  accepts both a NSURL list as well as a NSSring list
  */
@@ -320,10 +321,13 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 						   path = [file cStringUsingEncoding:NSUTF8StringEncoding];
 						   
 						   if([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && isDir){
-							   inserted = deadbeef->plt_insert_dir (plt, after, path, &abort, ui_add_file_info_cb, panel);
+
+							   inserted = deadbeef->plt_insert_dir2 (0, plt, after, path, &abort, ui_add_file_info_cb, panel);
 						   } else {
-							   inserted = deadbeef->plt_insert_file (plt, after, path, &abort, ui_add_file_info_cb, panel);
-							   if (inserted)
+                               
+                               inserted = deadbeef-> plt_insert_file2 (0, plt, after, path, &abort, ui_add_file_info_cb, panel);
+                               
+                               if (inserted)
 								   [[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:file]];
 						   }
 						   
@@ -935,12 +939,13 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     return list;
 }
 
-+ (NSArray *) availablePlaylists {
++ (NSMutableArray *) availablePlaylists {
 
 	int count = deadbeef-> plt_get_count();
     NSMutableArray * list = [NSMutableArray arrayWithCapacity: count];
-    NSDictionary * item;
-
+//    NSDictionary * item;
+    DBSideBarItem * item;
+    
     deadbeef->pl_lock();
 	for (int i = 0; i < count; ++i)
 	{
@@ -949,7 +954,9 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         deadbeef->plt_get_title (plt, title, sizeof (title));
         deadbeef->plt_unref (plt);
 
-        item = [NSMutableDictionary dictionaryWithObjectsAndKeys: [NSString stringWithUTF8String: title], @"name", nil];
+        item = [DBSideBarItem itemWithName: [NSString stringWithUTF8String:title] isHeader:NO identifier:@"playlist"];
+        
+//        item = [NSMutableDictionary dictionaryWithObjectsAndKeys: [NSString stringWithUTF8String: title], @"name", nil];
         [list addObject: item];
 	}
 

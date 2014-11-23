@@ -31,12 +31,7 @@
     sidebarItems = [[NSMutableArray array] retain];
     
     DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:@"playlistGroup"];
-    NSMutableArray * playlists = [NSMutableArray arrayWithCapacity:1];
-    
-    for (NSDictionary * object in [DBAppDelegate availablePlaylists]) {
-        
-        [playlists addObject:[DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO identifier:@"playlist" ] ];
-    }
+    NSMutableArray * playlists = [DBAppDelegate availablePlaylists];
     
     [playlistItem setChildren:playlists];
     
@@ -63,7 +58,6 @@
 
 - (void) updatePlaylistItems {
     
-    
     // we rely on the treecontroller for insertion and removal
     // docs says the controller is optimized and we choose to believe it
     // aditionally, it takes care of view update for us
@@ -79,17 +73,16 @@
     NSUInteger count = [[item children] count];
     NSUInteger i = 0;
     
-    NSDictionary * playlists = [DBAppDelegate availablePlaylists];
-    for (NSDictionary * object in playlists ) {
-    
+    NSMutableArray * playlists = [DBAppDelegate availablePlaylists];
+    for (DBSideBarItem * object in playlists ) {
         
         if (i >= count) {
             
             NSUInteger array[] = {idx, i};
-            [sidebarTreeController insertObject: [DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO identifier:@"playlist"] atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length: 2] ];
+            [sidebarTreeController insertObject: object atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length: 2] ];
         }
         
-        else if ( ![[[[item children] objectAtIndex: i] name ] isEqualToString: [object valueForKey:@"name"] ] ) {
+        else if ( ![[[[item children] objectAtIndex: i] name ] isEqualToString: [object name] ] ) {
             
             NSUInteger array[] = {idx, i};
             [sidebarTreeController removeObjectAtArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length:2]];
@@ -97,7 +90,7 @@
             // only if there was an add operation
             if ( [playlists count] >= count ) {
                 
-            [sidebarTreeController insertObject: [DBSideBarItem itemWithName:[object valueForKey:@"name"] isHeader:NO identifier:@"playlist"] atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length: 2] ];
+            [sidebarTreeController insertObject: object atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length: 2] ];
                 
             }
             

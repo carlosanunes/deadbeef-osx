@@ -66,6 +66,7 @@
 
 // helper functions
 - (BOOL) doFileImport : (BOOL) clearPlaylist;
+- (BOOL) doFolderImport;
 
 // update functions
 
@@ -101,6 +102,7 @@
 - (IBAction) openFiles: (id)sender;
 - (IBAction) addMusic: (id)sender;
 - (IBAction) openStream: (id)sender;
+- (IBAction) addFolder: (id) sender;
 
 // playlist management
 

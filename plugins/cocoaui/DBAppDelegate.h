@@ -30,6 +30,7 @@
 #import "DBPreferencesViewControllerPlugins.h"
 #import "DBPreferencesViewControllerNetwork.h"
 #import "DBPreferencesViewControllerPlayback.h"
+#import "DBSideBarItem.h"
 
 #define PLUGIN_DATA_NAME_POS 0
 #define PLUGIN_DATA_COPYRIGHT_POS 1
@@ -118,7 +119,7 @@
 
 + (NSArray *) proxyTypeList;
 
-+ (NSDictionary *) availablePlaylists;
++ (NSMutableArray *) availablePlaylists;
 
 + (NSInteger) currentPlaylistIndex;
 
