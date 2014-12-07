@@ -326,7 +326,6 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 						   } else {
                                
                                inserted = deadbeef-> plt_insert_file2 (0, plt, after, path, &abort, ui_add_file_info_cb, panel);
-                               
                                if (inserted)
 								   [[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:file]];
 						   }
