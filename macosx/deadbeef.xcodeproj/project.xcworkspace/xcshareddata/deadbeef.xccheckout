@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B0A8ED18-42FB-4AB6-A2B6-7B566DC6F9FA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>deadbeef</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>95DFD0BC92E4931B7646A785ED44D2AA7BD4F011</key>
+		<string>https://github.com/sbooth/AudioFrameworks.git</string>
+		<key>E53431AAD500967BB7F43A33CE93F09E5ADD8308</key>
+		<string>https://github.com/carlosanunes/deadbeef-osx.git</string>
+		<key>F0515DE9ED749C0E1C50A307EAD2A54C575AF047</key>
+		<string>https://github.com/shpakovski/MASPreferences.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>macosx/deadbeef.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>95DFD0BC92E4931B7646A785ED44D2AA7BD4F011</key>
+		<string>../../..macosx/libs/AudioFrameworks</string>
+		<key>E53431AAD500967BB7F43A33CE93F09E5ADD8308</key>
+		<string>../../..</string>
+		<key>F0515DE9ED749C0E1C50A307EAD2A54C575AF047</key>
+		<string>../../..macosx/libs/MASPreferences</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/carlosanunes/deadbeef-osx.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E53431AAD500967BB7F43A33CE93F09E5ADD8308</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>95DFD0BC92E4931B7646A785ED44D2AA7BD4F011</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AudioFrameworks</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E53431AAD500967BB7F43A33CE93F09E5ADD8308</string>
+			<key>IDESourceControlWCCName</key>
+			<string>deadbeef-macosx</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0515DE9ED749C0E1C50A307EAD2A54C575AF047</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MASPreferences</string>
+		</dict>
+	</array>
+</dict>
+</plist>
