@@ -147,10 +147,8 @@
 		075E335D1842A0BD00222503 /* FLAC.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075E334A18429DED00222503 /* FLAC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		075E335E1842A0BD00222503 /* ogg.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075E330A18429D9500222503 /* ogg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		075F8B091A096FD1005A4409 /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		075F8B191A097775005A4409 /* libmad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F8B171A097775005A4409 /* libmad.a */; };
 		075F8B1A1A0977AD005A4409 /* mad.h in Headers */ = {isa = PBXBuildFile; fileRef = 075F8B161A097775005A4409 /* mad.h */; };
 		075F8B2F1A097CD3005A4409 /* wavpack.h in Headers */ = {isa = PBXBuildFile; fileRef = 075F8B2D1A097CD3005A4409 /* wavpack.h */; };
-		075F8B301A097CD3005A4409 /* libwavpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F8B2E1A097CD3005A4409 /* libwavpack.a */; };
 		077E55A419B5429100DC97FA /* escape.c in Sources */ = {isa = PBXBuildFile; fileRef = 077E55A119B5429100DC97FA /* escape.c */; };
 		078060BE1868F328008319FD /* DBSplitViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 078060BC1868F328008319FD /* DBSplitViewController.h */; };
 		078060BF1868F328008319FD /* DBSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078060BD1868F328008319FD /* DBSplitViewController.m */; };
@@ -883,7 +881,6 @@
 		07C4AC0C180217C80086EB7F /* ddb_gui_cocoa.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07C4ACB7180233D80086EB7F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297C917E9084800710234 /* MainWindow.xib */; };
 		07C4ACB9180233D80086EB7F /* TextInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297CB17E9084800710234 /* TextInputPanel.xib */; };
-		07CF5C3A1A2BB4F80021AEAE /* libzip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CF5C391A2BB4F10021AEAE /* libzip.a */; };
 		07CF5C3D1A2BCA080021AEAE /* vfs_zip.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 078821F71689CE2D0066142D /* vfs_zip.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07CF5C3F1A2BCA720021AEAE /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CF5C3E1A2BCA720021AEAE /* zip.h */; };
 		07CF5C411A2BCA950021AEAE /* zipconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CF5C401A2BCA950021AEAE /* zipconf.h */; };
@@ -978,6 +975,9 @@
 		07D5884B1775192C003A01DE /* sndfile.c in Sources */ = {isa = PBXBuildFile; fileRef = 07D5884A1775192C003A01DE /* sndfile.c */; };
 		07D9661E1A2552F200FC9B6C /* DBOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D9661C1A2552F200FC9B6C /* DBOutlineView.h */; };
 		07D9661F1A2552F200FC9B6C /* DBOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D9661D1A2552F200FC9B6C /* DBOutlineView.m */; };
+		07F5622C1A3B8BDA00241AD9 /* libwavpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F8B2E1A097CD3005A4409 /* libwavpack.a */; };
+		07F5622D1A3B8BFC00241AD9 /* libmad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F8B171A097775005A4409 /* libmad.a */; };
+		07F5622E1A3B8D2B00241AD9 /* libzip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CF5C391A2BB4F10021AEAE /* libzip.a */; };
 		07FDD90E19157313009E0E56 /* TrackInspectorPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FDD90D19157313009E0E56 /* TrackInspectorPanel.xib */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -2645,7 +2645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0788232F1689D4930066142D /* libz.dylib in Frameworks */,
-				07CF5C3A1A2BB4F80021AEAE /* libzip.a in Frameworks */,
+				07F5622E1A3B8D2B00241AD9 /* libzip.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2669,7 +2669,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075F8B301A097CD3005A4409 /* libwavpack.a in Frameworks */,
+				07F5622C1A3B8BDA00241AD9 /* libwavpack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2693,7 +2693,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075F8B191A097775005A4409 /* libmad.a in Frameworks */,
+				07F5622D1A3B8BFC00241AD9 /* libmad.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6349,8 +6349,8 @@
 				"$(SRCROOT)/libs/wavpack/src/wavpack_version.h",
 			);
 			outputPaths = (
-				$SRCROOT/libs/libmad/build/lib/libwavpack.a,
-				$SRCROOT/libs/libmad/build/include/wavpack/wavpack.h,
+				$SRCROOT/libs/libwavpack/build/lib/libwavpack.a,
+				$SRCROOT/libs/libwavpack/build/include/wavpack/wavpack.h,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -7873,7 +7873,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
-				HEADER_SEARCH_PATHS = "$SRCROOT/libs/libzip-0.10.1/lib";
+				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7897,7 +7897,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
-				HEADER_SEARCH_PATHS = "$SRCROOT/libs/libzip-0.10.1/lib";
+				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -8014,10 +8014,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libs/wavpack/build/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PREBINDING = NO;
 				PRODUCT_NAME = wavpack;
 			};
@@ -8036,10 +8033,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libs/wavpack/build/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PREBINDING = NO;
 				PRODUCT_NAME = wavpack;
 				ZERO_LINK = NO;
@@ -8156,8 +8150,11 @@
 				GCC_PREPROCESSOR_DEFINITIONS = FPM_DEFAULT;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = ./;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACH_O_TYPE = staticlib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/libmad/build/lib",
+				);
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = mpgmad;
@@ -8180,8 +8177,11 @@
 				GCC_PREPROCESSOR_DEFINITIONS = FPM_DEFAULT;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = ./;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACH_O_TYPE = staticlib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/libmad/build/lib",
+				);
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = mpgmad;
