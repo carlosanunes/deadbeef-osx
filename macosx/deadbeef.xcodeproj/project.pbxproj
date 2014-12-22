@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		075F8B111A097261005A4409 /* libmad */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 075F8B121A097261005A4409 /* Build configuration list for PBXAggregateTarget "libmad" */;
-			buildPhases = (
-				075F8B151A0972C6005A4409 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = libmad;
-			productName = libmad;
-		};
 		075F8B261A097B15005A4409 /* libwavpack */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 075F8B281A097B15005A4409 /* Build configuration list for PBXAggregateTarget "libwavpack" */;
@@ -38,6 +27,17 @@
 			dependencies = (
 			);
 			name = libzip;
+			productName = libmad;
+		};
+		07F563021A3BC98A00241AD9 /* libmad */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 07F563041A3BC98A00241AD9 /* Build configuration list for PBXAggregateTarget "libmad" */;
+			buildPhases = (
+				07F563031A3BC98A00241AD9 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = libmad;
 			productName = libmad;
 		};
 /* End PBXAggregateTarget section */
@@ -99,6 +99,8 @@
 		070568E4181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 070568E2181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.m */; };
 		070568E7181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.h in Headers */ = {isa = PBXBuildFile; fileRef = 070568E5181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.h */; };
 		070568E8181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 070568E6181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.m */; };
+		07112CA91A3E3EF90052B352 /* libmad.0.2.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07112CA81A3E3C090052B352 /* libmad.0.2.1.dylib */; };
+		07112CAA1A3E3F130052B352 /* libzip.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07112CA41A3E39190052B352 /* libzip.2.dylib */; };
 		0715DF1117F6348300A15158 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0715DF1017F6348300A15158 /* main.c */; };
 		0715DF6217F63A0B00A15158 /* DBAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 070297BC17E9084800710234 /* DBAppDelegate.h */; };
 		0715DF6317F63A0C00A15158 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070297BD17E9084800710234 /* DBAppDelegate.m */; };
@@ -134,10 +136,6 @@
 		07458CAF19AEC33800DB2B62 /* oggedit_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 07458CA719AEC2EE00DB2B62 /* oggedit_utils.c */; };
 		07458CB019AEC33800DB2B62 /* oggedit_vorbis.c in Sources */ = {isa = PBXBuildFile; fileRef = 07458CA819AEC2EE00DB2B62 /* oggedit_vorbis.c */; };
 		075D94DA1842CB4400701D65 /* vorbis.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075D94D71842CADB00701D65 /* vorbis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		075E32FA184292D400222503 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32F9184292D400222503 /* CoreAudio.framework */; };
-		075E32FC1842930B00222503 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32FB1842930B00222503 /* AudioToolbox.framework */; };
-		075E32FE1842931400222503 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32FD1842931400222503 /* AudioUnit.framework */; };
-		075E33001842931E00222503 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32FF1842931E00222503 /* CoreServices.framework */; };
 		075E33011842935200222503 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32FB1842930B00222503 /* AudioToolbox.framework */; };
 		075E33021842935200222503 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32F9184292D400222503 /* CoreAudio.framework */; };
 		075E33031842936600222503 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E32FF1842931E00222503 /* CoreServices.framework */; };
@@ -147,8 +145,10 @@
 		075E335D1842A0BD00222503 /* FLAC.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075E334A18429DED00222503 /* FLAC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		075E335E1842A0BD00222503 /* ogg.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 075E330A18429D9500222503 /* ogg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		075F8B091A096FD1005A4409 /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		075F8B1A1A0977AD005A4409 /* mad.h in Headers */ = {isa = PBXBuildFile; fileRef = 075F8B161A097775005A4409 /* mad.h */; };
 		075F8B2F1A097CD3005A4409 /* wavpack.h in Headers */ = {isa = PBXBuildFile; fileRef = 075F8B2D1A097CD3005A4409 /* wavpack.h */; };
+		0766FB151A47882C00AACEC4 /* libwavpack.1.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 07F563001A3BC81300241AD9 /* libwavpack.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0766FB161A47883400AACEC4 /* libzip.2.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 07112CA41A3E39190052B352 /* libzip.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0766FB171A47883900AACEC4 /* libmad.0.2.1.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 07112CA81A3E3C090052B352 /* libmad.0.2.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		077E55A419B5429100DC97FA /* escape.c in Sources */ = {isa = PBXBuildFile; fileRef = 077E55A119B5429100DC97FA /* escape.c */; };
 		078060BE1868F328008319FD /* DBSplitViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 078060BC1868F328008319FD /* DBSplitViewController.h */; };
 		078060BF1868F328008319FD /* DBSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078060BD1868F328008319FD /* DBSplitViewController.m */; };
@@ -975,9 +975,8 @@
 		07D5884B1775192C003A01DE /* sndfile.c in Sources */ = {isa = PBXBuildFile; fileRef = 07D5884A1775192C003A01DE /* sndfile.c */; };
 		07D9661E1A2552F200FC9B6C /* DBOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D9661C1A2552F200FC9B6C /* DBOutlineView.h */; };
 		07D9661F1A2552F200FC9B6C /* DBOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D9661D1A2552F200FC9B6C /* DBOutlineView.m */; };
-		07F5622C1A3B8BDA00241AD9 /* libwavpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F8B2E1A097CD3005A4409 /* libwavpack.a */; };
-		07F5622D1A3B8BFC00241AD9 /* libmad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F8B171A097775005A4409 /* libmad.a */; };
-		07F5622E1A3B8D2B00241AD9 /* libzip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CF5C391A2BB4F10021AEAE /* libzip.a */; };
+		07F563121A3C4AEA00241AD9 /* mad.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F5630A1A3BCAD000241AD9 /* mad.h */; };
+		07F563171A3C93E300241AD9 /* libwavpack.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F563001A3BC81300241AD9 /* libwavpack.1.dylib */; };
 		07FDD90E19157313009E0E56 /* TrackInspectorPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FDD90D19157313009E0E56 /* TrackInspectorPanel.xib */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -1172,13 +1171,6 @@
 			remoteGlobalIDString = 0788227E1689D10B0066142D;
 			remoteInfo = mpgmad;
 		};
-		075F8B1F1A0979E0005A4409 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 075F8B111A097261005A4409;
-			remoteInfo = libmad;
-		};
 		075F8B311A097CF6005A4409 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -1270,6 +1262,13 @@
 			remoteGlobalIDString = 078821F61689CE2D0066142D;
 			remoteInfo = vfs_zip;
 		};
+		07F5630C1A3BCBA400241AD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07F563021A3BC98A00241AD9;
+			remoteInfo = libmad;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1282,6 +1281,9 @@
 				075D94DA1842CB4400701D65 /* vorbis.framework in Copy Frameworks */,
 				075E335D1842A0BD00222503 /* FLAC.framework in Copy Frameworks */,
 				075E335E1842A0BD00222503 /* ogg.framework in Copy Frameworks */,
+				0766FB171A47883900AACEC4 /* libmad.0.2.1.dylib in Copy Frameworks */,
+				0766FB161A47883400AACEC4 /* libzip.2.dylib in Copy Frameworks */,
+				0766FB151A47882C00AACEC4 /* libwavpack.1.dylib in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1390,6 +1392,8 @@
 		070568E2181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPreferencesViewControllerNetwork.m; path = ../plugins/cocoaui/DBPreferencesViewControllerNetwork.m; sourceTree = SOURCE_ROOT; };
 		070568E5181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPreferencesViewControllerPlayback.h; path = ../plugins/cocoaui/DBPreferencesViewControllerPlayback.h; sourceTree = SOURCE_ROOT; };
 		070568E6181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPreferencesViewControllerPlayback.m; path = ../plugins/cocoaui/DBPreferencesViewControllerPlayback.m; sourceTree = SOURCE_ROOT; };
+		07112CA41A3E39190052B352 /* libzip.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libzip.2.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		07112CA81A3E3C090052B352 /* libmad.0.2.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmad.0.2.1.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		0715DF0D17F6342300A15158 /* cocoaui.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoaui.c; path = ../plugins/cocoaui/cocoaui.c; sourceTree = SOURCE_ROOT; };
 		0715DF1017F6348300A15158 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../main.c; sourceTree = SOURCE_ROOT; };
 		0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_gui_cocoa.so; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1419,10 +1423,7 @@
 		075E32FF1842931E00222503 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		075E330518429D9500222503 /* ogg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ogg.xcodeproj; path = libs/AudioFrameworks/ogg/ogg.xcodeproj; sourceTree = "<group>"; };
 		075E332C18429DEC00222503 /* flac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = flac.xcodeproj; path = libs/AudioFrameworks/flac/flac.xcodeproj; sourceTree = "<group>"; };
-		075F8B161A097775005A4409 /* mad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mad.h; path = libs/libmad/build/include/mad.h; sourceTree = "<group>"; };
-		075F8B171A097775005A4409 /* libmad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmad.a; path = libs/libmad/build/lib/libmad.a; sourceTree = "<group>"; };
-		075F8B2D1A097CD3005A4409 /* wavpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack.h; sourceTree = "<group>"; };
-		075F8B2E1A097CD3005A4409 /* libwavpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwavpack.a; path = libs/wavpack/build/lib/libwavpack.a; sourceTree = "<group>"; };
+		075F8B2D1A097CD3005A4409 /* wavpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wavpack.h; path = include/wavpack/wavpack.h; sourceTree = BUILT_PRODUCTS_DIR; };
 		077E55A119B5429100DC97FA /* escape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = escape.c; path = ../escape.c; sourceTree = "<group>"; };
 		077E55A219B5429100DC97FA /* escape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = escape.h; path = ../escape.h; sourceTree = "<group>"; };
 		077E55A319B5429100DC97FA /* fastftoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fastftoi.h; path = ../fastftoi.h; sourceTree = "<group>"; };
@@ -2441,9 +2442,8 @@
 		079AF7A317BA8EEC00BDCBC4 /* ll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ll.h; sourceTree = "<group>"; };
 		079AF7A617BA8EEC00BDCBC4 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		079AF7F717BA94D300BDCBC4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "libs/libcdio-0.90/config.h"; sourceTree = SOURCE_ROOT; };
-		07CF5C391A2BB4F10021AEAE /* libzip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzip.a; path = libs/libzip/build/lib/libzip.a; sourceTree = SOURCE_ROOT; };
-		07CF5C3E1A2BCA720021AEAE /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
-		07CF5C401A2BCA950021AEAE /* zipconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zipconf.h; sourceTree = "<group>"; };
+		07CF5C3E1A2BCA720021AEAE /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = include/zip.h; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CF5C401A2BCA950021AEAE /* zipconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zipconf.h; path = libzip/include/zipconf.h; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D586B3177510E7003A01DE /* ao.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ao.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D586C317751164003A01DE /* ao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ao.h; sourceTree = "<group>"; };
 		07D586C417751164003A01DE /* corlett.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = corlett.c; sourceTree = "<group>"; };
@@ -2541,6 +2541,8 @@
 		07D9661D1A2552F200FC9B6C /* DBOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBOutlineView.m; sourceTree = "<group>"; };
 		07DC88FB1691AA2C00DB0456 /* coredecoder.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = coredecoder.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E582C11691E95000982BCB /* coredecoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = coredecoder.c; path = ../plugins/coredecoder/coredecoder.c; sourceTree = SOURCE_ROOT; };
+		07F563001A3BC81300241AD9 /* libwavpack.1.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libwavpack.1.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F5630A1A3BCAD000241AD9 /* mad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mad.h; path = include/mad.h; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDD90D19157313009E0E56 /* TrackInspectorPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrackInspectorPanel.xib; path = ../plugins/cocoaui/TrackInspectorPanel.xib; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -2645,7 +2647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0788232F1689D4930066142D /* libz.dylib in Frameworks */,
-				07F5622E1A3B8D2B00241AD9 /* libzip.a in Frameworks */,
+				07112CAA1A3E3F130052B352 /* libzip.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2669,7 +2671,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F5622C1A3B8BDA00241AD9 /* libwavpack.a in Frameworks */,
+				07F563171A3C93E300241AD9 /* libwavpack.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2693,7 +2695,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F5622D1A3B8BFC00241AD9 /* libmad.a in Frameworks */,
+				07112CA91A3E3EF90052B352 /* libmad.0.2.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2781,10 +2783,6 @@
 			files = (
 				075E335B1842A0A200222503 /* FLAC.framework in Frameworks */,
 				075E335C1842A0A200222503 /* ogg.framework in Frameworks */,
-				075E33001842931E00222503 /* CoreServices.framework in Frameworks */,
-				075E32FE1842931400222503 /* AudioUnit.framework in Frameworks */,
-				075E32FC1842930B00222503 /* AudioToolbox.framework in Frameworks */,
-				075E32FA184292D400222503 /* CoreAudio.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3028,27 +3026,18 @@
 		075F8ADD1A096334005A4409 /* External Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				07F563071A3BCA8900241AD9 /* libmad */,
 				0774F054184560F400D56194 /* libzip */,
 				075F8B2B1A097CA3005A4409 /* libwavpack */,
-				075F8ADE1A0963D9005A4409 /* libmad */,
 			);
 			name = "External Libraries";
-			sourceTree = "<group>";
-		};
-		075F8ADE1A0963D9005A4409 /* libmad */ = {
-			isa = PBXGroup;
-			children = (
-				075F8B161A097775005A4409 /* mad.h */,
-				075F8B171A097775005A4409 /* libmad.a */,
-			);
-			name = libmad;
 			sourceTree = "<group>";
 		};
 		075F8B2B1A097CA3005A4409 /* libwavpack */ = {
 			isa = PBXGroup;
 			children = (
+				07F563001A3BC81300241AD9 /* libwavpack.1.dylib */,
 				075F8B2C1A097CD3005A4409 /* wavpack */,
-				075F8B2E1A097CD3005A4409 /* libwavpack.a */,
 			);
 			name = libwavpack;
 			sourceTree = "<group>";
@@ -3075,13 +3064,13 @@
 		0774F054184560F400D56194 /* libzip */ = {
 			isa = PBXGroup;
 			children = (
+				07112CA41A3E39190052B352 /* libzip.2.dylib */,
 				07CF5C401A2BCA950021AEAE /* zipconf.h */,
 				07CF5C3E1A2BCA720021AEAE /* zip.h */,
-				07CF5C391A2BB4F10021AEAE /* libzip.a */,
 			);
 			name = libzip;
 			path = libs/libzip/lib;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 		07881E9E1689C3A70066142D /* lastfm */ = {
 			isa = PBXGroup;
@@ -4796,6 +4785,15 @@
 			name = coredecoder;
 			sourceTree = "<group>";
 		};
+		07F563071A3BCA8900241AD9 /* libmad */ = {
+			isa = PBXGroup;
+			children = (
+				07112CA81A3E3C090052B352 /* libmad.0.2.1.dylib */,
+				07F5630A1A3BCAD000241AD9 /* mad.h */,
+			);
+			name = libmad;
+			sourceTree = "<group>";
+		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -5180,7 +5178,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075F8B1A1A0977AD005A4409 /* mad.h in Headers */,
+				07F563121A3C4AEA00241AD9 /* mad.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5885,7 +5883,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				075F8B201A0979E0005A4409 /* PBXTargetDependency */,
+				07F5630D1A3BCBA400241AD9 /* PBXTargetDependency */,
 			);
 			name = mpgmad;
 			productName = mpgmad;
@@ -6128,11 +6126,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0600;
-				TargetAttributes = {
-					075F8B111A097261005A4409 = {
-						CreatedOnToolsVersion = 6.1;
-					};
-				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "deadbeef" */;
 			compatibilityVersion = "Xcode 3.1";
@@ -6193,9 +6186,9 @@
 				07D58632177510E7003A01DE /* ao */,
 				07D587B717751897003A01DE /* sndfile */,
 				0702996717E916C200710234 /* wma */,
-				075F8B111A097261005A4409 /* libmad */,
 				075F8B261A097B15005A4409 /* libwavpack */,
 				07CF5C321A2BB0F50021AEAE /* libzip */,
+				07F563021A3BC98A00241AD9 /* libmad */,
 			);
 		};
 /* End PBXProject section */
@@ -6324,37 +6317,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		075F8B151A0972C6005A4409 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/libs/libmad/mad.h",
-			);
-			outputPaths = (
-				$SRCROOT/libs/libmad/build/lib/libmad.a,
-				$SRCROOT/libs/libmad/build/include/mad.h,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd $SRCROOT/libs/libmad/\n#./configure x86_64-apple-darwin10.6.0 --prefix=$SRCROOT/libs/libmad/build\nmake install";
-		};
 		075F8B271A097B15005A4409 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/libs/wavpack/src/wavpack_version.h",
 			);
 			outputPaths = (
-				$SRCROOT/libs/libwavpack/build/lib/libwavpack.a,
-				$SRCROOT/libs/libwavpack/build/include/wavpack/wavpack.h,
+				$TARGET_BUILD_DIR/libwavpack.1.dylib,
+				$TARGET_BUILD_DIR/include/wavpack/wavpack.h,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd $SRCROOT/libs/wavpack/\n#./configure x86_64-apple-darwin10.6.0 --prefix=$SRCROOT/libs/wavpack/build\nmake install";
+			shellScript = "export DYLIB=libwavpack.1.dylib\nexport LDFLAGS=-headerpad_max_install_names\ncd $SRCROOT/libs/wavpack/\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
 		};
 		07CF5C331A2BB0F50021AEAE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -6362,14 +6338,30 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/libs/libzip/lib/zip.h",
 			);
 			outputPaths = (
-				$SRCROOT/libs/libzip/build/lib/libzip.a,
+				$TARGET_BUILD_DIR/libzip.2.dylib,
+				$TARGET_BUILD_DIR/include/zip.h,
+				$TARGET_BUILD_DIR/include/zipconf.h,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd $SRCROOT/libs/libzip/\n#./configure x86_64-apple-darwin10.6.0 --prefix=$SRCROOT/libs/libzip/build\nmake install";
+			shellScript = "export DYLIB=libzip.2.dylib\ncd $SRCROOT/libs/libzip/\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
+		};
+		07F563031A3BC98A00241AD9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+				$TARGET_BUILD_DIR/libmad.0.2.1.dylib,
+				$TARGET_BUILD_DIR/include/mad.h,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export DYLIB=libmad.0.2.1.dylib\ncd $SRCROOT/libs/libmad/\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -7131,11 +7123,6 @@
 			target = 0788227E1689D10B0066142D /* mpgmad */;
 			targetProxy = 075F8B071A096FBA005A4409 /* PBXContainerItemProxy */;
 		};
-		075F8B201A0979E0005A4409 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 075F8B111A097261005A4409 /* libmad */;
-			targetProxy = 075F8B1F1A0979E0005A4409 /* PBXContainerItemProxy */;
-		};
 		075F8B321A097CF6005A4409 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 075F8B261A097B15005A4409 /* libwavpack */;
@@ -7200,6 +7187,11 @@
 			isa = PBXTargetDependency;
 			target = 078821F61689CE2D0066142D /* vfs_zip */;
 			targetProxy = 07CF5C3B1A2BC9E30021AEAE /* PBXContainerItemProxy */;
+		};
+		07F5630D1A3BCBA400241AD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07F563021A3BC98A00241AD9 /* libmad */;
+			targetProxy = 07F5630C1A3BCBA400241AD9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -7387,24 +7379,6 @@
 				SDKROOT = macosx10.9;
 				USE_HEADERMAP = NO;
 				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		075F8B131A097261005A4409 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CFLAGS = "-Qunused-arguments";
-				CPPFLAGS = "-Qunused-arguments";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		075F8B141A097261005A4409 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CFLAGS = "-Qunused-arguments";
-				CPPFLAGS = "-Qunused-arguments";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -7875,10 +7849,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libs/libzip/build/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PREBINDING = NO;
 				PRODUCT_NAME = vfs_zip;
 				SKIP_INSTALL = YES;
@@ -7899,10 +7870,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_SYS_SYSLIMITS_H;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libs/libzip/build/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PREBINDING = NO;
 				PRODUCT_NAME = vfs_zip;
 				SKIP_INSTALL = YES;
@@ -8152,7 +8120,7 @@
 				INSTALL_PATH = ./;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/libs/libmad/build/lib",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/deadbeef-ehedoenhjwmmwmgltwrzekticdsy/Build/Products/Debug",
 				);
 				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "";
@@ -8179,7 +8147,7 @@
 				INSTALL_PATH = ./;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/libs/libmad/build/lib",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/deadbeef-ehedoenhjwmmwmgltwrzekticdsy/Build/Products/Debug",
 				);
 				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "";
@@ -8790,6 +8758,24 @@
 			};
 			name = Release;
 		};
+		07F563051A3BC98A00241AD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CFLAGS = "-Qunused-arguments";
+				CPPFLAGS = "-Qunused-arguments";
+				PRODUCT_NAME = libmad;
+			};
+			name = Debug;
+		};
+		07F563061A3BC98A00241AD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CFLAGS = "-Qunused-arguments";
+				CPPFLAGS = "-Qunused-arguments";
+				PRODUCT_NAME = libmad;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -8931,15 +8917,6 @@
 			buildConfigurations = (
 				0715DF5A17F6395200A15158 /* Debug */,
 				0715DF5B17F6395200A15158 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		075F8B121A097261005A4409 /* Build configuration list for PBXAggregateTarget "libmad" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				075F8B131A097261005A4409 /* Debug */,
-				075F8B141A097261005A4409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -9201,6 +9178,15 @@
 			buildConfigurations = (
 				07DC88FC1691AA2D00DB0456 /* Debug */,
 				07DC88FD1691AA2D00DB0456 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07F563041A3BC98A00241AD9 /* Build configuration list for PBXAggregateTarget "libmad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07F563051A3BC98A00241AD9 /* Debug */,
+				07F563061A3BC98A00241AD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
