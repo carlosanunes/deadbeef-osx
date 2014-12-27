@@ -4,3 +4,6 @@
 [submodule "macosx/libs/AudioFrameworks"]
 	path = macosx/libs/AudioFrameworks
 	url = https://github.com/sbooth/AudioFrameworks.git
+[submodule "macosx/libs/libfaad"]
+	path = macosx/libs/libfaad
+	url = https://github.com/gypified/libfaad.git
