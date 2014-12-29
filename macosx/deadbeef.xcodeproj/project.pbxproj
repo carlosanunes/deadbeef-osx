@@ -18,6 +18,17 @@
 			name = libfaad;
 			productName = libmad;
 		};
+		0700D81E1A4F515100216793 /* libsamplerate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0700D8201A4F515100216793 /* Build configuration list for PBXAggregateTarget "libsamplerate" */;
+			buildPhases = (
+				0700D81F1A4F515100216793 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = libsamplerate;
+			productName = libmad;
+		};
 		075F8B261A097B15005A4409 /* libwavpack */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 075F8B281A097B15005A4409 /* Build configuration list for PBXAggregateTarget "libwavpack" */;
@@ -119,6 +130,13 @@
 		0700D81A1A4F20B000216793 /* libfaad.2.0.0.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0700D80B1A4F1EE900216793 /* libfaad.2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0700D81B1A4F20B000216793 /* libsndfile.1.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0700D8011A4F1B1900216793 /* libsndfile.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0700D81D1A4F22BD00216793 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0700D81C1A4F22BD00216793 /* CoreAudio.framework */; };
+		0700D8261A4F67B500216793 /* samplerate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0700D8251A4F674500216793 /* samplerate.h */; };
+		0700D8271A4F67D600216793 /* libsamplerate.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0700D8241A4F66FE00216793 /* libsamplerate.0.dylib */; };
+		0700D82C1A4F685100216793 /* dsp.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0766FBAD1A4B442600AACEC4 /* dsp.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0700D82D1A4F686100216793 /* libsamplerate.0.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0700D8241A4F66FE00216793 /* libsamplerate.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0700D8301A4F693A00216793 /* medialib.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0766FC2C1A4B4A1700AACEC4 /* medialib.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0700D8331A4F697800216793 /* ddb_mono2stereo.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0766FC3A1A4B4A9500AACEC4 /* ddb_mono2stereo.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0700D8361A4F6A4000216793 /* soundtouch.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0766FC561A4B4C0D00AACEC4 /* soundtouch.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0702977917E8EBE700710234 /* fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702977417E8EBE700710234 /* fft.c */; };
 		0702977A17E8EBE700710234 /* handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702977617E8EBE700710234 /* handler.c */; };
 		0702979317E8EE4A00710234 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702979117E8EE4A00710234 /* parser.c */; };
@@ -161,10 +179,10 @@
 		070299B117E9171400710234 /* wmafixed.h in Headers */ = {isa = PBXBuildFile; fileRef = 0702999A17E9171400710234 /* wmafixed.h */; };
 		070299B217E9171400710234 /* wma_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 0702999C17E9171400710234 /* wma_plugin.c */; };
 		070299BB17E9178E00710234 /* wma.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0702997317E916C200710234 /* wma.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		07029A0D17E91CA600710234 /* dumb.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B12E1688F3B10079D590 /* dumb.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		07029A0D17E91CA600710234 /* ddb_dumb.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B12E1688F3B10079D590 /* ddb_dumb.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07029A1417E91CD500710234 /* ffap.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B2DF1688F7860079D590 /* ffap.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07029A1917E91D1000710234 /* gme.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0796B314168920E10079D590 /* gme.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		07029A1E17E91D3900710234 /* shn.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881F431689C8200066142D /* shn.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		07029A1E17E91D3900710234 /* ddb_shn.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 07881F431689C8200066142D /* ddb_shn.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		070568B9181B13D700B094E4 /* DBPreferencesViewControllerPlugins.h in Headers */ = {isa = PBXBuildFile; fileRef = 070568B7181B13D700B094E4 /* DBPreferencesViewControllerPlugins.h */; };
 		070568BA181B13D700B094E4 /* DBPreferencesViewControllerPlugins.m in Sources */ = {isa = PBXBuildFile; fileRef = 070568B8181B13D700B094E4 /* DBPreferencesViewControllerPlugins.m */; };
 		070568E3181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 070568E1181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.h */; };
@@ -239,13 +257,11 @@
 		0766FC801A4B4C5700AACEC4 /* SoundTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 0766FC601A4B4C5700AACEC4 /* SoundTouch.h */; };
 		0766FC811A4B4C5700AACEC4 /* soundtouch_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 0766FC611A4B4C5700AACEC4 /* soundtouch_config.h */; };
 		0766FC821A4B4C5700AACEC4 /* STTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0766FC621A4B4C5700AACEC4 /* STTypes.h */; };
-		0766FC831A4B4C5700AACEC4 /* 3dnow_win.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0766FC661A4B4C5700AACEC4 /* 3dnow_win.cpp */; };
 		0766FC841A4B4C5700AACEC4 /* AAFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0766FC671A4B4C5700AACEC4 /* AAFilter.cpp */; };
 		0766FC851A4B4C5700AACEC4 /* AAFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0766FC681A4B4C5700AACEC4 /* AAFilter.h */; };
 		0766FC861A4B4C5700AACEC4 /* BPMDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0766FC691A4B4C5700AACEC4 /* BPMDetect.cpp */; };
 		0766FC871A4B4C5700AACEC4 /* cpu_detect.h in Headers */ = {isa = PBXBuildFile; fileRef = 0766FC6A1A4B4C5700AACEC4 /* cpu_detect.h */; };
 		0766FC881A4B4C5700AACEC4 /* cpu_detect_x86_gcc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0766FC6B1A4B4C5700AACEC4 /* cpu_detect_x86_gcc.cpp */; };
-		0766FC891A4B4C5700AACEC4 /* cpu_detect_x86_win.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0766FC6C1A4B4C5700AACEC4 /* cpu_detect_x86_win.cpp */; };
 		0766FC8A1A4B4C5700AACEC4 /* FIFOSampleBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0766FC6D1A4B4C5700AACEC4 /* FIFOSampleBuffer.cpp */; };
 		0766FC8B1A4B4C5700AACEC4 /* FIRFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0766FC6E1A4B4C5700AACEC4 /* FIRFilter.cpp */; };
 		0766FC8C1A4B4C5700AACEC4 /* FIRFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0766FC6F1A4B4C5700AACEC4 /* FIRFilter.h */; };
@@ -985,6 +1001,41 @@
 			remoteGlobalIDString = 0766FB181A4B411400AACEC4;
 			remoteInfo = aac;
 		};
+		0700D8281A4F67E400216793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0700D81E1A4F515100216793;
+			remoteInfo = libsamplerate;
+		};
+		0700D82A1A4F684300216793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0766FBA31A4B442600AACEC4;
+			remoteInfo = dsp;
+		};
+		0700D82E1A4F691C00216793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0766FC231A4B4A1700AACEC4;
+			remoteInfo = medialib;
+		};
+		0700D8311A4F696C00216793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0766FC321A4B4A9500AACEC4;
+			remoteInfo = mono2stereo;
+		};
+		0700D8341A4F6A3200216793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0766FC4E1A4B4C0D00AACEC4;
+			remoteInfo = soundtouch;
+		};
 		070297A017E9010400710234 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -1400,6 +1451,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0700D82D1A4F686100216793 /* libsamplerate.0.dylib in Copy Frameworks */,
 				0700D81A1A4F20B000216793 /* libfaad.2.0.0.dylib in Copy Frameworks */,
 				0700D81B1A4F20B000216793 /* libsndfile.1.dylib in Copy Frameworks */,
 				0766FDBD1A4CD40900AACEC4 /* libvorbis.a in Copy Frameworks */,
@@ -1421,6 +1473,10 @@
 			dstPath = plugins;
 			dstSubfolderSpec = 6;
 			files = (
+				0700D8361A4F6A4000216793 /* soundtouch.so in Copy Plugins */,
+				0700D8331A4F697800216793 /* ddb_mono2stereo.so in Copy Plugins */,
+				0700D8301A4F693A00216793 /* medialib.so in Copy Plugins */,
+				0700D82C1A4F685100216793 /* dsp.so in Copy Plugins */,
 				0700D8191A4F20A400216793 /* sndfile.so in Copy Plugins */,
 				0700D8181A4F209E00216793 /* aac.so in Copy Plugins */,
 				0766FDBB1A4CD36000AACEC4 /* liboggedit.so in Copy Plugins */,
@@ -1431,10 +1487,10 @@
 				07CF5C3D1A2BCA080021AEAE /* vfs_zip.so in Copy Plugins */,
 				075F8B091A096FD1005A4409 /* mpgmad.so in Copy Plugins */,
 				07C4AC0C180217C80086EB7F /* ddb_gui_cocoa.so in Copy Plugins */,
-				07029A1E17E91D3900710234 /* shn.so in Copy Plugins */,
+				07029A1E17E91D3900710234 /* ddb_shn.so in Copy Plugins */,
 				07029A1917E91D1000710234 /* gme.so in Copy Plugins */,
 				07029A1417E91CD500710234 /* ffap.so in Copy Plugins */,
-				07029A0D17E91CA600710234 /* dumb.so in Copy Plugins */,
+				07029A0D17E91CA600710234 /* ddb_dumb.so in Copy Plugins */,
 				070299BB17E9178E00710234 /* wma.so in Copy Plugins */,
 				0702995C17E9148700710234 /* coreaudio.so in Copy Plugins */,
 				070297A717E9014900710234 /* mms.so in Copy Plugins */,
@@ -1459,6 +1515,8 @@
 		0700D80B1A4F1EE900216793 /* libfaad.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfaad.2.0.0.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		0700D80C1A4F1F0300216793 /* faad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = faad.h; path = include/faad.h; sourceTree = BUILT_PRODUCTS_DIR; };
 		0700D81C1A4F22BD00216793 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		0700D8241A4F66FE00216793 /* libsamplerate.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsamplerate.0.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		0700D8251A4F674500216793 /* samplerate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = samplerate.h; path = include/samplerate.h; sourceTree = BUILT_PRODUCTS_DIR; };
 		0702977417E8EBE700710234 /* fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fft.c; path = ../fft.c; sourceTree = SOURCE_ROOT; };
 		0702977517E8EBE700710234 /* fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fft.h; path = ../fft.h; sourceTree = SOURCE_ROOT; };
 		0702977617E8EBE700710234 /* handler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = handler.c; path = ../handler.c; sourceTree = SOURCE_ROOT; };
@@ -1596,7 +1654,7 @@
 		0766FC2E1A4B4A5900AACEC4 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		0766FC2F1A4B4A5900AACEC4 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		0766FC301A4B4A5900AACEC4 /* medialib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = medialib.c; sourceTree = "<group>"; };
-		0766FC3A1A4B4A9500AACEC4 /* mono2stereo.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = mono2stereo.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		0766FC3A1A4B4A9500AACEC4 /* ddb_mono2stereo.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_mono2stereo.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		0766FC3E1A4B4AD300AACEC4 /* mono2stereo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mono2stereo.c; sourceTree = "<group>"; };
 		0766FC481A4B4B2200AACEC4 /* nullout.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = nullout.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		0766FC4C1A4B4B5B00AACEC4 /* nullout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nullout.c; sourceTree = "<group>"; };
@@ -1608,13 +1666,11 @@
 		0766FC601A4B4C5700AACEC4 /* SoundTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundTouch.h; sourceTree = "<group>"; };
 		0766FC611A4B4C5700AACEC4 /* soundtouch_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundtouch_config.h; sourceTree = "<group>"; };
 		0766FC621A4B4C5700AACEC4 /* STTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTypes.h; sourceTree = "<group>"; };
-		0766FC661A4B4C5700AACEC4 /* 3dnow_win.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3dnow_win.cpp; sourceTree = "<group>"; };
 		0766FC671A4B4C5700AACEC4 /* AAFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAFilter.cpp; sourceTree = "<group>"; };
 		0766FC681A4B4C5700AACEC4 /* AAFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAFilter.h; sourceTree = "<group>"; };
 		0766FC691A4B4C5700AACEC4 /* BPMDetect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BPMDetect.cpp; sourceTree = "<group>"; };
 		0766FC6A1A4B4C5700AACEC4 /* cpu_detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_detect.h; sourceTree = "<group>"; };
 		0766FC6B1A4B4C5700AACEC4 /* cpu_detect_x86_gcc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu_detect_x86_gcc.cpp; sourceTree = "<group>"; };
-		0766FC6C1A4B4C5700AACEC4 /* cpu_detect_x86_win.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu_detect_x86_win.cpp; sourceTree = "<group>"; };
 		0766FC6D1A4B4C5700AACEC4 /* FIFOSampleBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIFOSampleBuffer.cpp; sourceTree = "<group>"; };
 		0766FC6E1A4B4C5700AACEC4 /* FIRFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIRFilter.cpp; sourceTree = "<group>"; };
 		0766FC6F1A4B4C5700AACEC4 /* FIRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIRFilter.h; sourceTree = "<group>"; };
@@ -1777,7 +1833,7 @@
 		07881F171689C7230066142D /* requant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = requant.h; sourceTree = "<group>"; };
 		07881F181689C7230066142D /* streaminfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = streaminfo.c; sourceTree = "<group>"; };
 		07881F191689C7230066142D /* synth_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = synth_filter.c; sourceTree = "<group>"; };
-		07881F431689C8200066142D /* shn.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = shn.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		07881F431689C8200066142D /* ddb_shn.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_shn.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07881F491689C85A0066142D /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
 		07881F4B1689C85A0066142D /* bitshift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitshift.h; sourceTree = "<group>"; };
 		07881F4C1689C85A0066142D /* convert.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = convert.c; sourceTree = "<group>"; };
@@ -2034,7 +2090,7 @@
 		0796B1001688F0E10079D590 /* tables_quantization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tables_quantization.h; sourceTree = "<group>"; };
 		0796B1011688F0E10079D590 /* tables_vq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tables_vq.h; sourceTree = "<group>"; };
 		0796B1021688F0E20079D590 /* tendra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tendra.h; sourceTree = "<group>"; };
-		0796B12E1688F3B10079D590 /* dumb.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = dumb.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		0796B12E1688F3B10079D590 /* ddb_dumb.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_dumb.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		0796B1351688F3F10079D590 /* cdumb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdumb.c; sourceTree = "<group>"; };
 		0796B14E1688F3F10079D590 /* aldumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aldumb.h; sourceTree = "<group>"; };
 		0796B14F1688F3F10079D590 /* dumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dumb.h; sourceTree = "<group>"; };
@@ -2675,7 +2731,7 @@
 		079AF7F717BA94D300BDCBC4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "libs/libcdio-0.90/config.h"; sourceTree = SOURCE_ROOT; };
 		07CF5C3E1A2BCA720021AEAE /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = include/zip.h; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CF5C401A2BCA950021AEAE /* zipconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zipconf.h; path = libzip/include/zipconf.h; sourceTree = BUILT_PRODUCTS_DIR; };
-		07D586B3177510E7003A01DE /* ao.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ao.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		07D586B3177510E7003A01DE /* ddb_ao.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_ao.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D586C317751164003A01DE /* ao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ao.h; sourceTree = "<group>"; };
 		07D586C417751164003A01DE /* corlett.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = corlett.c; sourceTree = "<group>"; };
 		07D586C517751164003A01DE /* corlett.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = corlett.h; sourceTree = "<group>"; };
@@ -2818,6 +2874,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0700D8271A4F67D600216793 /* libsamplerate.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3112,6 +3169,15 @@
 			name = libfaad;
 			sourceTree = "<group>";
 		};
+		0700D8231A4F668800216793 /* libsamplerate */ = {
+			isa = PBXGroup;
+			children = (
+				0700D8251A4F674500216793 /* samplerate.h */,
+				0700D8241A4F66FE00216793 /* libsamplerate.0.dylib */,
+			);
+			name = libsamplerate;
+			sourceTree = "<group>";
+		};
 		0702979017E8EE4A00710234 /* libparser */ = {
 			isa = PBXGroup;
 			children = (
@@ -3348,6 +3414,7 @@
 		075F8ADD1A096334005A4409 /* External Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0700D8231A4F668800216793 /* libsamplerate */,
 				0700D80A1A4F1EC300216793 /* libfaad */,
 				0700D8001A4F1A7B00216793 /* libsndfile */,
 				0766FD731A4C843100AACEC4 /* libflac */,
@@ -3538,13 +3605,11 @@
 		0766FC651A4B4C5700AACEC4 /* SoundTouch */ = {
 			isa = PBXGroup;
 			children = (
-				0766FC661A4B4C5700AACEC4 /* 3dnow_win.cpp */,
 				0766FC671A4B4C5700AACEC4 /* AAFilter.cpp */,
 				0766FC681A4B4C5700AACEC4 /* AAFilter.h */,
 				0766FC691A4B4C5700AACEC4 /* BPMDetect.cpp */,
 				0766FC6A1A4B4C5700AACEC4 /* cpu_detect.h */,
 				0766FC6B1A4B4C5700AACEC4 /* cpu_detect_x86_gcc.cpp */,
-				0766FC6C1A4B4C5700AACEC4 /* cpu_detect_x86_win.cpp */,
 				0766FC6D1A4B4C5700AACEC4 /* FIFOSampleBuffer.cpp */,
 				0766FC6E1A4B4C5700AACEC4 /* FIRFilter.cpp */,
 				0766FC6F1A4B4C5700AACEC4 /* FIRFilter.h */,
@@ -5407,13 +5472,13 @@
 				0788227F1689D10B0066142D /* mpgmad.so */,
 				078823F3168A05700066142D /* artwork.so */,
 				07DC88FB1691AA2C00DB0456 /* coredecoder.so */,
-				07D586B3177510E7003A01DE /* ao.so */,
+				07D586B3177510E7003A01DE /* ddb_ao.so */,
 				07D5883517751897003A01DE /* sndfile.so */,
 				0702984A17E9113200710234 /* coreaudio.so */,
-				0796B12E1688F3B10079D590 /* dumb.so */,
+				0796B12E1688F3B10079D590 /* ddb_dumb.so */,
 				0702997317E916C200710234 /* wma.so */,
 				0796B314168920E10079D590 /* gme.so */,
-				07881F431689C8200066142D /* shn.so */,
+				07881F431689C8200066142D /* ddb_shn.so */,
 				0796B2DF1688F7860079D590 /* ffap.so */,
 				0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */,
 				0766FB991A4B411400AACEC4 /* aac.so */,
@@ -5423,7 +5488,7 @@
 				0766FBF91A4B48CE00AACEC4 /* liboggedit.so */,
 				0766FC1B1A4B497700AACEC4 /* libparser.so */,
 				0766FC2C1A4B4A1700AACEC4 /* medialib.so */,
-				0766FC3A1A4B4A9500AACEC4 /* mono2stereo.so */,
+				0766FC3A1A4B4A9500AACEC4 /* ddb_mono2stereo.so */,
 				0766FC481A4B4B2200AACEC4 /* nullout.so */,
 				0766FC561A4B4C0D00AACEC4 /* soundtouch.so */,
 				0766FCBB1A4B4CE200AACEC4 /* supereq.so */,
@@ -5599,6 +5664,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0700D8261A4F67B500216793 /* samplerate.h in Headers */,
 				0766FBB81A4B46C400AACEC4 /* src.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6207,9 +6273,9 @@
 			productReference = 0766FB991A4B411400AACEC4 /* aac.so */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		0766FBA31A4B442600AACEC4 /* dsp */ = {
+		0766FBA31A4B442600AACEC4 /* dsp_libsrc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0766FBAA1A4B442600AACEC4 /* Build configuration list for PBXNativeTarget "dsp" */;
+			buildConfigurationList = 0766FBAA1A4B442600AACEC4 /* Build configuration list for PBXNativeTarget "dsp_libsrc" */;
 			buildPhases = (
 				0766FBA41A4B442600AACEC4 /* Headers */,
 				0766FBA61A4B442600AACEC4 /* Sources */,
@@ -6218,8 +6284,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				0700D8291A4F67E400216793 /* PBXTargetDependency */,
 			);
-			name = dsp;
+			name = dsp_libsrc;
 			productName = adplug;
 			productReference = 0766FBAD1A4B442600AACEC4 /* dsp.so */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -6323,7 +6390,7 @@
 			);
 			name = mono2stereo;
 			productName = adplug;
-			productReference = 0766FC3A1A4B4A9500AACEC4 /* mono2stereo.so */;
+			productReference = 0766FC3A1A4B4A9500AACEC4 /* ddb_mono2stereo.so */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		0766FC401A4B4B2200AACEC4 /* nullout */ = {
@@ -6459,7 +6526,7 @@
 			);
 			name = shn;
 			productName = shn;
-			productReference = 07881F431689C8200066142D /* shn.so */;
+			productReference = 07881F431689C8200066142D /* ddb_shn.so */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		07881F6F1689C9040066142D /* sid */ = {
@@ -6746,7 +6813,7 @@
 			);
 			name = dumb;
 			productName = dumb;
-			productReference = 0796B12E1688F3B10079D590 /* dumb.so */;
+			productReference = 0796B12E1688F3B10079D590 /* ddb_dumb.so */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		0796B2DE1688F7860079D590 /* ffap */ = {
@@ -6797,7 +6864,7 @@
 			);
 			name = ao;
 			productName = adplug;
-			productReference = 07D586B3177510E7003A01DE /* ao.so */;
+			productReference = 07D586B3177510E7003A01DE /* ddb_ao.so */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		07D587B717751897003A01DE /* sndfile */ = {
@@ -6848,6 +6915,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				0700D8351A4F6A3200216793 /* PBXTargetDependency */,
+				0700D8321A4F696C00216793 /* PBXTargetDependency */,
+				0700D82F1A4F691C00216793 /* PBXTargetDependency */,
+				0700D82B1A4F684300216793 /* PBXTargetDependency */,
 				0700D8171A4F208C00216793 /* PBXTargetDependency */,
 				0700D8151A4F207C00216793 /* PBXTargetDependency */,
 				0766FD6C1A4C7F5300AACEC4 /* PBXTargetDependency */,
@@ -6958,7 +7029,7 @@
 				07D58632177510E7003A01DE /* ao */,
 				07D587B717751897003A01DE /* sndfile */,
 				0702996717E916C200710234 /* wma */,
-				0766FBA31A4B442600AACEC4 /* dsp */,
+				0766FBA31A4B442600AACEC4 /* dsp_libsrc */,
 				0766FBB91A4B473D00AACEC4 /* ffmpeg */,
 				0766FBC91A4B484D00AACEC4 /* libmp4ff */,
 				0766FBE91A4B48CE00AACEC4 /* liboggedit */,
@@ -6977,6 +7048,7 @@
 				0766FD6E1A4C82C100AACEC4 /* libflac */,
 				0766FDC01A4CDF1F00AACEC4 /* libsndfile */,
 				0700D8051A4F1DED00216793 /* libfaad */,
+				0700D81E1A4F515100216793 /* libsamplerate */,
 			);
 		};
 /* End PBXProject section */
@@ -7159,6 +7231,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export DYLIB=libfaad.2.0.0.dylib\ncd $SRCROOT/libs/libfaad\n./configure --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR \nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
+		};
+		0700D81F1A4F515100216793 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export DYLIB=libsamplerate.0.dylib\ncd $SRCROOT/libs/libsamplerate\n./configure --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR \nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
 		};
 		075F8B271A097B15005A4409 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -7423,10 +7508,8 @@
 				0766FC881A4B4C5700AACEC4 /* cpu_detect_x86_gcc.cpp in Sources */,
 				0766FC7C1A4B4C5700AACEC4 /* plugin.c in Sources */,
 				0766FC901A4B4C5700AACEC4 /* RateTransposer.cpp in Sources */,
-				0766FC891A4B4C5700AACEC4 /* cpu_detect_x86_win.cpp in Sources */,
 				0766FC931A4B4C5700AACEC4 /* sse_optimized.cpp in Sources */,
 				0766FC841A4B4C5700AACEC4 /* AAFilter.cpp in Sources */,
-				0766FC831A4B4C5700AACEC4 /* 3dnow_win.cpp in Sources */,
 				0766FC8A1A4B4C5700AACEC4 /* FIFOSampleBuffer.cpp in Sources */,
 				0766FC861A4B4C5700AACEC4 /* BPMDetect.cpp in Sources */,
 				0766FC961A4B4C5700AACEC4 /* st.cpp in Sources */,
@@ -8017,6 +8100,31 @@
 			target = 0766FB181A4B411400AACEC4 /* aac */;
 			targetProxy = 0700D8161A4F208C00216793 /* PBXContainerItemProxy */;
 		};
+		0700D8291A4F67E400216793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0700D81E1A4F515100216793 /* libsamplerate */;
+			targetProxy = 0700D8281A4F67E400216793 /* PBXContainerItemProxy */;
+		};
+		0700D82B1A4F684300216793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0766FBA31A4B442600AACEC4 /* dsp_libsrc */;
+			targetProxy = 0700D82A1A4F684300216793 /* PBXContainerItemProxy */;
+		};
+		0700D82F1A4F691C00216793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0766FC231A4B4A1700AACEC4 /* medialib */;
+			targetProxy = 0700D82E1A4F691C00216793 /* PBXContainerItemProxy */;
+		};
+		0700D8321A4F696C00216793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0766FC321A4B4A9500AACEC4 /* mono2stereo */;
+			targetProxy = 0700D8311A4F696C00216793 /* PBXContainerItemProxy */;
+		};
+		0700D8351A4F6A3200216793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0766FC4E1A4B4C0D00AACEC4 /* soundtouch */;
+			targetProxy = 0700D8341A4F6A3200216793 /* PBXContainerItemProxy */;
+		};
 		070297A117E9010400710234 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 07881ECF1689C5550066142D /* mms */;
@@ -8226,7 +8334,7 @@
 				CFLAGS = "-Qunused-arguments -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Headers/";
 				CPPFLAGS = "-Qunused-arguments";
 				HEADER_SEARCH_PATHS = "";
-				PRODUCT_NAME = "libsndfile copy";
+				PRODUCT_NAME = libfaad;
 			};
 			name = Debug;
 		};
@@ -8236,7 +8344,27 @@
 				CFLAGS = "-Qunused-arguments -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Headers/";
 				CPPFLAGS = "-Qunused-arguments";
 				HEADER_SEARCH_PATHS = "";
-				PRODUCT_NAME = "libsndfile copy";
+				PRODUCT_NAME = libfaad;
+			};
+			name = Release;
+		};
+		0700D8211A4F515100216793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CFLAGS = "-Qunused-arguments -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Headers/";
+				CPPFLAGS = "-Qunused-arguments";
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = libsamplerate;
+			};
+			name = Debug;
+		};
+		0700D8221A4F515100216793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CFLAGS = "-Qunused-arguments -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Headers/";
+				CPPFLAGS = "-Qunused-arguments";
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = libsamplerate;
 			};
 			name = Release;
 		};
@@ -8867,7 +8995,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
-				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_PREFIX = ddb_;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
@@ -8897,7 +9025,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
-				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_PREFIX = ddb_;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -8985,8 +9113,8 @@
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -9014,8 +9142,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
-				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = "stricmp=strcasecmp";
@@ -9365,7 +9493,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
-				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_PREFIX = ddb_;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -9394,7 +9522,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
-				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_PREFIX = ddb_;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
@@ -9621,6 +9749,7 @@
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -9629,7 +9758,10 @@
 					__MACOSX__,
 					HAVE_SYS_SYSLIMITS_H,
 				);
-				HEADER_SEARCH_PATHS = "$SRCROOT/libs/**";
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/libs/libogg/include,
+					$SRCROOT/libs/libvorbis/include,
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = vorbis;
@@ -9647,13 +9779,17 @@
 				EXECUTABLE_EXTENSION = so;
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					__MACOSX__,
 					HAVE_SYS_SYSLIMITS_H,
 				);
-				HEADER_SEARCH_PATHS = "$SRCROOT/libs/**";
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/libs/libogg/include,
+					$SRCROOT/libs/libvorbis/include,
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = vorbis;
@@ -10151,7 +10287,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
-				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_PREFIX = ddb_;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -10180,7 +10316,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
-				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_PREFIX = ddb_;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -10341,7 +10477,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = so;
-				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_PREFIX = ddb_;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
@@ -10377,7 +10513,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_EXTENSION = so;
-				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_PREFIX = ddb_;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -10641,6 +10777,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		0700D8201A4F515100216793 /* Build configuration list for PBXAggregateTarget "libsamplerate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0700D8211A4F515100216793 /* Debug */,
+				0700D8221A4F515100216793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0702984717E9113200710234 /* Build configuration list for PBXNativeTarget "coreaudio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -10686,7 +10831,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0766FBAA1A4B442600AACEC4 /* Build configuration list for PBXNativeTarget "dsp" */ = {
+		0766FBAA1A4B442600AACEC4 /* Build configuration list for PBXNativeTarget "dsp_libsrc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0766FBAB1A4B442600AACEC4 /* Debug */,
