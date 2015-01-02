@@ -280,6 +280,8 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	
 }
 
+
+
 /*
  accepts both a NSURL list as well as a NSSring list
  */
@@ -1074,6 +1076,12 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     
     return YES;
 
+}
+
++ (void) removePlaylist: (NSInteger) num {
+    
+    deadbeef->plt_remove( (int) num );
+    
 }
 
 + (NSInteger) streamingTrackIndex {

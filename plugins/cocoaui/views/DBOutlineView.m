@@ -24,14 +24,21 @@
 
 @implementation DBOutlineView
 
+
+- (void)setDeleteAction:(SEL)aSelector
+{
+    deleteAction = aSelector;
+}
+
+
 - (void)keyDown:(NSEvent *)theEvent {
     // handle delete
     unichar key = [[theEvent charactersIgnoringModifiers] characterAtIndex:0];
     
     if (key == NSDeleteCharacter && self.selectedRow != -1) {
         
-        [[self delegate] performSelector:@selector(tableView:didRemoveRowView:forRow:) withObject:self];
-        
+        [_target performSelector:deleteAction];
+        return;
     }
         
     [super keyDown:theEvent];

@@ -131,6 +131,8 @@
 
 + (BOOL) newPlaylist;
 
++ (void) removePlaylist: (NSInteger) num;
+
 + (BOOL) streamerOkToRead;
 
 @end

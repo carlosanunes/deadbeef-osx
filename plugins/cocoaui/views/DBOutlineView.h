@@ -22,6 +22,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface DBOutlineView : NSOutlineView
+@interface DBOutlineView : NSOutlineView {
+    
+    SEL deleteAction;
+    
+}
+
+- (void)setDeleteAction:(SEL)aSelector;
 
 @end

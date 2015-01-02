@@ -24,15 +24,18 @@
 #import <Foundation/Foundation.h>
 #import <DBAppDelegate.h>
 #import "DBSideBarItem.h"
+#import "views/DBOutlineView.h"
 
 @interface DBSidebarViewController : NSViewController <NSOutlineViewDelegate> {
  
     IBOutlet NSTreeController * sidebarTreeController;
-    IBOutlet NSOutlineView * sidebarView;
+    IBOutlet DBOutlineView * sidebarView;
     
     NSMutableArray * sidebarItems;
         
 }
+
+- (IBAction) deleteSelectedItems: sender;
 
 @property (retain) NSMutableArray * sidebarItems;
 

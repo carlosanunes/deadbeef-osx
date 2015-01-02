@@ -28,6 +28,9 @@
 
 - (void) awakeFromNib {
     
+    [sidebarView setTarget:self];
+    [sidebarView setDeleteAction: @selector(deleteSelectedItems:)];
+    
     sidebarItems = [[NSMutableArray array] retain];
     
     DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:@"playlistGroup"];
@@ -101,7 +104,13 @@
 
 }
 
-
+- (IBAction) deleteSelectedItems: sender {
+    
+    NSIndexPath * path =[sidebarTreeController selectionIndexPath];
+    
+    [DBAppDelegate removePlaylist: [path indexAtPosition: 1] ];
+    
+}
 
 
 - (void)outlineViewColumnDidMove:(NSNotification *)notification {
