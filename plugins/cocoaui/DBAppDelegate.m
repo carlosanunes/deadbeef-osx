@@ -940,30 +940,24 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     return list;
 }
 
-+ (NSMutableArray *) availablePlaylists {
++ (NSInteger) playlistCount {
+    
+    return deadbeef -> plt_get_count();
+}
 
-	int count = deadbeef-> plt_get_count();
-    NSMutableArray * list = [NSMutableArray arrayWithCapacity: count];
-//    NSDictionary * item;
-    DBSideBarItem * item;
+
++ (NSString *) playlistName: (NSInteger) index {
     
     deadbeef->pl_lock();
-	for (int i = 0; i < count; ++i)
-	{
-        char title[1000];
-        ddb_playlist_t *plt = deadbeef->plt_get_for_idx (i);
-        deadbeef->plt_get_title (plt, title, sizeof (title));
-        deadbeef->plt_unref (plt);
-
-        item = [DBSideBarItem itemWithName: [NSString stringWithUTF8String:title] isHeader:NO identifier:@"playlist"];
-        
-//        item = [NSMutableDictionary dictionaryWithObjectsAndKeys: [NSString stringWithUTF8String: title], @"name", nil];
-        [list addObject: item];
-	}
-
+    
+    char title[1000];
+    ddb_playlist_t *plt = deadbeef->plt_get_for_idx ( (int) index);
+    deadbeef->plt_get_title (plt, title, sizeof (title));
+    deadbeef->plt_unref (plt);
+    
     deadbeef->pl_unlock();
     
-    return list;
+    return [NSString stringWithUTF8String:title];
 }
 
 + (NSArray *) replaygainModeList {

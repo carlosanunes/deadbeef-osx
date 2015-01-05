@@ -24,8 +24,6 @@
 
 @implementation DBSidebarViewController 
 
-@synthesize sidebarItems;
-
 - (void) awakeFromNib {
     
     [sidebarView setTarget:self];
@@ -33,19 +31,26 @@
     
     sidebarItems = [[NSMutableArray array] retain];
     
-    DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:@"playlistGroup"];
-    NSMutableArray * playlists = [DBAppDelegate availablePlaylists];
-    
-    [playlistItem setChildren:playlists];
+    DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:GROUP_PLAYLIST];
+    NSUInteger count = [DBAppDelegate playlistCount];
+    NSMutableArray * playlists = [NSMutableArray arrayWithCapacity: count];
+    for (NSInteger i = 0; i < count; ++i) {
+        [playlists addObject: [DBSideBarItem itemWithName:[DBAppDelegate playlistName:i] isHeader: NO identifier:@"playlist"] ];
+    }
+    [playlistItem setChildren: playlists];
     
     [sidebarItems addObject: playlistItem];
-    [sidebarTreeController setContent: sidebarItems];
-    
+
     [sidebarView reloadData];
+
+    // Expand all the root items; disable the expansion animation that normally happens
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:0];
     [sidebarView expandItem:nil expandChildren:YES];
+    [NSAnimationContext endGrouping];
     
     [sidebarView selectRowIndexes: [NSIndexSet indexSetWithIndex: [DBAppDelegate intConfiguration:@"playlist.current" num:0] + 1 ] byExtendingSelection:NO ];
-
+    
 
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
     
@@ -60,74 +65,41 @@
 
 
 - (void) updatePlaylistItems {
-    
-    // we rely on the treecontroller for insertion and removal
-    // docs says the controller is optimized and we choose to believe it
-    // aditionally, it takes care of view update for us
-    
-    NSUInteger idx = [sidebarItems indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        DBSideBarItem * item = (DBSideBarItem *) obj;
-        if ( [[item identifier] isEqualToString:@"playlistGroup"] )
-            return TRUE;
-        return false;
-    }];
-    
-    DBSideBarItem * item = [sidebarItems objectAtIndex: idx];
-    NSUInteger count = [[item children] count];
-    NSUInteger i = 0;
-    
-    NSMutableArray * playlists = [DBAppDelegate availablePlaylists];
-    for (DBSideBarItem * object in playlists ) {
-        
-        if (i >= count) {
-            
-            NSUInteger array[] = {idx, i};
-            [sidebarTreeController insertObject: object atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length: 2] ];
-        }
-        
-        else if ( ![[[[item children] objectAtIndex: i] name ] isEqualToString: [object name] ] ) {
-            
-            NSUInteger array[] = {idx, i};
-            [sidebarTreeController removeObjectAtArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length:2]];
-            
-            // only if there was an add operation
-            if ( [playlists count] >= count ) {
-                
-            [sidebarTreeController insertObject: object atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndexes:array length: 2] ];
-                
-            }
-            
-        }
-    
-        ++i;
-    }
 
+    NSUInteger count = [DBAppDelegate playlistCount];
+    NSMutableArray * playlists = [NSMutableArray arrayWithCapacity: count];
+    for (NSInteger i = 0; i < count; ++i) {
+        [playlists addObject: [DBSideBarItem itemWithName:[DBAppDelegate playlistName:i] isHeader: NO identifier:@"playlist"] ];
+    }
+    [[sidebarItems objectAtIndex: GROUP_PLAYLIST_INDEX] setChildren: playlists];
+    
+//    [sidebarView reloadItem: [sidebarItems objectAtIndex:0] reloadChildren: YES ];
+ //   [sidebarView reloadData];
+    
 }
 
 - (IBAction) deleteSelectedItems: sender {
     
-    NSIndexPath * path =[sidebarTreeController selectionIndexPath];
-    
-    [DBAppDelegate removePlaylist: [path indexAtPosition: 1] ];
+    if ([sidebarView selectedRow] != -1) {
+        DBSideBarItem *item = [sidebarView itemAtRow:[sidebarView selectedRow]];
+        if ([item isHeader] == NO) {
+            // Only change things for non header items
+            if ( [[item identifier] isEqualToString: @"playlist"] ) {
+                [DBAppDelegate removePlaylist: [[[sidebarItems objectAtIndex:GROUP_PLAYLIST_INDEX] children] indexOfObject: item] ];
+            }
+        }
+    }
     
 }
 
-
-- (void)outlineViewColumnDidMove:(NSNotification *)notification {
-    
-    return;
-    
-}
 
 
 #pragma mark - Helpers
 
 - (BOOL) isItemHeader:(id)item{
     
-    if([item isKindOfClass:[NSTreeNode class]]){
-        if ([((NSTreeNode *)item).representedObject respondsToSelector:@selector(isHeader)]) {
-            return [((NSTreeNode *)item).representedObject performSelector:@selector(isHeader)];
-        }
+    if([item isKindOfClass:[DBSideBarItem class]]){
+            return [((DBSideBarItem *)item) performSelector:@selector(isHeader)];
     }
     
     return NO;
@@ -138,22 +110,14 @@
 
 - (void) outlineViewSelectionDidChange:(NSNotification *)notification {
     
-    NSOutlineView * mOutlineView = [notification object];
-    NSInteger rowNumber = [mOutlineView selectedRow];
-    NSTreeNode * item = (NSTreeNode *) [mOutlineView itemAtRow: rowNumber];
-    DBSideBarItem * sidebarItem = (DBSideBarItem *) item.representedObject;
-    
-    if ( [[sidebarItem identifier] isEqualToString:@"playlist"] ) {
-        
-        // figuring out the correct index
-        NSTreeNode * parentNode = [item parentNode];
-        NSInteger parentRowNumber = [mOutlineView rowForItem: parentNode];
-        parentRowNumber++;
-        
-        if ([DBAppDelegate currentPlaylistIndex] == (rowNumber - parentRowNumber) )
-            return; // already selected
-        
-        [DBAppDelegate setCurrentPlaylist: rowNumber - parentRowNumber ];
+    if ([sidebarView selectedRow] != -1) {
+        DBSideBarItem *item = [sidebarView itemAtRow:[sidebarView selectedRow]];
+        if ([item isHeader] == NO) {
+            // Only change things for non header items
+            if ( [[item identifier] isEqualToString: @"playlist"] ) {
+                [DBAppDelegate setCurrentPlaylist: [[[sidebarItems objectAtIndex:GROUP_PLAYLIST_INDEX] children] indexOfObject: item] ];
+            }
+        }
     }
     
 }
@@ -167,12 +131,14 @@
 - (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
     
     if ([self isItemHeader:item]) {
-        return [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
-    } else {
-        return [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
+        NSTableCellView * result = [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
+        [result setObjectValue: item];
+        return result;
     }
     
-    return nil;
+    NSTableCellView * result =  [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
+    [result setObjectValue: item];
+    return result;
 }
 
 
@@ -180,6 +146,45 @@
     // This converts a group to a header which influences its style
 
     return [self isItemHeader:item];
+}
+
+
+/* datasource methods */
+
+#pragma mark - NSOutlineViewDataSource
+
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
+{
+    // root
+    if (item == nil) {
+        return [sidebarItems count];
+    }
+    
+    return [[(DBSideBarItem *) item children] count];
+        
+}
+
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
+{
+
+    // root
+    if (item == nil) {
+        return [sidebarItems objectAtIndex:index];
+    }
+    
+    return [[(DBSideBarItem *) item children ] objectAtIndex:index];
+    
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item {
+    
+    // root
+    if (item == nil) {
+        return [sidebarItems count] > 0;
+    }
+
+    return [[(DBSideBarItem *) item children ] count ] > 0;
+    
 }
 
 

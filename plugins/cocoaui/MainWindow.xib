@@ -442,12 +442,10 @@
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
-                                                    <connections>
-                                                        <binding destination="Mhz-7G-mcH" name="value" keyPath="arrangedObjects" id="71C-U6-OIH"/>
-                                                    </connections>
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
+                                                <outlet property="dataSource" destination="BGk-Cd-IRo" id="Umz-7p-LR7"/>
                                                 <outlet property="delegate" destination="BGk-Cd-IRo" id="Y1d-zt-h3o"/>
                                             </connections>
                                         </outlineView>
@@ -572,10 +570,8 @@
             </connections>
         </customObject>
         <customObject id="cR5-PM-Dmf" userLabel="Split View Controller" customClass="DBSplitViewController"/>
-        <treeController objectClassName="DBSideBarItem" childrenKeyPath="children" leafKeyPath="isLeaf" id="Mhz-7G-mcH"/>
         <customObject id="BGk-Cd-IRo" userLabel="Outline View Controller" customClass="DBSidebarViewController">
             <connections>
-                <outlet property="sidebarTreeController" destination="Mhz-7G-mcH" id="naC-W6-jHK"/>
                 <outlet property="sidebarView" destination="HHP-xw-JpJ" id="dcl-UQ-GXl"/>
             </connections>
         </customObject>

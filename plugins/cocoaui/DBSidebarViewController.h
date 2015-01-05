@@ -20,15 +20,17 @@
 
 */
 
-    
+#define GROUP_PLAYLIST @"playlistGroup"
+
+#define GROUP_PLAYLIST_INDEX 0
+
 #import <Foundation/Foundation.h>
 #import <DBAppDelegate.h>
 #import "DBSideBarItem.h"
 #import "views/DBOutlineView.h"
 
-@interface DBSidebarViewController : NSViewController <NSOutlineViewDelegate> {
+@interface DBSidebarViewController : NSViewController <NSOutlineViewDelegate, NSOutlineViewDataSource> {
  
-    IBOutlet NSTreeController * sidebarTreeController;
     IBOutlet DBOutlineView * sidebarView;
     
     NSMutableArray * sidebarItems;
@@ -36,9 +38,6 @@
 }
 
 - (IBAction) deleteSelectedItems: sender;
-
-@property (retain) NSMutableArray * sidebarItems;
-
 
 - (void) updatePlaylistItems;
 

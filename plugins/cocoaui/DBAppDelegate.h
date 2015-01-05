@@ -119,7 +119,7 @@
 
 + (NSArray *) proxyTypeList;
 
-+ (NSMutableArray *) availablePlaylists;
++ (NSString *) playlistName: (NSInteger) index;
 
 + (NSInteger) currentPlaylistIndex;
 
@@ -134,5 +134,7 @@
 + (void) removePlaylist: (NSInteger) num;
 
 + (BOOL) streamerOkToRead;
+
++ (NSInteger) playlistCount;
 
 @end
