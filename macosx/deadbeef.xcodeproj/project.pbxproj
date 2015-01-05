@@ -7258,7 +7258,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export DYLIB=libwavpack.1.dylib\nexport LDFLAGS=-headerpad_max_install_names\ncd $SRCROOT/libs/wavpack/\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
+			shellScript = "export DYLIB=libwavpack.1.dylib\nexport LDFLAGS=-headerpad_max_install_names\ncd $SRCROOT/libs/wavpack/\nif ! test -f \"Makefile\"; then\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nfi;\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
 		};
 		0766FCCF1A4B4DFC00AACEC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -7285,7 +7285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export DYLIB=libcddb.2.dylib\ncd $SRCROOT/libs/libcddb/\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
+			shellScript = "export DYLIB=libcddb.2.dylib\ncd $SRCROOT/libs/libcddb/\nif ! test -f \"Makefile\"; then\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nfi;\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
 		};
 		0766FD2B1A4C746900AACEC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -7298,7 +7298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export DYLIB=libcdio.16.dylib\nexport DYLIB2=libcdio++.0.dylib\nexport DYLIB3=libiso9660.10.dylib\nexport DYLIB4=libiso9660++.0.dylib\nexport DYLIB5=libudf.0.dylib\ncd $SRCROOT/libs/libcdio\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"\ninstall_name_tool -id @rpath/$DYLIB2 \"$TARGET_BUILD_DIR/$DYLIB2\"\ninstall_name_tool -id @rpath/$DYLIB3 \"$TARGET_BUILD_DIR/$DYLIB3\"\ninstall_name_tool -id @rpath/$DYLIB4 \"$TARGET_BUILD_DIR/$DYLIB4\"\ninstall_name_tool -id @rpath/$DYLIB5 \"$TARGET_BUILD_DIR/$DYLIB5\"";
+			shellScript = "export DYLIB=libcdio.16.dylib\nexport DYLIB2=libcdio++.0.dylib\nexport DYLIB3=libiso9660.10.dylib\nexport DYLIB4=libiso9660++.0.dylib\nexport DYLIB5=libudf.0.dylib\ncd $SRCROOT/libs/libcdio\nif ! test -f \"Makefile\"; then\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nfi;\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"\ninstall_name_tool -id @rpath/$DYLIB2 \"$TARGET_BUILD_DIR/$DYLIB2\"\ninstall_name_tool -id @rpath/$DYLIB3 \"$TARGET_BUILD_DIR/$DYLIB3\"\ninstall_name_tool -id @rpath/$DYLIB4 \"$TARGET_BUILD_DIR/$DYLIB4\"\ninstall_name_tool -id @rpath/$DYLIB5 \"$TARGET_BUILD_DIR/$DYLIB5\"";
 		};
 		0766FD6F1A4C82C100AACEC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -7311,7 +7311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export DYLIB=libFLAC.8.dylib\ncd $SRCROOT/libs/flac\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
+			shellScript = "export DYLIB=libFLAC.8.dylib\ncd $SRCROOT/libs/flac\nif ! test -f \"Makefile\"; then\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nfi;\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
 		};
 		0766FDC11A4CDF1F00AACEC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -7340,7 +7340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export DYLIB=libzip.2.dylib\ncd $SRCROOT/libs/libzip/\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
+			shellScript = "export DYLIB=libzip.2.dylib\ncd $SRCROOT/libs/libzip/\nif ! test -f \"Makefile\"; then\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nfi;\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
 		};
 		07F563031A3BC98A00241AD9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -7355,7 +7355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export DYLIB=libmad.0.2.1.dylib\ncd $SRCROOT/libs/libmad/\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
+			shellScript = "export DYLIB=libmad.0.2.1.dylib\ncd $SRCROOT/libs/libmad/\nif ! test -f \"Makefile\"; then\n./configure x86_64-apple-darwin10.6.0 --prefix=$TARGET_BUILD_DIR --libdir=$TARGET_BUILD_DIR\nfi;\nmake install\ninstall_name_tool -id @rpath/$DYLIB \"$TARGET_BUILD_DIR/$DYLIB\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
