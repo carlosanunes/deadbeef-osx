@@ -31,11 +31,11 @@
     
     sidebarItems = [[NSMutableArray array] retain];
     
-    DBSideBarItem * playlistItem = [DBSideBarItem itemWithName:@"PLAYLISTS" isHeader:YES identifier:GROUP_PLAYLIST];
+    DBGroupSideBarItem * playlistItem = [DBGroupSideBarItem itemWithName:@"PLAYLISTS"  identifier:GROUP_PLAYLIST];
     NSUInteger count = [DBAppDelegate playlistCount];
-    NSMutableArray * playlists = [NSMutableArray arrayWithCapacity: count];
+    NSMutableArray * playlists = [[NSMutableArray arrayWithCapacity: count] retain];
     for (NSInteger i = 0; i < count; ++i) {
-        [playlists addObject: [DBSideBarItem itemWithName:[DBAppDelegate playlistName:i] isHeader: NO identifier:@"playlist"] ];
+        [playlists addObject: [DBPlaylistSideBarItem playlistAtIndex:i parent: playlistItem ] ];
     }
     [playlistItem setChildren: playlists];
     
@@ -67,15 +67,24 @@
 - (void) updatePlaylistItems {
 
     NSUInteger count = [DBAppDelegate playlistCount];
-    NSMutableArray * playlists = [NSMutableArray arrayWithCapacity: count];
-    for (NSInteger i = 0; i < count; ++i) {
-        [playlists addObject: [DBSideBarItem itemWithName:[DBAppDelegate playlistName:i] isHeader: NO identifier:@"playlist"] ];
+    DBGroupSideBarItem * playlistsGroup = [sidebarItems objectAtIndex: GROUP_PLAYLIST_INDEX];
+    BOOL reload = NO;
+    
+    // add proxy objects if needed
+    while ([playlistsGroup numChildren] < count) {
+        [playlistsGroup addChild: [DBPlaylistSideBarItem playlistAtIndex: [playlistsGroup numChildren]  parent: playlistsGroup ]];
+        reload = YES;
     }
-    [[sidebarItems objectAtIndex: GROUP_PLAYLIST_INDEX] setChildren: playlists];
-    
-//    [sidebarView reloadItem: [sidebarItems objectAtIndex:0] reloadChildren: YES ];
- //   [sidebarView reloadData];
-    
+
+    // remove proxy objects if needed
+    while ([playlistsGroup numChildren] > count) {
+        [playlistsGroup removeLastChild];
+        reload = YES;
+    }
+
+    if (reload)
+        [sidebarView reloadData];
+
 }
 
 - (IBAction) deleteSelectedItems: sender {
@@ -85,7 +94,7 @@
         if ([item isHeader] == NO) {
             // Only change things for non header items
             if ( [[item identifier] isEqualToString: @"playlist"] ) {
-                [DBAppDelegate removePlaylist: [[[sidebarItems objectAtIndex:GROUP_PLAYLIST_INDEX] children] indexOfObject: item] ];
+                [DBAppDelegate removePlaylist: [ ((DBPlaylistSideBarItem *) item) idx] ];
             }
         }
     }
@@ -115,7 +124,7 @@
         if ([item isHeader] == NO) {
             // Only change things for non header items
             if ( [[item identifier] isEqualToString: @"playlist"] ) {
-                [DBAppDelegate setCurrentPlaylist: [[[sidebarItems objectAtIndex:GROUP_PLAYLIST_INDEX] children] indexOfObject: item] ];
+                [DBAppDelegate setCurrentPlaylist: [ ((DBPlaylistSideBarItem *) item) idx]];
             }
         }
     }
@@ -160,7 +169,7 @@
         return [sidebarItems count];
     }
     
-    return [[(DBSideBarItem *) item children] count];
+    return [(DBSideBarItem *) item numChildren];
         
 }
 
@@ -172,7 +181,7 @@
         return [sidebarItems objectAtIndex:index];
     }
     
-    return [[(DBSideBarItem *) item children ] objectAtIndex:index];
+    return [(DBSideBarItem *) item childAtIndex:index];
     
 }
 
@@ -183,7 +192,7 @@
         return [sidebarItems count] > 0;
     }
 
-    return [[(DBSideBarItem *) item children ] count ] > 0;
+    return [(DBSideBarItem *) item numChildren ] > 0;
     
 }
 

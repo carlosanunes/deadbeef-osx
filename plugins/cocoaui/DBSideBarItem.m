@@ -31,31 +31,7 @@
 
 @implementation DBSideBarItem
 
-@synthesize name;
-@synthesize children;
 @synthesize identifier;
-
-
-+ (DBSideBarItem *) itemWithName:(NSString *)name  isHeader:(BOOL) header {
-
-    DBSideBarItem * item = [[[DBSideBarItem alloc] init] autorelease];
-    
-    [item setName:name];
-    [item setIsHeader:header];
-
-    return item;
-}
-
-+ (DBSideBarItem *) itemWithName:(NSString *)name isHeader:(BOOL) header identifier:(NSString *) aIdentifier {
-    DBSideBarItem * item = [[[DBSideBarItem alloc] init] autorelease];
-    
-    [item setName:name];
-    [item setIdentifier:aIdentifier];
-    [item setIsHeader:header];
-    
-    return item;
-    
-}
 
 
 - (BOOL) isLeaf{
@@ -63,22 +39,32 @@
     if ([self isHeader])
         return NO;
     
-    return [children count] == 0;
+    return [self numChildren] == 0;
+}
+
+- (NSInteger) numChildren{
+    return 0;
+}
+
+- (DBSideBarItem *) childAtIndex: (NSUInteger) idx {
+    
+    return nil;
+}
+
+
+- (NSString *) name {
+    return nil;
 }
 
 - (void)dealloc
 {
-    [name release];
-    [children release];
-    
+    [identifier release];
     [super dealloc];
 }
 
 - (void)finalize
 {
-    name = nil;
-    children = nil;
-    
+    identifier = nil;
     [super finalize];
 }
 

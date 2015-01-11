@@ -27,6 +27,8 @@
 #import <Foundation/Foundation.h>
 #import <DBAppDelegate.h>
 #import "DBSideBarItem.h"
+#import "DBGroupSideBarItem.h"
+#import "DBPlaylistSideBarItem.h"
 #import "views/DBOutlineView.h"
 
 @interface DBSidebarViewController : NSViewController <NSOutlineViewDelegate, NSOutlineViewDataSource> {
