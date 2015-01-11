@@ -854,6 +854,10 @@
 		0796B5C5168921150079D590 /* Z80_Cpu_run.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B439168921150079D590 /* Z80_Cpu_run.h */; };
 		0796B6391689494E0079D590 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0796B6381689494E0079D590 /* libz.dylib */; };
 		079AF5BE17BA876F00BDCBC4 /* mpgmad.c in Sources */ = {isa = PBXBuildFile; fileRef = 079AF5BD17BA876F00BDCBC4 /* mpgmad.c */; };
+		07B1825F1A5E01D9002212C9 /* DBPlaylistSideBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B1825D1A5E01D9002212C9 /* DBPlaylistSideBarItem.h */; };
+		07B182601A5E01D9002212C9 /* DBPlaylistSideBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B1825E1A5E01D9002212C9 /* DBPlaylistSideBarItem.m */; };
+		07B182661A5E0EBF002212C9 /* DBGroupSideBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B182641A5E0EBF002212C9 /* DBGroupSideBarItem.h */; };
+		07B182671A5E0EBF002212C9 /* DBGroupSideBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B182651A5E0EBF002212C9 /* DBGroupSideBarItem.m */; };
 		07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */ = {isa = PBXBuildFile; fileRef = 0715DF0D17F6342300A15158 /* cocoaui.c */; };
 		07C4AC0C180217C80086EB7F /* ddb_gui_cocoa.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0715DF5917F6395100A15158 /* ddb_gui_cocoa.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		07C4ACB7180233D80086EB7F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070297C917E9084800710234 /* MainWindow.xib */; };
@@ -2729,6 +2733,10 @@
 		079AF7A317BA8EEC00BDCBC4 /* ll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ll.h; sourceTree = "<group>"; };
 		079AF7A617BA8EEC00BDCBC4 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		079AF7F717BA94D300BDCBC4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "libs/libcdio-0.90/config.h"; sourceTree = SOURCE_ROOT; };
+		07B1825D1A5E01D9002212C9 /* DBPlaylistSideBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPlaylistSideBarItem.h; path = ../plugins/cocoaui/DBPlaylistSideBarItem.h; sourceTree = "<group>"; };
+		07B1825E1A5E01D9002212C9 /* DBPlaylistSideBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPlaylistSideBarItem.m; path = ../plugins/cocoaui/DBPlaylistSideBarItem.m; sourceTree = "<group>"; };
+		07B182641A5E0EBF002212C9 /* DBGroupSideBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBGroupSideBarItem.h; path = ../plugins/cocoaui/DBGroupSideBarItem.h; sourceTree = "<group>"; };
+		07B182651A5E0EBF002212C9 /* DBGroupSideBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBGroupSideBarItem.m; path = ../plugins/cocoaui/DBGroupSideBarItem.m; sourceTree = "<group>"; };
 		07CF5C3E1A2BCA720021AEAE /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = include/zip.h; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CF5C401A2BCA950021AEAE /* zipconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zipconf.h; path = libzip/include/zipconf.h; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D586B3177510E7003A01DE /* ddb_ao.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ddb_ao.so; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3225,6 +3233,10 @@
 				078060CA186A1F43008319FD /* DBSidebarViewController.m */,
 				078060CD186B90A3008319FD /* DBSideBarItem.h */,
 				078060CE186B90A3008319FD /* DBSideBarItem.m */,
+				07B1825D1A5E01D9002212C9 /* DBPlaylistSideBarItem.h */,
+				07B1825E1A5E01D9002212C9 /* DBPlaylistSideBarItem.m */,
+				07B182641A5E0EBF002212C9 /* DBGroupSideBarItem.h */,
+				07B182651A5E0EBF002212C9 /* DBGroupSideBarItem.m */,
 			);
 			name = cocoaui;
 			sourceTree = "<group>";
@@ -5646,7 +5658,9 @@
 				078699381813147A0093C177 /* DBScrollableTextPanelController.h in Headers */,
 				07869A601813428D0093C177 /* DBValueTransformerPluginHasWebsite.h in Headers */,
 				070568B9181B13D700B094E4 /* DBPreferencesViewControllerPlugins.h in Headers */,
+				07B1825F1A5E01D9002212C9 /* DBPlaylistSideBarItem.h in Headers */,
 				070568E3181B1E9D00B094E4 /* DBPreferencesViewControllerNetwork.h in Headers */,
+				07B182661A5E0EBF002212C9 /* DBGroupSideBarItem.h in Headers */,
 				070568E7181B1EC800B094E4 /* DBPreferencesViewControllerPlayback.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -7396,8 +7410,10 @@
 				0715DF6C17F63A2000A15158 /* DBPlayListController.m in Sources */,
 				0715DF7017F63A2500A15158 /* DBTableView.m in Sources */,
 				0715DF7217F63A2800A15158 /* DBTextInputPanelController.m in Sources */,
+				07B182671A5E0EBF002212C9 /* DBGroupSideBarItem.m in Sources */,
 				07D9661F1A2552F200FC9B6C /* DBOutlineView.m in Sources */,
 				0715DF7417F63A2A00A15158 /* DBTimeSliderCell.m in Sources */,
+				07B182601A5E01D9002212C9 /* DBPlaylistSideBarItem.m in Sources */,
 				078060D0186B90A3008319FD /* DBSideBarItem.m in Sources */,
 				0715DF7617F63A2C00A15158 /* DBTrackInspectorPanelController.m in Sources */,
 				07C4AB4B17F714750086EB7F /* cocoaui.c in Sources */,
