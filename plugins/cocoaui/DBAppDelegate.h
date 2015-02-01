@@ -133,6 +133,8 @@
 
 + (void) removePlaylist: (NSInteger) num;
 
++ (void) setPlaylistName: (NSString *) name atIndex: (NSUInteger) idx;
+
 + (BOOL) streamerOkToRead;
 
 + (NSInteger) playlistCount;

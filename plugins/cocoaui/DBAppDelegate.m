@@ -1078,6 +1078,16 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     
 }
 
++ (void) setPlaylistName: (NSString *) name atIndex: (NSUInteger) idx {
+
+    deadbeef->pl_lock ();
+    ddb_playlist_t *p = deadbeef->plt_get_for_idx ( (int) idx );
+    deadbeef->plt_set_title (p, [name UTF8String] );
+    deadbeef->plt_unref (p);
+    deadbeef->pl_unlock ();
+    
+}
+
 + (NSInteger) streamingTrackIndex {
     
     DB_playItem_t * streamingTrack = deadbeef->streamer_get_streaming_track();
