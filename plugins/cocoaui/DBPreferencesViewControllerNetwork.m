@@ -127,7 +127,7 @@
 
 - (NSImage *)toolbarItemImage
 {
-    return [NSImage imageNamed:NSImageNameAdvanced];
+    return [NSImage imageNamed:NSImageNameNetwork];
 }
 
 - (NSString *)toolbarItemLabel

@@ -57,7 +57,9 @@
 
 - (NSImage *)toolbarItemImage
 {
-    return [NSImage imageNamed:NSImageNameAdvanced];
+    NSImage * img = [[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kToolbarMusicFolderIcon)];
+    
+    return img;
 }
 
 - (NSString *)toolbarItemLabel
