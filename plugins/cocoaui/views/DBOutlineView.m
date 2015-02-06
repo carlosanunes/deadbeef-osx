@@ -37,7 +37,7 @@
     
     if (key == NSDeleteCharacter && self.selectedRow != -1) {
         
-        [_target performSelector:deleteAction];
+        [[self target] performSelector:deleteAction];
         return;
     }
         

@@ -46,13 +46,14 @@
 	
 	if ( u == NSEnterCharacter || u == NSCarriageReturnCharacter )
 	{
-		[_target performSelector:enterAction];
+        
+		[[self target]  performSelector:enterAction];
 		return;
 	}
 	
 	if ( u == NSDeleteCharacter )
 	{
-		[_target performSelector:deleteAction];
+		[[self target] performSelector:deleteAction];
 		return;
 	}
 
