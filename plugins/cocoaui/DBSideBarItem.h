@@ -36,6 +36,7 @@
 - (NSInteger) numChildren;
 - (DBSideBarItem *) childAtIndex: (NSUInteger) idx;
 - (NSString *) name;
+- (void) setName: (NSString *) name;
 
 
 @end

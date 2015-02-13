@@ -56,6 +56,10 @@
     return nil;
 }
 
+- (void) setName: (NSString *) name {
+    // nothing to do
+}
+
 - (void)dealloc
 {
     [identifier release];
