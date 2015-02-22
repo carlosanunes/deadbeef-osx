@@ -16,3 +16,6 @@
 [submodule "macosx/libs/flac"]
 	path = macosx/libs/flac
 	url = https://git.xiph.org/flac.git
+[submodule "macosx/libs/wavpack"]
+	path = macosx/libs/wavpack
+	url = https://github.com/dbry/WavPack.git
