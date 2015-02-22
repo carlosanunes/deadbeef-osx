@@ -10,3 +10,6 @@
 [submodule "macosx/libs/libcdio"]
 	path = macosx/libs/libcdio
 	url = git://git.sv.gnu.org/libcdio.git
+[submodule "macosx/libs/libsndfile"]
+	path = macosx/libs/libsndfile
+	url = git://github.com/erikd/libsndfile.git
