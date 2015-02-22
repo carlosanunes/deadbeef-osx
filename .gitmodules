@@ -13,3 +13,6 @@
 [submodule "macosx/libs/libsndfile"]
 	path = macosx/libs/libsndfile
 	url = git://github.com/erikd/libsndfile.git
+[submodule "macosx/libs/flac"]
+	path = macosx/libs/flac
+	url = https://git.xiph.org/flac.git
