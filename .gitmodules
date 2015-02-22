@@ -7,3 +7,6 @@
 [submodule "macosx/libs/libfaad"]
 	path = macosx/libs/libfaad
 	url = https://github.com/gypified/libfaad.git
+[submodule "macosx/libs/libcdio"]
+	path = macosx/libs/libcdio
+	url = git://git.sv.gnu.org/libcdio.git
