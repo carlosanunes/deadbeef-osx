@@ -42,13 +42,24 @@
 
 }
 
-@property BOOL proxyServer;
 
-@property (retain) NSString * proxyServerAddress;
-@property (retain) NSString * proxyServerPort;
-@property (retain) NSString * proxyServerUsername;
-@property (retain) NSString * proxyServerPassword;
-@property (retain) NSString * proxyServerUserAgent;
+- (BOOL) proxyServer;
+- (void) setProxyServer:(BOOL)proxyServer;
+
+- (NSString *) proxyServerAddress;
+- (void) setProxyServerAddress:(NSString *)proxyServerAddress;
+
+- (NSString *) proxyServerPort;
+- (void) setProxyServerPort: (NSString *) proxyServerPort;
+
+- (NSString *) proxyServerUsername;
+- (void) setProxyServerUsername: (NSString *) proxyServerUsername;
+
+- (NSString *) proxyServerPassword;
+- (void) setProxyServerPassword: (NSString *) proxyServerPassword;
+
+- (NSString *) proxyServerUserAgent;
+- (void) setProxyServerUserAgent: (NSString *) proxyServerUserAgent;
 
 
 @end

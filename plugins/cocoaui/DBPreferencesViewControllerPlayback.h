@@ -31,20 +31,28 @@
     IBOutlet NSArrayController * replaygainModeListController;
 }
 
-@property BOOL replaygainScale;
-@property BOOL resumePreviousSession;
-@property BOOL ignoreArchivesOnAddFolder;
-@property BOOL autoResetStopAfterCurrent;
+- (BOOL) replaygainScale;
+- (BOOL) resumePreviousSession;
+- (BOOL) ignoreArchivesOnAddFolder;
+- (BOOL) autoResetStopAfterCurrent;
 
-@property (retain) NSString * cliAddPlaylist;
+- (void) setReplaygainScale : (BOOL) replaygainScale;
+- (void) setResumePreviousSession : (BOOL) resumePreviousSession;
+- (void) setIgnoreArchivesOnAddFolder : (BOOL) ignoreArchivesOnAddFolder;
+- (void) setAutoResetStopAfterCurrent : (BOOL) autoResetStopAfterCurrent;
 
-@property NSInteger replaygainPreamp;
-@property NSInteger globalPreamp;
+- (NSString *) cliAddPlaylist;
+- (void) setCliAddPlaylist : (NSString *) cliAddPlaylist;
 
-@property (nonatomic) NSInteger minReplaygainPreamp;
-@property (nonatomic) NSInteger maxReplaygainPreamp;
+- (NSInteger) replaygainPreamp;
+- (NSInteger) globalPreamp;
+- (NSInteger) minReplaygainPreamp;
+- (NSInteger) maxReplaygainPreamp;
+- (NSInteger) minGlobalPreamp;
+- (NSInteger) maxGlobalPreamp;
 
-@property (nonatomic) NSInteger minGlobalPreamp;
-@property (nonatomic) NSInteger maxGlobalPreamp;
+- (void) setReplaygainPreamp : (NSInteger) replaygainPreamp;
+- (void) setGlobalPreamp : (NSInteger) globalPreamp;
+
 
 @end

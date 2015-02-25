@@ -63,7 +63,6 @@
 
 
 
-
 - (void) updatePlaylistItems {
 
     NSUInteger count = [DBAppDelegate playlistCount];
@@ -82,8 +81,9 @@
         reload = YES;
     }
 
-    if (reload)
+    if (reload) {
         [sidebarView reloadData];
+    }
 
 }
 
@@ -195,6 +195,8 @@
     return [(DBSideBarItem *) item numChildren ] > 0;
     
 }
+
+
 
 
 @end

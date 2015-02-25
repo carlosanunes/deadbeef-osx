@@ -26,21 +26,6 @@
 
 @implementation DBPreferencesViewControllerPlayback
 
-@synthesize replaygainScale;
-@synthesize resumePreviousSession;
-@synthesize ignoreArchivesOnAddFolder;
-@synthesize autoResetStopAfterCurrent;
-
-@synthesize cliAddPlaylist;
-
-@synthesize replaygainPreamp;
-@synthesize globalPreamp;
-
-@synthesize minReplaygainPreamp;
-@synthesize minGlobalPreamp;
-@synthesize maxReplaygainPreamp;
-@synthesize maxGlobalPreamp;
-
 - (id)init
 {
 

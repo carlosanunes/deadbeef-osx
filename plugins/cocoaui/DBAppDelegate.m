@@ -394,121 +394,6 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 	return [NSString stringWithFormat:@"%d song(s)%s", deadbeef->pl_getcount(PL_MAIN), totaltime_str];
 }
 
-/*
- - (void) updateSongInfo {
- 
- DB_output_t *output = plug_get_output ();
- 
- char sbtext_new[512] = "-";
- float songpos = last_songpos;
- 
- float pl_totaltime = pl_get_totaltime ();
- int daystotal = (int)pl_totaltime / (3600*24);
- int hourtotal = ((int)pl_totaltime / 3600) % 24;
- int mintotal = ((int)pl_totaltime/60) % 60;
- int sectotal = ((int)pl_totaltime) % 60;
- 
- char totaltime_str[512] = "";
- if (daystotal == 0) {
- snprintf (totaltime_str, sizeof (totaltime_str), "%d:%02d:%02d", hourtotal, mintotal, sectotal);
- }
- else if (daystotal == 1) {
- snprintf (totaltime_str, sizeof (totaltime_str), _("1 day %d:%02d:%02d"), hourtotal, mintotal, sectotal);
- }
- else {
- snprintf (totaltime_str, sizeof (totaltime_str), _("%d days %d:%02d:%02d"), daystotal, hourtotal, mintotal, sectotal);
- }
- 
- DB_playItem_t *track = streamer_get_playing_track ();
- DB_fileinfo_t *c = streamer_get_current_fileinfo (); // FIXME: might crash streamer
- 
- float duration = track ? pl_get_item_duration (track) : -1;
- 
- if (!output || (output->state () == OUTPUT_STATE_STOPPED || !track || !c)) {
- snprintf (sbtext_new, sizeof (sbtext_new), _("Stopped | %d tracks | %s total playtime"), pl_getcount (PL_MAIN), totaltime_str);
- songpos = 0;
- }
- else {
- float playpos = streamer_get_playpos ();
- int minpos = playpos / 60;
- int secpos = playpos - minpos * 60;
- int mindur = duration / 60;
- int secdur = duration - mindur * 60;
- 
- const char *mode;
- char temp[20];
- if (c->fmt.channels <= 2) {
- mode = c->fmt.channels == 1 ? _("Mono") : _("Stereo");
- }
- else {
- snprintf (temp, sizeof (temp), "%dch Multichannel", c->fmt.channels);
- mode = temp;
- }
- int samplerate = c->fmt.samplerate;
- int bitspersample = c->fmt.bps;
- songpos = playpos;
- //        codec_unlock ();
- 
- char t[100];
- if (duration >= 0) {
- snprintf (t, sizeof (t), "%d:%02d", mindur, secdur);
- }
- else {
- strcpy (t, "-:--");
- }
- 
- struct timeval tm;
- gettimeofday (&tm, NULL);
- if (tm.tv_sec - last_br_update.tv_sec + (tm.tv_usec - last_br_update.tv_usec) / 1000000.0 >= 0.3) {
- memcpy (&last_br_update, &tm, sizeof (tm));
- int bitrate = streamer_get_apx_bitrate ();
- if (bitrate > 0) {
- snprintf (sbitrate, sizeof (sbitrate), _("| %4d kbps "), bitrate);
- }
- else {
- sbitrate[0] = 0;
- }
- }
- const char *spaused = plug_get_output ()->state () == OUTPUT_STATE_PAUSED ? _("Paused | ") : "";
- const char *filetype = pl_find_meta (track, ":FILETYPE");
- if (!filetype) {
- filetype = "-";
- }
- snprintf (sbtext_new, sizeof (sbtext_new), _("%s%s %s| %dHz | %d bit | %s | %d:%02d / %s | %d tracks | %s total playtime"), spaused, filetype, sbitrate, samplerate, bitspersample, mode, minpos, secpos, t, deadbeef->pl_getcount (PL_MAIN), totaltime_str);
- }
- 
- if (strcmp (sbtext_new, sb_text)) {
- strcpy (sb_text, sbtext_new);
- 
- // form statusline
- // FIXME: don't update if window is not visible
- GtkStatusbar *sb = GTK_STATUSBAR (lookup_widget (mainwin, "statusbar"));
- if (sb_context_id == -1) {
- sb_context_id = gtk_statusbar_get_context_id (sb, "msg");
- }
- 
- gtk_statusbar_pop (sb, sb_context_id);
- gtk_statusbar_push (sb, sb_context_id, sb_text);
- }
- 
- if (mainwin) {
- GtkWidget *widget = lookup_widget (mainwin, "seekbar");
- // translate volume to seekbar pixels
- songpos /= duration;
- GtkAllocation a;
- gtk_widget_get_allocation (widget, &a);
- songpos *= a.width;
- if (fabs (songpos - last_songpos) > 0.01) {
- gtk_widget_queue_draw (widget);
- last_songpos = songpos;
- }
- }
- if (track) {
- pl_item_unref (track);
- }
- }
- */
-
 + (NSArray *) supportedSavePlaylistExtensions {
     
     NSMutableArray * array = [NSMutableArray arrayWithCapacity: 5];
@@ -618,6 +503,10 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 + (float) minVolumeDB {
 	
 	return deadbeef->volume_get_min_db();
+}
+
++ (void) removeConfiguration : (NSString *) key {
+    return deadbeef->conf_remove_items( [key UTF8String] );
 }
 
 + (int) intConfiguration : (NSString *) key num:(NSInteger) def {
@@ -1110,6 +999,116 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
         return YES;
 
     return NO;
+}
+
++ (NSArray *) menuPluginActions {
+/*
+    DB_plugin_t **plugins = deadbeef->plug_get_list();
+    int i;
+    
+    // cycle thru all plugins with actions
+    for (i = 0; plugins[i]; i++)
+    {
+        if (!plugins[i]->get_actions)
+            continue;
+    
+        DB_plugin_action_t *actions = plugins[i]->get_actions (NULL);
+        DB_plugin_action_t *action;
+        
+        // cycle thru the plugins actions
+        for (action = actions; action; action = action->next)
+        {
+            
+            char *tmp = NULL;
+            
+            int has_addmenu = (action->flags & DB_ACTION_COMMON) && ((action->flags & DB_ACTION_ADD_MENU) || (action->callback));
+            
+            // if it doesn't have a menu action, we ignore this action
+            if (!has_addmenu)
+                continue;
+            
+            // 1st check if we have slashes
+            const char *slash = action->title;
+            while (NULL != (slash = strchr (slash, '/'))) {
+                if (slash && slash > action->title && *(slash-1) == '\\') {
+                    slash++;
+                    continue;
+                }
+                break;
+            }
+            
+            if (!slash) {
+                continue;
+            }
+            
+            char *ptr = tmp = strdup (action->title);
+            
+            char *prev_title = NULL;
+            
+            while (1)
+            {
+                // find unescaped forward slash
+                char *slash = strchr (ptr, '/');
+                if (slash && slash > ptr && *(slash-1) == '\\') {
+                    ptr = slash + 1;
+                    continue;
+                }
+                
+                if (!slash)
+                {
+                    
+                    // Here we have special cases for different submenus
+                    if (0 == strcmp ("File", prev_title))
+//                        gtk_menu_shell_insert (GTK_MENU_SHELL (current), actionitem, 5);
+                    else if (0 == strcmp ("Edit", prev_title))
+//                        gtk_menu_shell_insert (GTK_MENU_SHELL (current), actionitem, 7);
+                    else {
+//                        gtk_container_add (GTK_CONTAINER (current), actionitem);
+                    }
+                    
+//                    g_signal_connect ((gpointer) actionitem, "activate",
+//                                      G_CALLBACK (on_actionitem_activate),
+//                                      action);
+//                    g_object_set_data_full (G_OBJECT (actionitem), "plugaction", strdup (action->name), free);
+                    break;
+                }
+                *slash = 0;
+                char menuname [1024];
+                
+                snprintf (menuname, sizeof (menuname), "%s_menu", ptr);
+                
+                previous = current;
+//                current = lookup_widget (mainwin, menuname);
+                if (!current)
+                {
+                    GtkWidget *newitem;
+                    
+                    newitem = gtk_menu_item_new_with_mnemonic (ptr);
+                    gtk_widget_show (newitem);
+                    
+                    //If we add new submenu in main bar, add it before 'Help'
+                    if (NULL == prev_title)
+                        gtk_menu_shell_insert (GTK_MENU_SHELL (previous), newitem, 4);
+                    else
+                        gtk_container_add (GTK_CONTAINER (previous), newitem);
+                    
+                    current = gtk_menu_new ();
+                    gtk_menu_item_set_submenu (GTK_MENU_ITEM (newitem), current);
+                    GLADE_HOOKUP_OBJECT (mainwin, current, menuname);
+                }
+                prev_title = ptr;
+                ptr = slash + 1;
+            }
+            if (tmp) {
+                free (tmp);
+            }
+            
+            
+        }
+        
+    }
+ */
+    
 }
 
 @end

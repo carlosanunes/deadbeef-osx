@@ -28,14 +28,6 @@
 
 @implementation DBPreferencesViewControllerNetwork
 
-@synthesize proxyServer;
-
-@synthesize proxyServerAddress;
-@synthesize proxyServerPort;
-@synthesize proxyServerUsername;
-@synthesize proxyServerPassword;
-@synthesize proxyServerUserAgent;
-
 - (id)init
 {
 
@@ -67,6 +59,10 @@
 
 - (void) setProxyServerAddress:(NSString *)proxyServerAddress {
     
+    if ( proxyServerAddress == nil ) {
+        return [DBAppDelegate removeConfiguration:@"network.proxy.address"];
+    }
+    
    return [DBAppDelegate setStringConfiguration:@"network.proxy.address" value:proxyServerAddress];
 }
 
@@ -76,7 +72,11 @@
 }
 
 - (void) setProxyServerPort:(NSString *)proxyServerPort {
-    
+
+    if ( proxyServerPort == nil ) {
+        return [DBAppDelegate removeConfiguration:@"network.proxy.port"];
+    }
+
     return [DBAppDelegate setStringConfiguration:@"network.proxy.port" value:proxyServerPort];
 }
 
@@ -86,6 +86,10 @@
 }
 
 - (void) setProxyServerUsername:(NSString *)proxyServerUsername {
+
+    if ( proxyServerUsername == nil ) {
+        return [DBAppDelegate removeConfiguration:@"network.proxy.username"];
+    }
     
     return [DBAppDelegate setStringConfiguration:@"network.proxy.username" value:proxyServerUsername];
 }
@@ -97,6 +101,10 @@
 
 - (void) setProxyServerPassword:(NSString *)proxyServerPassword {
     
+    if ( proxyServerPassword == nil ) {
+        return [DBAppDelegate removeConfiguration:@"network.proxy.password"];
+    }
+    
     return [DBAppDelegate setStringConfiguration:@"network.proxy.password" value:proxyServerPassword];
 }
 
@@ -106,6 +114,10 @@
 }
 
 - (void) setProxyServerUserAgent:(NSString *)proxyServerUserAgent {
+
+    if ( proxyServerUserAgent == nil ) {
+        return [DBAppDelegate removeConfiguration:@"network.http_user_agent"];
+    }
     
     return [DBAppDelegate setStringConfiguration:@"network.http_user_agent" value:proxyServerUserAgent];
 }

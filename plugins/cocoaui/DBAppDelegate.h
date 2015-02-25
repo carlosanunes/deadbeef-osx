@@ -89,6 +89,8 @@
 + (NSString *) stringConfiguration : (NSString *) key str:(NSString *) def;
 + (void) setStringConfiguration : (NSString *) key value:(NSString *) def;
 
++ (void) removeConfiguration : (NSString *) key;
+
 + (BOOL) addPathsToPlaylistAt : (NSArray *) list row:(NSInteger)rowIndex progressPanel : (DBFileImportPanel *) panel;
 
 + (BOOL) addPathToPlaylistAtEnd : (NSString *) path;
@@ -138,5 +140,7 @@
 + (BOOL) streamerOkToRead;
 
 + (NSInteger) playlistCount;
+
++ (NSArray *) menuPluginActions;
 
 @end

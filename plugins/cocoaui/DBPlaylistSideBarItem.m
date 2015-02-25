@@ -42,9 +42,13 @@
     
 }
 
-
 - (NSString *) name {
     return [DBAppDelegate playlistName: [self idx] ];
+}
+
+- (void) setName: (NSString *) name {
+
+    [DBAppDelegate setPlaylistName: name atIndex:[self idx] ];
 }
 
 

@@ -33,7 +33,11 @@
 }
 
 @property (retain) NSArray * outputPluginList;
-@property BOOL eightToSixteen;
-@property BOOL sixteenToTwentyFour;
+
+- (BOOL) eightToSixteen;
+- (BOOL) sixteenToTwentyFour;
+
+- (void) setEightToSixteen: (BOOL) eightToSixteen;
+- (void) setSixteenToTwentyFour: (BOOL) sixteenToTwentyFour;
 
 @end
