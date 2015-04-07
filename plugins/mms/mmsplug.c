@@ -175,6 +175,7 @@ static DB_vfs_t plugin = {
     .plugin.version_major = 1,
     .plugin.version_minor = 0,
     .plugin.type = DB_PLUGIN_VFS,
+    .plugin.id = "mms_vfs",
     .plugin.name = "mms vfs",
     .plugin.descr = "MMS streaming plugin based on libmms",
     .plugin.copyright = 

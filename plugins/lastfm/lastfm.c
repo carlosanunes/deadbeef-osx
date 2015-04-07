@@ -1018,4 +1018,5 @@ static DB_misc_t plugin = {
     .plugin.configdialog = settings_dlg,
     .plugin.get_actions = lfm_get_actions,
     .plugin.message = lfm_message,
+    .plugin.id = "lastfm"
 };
