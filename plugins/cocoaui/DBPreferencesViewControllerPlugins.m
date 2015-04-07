@@ -59,8 +59,8 @@
 	DBScrollableTextPanelController * controller = [[DBScrollableTextPanelController alloc] initWithWindowNibName:@"ScrollableTextPanel" ];
 	[controller setPanelTitle: NSLocalizedString(@"Copyright", "Copyright panel title")];
 
-	NSArray * array = [pluginListController valueForKeyPath:@"selection.value"];
-	[controller setText: [array objectAtIndex: PLUGIN_DATA_COPYRIGHT_POS ]  ];
+	NSString * plugin_id = [pluginListController valueForKeyPath:@"selection.value"];
+	[controller setText: [DBAppDelegate pluginCopyright:plugin_id] ];
 	
 	[controller runModal];
     [controller release];
@@ -68,8 +68,9 @@
 
 - (IBAction) openWebsite : (id)sender {
 
-	NSArray * array = [pluginListController valueForKeyPath:@"selection.value"];
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[array objectAtIndex: PLUGIN_DATA_WEBSITE_POS]]];
+	NSString * plugin_id = [pluginListController valueForKeyPath:@"selection.value"];
+    
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: [DBAppDelegate pluginWebsite:plugin_id]  ]];
 }
 
 

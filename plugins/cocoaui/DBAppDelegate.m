@@ -416,6 +416,21 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     
 }
 
++ (NSString *) pluginWebsite:(NSString *)identifier {
+    
+    DB_plugin_t * plugin = deadbeef->plug_get_for_id( [identifier UTF8String] );
+    
+    return ([NSString stringWithUTF8String: plugin->website]);
+}
+
++ (NSString *) pluginCopyright:(NSString *)identifier {
+    
+    DB_plugin_t * plugin = deadbeef->plug_get_for_id( [identifier UTF8String] );
+    
+    return ([NSString stringWithUTF8String: plugin->copyright]);
+}
+
+
 + (NSArray *) supportedFormatsExtensions {
     
     NSMutableArray * array = [NSMutableArray arrayWithCapacity: 10];
@@ -799,18 +814,12 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
 + (NSDictionary *) pluginList {
 
 	NSMutableDictionary * list = [[NSMutableDictionary alloc] init];
-	char s[20];
-	
+    
 	DB_plugin_t **plugins = deadbeef -> plug_get_list();
 	for (int i = 0; plugins[i]; ++i)
 	{
-		snprintf (s, sizeof (s), "%d.%d", plugins[i] -> version_major, plugins[i] -> version_minor);
-		[list setObject:[NSArray arrayWithObjects: 
-						 [NSString stringWithUTF8String: plugins[i]->descr],
-						 [NSString stringWithUTF8String: plugins[i]->copyright],
-						 [NSString stringWithUTF8String: plugins[i]->website],
-						 [NSString stringWithUTF8String: s],
-						 nil ] 
+        
+		[list setObject: [NSString stringWithUTF8String: plugins[i]->id ]
 				 forKey: [NSString stringWithUTF8String: plugins[i]->name] ];
 	}
 	
@@ -976,6 +985,7 @@ int ui_add_file_info_cb (DB_playItem_t *it, void *data) {
     deadbeef->pl_unlock ();
     
 }
+
 
 + (NSInteger) streamingTrackIndex {
     

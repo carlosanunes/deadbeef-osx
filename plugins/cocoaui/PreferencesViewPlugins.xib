@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1066" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DBPreferencesViewControllerPlugins">
@@ -12,7 +12,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="1">
             <rect key="frame" x="0.0" y="0.0" width="603" height="325"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" id="5">
-                                <rect key="frame" x="0.0" y="0.0" width="226" height="282"/>
+                                <rect key="frame" x="0.0" y="0.0" width="226" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,10 +82,17 @@
                             <button verticalHuggingPriority="750" id="16">
                                 <rect key="frame" x="16" y="6" width="96" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="push" title="Configure" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="17">
+                                <buttonCell key="cell" type="push" title="Configure" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="17">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <binding destination="52" name="enabled" keyPath="selection.value" id="GVC-Cn-xUV">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">DBValueTransformerPluginHasConfig</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
                             </button>
                             <textField verticalHuggingPriority="750" id="40">
                                 <rect key="frame" x="15" y="230" width="97" height="17"/>
@@ -114,9 +121,9 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="52" name="value" keyPath="selection.value" id="81">
+                                    <binding destination="52" name="value" keyPath="selection.value" id="EBN-WX-2uN">
                                         <dictionary key="options">
-                                            <string key="NSValueTransformerName">DBValueTransformerLastElement</string>
+                                            <string key="NSValueTransformerName">DBValueTransformerPluginVersion</string>
                                         </dictionary>
                                     </binding>
                                 </connections>
@@ -158,11 +165,11 @@
                                             <size key="minSize" width="271" height="166"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <connections>
-                                                <binding destination="52" name="attributedString" keyPath="selection.value" id="Nbd-sm-JSq">
+                                                <binding destination="52" name="attributedString" keyPath="selection.value" id="uqO-l1-sAn">
                                                     <dictionary key="options">
                                                         <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
                                                         <bool key="NSConditionallySetsEditable" value="NO"/>
-                                                        <string key="NSValueTransformerName">DBValueTransformerFirstElement</string>
+                                                        <string key="NSValueTransformerName">DBValueTransformerPluginDescription</string>
                                                     </dictionary>
                                                 </binding>
                                             </connections>

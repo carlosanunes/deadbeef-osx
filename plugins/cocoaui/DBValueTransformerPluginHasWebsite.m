@@ -22,6 +22,8 @@
 
 #import "DBValueTransformerPluginHasWebsite.h"
 
+#include "deadbeef.h"
+extern DB_functions_t *deadbeef;
 
 @implementation DBValueTransformerPluginHasWebsite
 
@@ -33,8 +35,9 @@
 
 - (id) transformedValue:(id)value {
 
-	return (id) ( [value objectAtIndex:PLUGIN_DATA_WEBSITE_POS] == nil ?
-				 [NSNumber numberWithBool:NO] : [NSNumber numberWithBool:YES] );
+    DB_plugin_t * plugin = deadbeef->plug_get_for_id( [(NSString*) value UTF8String] );
+    
+    return (id) ( plugin->website ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO] ) ;
 }
 
 

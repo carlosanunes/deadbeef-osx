@@ -215,6 +215,14 @@
 		073B5DAA180DFDC300AF2FE8 /* MASPreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 073B5DA6180DFDC300AF2FE8 /* MASPreferencesWindowController.h */; };
 		073B5DAB180DFDC300AF2FE8 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073B5DA7180DFDC300AF2FE8 /* MASPreferencesWindowController.m */; };
 		073B5DF3180E030600AF2FE8 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073B5DA5180DFDC300AF2FE8 /* MASPreferencesWindow.xib */; };
+		073E900A1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 073E8FFE1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.h */; };
+		073E900B1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 073E8FFF1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.m */; };
+		073E900C1AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 073E90001AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.h */; };
+		073E900D1AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 073E90011AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.m */; };
+		073E900E1AD329F800DDF9C4 /* DBValueTransformerPluginName.h in Headers */ = {isa = PBXBuildFile; fileRef = 073E90021AD329F800DDF9C4 /* DBValueTransformerPluginName.h */; };
+		073E900F1AD329F800DDF9C4 /* DBValueTransformerPluginName.m in Sources */ = {isa = PBXBuildFile; fileRef = 073E90031AD329F800DDF9C4 /* DBValueTransformerPluginName.m */; };
+		073E90101AD329F800DDF9C4 /* DBValueTransformerPluginVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 073E90041AD329F800DDF9C4 /* DBValueTransformerPluginVersion.h */; };
+		073E90111AD329F800DDF9C4 /* DBValueTransformerPluginVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 073E90051AD329F800DDF9C4 /* DBValueTransformerPluginVersion.m */; };
 		075F8B091A096FD1005A4409 /* mpgmad.so in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 0788227F1689D10B0066142D /* mpgmad.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		075F8B2F1A097CD3005A4409 /* wavpack.h in Headers */ = {isa = PBXBuildFile; fileRef = 075F8B2D1A097CD3005A4409 /* wavpack.h */; };
 		0766FB161A47883400AACEC4 /* libzip.2.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 07112CA41A3E39190052B352 /* libzip.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -1568,6 +1576,14 @@
 		073B5DA6180DFDC300AF2FE8 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
 		073B5DA7180DFDC300AF2FE8 /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
 		073B5DA8180DFDC300AF2FE8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		073E8FFE1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBValueTransformerPluginDescription.h; path = ../plugins/cocoaui/DBValueTransformerPluginDescription.h; sourceTree = "<group>"; };
+		073E8FFF1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBValueTransformerPluginDescription.m; path = ../plugins/cocoaui/DBValueTransformerPluginDescription.m; sourceTree = "<group>"; };
+		073E90001AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBValueTransformerPluginHasConfig.h; path = ../plugins/cocoaui/DBValueTransformerPluginHasConfig.h; sourceTree = "<group>"; };
+		073E90011AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBValueTransformerPluginHasConfig.m; path = ../plugins/cocoaui/DBValueTransformerPluginHasConfig.m; sourceTree = "<group>"; };
+		073E90021AD329F800DDF9C4 /* DBValueTransformerPluginName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBValueTransformerPluginName.h; path = ../plugins/cocoaui/DBValueTransformerPluginName.h; sourceTree = "<group>"; };
+		073E90031AD329F800DDF9C4 /* DBValueTransformerPluginName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBValueTransformerPluginName.m; path = ../plugins/cocoaui/DBValueTransformerPluginName.m; sourceTree = "<group>"; };
+		073E90041AD329F800DDF9C4 /* DBValueTransformerPluginVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBValueTransformerPluginVersion.h; path = ../plugins/cocoaui/DBValueTransformerPluginVersion.h; sourceTree = "<group>"; };
+		073E90051AD329F800DDF9C4 /* DBValueTransformerPluginVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBValueTransformerPluginVersion.m; path = ../plugins/cocoaui/DBValueTransformerPluginVersion.m; sourceTree = "<group>"; };
 		07458CA019AEC2EE00DB2B62 /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		07458CA119AEC2EE00DB2B62 /* oggedit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oggedit.h; sourceTree = "<group>"; };
 		07458CA219AEC2EE00DB2B62 /* oggedit_art.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = oggedit_art.c; sourceTree = "<group>"; };
@@ -3158,6 +3174,14 @@
 		070297AB17E9055500710234 /* cocoaui */ = {
 			isa = PBXGroup;
 			children = (
+				073E8FFE1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.h */,
+				073E8FFF1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.m */,
+				073E90001AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.h */,
+				073E90011AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.m */,
+				073E90021AD329F800DDF9C4 /* DBValueTransformerPluginName.h */,
+				073E90031AD329F800DDF9C4 /* DBValueTransformerPluginName.m */,
+				073E90041AD329F800DDF9C4 /* DBValueTransformerPluginVersion.h */,
+				073E90051AD329F800DDF9C4 /* DBValueTransformerPluginVersion.m */,
 				070568B7181B13D700B094E4 /* DBPreferencesViewControllerPlugins.h */,
 				070568B8181B13D700B094E4 /* DBPreferencesViewControllerPlugins.m */,
 				0715DF0D17F6342300A15158 /* cocoaui.c */,
@@ -5596,6 +5620,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073E900A1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.h in Headers */,
 				0715DF6217F63A0B00A15158 /* DBAppDelegate.h in Headers */,
 				0715DF6417F63A0E00A15158 /* DBBottomBar.h in Headers */,
 				0715DF6617F63A1200A15158 /* DBFileImportPanel.h in Headers */,
@@ -5606,6 +5631,7 @@
 				0715DF7317F63A2900A15158 /* DBTimeSliderCell.h in Headers */,
 				0715DF7517F63A2B00A15158 /* DBTrackInspectorPanelController.h in Headers */,
 				073B5D8A180DFB7000AF2FE8 /* DBPreferencesViewControllerSound.h in Headers */,
+				073E900E1AD329F800DDF9C4 /* DBValueTransformerPluginName.h in Headers */,
 				078060BE1868F328008319FD /* DBSplitViewController.h in Headers */,
 				073B5DA9180DFDC300AF2FE8 /* MASPreferencesViewController.h in Headers */,
 				073B5DAA180DFDC300AF2FE8 /* MASPreferencesWindowController.h in Headers */,
@@ -5613,7 +5639,9 @@
 				0786991618130C740093C177 /* DBValueTransformerFirstElement.h in Headers */,
 				07D9661E1A2552F200FC9B6C /* DBOutlineView.h in Headers */,
 				078060CF186B90A3008319FD /* DBSideBarItem.h in Headers */,
+				073E90101AD329F800DDF9C4 /* DBValueTransformerPluginVersion.h in Headers */,
 				0786991B18130C970093C177 /* DBValueTransformerLastElement.h in Headers */,
+				073E900C1AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.h in Headers */,
 				078699381813147A0093C177 /* DBScrollableTextPanelController.h in Headers */,
 				07869A601813428D0093C177 /* DBValueTransformerPluginHasWebsite.h in Headers */,
 				070568B9181B13D700B094E4 /* DBPreferencesViewControllerPlugins.h in Headers */,
@@ -7360,11 +7388,15 @@
 			files = (
 				0715DF6317F63A0C00A15158 /* DBAppDelegate.m in Sources */,
 				0715DF6517F63A1000A15158 /* DBBottomBar.m in Sources */,
+				073E900B1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.m in Sources */,
 				0715DF6717F63A1300A15158 /* DBFileImportPanel.m in Sources */,
+				073E90111AD329F800DDF9C4 /* DBValueTransformerPluginVersion.m in Sources */,
 				078060BF1868F328008319FD /* DBSplitViewController.m in Sources */,
 				0715DF6A17F63A1700A15158 /* DBMainWindowController.m in Sources */,
 				0715DF6C17F63A2000A15158 /* DBPlayListController.m in Sources */,
+				073E900F1AD329F800DDF9C4 /* DBValueTransformerPluginName.m in Sources */,
 				0715DF7017F63A2500A15158 /* DBTableView.m in Sources */,
+				073E900D1AD329F800DDF9C4 /* DBValueTransformerPluginHasConfig.m in Sources */,
 				0715DF7217F63A2800A15158 /* DBTextInputPanelController.m in Sources */,
 				07B182671A5E0EBF002212C9 /* DBGroupSideBarItem.m in Sources */,
 				07D9661F1A2552F200FC9B6C /* DBOutlineView.m in Sources */,
