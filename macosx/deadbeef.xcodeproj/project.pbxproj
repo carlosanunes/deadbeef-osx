@@ -850,6 +850,8 @@
 		0796B5C5168921150079D590 /* Z80_Cpu_run.h in Headers */ = {isa = PBXBuildFile; fileRef = 0796B439168921150079D590 /* Z80_Cpu_run.h */; };
 		0796B6391689494E0079D590 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0796B6381689494E0079D590 /* libz.dylib */; };
 		079AF5BE17BA876F00BDCBC4 /* mpgmad.c in Sources */ = {isa = PBXBuildFile; fileRef = 079AF5BD17BA876F00BDCBC4 /* mpgmad.c */; };
+		079E61891ADAF03C007979CD /* DBPluginConfigurationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 079E61861ADAF03C007979CD /* DBPluginConfigurationController.h */; };
+		079E618A1ADAF03C007979CD /* DBPluginConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E61871ADAF03C007979CD /* DBPluginConfigurationController.m */; };
 		079F35471A9A9C1100A896A2 /* libFLAC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 079F35461A9A9C1100A896A2 /* libFLAC.a */; };
 		079F355B1A9D5EC100A896A2 /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 079F35581A9D5E5100A896A2 /* libogg.a */; };
 		07B1825F1A5E01D9002212C9 /* DBPlaylistSideBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B1825D1A5E01D9002212C9 /* DBPlaylistSideBarItem.h */; };
@@ -2708,6 +2710,8 @@
 		079AF7A317BA8EEC00BDCBC4 /* ll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ll.h; sourceTree = "<group>"; };
 		079AF7A617BA8EEC00BDCBC4 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		079AF7F717BA94D300BDCBC4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "libs/libcdio-0.90/config.h"; sourceTree = SOURCE_ROOT; };
+		079E61861ADAF03C007979CD /* DBPluginConfigurationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPluginConfigurationController.h; path = ../plugins/cocoaui/DBPluginConfigurationController.h; sourceTree = "<group>"; };
+		079E61871ADAF03C007979CD /* DBPluginConfigurationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPluginConfigurationController.m; path = ../plugins/cocoaui/DBPluginConfigurationController.m; sourceTree = "<group>"; };
 		079F35461A9A9C1100A896A2 /* libFLAC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFLAC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B1825D1A5E01D9002212C9 /* DBPlaylistSideBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPlaylistSideBarItem.h; path = ../plugins/cocoaui/DBPlaylistSideBarItem.h; sourceTree = "<group>"; };
 		07B1825E1A5E01D9002212C9 /* DBPlaylistSideBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPlaylistSideBarItem.m; path = ../plugins/cocoaui/DBPlaylistSideBarItem.m; sourceTree = "<group>"; };
@@ -3220,6 +3224,8 @@
 				07B1825E1A5E01D9002212C9 /* DBPlaylistSideBarItem.m */,
 				07B182641A5E0EBF002212C9 /* DBGroupSideBarItem.h */,
 				07B182651A5E0EBF002212C9 /* DBGroupSideBarItem.m */,
+				079E61861ADAF03C007979CD /* DBPluginConfigurationController.h */,
+				079E61871ADAF03C007979CD /* DBPluginConfigurationController.m */,
 			);
 			name = cocoaui;
 			sourceTree = "<group>";
@@ -5638,6 +5644,7 @@
 				078060CB186A1F43008319FD /* DBSidebarViewController.h in Headers */,
 				0786991618130C740093C177 /* DBValueTransformerFirstElement.h in Headers */,
 				07D9661E1A2552F200FC9B6C /* DBOutlineView.h in Headers */,
+				079E61891ADAF03C007979CD /* DBPluginConfigurationController.h in Headers */,
 				078060CF186B90A3008319FD /* DBSideBarItem.h in Headers */,
 				073E90101AD329F800DDF9C4 /* DBValueTransformerPluginVersion.h in Headers */,
 				0786991B18130C970093C177 /* DBValueTransformerLastElement.h in Headers */,
@@ -7389,6 +7396,7 @@
 				0715DF6317F63A0C00A15158 /* DBAppDelegate.m in Sources */,
 				0715DF6517F63A1000A15158 /* DBBottomBar.m in Sources */,
 				073E900B1AD329F800DDF9C4 /* DBValueTransformerPluginDescription.m in Sources */,
+				079E618A1ADAF03C007979CD /* DBPluginConfigurationController.m in Sources */,
 				0715DF6717F63A1300A15158 /* DBFileImportPanel.m in Sources */,
 				073E90111AD329F800DDF9C4 /* DBValueTransformerPluginVersion.m in Sources */,
 				078060BF1868F328008319FD /* DBSplitViewController.m in Sources */,

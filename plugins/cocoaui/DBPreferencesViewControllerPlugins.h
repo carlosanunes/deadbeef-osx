@@ -24,6 +24,7 @@
 #import "MASPreferencesViewController.h"
 #import "DBAppDelegate.h"
 #import "DBScrollableTextPanelController.h"
+#import "DBPluginConfigurationController.h"
 
 @interface DBPreferencesViewControllerPlugins : NSViewController <MASPreferencesViewController> {
 
@@ -34,6 +35,7 @@
 
 - (IBAction) showCopyright: (id)sender;
 - (IBAction) openWebsite : (id)sender;
+- (IBAction) openConfig : (id)sender;
 
 @property (retain) NSDictionary * pluginList;
 

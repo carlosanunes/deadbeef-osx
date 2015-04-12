@@ -87,6 +87,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
+                                    <action selector="openConfig:" target="-2" id="dlD-Df-Dpo"/>
                                     <binding destination="52" name="enabled" keyPath="selection.value" id="GVC-Cn-xUV">
                                         <dictionary key="options">
                                             <string key="NSValueTransformerName">DBValueTransformerPluginHasConfig</string>

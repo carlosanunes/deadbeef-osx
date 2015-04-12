@@ -73,6 +73,17 @@
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: [DBAppDelegate pluginWebsite:plugin_id]  ]];
 }
 
+- (IBAction) openConfig : (id)sender {
+    
+	NSString * plugin_id = [pluginListController valueForKeyPath:@"selection.value"];
+    
+    DBPluginConfigurationController * controller = [DBPluginConfigurationController initPanelForPlugin: plugin_id];
+    
+    [controller runModal];
+    
+    [controller release];
+    
+}
 
 -(void) dealloc {
 	
